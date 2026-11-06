@@ -1,0 +1,370 @@
+{
+ "instrument": "kit/examples/hep/feas/imgtools.py stats v2, on the committed JPEGs (quality 88)",
+ "reference_still": {
+  "note": "private look target, not committed",
+  "instrument": "imgtools stats v2",
+  "file": "reference hero still (private, not committed)",
+  "size": [
+   1376,
+   768
+  ],
+  "mean_luma": 0.1899,
+  "p50": 0.1045,
+  "p99": 0.9132,
+  "frac_luma_gt_0_9": 0.01234,
+  "frac_any_channel_255": 0.00566,
+  "frac_luma_gt_0_05": 0.7095,
+  "bright_px_frac": 0.3446,
+  "achromatic_share_of_bright": 0.2,
+  "mean_sat_bright": 0.372,
+  "hue_share": {
+   "red": 0.075,
+   "orange": 0.125,
+   "yellow": 0.008,
+   "green": 0.002,
+   "cyan": 0.094,
+   "blue": 0.632,
+   "violet/magenta": 0.064
+  }
+ },
+ "frames": {
+  "hero_endon.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "hero_endon.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.1708,
+   "p50": 0.0575,
+   "p99": 0.9972,
+   "frac_luma_gt_0_9": 0.05514,
+   "frac_any_channel_255": 0.05102,
+   "frac_luma_gt_0_05": 0.5692,
+   "bright_px_frac": 0.291,
+   "achromatic_share_of_bright": 0.191,
+   "mean_sat_bright": 0.477,
+   "hue_share": {
+    "red": 0.004,
+    "orange": 0.099,
+    "yellow": 0.098,
+    "green": 0.0,
+    "cyan": 0.068,
+    "blue": 0.611,
+    "violet/magenta": 0.118
+   }
+  },
+  "hero_endon_bloom.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "hero_endon_bloom.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.179,
+   "p50": 0.0581,
+   "p99": 0.9986,
+   "frac_luma_gt_0_9": 0.06066,
+   "frac_any_channel_255": 0.05351,
+   "frac_luma_gt_0_05": 0.572,
+   "bright_px_frac": 0.2941,
+   "achromatic_share_of_bright": 0.246,
+   "mean_sat_bright": 0.438,
+   "hue_share": {
+    "red": 0.003,
+    "orange": 0.084,
+    "yellow": 0.09,
+    "green": 0.0,
+    "cyan": 0.071,
+    "blue": 0.632,
+    "violet/magenta": 0.119
+   }
+  },
+  "hero_endon_bloom_t2.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "hero_endon_bloom_t2.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.1141,
+   "p50": 0.0499,
+   "p99": 0.9844,
+   "frac_luma_gt_0_9": 0.01862,
+   "frac_any_channel_255": 0.01688,
+   "frac_luma_gt_0_05": 0.4963,
+   "bright_px_frac": 0.2062,
+   "achromatic_share_of_bright": 0.145,
+   "mean_sat_bright": 0.499,
+   "hue_share": {
+    "red": 0.002,
+    "orange": 0.002,
+    "yellow": 0.0,
+    "green": 0.0,
+    "cyan": 0.059,
+    "blue": 0.832,
+    "violet/magenta": 0.105
+   }
+  },
+  "hero_endon_bloom_t35.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "hero_endon_bloom_t35.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.1799,
+   "p50": 0.0575,
+   "p99": 0.9992,
+   "frac_luma_gt_0_9": 0.06273,
+   "frac_any_channel_255": 0.05487,
+   "frac_luma_gt_0_05": 0.5716,
+   "bright_px_frac": 0.2882,
+   "achromatic_share_of_bright": 0.273,
+   "mean_sat_bright": 0.416,
+   "hue_share": {
+    "red": 0.003,
+    "orange": 0.084,
+    "yellow": 0.08,
+    "green": 0.0,
+    "cyan": 0.071,
+    "blue": 0.642,
+    "violet/magenta": 0.118
+   }
+  },
+  "hero_side_bloom.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "hero_side_bloom.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.1628,
+   "p50": 0.0679,
+   "p99": 0.9949,
+   "frac_luma_gt_0_9": 0.02859,
+   "frac_any_channel_255": 0.02813,
+   "frac_luma_gt_0_05": 0.622,
+   "bright_px_frac": 0.3264,
+   "achromatic_share_of_bright": 0.12,
+   "mean_sat_bright": 0.513,
+   "hue_share": {
+    "red": 0.0,
+    "orange": 0.0,
+    "yellow": 0.002,
+    "green": 0.0,
+    "cyan": 0.007,
+    "blue": 0.985,
+    "violet/magenta": 0.006
+   }
+  },
+  "hero_three_quarter.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "hero_three_quarter.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.1319,
+   "p50": 0.0519,
+   "p99": 0.9936,
+   "frac_luma_gt_0_9": 0.02192,
+   "frac_any_channel_255": 0.02409,
+   "frac_luma_gt_0_05": 0.5184,
+   "bright_px_frac": 0.2709,
+   "achromatic_share_of_bright": 0.113,
+   "mean_sat_bright": 0.539,
+   "hue_share": {
+    "red": 0.0,
+    "orange": 0.0,
+    "yellow": 0.001,
+    "green": 0.0,
+    "cyan": 0.009,
+    "blue": 0.986,
+    "violet/magenta": 0.003
+   }
+  },
+  "hero_three_quarter_bloom.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "hero_three_quarter_bloom.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.1333,
+   "p50": 0.0519,
+   "p99": 0.9944,
+   "frac_luma_gt_0_9": 0.02367,
+   "frac_any_channel_255": 0.02473,
+   "frac_luma_gt_0_05": 0.518,
+   "bright_px_frac": 0.2705,
+   "achromatic_share_of_bright": 0.126,
+   "mean_sat_bright": 0.533,
+   "hue_share": {
+    "red": 0.0,
+    "orange": 0.0,
+    "yellow": 0.001,
+    "green": 0.0,
+    "cyan": 0.008,
+    "blue": 0.989,
+    "violet/magenta": 0.002
+   }
+  },
+  "pileup24_endon.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "pileup24_endon.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.4002,
+   "p50": 0.099,
+   "p99": 1.0,
+   "frac_luma_gt_0_9": 0.28349,
+   "frac_any_channel_255": 0.26585,
+   "frac_luma_gt_0_05": 0.6418,
+   "bright_px_frac": 0.4606,
+   "achromatic_share_of_bright": 0.559,
+   "mean_sat_bright": 0.238,
+   "hue_share": {
+    "red": 0.003,
+    "orange": 0.181,
+    "yellow": 0.29,
+    "green": 0.0,
+    "cyan": 0.095,
+    "blue": 0.27,
+    "violet/magenta": 0.161
+   }
+  },
+  "pileup7_endon_bloom.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "pileup7_endon_bloom.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.2946,
+   "p50": 0.0865,
+   "p99": 1.0,
+   "frac_luma_gt_0_9": 0.14664,
+   "frac_any_channel_255": 0.12843,
+   "frac_luma_gt_0_05": 0.6224,
+   "bright_px_frac": 0.4156,
+   "achromatic_share_of_bright": 0.374,
+   "mean_sat_bright": 0.34,
+   "hue_share": {
+    "red": 0.003,
+    "orange": 0.212,
+    "yellow": 0.124,
+    "green": 0.0,
+    "cyan": 0.083,
+    "blue": 0.436,
+    "violet/magenta": 0.142
+   }
+  },
+  "pileup7_three_quarter_bloom.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "pileup7_three_quarter_bloom.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.1674,
+   "p50": 0.0519,
+   "p99": 1.0,
+   "frac_luma_gt_0_9": 0.07535,
+   "frac_any_channel_255": 0.06389,
+   "frac_luma_gt_0_05": 0.518,
+   "bright_px_frac": 0.2705,
+   "achromatic_share_of_bright": 0.335,
+   "mean_sat_bright": 0.416,
+   "hue_share": {
+    "red": 0.0,
+    "orange": 0.009,
+    "yellow": 0.012,
+    "green": 0.0,
+    "cyan": 0.01,
+    "blue": 0.959,
+    "violet/magenta": 0.01
+   }
+  },
+  "softqcd_endon_bloom.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "softqcd_endon_bloom.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.1301,
+   "p50": 0.0575,
+   "p99": 0.9357,
+   "frac_luma_gt_0_9": 0.01246,
+   "frac_any_channel_255": 0.01175,
+   "frac_luma_gt_0_05": 0.5603,
+   "bright_px_frac": 0.2556,
+   "achromatic_share_of_bright": 0.124,
+   "mean_sat_bright": 0.522,
+   "hue_share": {
+    "red": 0.003,
+    "orange": 0.221,
+    "yellow": 0.024,
+    "green": 0.0,
+    "cyan": 0.044,
+    "blue": 0.654,
+    "violet/magenta": 0.054
+   }
+  },
+  "zmumu_endon_bloom.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "zmumu_endon_bloom.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.1353,
+   "p50": 0.0581,
+   "p99": 0.9313,
+   "frac_luma_gt_0_9": 0.01246,
+   "frac_any_channel_255": 0.01239,
+   "frac_luma_gt_0_05": 0.5722,
+   "bright_px_frac": 0.2718,
+   "achromatic_share_of_bright": 0.141,
+   "mean_sat_bright": 0.5,
+   "hue_share": {
+    "red": 0.004,
+    "orange": 0.201,
+    "yellow": 0.013,
+    "green": 0.0,
+    "cyan": 0.041,
+    "blue": 0.678,
+    "violet/magenta": 0.064
+   }
+  },
+  "zmumu_three_quarter_bloom.jpg": {
+   "instrument": "imgtools stats v2",
+   "file": "zmumu_three_quarter_bloom.jpg",
+   "size": [
+    960,
+    540
+   ],
+   "mean_luma": 0.1341,
+   "p50": 0.0519,
+   "p99": 0.9819,
+   "frac_luma_gt_0_9": 0.0197,
+   "frac_any_channel_255": 0.02234,
+   "frac_luma_gt_0_05": 0.5179,
+   "bright_px_frac": 0.2725,
+   "achromatic_share_of_bright": 0.105,
+   "mean_sat_bright": 0.546,
+   "hue_share": {
+    "red": 0.0,
+    "orange": 0.006,
+    "yellow": 0.004,
+    "green": 0.0,
+    "cyan": 0.016,
+    "blue": 0.969,
+    "violet/magenta": 0.004
+   }
+  }
+ }
+}

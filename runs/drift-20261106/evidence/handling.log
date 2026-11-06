@@ -1,0 +1,37 @@
+ok   koi 0-100 km/h 7.42 s (window 7-9; traction off 7.42 s)
+ok   koi top speed 208.8 km/h (window 185-215; bracket spread 0.3)
+ok   koi 100-0 km/h 39.0 m (window 33-42; wet 52.3 m)
+ok   koi skidpad 0.989 g (window 0.9-1.1)
+ok   koi wet/dry skidpad 0.717 (window 0.62-0.8)
+ok   koi left/right symmetry: skidpad 0.00%, flick yaw 0.00%, slip 0.00%
+ok   koi held drift 25-50 deg for 34.4 s (mean 36 deg, 0 wall hits)
+ok   ronin 0-100 km/h 5.38 s (window 4.8-6.2; traction off 5.97 s)
+ok   ronin top speed 252.9 km/h (window 230-265; bracket spread 0.5)
+ok   ronin 100-0 km/h 36.6 m (window 33-42; wet 49.5 m)
+ok   ronin skidpad 1.011 g (window 0.92-1.12)
+ok   ronin wet/dry skidpad 0.740 (window 0.62-0.8)
+ok   ronin left/right symmetry: skidpad 0.01%, flick yaw 0.00%, slip 0.00%
+ok   ronin held drift 25-50 deg for 35.1 s (mean 36 deg, 0 wall hits)
+ok   tempest 0-100 km/h 3.79 s (window 3.3-4.3; traction off 3.85 s)
+ok   tempest top speed 266.4 km/h (window 245-280; bracket spread 1.2)
+ok   tempest 100-0 km/h 33.0 m (window 32-40; wet 50.4 m)
+ok   tempest skidpad 1.078 g (window 1-1.2)
+ok   tempest wet/dry skidpad 0.751 (window 0.62-0.8)
+ok   tempest left/right symmetry: skidpad 0.03%, flick yaw 0.00%, slip 0.00%
+ok   tempest held drift 25-50 deg for 13.3 s (mean 33 deg, 0 wall hits, drift setup {"traction":0,"stability":0,"awdSplit":0.2,"balance":0.8})
+ok   banshee 0-100 km/h 4.49 s (window 3.8-5; traction off 5.10 s)
+ok   banshee top speed 299.9 km/h (window 275-315; bracket spread 0.9)
+ok   banshee 100-0 km/h 34.5 m (window 33-42; wet 48.0 m)
+ok   banshee skidpad 1.013 g (window 0.9-1.12)
+ok   banshee wet/dry skidpad 0.740 (window 0.62-0.8)
+ok   banshee left/right symmetry: skidpad 0.00%, flick yaw 0.00%, slip 0.00%
+ok   banshee held drift 25-50 deg for 36.0 s (mean 36 deg, 0 wall hits)
+ok   banshee on oval: wheel loads sum to m g cos(theta) + downforce (worst 2.6e-16), lightest wheel 6.1%
+ok   koi on twisty: wheel loads sum to m g cos(theta) + downforce (worst 3.6e-16), lightest wheel 8.8%
+ok   tempest on oval: wheel loads sum to m g cos(theta) + downforce (worst 2.5e-16), lightest wheel 7.5%
+ok   acceleration order KOI < RONIN < BANSHEE < TEMPEST
+ok   TEMPEST has the most grip
+ok   top speed order KOI < RONIN < TEMPEST < BANSHEE
+{"handling":"pass","failed":0}
+
+--- stderr ---

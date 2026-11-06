@@ -1,0 +1,142 @@
+{
+  "schema": "loom.hep-event-spec/1",
+  "note": "Demo plausibility spec. Every number is a declared, loose threshold for a viewer, not a precision study; change it here, never in kit/loomkit/hepevent.py.",
+  "units": {
+    "length_range_m": [
+      0.05,
+      50.0
+    ],
+    "ratio_log10_tol": 0.3
+  },
+  "p4": {
+    "abs_tol_gev": 0.5,
+    "rel_tol": 0.0001
+  },
+  "charge": {
+    "abs_tol": 1e-06
+  },
+  "curvature": {
+    "rel_tol": 0.15,
+    "abs_tol_per_m": 0.01,
+    "straight_sagitta_m": 0.002,
+    "point_resolution_m": 0.0001,
+    "resolvable_sagitta_m": 0.0003
+  },
+  "containment": {
+    "margin_m": 0.02
+  },
+  "scene": {
+    "required": true,
+    "unreadable_nodes": "reject",
+    "draw_eta_max": 10.0,
+    "draw_min_pt_gev": 0.15,
+    "draw_min_neutral_e_gev": 0.3,
+    "invisible_pdg": [
+      12,
+      14,
+      16
+    ],
+    "min_points": 2,
+    "shader": {
+      "time_field": "u_phase",
+      "pt_rel_tol": 0.01,
+      "ident": {
+        "name": "a_ident",
+        "layout": [
+          "id",
+          "charge",
+          "pt",
+          "birth_s"
+        ]
+      },
+      "attributes": [
+        {
+          "name": "a_ident",
+          "components": 4
+        },
+        {
+          "name": "a_arc",
+          "components": 1,
+          "constant": false
+        },
+        {
+          "name": "a_species",
+          "components": 1
+        }
+      ],
+      "birth": {
+        "note": "birth_s = t_prod_ns * c / slow_motion + a fixed jitter per track",
+        "slow_motion_m_per_s": 0.9,
+        "jitter_s": 0.1
+      },
+      "arc": {
+        "name": "a_arc",
+        "abs_tol_m": 0.005,
+        "rel_tol": 0.02
+      },
+      "species": {
+        "name": "a_species",
+        "by_pdg": {
+          "11": 1,
+          "13": 2,
+          "22": 5,
+          "2212": 4
+        },
+        "charged": 3,
+        "neutral": 6
+      }
+    },
+    "merged": {
+      "note": "Look v2: tracks as ribbons in a few merged strips, muon extensions, tower spikes. The builder's anti-degeneracy offset, declared here so the witness can take it off.",
+      "offset_m": [
+        0.004,
+        0.0028,
+        0.0012
+      ],
+      "offset_tol_m": 0.0002,
+      "tower_cell": {
+        "name": "a_cell",
+        "layout": [
+          "id",
+          "E",
+          "em_frac",
+          "arrival_s"
+        ],
+        "e_rel_tol": 0.01,
+        "cell_deta": 0.0873,
+        "cell_dphi": 0.08727,
+        "cell_tol": 0.005
+      },
+      "extensions": {
+        "pdg": [
+          13
+        ],
+        "r_max_m": 3.4,
+        "half_length_m": 4.5,
+        "join_tol_m": 0.01,
+        "join_angle_deg": 10
+      },
+      "look": {
+        "name": "a_look",
+        "track_layout": [
+          "side",
+          "seed",
+          "drawn_m",
+          "kind"
+        ],
+        "kinds": {
+          "charged": 0,
+          "neutral": 1,
+          "extension": 2
+        }
+      }
+    },
+    "reach": {
+      "note": "Each drawn path is bound to its own event track: it starts at the vertex, heads along phi, rises as eta says and reaches as far in xy as the event's helix does inside the tracker (half a turn at most).",
+      "start_tol_m": 0.01,
+      "reach_tol_m": 0.01,
+      "dir_tol_rad": 0.1,
+      "pitch_tol_rad": 0.05
+    }
+  }
+}

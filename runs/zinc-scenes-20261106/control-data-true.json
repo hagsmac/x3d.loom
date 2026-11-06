@@ -1,0 +1,78 @@
+{
+  "schema": "loom.zinc-scene-truth-controls/1",
+  "scene": "scenes/1rgo.x3d",
+  "controls": [
+    {
+      "control": "atom moved 0.01 A",
+      "intended": "ATOM_POSITION",
+      "exit": 1,
+      "first_violation": "ATOM_POSITION",
+      "line": "VIOLATION ATOM_POSITION 1rgo A_CYS_159_SG at -5.990 12.502 4.334, deposited -6.000 12.502 4.334",
+      "result": "caught"
+    },
+    {
+      "control": "selected atom left out",
+      "intended": "ATOM_SELECTION",
+      "exit": 1,
+      "first_violation": "ATOM_SELECTION",
+      "line": "VIOLATION ATOM_SELECTION 1rgo selected by the rule but not drawn: A_CYS_159_CB",
+      "result": "caught"
+    },
+    {
+      "control": "unselected atom drawn",
+      "intended": "ATOM_SELECTION",
+      "exit": 1,
+      "first_violation": "ATOM_SELECTION",
+      "line": "VIOLATION ATOM_SELECTION 1rgo drawn but not selected by the rule: A_SER_150_CA",
+      "result": "caught"
+    },
+    {
+      "control": "short bond drawn dark",
+      "intended": "BOND_GLOW",
+      "exit": 1,
+      "first_violation": "BOND_GLOW",
+      "line": "VIOLATION BOND_GLOW 1rgo Bond_A221_CYS159_SG: glows=False at 2.2985 A (line 2.5)",
+      "result": "caught"
+    },
+    {
+      "control": "label off by 0.01",
+      "intended": "BOND_LABEL",
+      "exit": 1,
+      "first_violation": "BOND_LABEL",
+      "line": "VIOLATION BOND_LABEL 1rgo Bond_A221_CYS159_SG: label \"2.31 \u00c5\", length 2.30 \u00c5",
+      "result": "caught"
+    },
+    {
+      "control": "two labels swap places",
+      "intended": "LABEL_PLACE",
+      "exit": 1,
+      "first_violation": "LABEL_PLACE",
+      "line": "VIOLATION LABEL_PLACE 1rgo Label_A221_CYS159_SG at -6.256 17.035 5.424, its bond's line puts it at -6.516 11.658 4.479",
+      "result": "caught"
+    },
+    {
+      "control": "bond turned off its atoms",
+      "intended": "BOND_GEOMETRY",
+      "exit": 1,
+      "first_violation": "BOND_GEOMETRY",
+      "line": "VIOLATION BOND_GEOMETRY 1rgo Bond_A221_CYS159_SG: ends [-5.013 14.546  4.056] [-5.803 12.4    4.278] vs zinc and donor",
+      "result": "caught"
+    },
+    {
+      "control": "rule bond not drawn",
+      "intended": "BOND_SET",
+      "exit": 1,
+      "first_violation": "BOND_SET",
+      "line": "VIOLATION BOND_SET 1rgo rule bond not drawn: ZN221 to CYS159.SG",
+      "result": "caught"
+    },
+    {
+      "control": "tube point off its C-alpha",
+      "intended": "TUBE_ANCHOR",
+      "exit": 1,
+      "first_violation": "TUBE_ANCHOR",
+      "line": "VIOLATION TUBE_ANCHOR 1rgo Backbone_A221_155: control point 1.679 8.234 1.981 is not a deposited CA or P",
+      "result": "caught"
+    }
+  ]
+}

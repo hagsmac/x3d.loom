@@ -1,0 +1,51 @@
+{
+  "schema": "loom.profile/1",
+  "name": "hep-demo/v2",
+  "purpose": "Acceptance profile for a collider-event DEMO scene (not a precision study, not a STEM-grade physics claim). Accepting under it means: every listed event file parses, its units are sane (no MeV read as GeV, no millimetres read as metres), its charge adds up, its momenta roughly balance the declared incoming, every helix bends the way its pT, charge and the field say (declared, measured on the hits, and as drawn in the scene), and every drawn path starts at its own vertex, heads and dips the way its momentum says and reaches as far as the event says it goes, everything drawn sits inside the declared detector, every visible particle above the declared cuts is drawn exactly once and every drawn track and tower maps to the event (one Shape per track, or one strip per track in a merged set whose declared ribbon offset is taken off), only muons are drawn past the calorimeter and every muon that leaves the tracker is, every drawn track carries the shared shader, its per-track vertex attributes (id, charge, pT, birth time, species, arc length) with values that match the event (birth window, species code, arc length along the drawn path) and a clock route from a TimeSensor, every merged strip and spike sits in its own tower cell, the scene graph is read fail-closed (USE'd groups, LOD, Switch and Collision proxies, unknown or unreadable nodes refuse rather than pass), and the repository's own traps witness finds none of its eleven known traps in the scenes. It says nothing about masses, resonances, calorimeter sums, how the shaders compile or look, frame rate, or whether the physics is right.",
+  "required": [
+    {
+      "witness": "hep-event",
+      "coverage": {
+        "events": 10,
+        "scenes": 10
+      }
+    },
+    {
+      "witness": "traps",
+      "coverage": {
+        "rules": 11
+      }
+    }
+  ],
+  "visible_not_run": [
+    "grammar",
+    "meaning",
+    "behaviour",
+    "look-match",
+    "eyes",
+    "real-gpu"
+  ],
+  "gate_map": {
+    "HEP-PARSE": "hepevent: EVT_PARSE (event JSON, mothers, numbers, scene XML, USE before DEF, cycles, reuse, unreadable or unknown nodes, a named shape where the reader does not look)",
+    "HEP-SPEC": "hepevent: EVT_SPEC (the thresholds live in the spec file, validated before use)",
+    "HEP-UNITS": "hepevent: EVT_UNITS (median mass of known particles, detector size, helix radius and scene extent against their expected scale)",
+    "HEP-CHARGE": "hepevent: EVT_CHARGE (final-state charge against the declared incoming; track against its particle)",
+    "HEP-4MOM": "hepevent: EVT_4MOM (loose: final-state four-momentum against the declared incoming and the beams)",
+    "HEP-CURVATURE": "hepevent: EVT_CURVATURE (curvature = 0.2998 B / pT, on the declared helix, the hits and the drawn polyline; a path whose expected bend is below the rounding of its points is judged as a straight line and counted as unresolved; the drawn path must start at its vertex, head and dip along its momentum and reach as far as the event's helix goes)",
+    "HEP-SENSE": "hepevent: EVT_SENSE (clockwise or counter-clockwise from charge and field direction)",
+    "HEP-CONTAINMENT": "hepevent: EVT_CONTAINMENT (hits, vertices, drawn track points and drawn tower corners inside the declared volumes; muon extensions inside the declared muon system, and only for the declared pdg codes)",
+    "HEP-BIJECTION": "hepevent: EVT_SCENE_BIJECTION (every drawable particle drawn once; every trk_ and twr_ shape, or trkset_/muext_/twrset_ strip, maps to the event; none hidden or drawn twice; a merged shape is read only under a declared scene.merged convention; an exiting muon must continue through the calorimeter; hidden includes a Switch that does not select it and a Collision proxy; a muon extension joins its own track's end on the tracker boundary, heading on)",
+    "HEP-SHADER": "hepevent: EVT_SHADER (shader bound, data: URLs, attributes supplied with the right count and values: birth time inside its window, species code from the pdg, arc length running from zero along the drawn path; ribbon edges agree; tower cell energy and position match the event; look rows declared; clock routed)",
+    "HEP-TRAPS": "traps: the eleven recorded traps (shader-raw-source, glsl-reserved-active, route-before-def, version-fits-nodes, ...)",
+    "HEP-FAIL-CLOSED": "every predicate raises; tested under python -O (kit/tests/test_hepevent.py)"
+  },
+  "limitations": [
+    "15 to 17 percent of the charged tracks in the real events (mostly very forward ones) draw a bend smaller than 0.3 mm over the tracker; the witness cannot measure that bend and says so (scene_curvature_unresolved, unresolved_hits). Those paths are checked only for being straight to within the expected sagitta plus three rounding steps.",
+    "A demo profile: tolerances are loose and declared in the spec; a precision study would add mass-shell, resonance and calorimeter sum-rule codes, not tighten these.",
+    "The acceptance does not render the scene or compile the GLSL: grammar and meaning need the X3D fork, behaviour needs a browser witness, the look-match against the reference still is an eye witness; all four stay visibly not run. X_ITE 16.5.1 stills of the same look v2 scenes, with 0 shader or console errors under software GL, are recorded beside the receipt (frames-v2), not inside it.",
+    "Inside this acceptance the shaders are checked lexically only (no '#', '%', quotes or '//', no 'active', no integer literals, balanced brackets) and for their binding (data: parts, the clock field and route, every attribute declared and supplied).",
+    "The detector response is a truth-level toy (kit/examples/hep/hep_response.py): tracks, hits and towers are placed from the generator's particles, not simulated.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ],
+  "version_note": "v2 (2026-11-06): five fixtures (the dijet hero added), each in look v1 and look v2, so coverage is 10 events and 10 scenes; the witness reads the scene graph fail-closed and binds each drawing to its own event (path start, heading, dip, reach; birth window, species, arc length; tower cells; extension joins), after an independent review of v1. v1 (first push of PR #4, a57fe18; run runs/hep-demo-20261106) covered 8 events and 8 scenes and is kept as history; v0 covered look v1 only and was never published."
+}

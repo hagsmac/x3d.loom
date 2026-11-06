@@ -1,0 +1,101 @@
+{
+  "coverage": {
+    "files": 14
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T06:54:54+00:00",
+  "grade": "C",
+  "instrument": {
+    "branch": "HEAD",
+    "commit": "327c5c4ee21268fcb5c4526da7c2f39932019e72",
+    "dirty": false,
+    "path": "~/Projects/x3d/x3d_mcp",
+    "python": "~/Projects/x3d/x3d_mcp/.venv/bin/python",
+    "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+  },
+  "limitations": [
+    "Fork commit 327c5c4 on branch HEAD; not the family pin unless they match."
+  ],
+  "measurements": {
+    "scenes/1aay.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/1m9o.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/1n0z.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/1rgo.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/1ubd.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/1zaa.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/2jvx.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/2k1p.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/3g9y.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/4av1.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/6dnh.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/6fuw.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/6nzl.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/6uro.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    }
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "979dec13377e906f95a4736ee6c5fabd00a49c4c48f40bc23c0bacac3d6fc7b0",
+  "witness": "meaning"
+}

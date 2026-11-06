@@ -1,0 +1,66 @@
+{
+  "coverage": {
+    "rules": 7
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T20:25:20+00:00",
+  "grade": "C",
+  "instrument": {
+    "rules": [
+      "js-syntax",
+      "loadurl-unbudgeted",
+      "nav-before-scene",
+      "sim-nonportable-math",
+      "window-global-shadow",
+      "xite-browser-currenttime",
+      "xite-callback-unguarded"
+    ],
+    "rules_sha256": "f492ffd59d6a86d0bd9779ad8a089a17b4af98be87728b454064a69ec080b0ec",
+    "tool": "loomkit.pagetraps"
+  },
+  "limitations": [
+    "Static pattern reading of page JavaScript; a clean result means none of these known traps is present, not that the page behaves correctly.",
+    "Reads .js files and the inline <script> blocks of .html files listed in --files; 'seen' counts the field callbacks and world loads it read (zero means the X_ITE rules had nothing to judge).",
+    "Rules are labelled with the runtime they were observed on (X_ITE 16.5.1 unless stated)."
+  ],
+  "measurements": {
+    "errors": 0,
+    "files": 18,
+    "hits": {
+      "engine/ai.js": [],
+      "engine/audio.js": [],
+      "engine/camera.js": [],
+      "engine/car.js": [],
+      "engine/cars.js": [],
+      "engine/fmath.js": [],
+      "engine/fx.js": [],
+      "engine/goal.js": [],
+      "engine/impact.js": [],
+      "engine/race.js": [],
+      "engine/render.js": [],
+      "engine/sim.js": [],
+      "engine/tape.js": [],
+      "engine/track.js": [],
+      "engine/ui.js": [],
+      "engine/x3d.js": [],
+      "index.html": [],
+      "main.js": []
+    },
+    "seen": {
+      "field_callbacks": 0,
+      "inline_scripts": 0,
+      "world_loads": 5
+    },
+    "warnings": 0
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "c5821a908021b14e001ad92197530ff64aa815eba819ad49d838f3f284605565",
+  "witness": "page-traps"
+}

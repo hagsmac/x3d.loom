@@ -1,0 +1,18 @@
+{
+  "min_intact_fraction": 0.99,
+  "note": "2JVX: NEMO zinc finger (NMR, 10 models). Ligand classes from the family's literature (L); tau4, windows and radius as declared for the synthetic rehearsal.",
+  "schema": "loom.metal-site-spec/1",
+  "search_radius": 3.0,
+  "sites": [
+    {
+      "class": "CCHC",
+      "coordination": 4,
+      "metal": {
+        "chain": "A",
+        "resname": "ZN",
+        "resseq": 29
+      },
+      "tau4_min": 0.7
+    }
+  ]
+}

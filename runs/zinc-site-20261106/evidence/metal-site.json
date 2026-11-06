@@ -1,0 +1,138 @@
+{
+  "coverage": {
+    "class_declared": 1,
+    "files": 2,
+    "min_intact_fraction": 0.99,
+    "sites": 2,
+    "tau4_floor_declared": 1
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T06:57:59+00:00",
+  "grade": "C",
+  "instrument": {
+    "rules_sha256": "5b1bbcf223c019cb2bf1d68511dc2fe6d1ac5d36a1c4d7d00379c0dc0a8e3bd8",
+    "spec_sha256": "66d9d9f2f03c168289b8282d7975aab40e2d09c4ea359daa36895a683e44353e",
+    "tool": "loomkit.metalsite"
+  },
+  "limitations": [
+    "PDB format only; distance windows are typical values (L), declared in the spec."
+  ],
+  "measurements": {
+    "structures/ccch-site-20-frames.pdb": {
+      "inventory": {
+        "altloc_skipped": 0,
+        "atoms_per_frame": 13,
+        "frames": 20,
+        "median_nn_angstrom": 1.5455,
+        "metal_atoms_in_file": [
+          "ZN A101"
+        ],
+        "metals_checked": 1,
+        "undeclared_metals": []
+      },
+      "sites": [
+        {
+          "class": "CCCH",
+          "distance_max": 2.3764,
+          "distance_min": 2.0329,
+          "failures": [],
+          "first_frame": {
+            "class": "CCCH",
+            "coordination": 4,
+            "distances": [
+              {
+                "angstrom": 2.0858,
+                "donor": "HIS29.NE2",
+                "element": "N"
+              },
+              {
+                "angstrom": 2.3085,
+                "donor": "CYS10.SG",
+                "element": "S"
+              },
+              {
+                "angstrom": 2.3348,
+                "donor": "CYS25.SG",
+                "element": "S"
+              },
+              {
+                "angstrom": 2.3719,
+                "donor": "CYS19.SG",
+                "element": "S"
+              }
+            ],
+            "site": "ZN A101",
+            "tau4": 0.9785
+          },
+          "frames": 20,
+          "frames_intact": 20,
+          "site": "ZN A101",
+          "tau4_min": 0.9785
+        }
+      ]
+    },
+    "structures/ccch-site.pdb": {
+      "inventory": {
+        "altloc_skipped": 0,
+        "atoms_per_frame": 13,
+        "frames": 1,
+        "median_nn_angstrom": 1.5311,
+        "metal_atoms_in_file": [
+          "ZN A101"
+        ],
+        "metals_checked": 1,
+        "undeclared_metals": []
+      },
+      "sites": [
+        {
+          "class": "CCCH",
+          "distance_max": 2.3296,
+          "distance_min": 2.0698,
+          "failures": [],
+          "first_frame": {
+            "class": "CCCH",
+            "coordination": 4,
+            "distances": [
+              {
+                "angstrom": 2.0698,
+                "donor": "HIS29.NE2",
+                "element": "N"
+              },
+              {
+                "angstrom": 2.3296,
+                "donor": "CYS10.SG",
+                "element": "S"
+              },
+              {
+                "angstrom": 2.3296,
+                "donor": "CYS19.SG",
+                "element": "S"
+              },
+              {
+                "angstrom": 2.3296,
+                "donor": "CYS25.SG",
+                "element": "S"
+              }
+            ],
+            "site": "ZN A101",
+            "tau4": 1.0004
+          },
+          "frames": 1,
+          "frames_intact": 1,
+          "site": "ZN A101",
+          "tau4_min": 1.0004
+        }
+      ]
+    }
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "43dd849560ada574be59dbf4ee450ae57c2bdd3567070ebc047177432e9a4b61",
+  "witness": "metal-site"
+}

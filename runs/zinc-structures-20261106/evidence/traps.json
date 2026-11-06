@@ -1,0 +1,22 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T07:00:47+00:00",
+  "grade": "L",
+  "instrument": {
+    "by": "operator",
+    "tool": "declared"
+  },
+  "limitations": [],
+  "measurements": {},
+  "reason": "P1 checks deposited structures only: no simulation ran and the Site scenes are judged in their own run.",
+  "schema": "loom.witness/1",
+  "status": "not_run",
+  "subject_sha256": "7e9e184ffabfec6a161905a818b7adf743728ee98bdf8f8cee9d7e58abdf7e05",
+  "witness": "traps"
+}

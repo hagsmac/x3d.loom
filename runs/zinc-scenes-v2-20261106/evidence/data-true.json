@@ -1,0 +1,33 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [
+    {
+      "path": "data-true.log",
+      "sha256": "b7a2cef800692fd26389d2aeec07252cebb5362198b838d707b5b5d99261dddf"
+    }
+  ],
+  "finished_at": "2026-11-06T09:20:04+00:00",
+  "grade": "C",
+  "instrument": {
+    "command": [
+      "python3",
+      "scene_truth_v2.py"
+    ],
+    "tool": "project gate (adapter)"
+  },
+  "limitations": [],
+  "measurements": {
+    "exit_code": 0,
+    "stdout_tail": "es 1 donor names 4 element shapes 3\n1rgo: v2 ok cages 2 donor names 8 element shapes 4\n1ubd: v2 ok cages 4 donor names 16 element shapes 4\n1zaa: v2 ok cages 3 donor names 12 element shapes 4\n2jvx: v2 ok cages 1 donor names 4 element shapes 4\n2k1p: v2 ok cages 1 donor names 4 element shapes 3\n3g9y: v2 ok cages 1 donor names 4 element shapes 3\n4av1: v2 ok cages 4 donor names 16 element shapes 4\n6dnh: v2 ok cages 0 donor names 9 element shapes 4\n6fuw: v2 ok cages 2 donor names 12 element shapes 4\n6nzl: v2 ok cages 2 donor names 8 element shapes 4\n6uro: v2 ok cages 0 donor names 9 element shapes 4"
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "57b72390a79cc783297d85f4e989ba1af2db1728bb3c8228475cc3e3c2c902c5",
+  "witness": "data-true"
+}

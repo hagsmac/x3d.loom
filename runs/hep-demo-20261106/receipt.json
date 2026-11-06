@@ -1,0 +1,97 @@
+{
+  "budget": {
+    "cloud_resources": 0,
+    "paid_calls": 0
+  },
+  "candidate_files": 17,
+  "candidate_sha256": "fd8301241b5ca8870b391426d1d9ce56cc13e4e20eb510956a182d036d228101",
+  "grade": "C",
+  "inputs": {
+    "candidate_sha256": "fd8301241b5ca8870b391426d1d9ce56cc13e4e20eb510956a182d036d228101"
+  },
+  "kind": "artifact",
+  "limitations": [
+    "15 to 17 percent of the charged tracks in the real events (mostly very forward ones) draw a bend smaller than 0.3 mm over the tracker; the witness cannot measure that bend and says so (scene_curvature_unresolved, unresolved_hits). Those paths are checked only for being straight to within the expected sagitta plus three rounding steps.",
+    "A demo profile: tolerances are loose and declared in the spec; a precision study would add mass-shell, resonance and calorimeter sum-rule codes, not tighten these.",
+    "Nothing here renders the scene or compiles the GLSL: grammar and meaning need the X3D fork, behaviour needs a browser, the look-match against the reference still is an eye witness. All four stay visibly not run.",
+    "The shaders were written for X_ITE's WebGL and checked lexically only (no '#', '%', quotes or '//', no 'active', no integer literals, balanced brackets).",
+    "The detector response is a truth-level toy (kit/examples/hep/hep_response.py): tracks, hits and towers are placed from the generator's particles, not simulated.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ],
+  "model_calls": [],
+  "not_run": [
+    {
+      "reason": "The X3D fork is not on this machine. Written against X3D 4.0 (profile Immersive, Shaders level 3 declared); not validated.",
+      "status": "not_run",
+      "witness": "grammar"
+    },
+    {
+      "reason": "The X3D fork is not on this machine; DEF before USE and ROUTE order are read by the hep-event and traps witnesses only.",
+      "status": "not_run",
+      "witness": "meaning"
+    },
+    {
+      "reason": "No browser ran: the GLSL has not been compiled and the scene has not been loaded in X_ITE. Another worker is measuring X_ITE rendering separately.",
+      "status": "not_run",
+      "witness": "behaviour"
+    },
+    {
+      "reason": "No frame was rendered, so the scene has not been compared with the reference stills (end-on framing, nested shells, filaments, tower crown).",
+      "status": "not_run",
+      "witness": "look-match"
+    },
+    {
+      "reason": "No eye has looked at the scene.",
+      "status": "not_run",
+      "witness": "eyes"
+    },
+    {
+      "reason": "No GPU timing or frame-rate measurement.",
+      "status": "not_run",
+      "witness": "real-gpu"
+    }
+  ],
+  "outputs": {
+    "exact-zmumu.x3d": {
+      "bytes": 105365,
+      "sha256": "bd1ca0fd6a6e37fd19ed5cfd90ee7b205909a63c0a28adef24dda2cc7899f66f"
+    },
+    "pythia-qcd-demo.x3d": {
+      "bytes": 2154062,
+      "sha256": "9e06c8ccb2a67243d91ffd42a00350ad4442cfe911cfdd7608ad5f02cb33e8d4"
+    },
+    "pythia-zmumu.x3d": {
+      "bytes": 2166898,
+      "sha256": "ecc99a4fef2f7a1ac05ab8cf262ea65eea930f9fb1752cd697494f5835c40c31"
+    }
+  },
+  "prev": null,
+  "profile": "hep-demo/v1",
+  "schema": "loom.receipt/1",
+  "sha256": "36d222ae0fad1b20660b913c04d46f52b1344a4e55c15b6800ce0f15af28d629",
+  "signed": false,
+  "subject": "Collider-event demo scenes (one exact decay, three Pythia 8 events; instrument rehearsal, not rendered)",
+  "tools": {
+    "hep-event": {
+      "tool": "loomkit.hepevent"
+    },
+    "traps": {
+      "tool": "loomkit.traps"
+    }
+  },
+  "witnesses": [
+    {
+      "grade": "C",
+      "record_sha256": "a8e41a6332a8904a42301f3aa0af5391e9f138b93e6001899d9098d2bcbbb68e",
+      "status": "pass",
+      "witness": "hep-event"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "596084eb89ab4b4d87e30cace07235d53a9033b36f5c7442b549958470900376",
+      "status": "pass",
+      "witness": "traps"
+    }
+  ],
+  "written_at": "2026-11-06T14:42:07+00:00"
+}

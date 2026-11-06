@@ -1,0 +1,92 @@
+{
+  "candidate_sha256": "fd8301241b5ca8870b391426d1d9ce56cc13e4e20eb510956a182d036d228101",
+  "files": [
+    {
+      "bytes": 637,
+      "path": "behaviour.json",
+      "role": "witness-record",
+      "sha256": "d50d7e5b59086d40d83919c792596300e5cbb355e246d7b4fe23393b6dbe994c"
+    },
+    {
+      "bytes": 517,
+      "path": "eyes.json",
+      "role": "witness-record",
+      "sha256": "391a9831c335606c01ec4bfbafe4d0639e8d0e8814fe93a48483a59d5137c056"
+    },
+    {
+      "bytes": 611,
+      "path": "grammar.json",
+      "role": "witness-record",
+      "sha256": "0d7aa49f7469b474090c81bcd762714cfb0430adc8671d39b090b13881465a6e"
+    },
+    {
+      "bytes": 16707,
+      "path": "hep-event.json",
+      "role": "witness-record",
+      "sha256": "a8e41a6332a8904a42301f3aa0af5391e9f138b93e6001899d9098d2bcbbb68e"
+    },
+    {
+      "bytes": 632,
+      "path": "look-match.json",
+      "role": "witness-record",
+      "sha256": "f60f08b06b0df13aaf08e9ac8ebe6e68ac192750438db2f08b3027d4beb629f4"
+    },
+    {
+      "bytes": 608,
+      "path": "meaning.json",
+      "role": "witness-record",
+      "sha256": "53efd895e2e2194cd055cf779f2b5f832acf615a2cb4892e4ca5cc96a2825567"
+    },
+    {
+      "bytes": 530,
+      "path": "real-gpu.json",
+      "role": "witness-record",
+      "sha256": "a70bf60bd979c537101b7beea5fcd99d5d0ffc9ee3ba8561e9eab0d4196fb9e5"
+    },
+    {
+      "bytes": 1531,
+      "path": "traps.json",
+      "role": "witness-record",
+      "sha256": "596084eb89ab4b4d87e30cace07235d53a9033b36f5c7442b549958470900376"
+    }
+  ],
+  "not_run": [
+    {
+      "reason": "The X3D fork is not on this machine. Written against X3D 4.0 (profile Immersive, Shaders level 3 declared); not validated.",
+      "status": "not_run",
+      "witness": "grammar"
+    },
+    {
+      "reason": "The X3D fork is not on this machine; DEF before USE and ROUTE order are read by the hep-event and traps witnesses only.",
+      "status": "not_run",
+      "witness": "meaning"
+    },
+    {
+      "reason": "No browser ran: the GLSL has not been compiled and the scene has not been loaded in X_ITE. Another worker is measuring X_ITE rendering separately.",
+      "status": "not_run",
+      "witness": "behaviour"
+    },
+    {
+      "reason": "No frame was rendered, so the scene has not been compared with the reference stills (end-on framing, nested shells, filaments, tower crown).",
+      "status": "not_run",
+      "witness": "look-match"
+    },
+    {
+      "reason": "No eye has looked at the scene.",
+      "status": "not_run",
+      "witness": "eyes"
+    },
+    {
+      "reason": "No GPU timing or frame-rate measurement.",
+      "status": "not_run",
+      "witness": "real-gpu"
+    }
+  ],
+  "profile": "hep-demo/v1",
+  "receipt": {
+    "path": "receipt.json",
+    "sha256": "cc5b7536156292f63a44e5020045a77c760179a0171446d361a32e54d62c80e3"
+  },
+  "schema": "loom.evidence-manifest/1",
+  "subject": "Collider-event demo scenes (one exact decay, three Pythia 8 events; instrument rehearsal, not rendered)"
+}

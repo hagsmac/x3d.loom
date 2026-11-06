@@ -1,0 +1,129 @@
+{
+  "budget": {
+    "cloud_resources": 0,
+    "paid_calls": 0
+  },
+  "candidate_files": 160,
+  "candidate_sha256": "c5821a908021b14e001ad92197530ff64aa815eba819ad49d838f3f284605565",
+  "grade": "C",
+  "inputs": {
+    "candidate_sha256": "c5821a908021b14e001ad92197530ff64aa815eba819ad49d838f3f284605565"
+  },
+  "kind": "artifact",
+  "limitations": [
+    "Grammar and Meaning ran on the local x3d_mcp fork checkout (327c5c4), not the family pin.",
+    "Behaviour is one headless Chromium with software WebGL (SwiftShader) on one machine: it shows outcomes, not pixels or frame rate.",
+    "The tapes were recorded by the game's own AI driving the player's car, not by people; a tape proves one way round a circuit, not that the medal targets are fair. The tandem tape's chaser grades D.",
+    "Handling windows were set by the builders from genre practice and real-car figures, not from playtests.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ],
+  "model_calls": [],
+  "not_run": [
+    {
+      "reason": "Stills, a clip and a side-by-side A/B were reviewed by the builders only (reviews changed the start-gantry lights, the clip's smoke density, the car screen's fold, the phone framing and a stale HUD still); the owner has not looked at or played the game yet.",
+      "status": "not_run",
+      "witness": "eyes"
+    },
+    {
+      "reason": "No person has played it. The AI, scripted keyboard drivers and scripted exploit drivers finished, drifted or failed to farm every circuit; that proves possible and not trivially farmable, not fun, fair or well paced, and says nothing about keyboard, pad or touch feel or the sound.",
+      "status": "not_run",
+      "witness": "fun"
+    },
+    {
+      "reason": "Tapes were replayed in Node (V8) and Chromium (V8) only; Firefox (SpiderMonkey) and Safari (JavaScriptCore) were not run.",
+      "status": "not_run",
+      "witness": "cross-engine"
+    },
+    {
+      "reason": "No strict host copy was published for this run.",
+      "status": "not_run",
+      "witness": "host"
+    }
+  ],
+  "outputs": {},
+  "prev": null,
+  "profile": "x3d-drift/v1",
+  "schema": "loom.receipt/1",
+  "sha256": "86585bca4a83dfa7f34bcd8f8cf23d29808f39449d97480dac7f72c6349de9fd",
+  "signed": false,
+  "subject": "x3d.drift KANSEI, five circuits",
+  "tools": {
+    "behaviour": {
+      "tool": "project gate (adapter)"
+    },
+    "grammar": {
+      "commit": "327c5c4ee21268fcb5c4526da7c2f39932019e72",
+      "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+    },
+    "handling": {
+      "tool": "project gate (adapter)"
+    },
+    "meaning": {
+      "commit": "327c5c4ee21268fcb5c4526da7c2f39932019e72",
+      "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+    },
+    "page-traps": {
+      "tool": "loomkit.pagetraps"
+    },
+    "play": {
+      "tool": "loomkit.play"
+    },
+    "suite": {
+      "tool": "project gate (adapter)"
+    },
+    "traps": {
+      "tool": "loomkit.traps"
+    }
+  },
+  "witnesses": [
+    {
+      "grade": "C",
+      "record_sha256": "2ac5a1a6e920a8643d44848c08ac438ccd74bb401a44f7db433a3ca035ff5c23",
+      "status": "pass",
+      "witness": "grammar"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "06aa3e1ed8488b615fe256ee86441136e03507263ecb1e3105fdac17d2fa6277",
+      "status": "pass",
+      "witness": "meaning"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "5902c2e275ac52412d9a4544ab7264222546309b2ba579c685db3a2b1a6ed54e",
+      "status": "pass",
+      "witness": "traps"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "2ad36f92d97e43da7953c3dc1038360c9a142870e5837f649ee087e5ea8c4164",
+      "status": "pass",
+      "witness": "page-traps"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "6ecf58b3fd77ed8552ee97b336659fa72ccffbc295d6144c05735d49b47c17b4",
+      "status": "pass",
+      "witness": "handling"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "1b83ef42eccc22f90587bd58ed9ac2c9b7234df3757687611715e84f16ea50b4",
+      "status": "pass",
+      "witness": "suite"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "08d59b66b8854d54c7f5dec7fbd925512f5abeeb744a923be9e13976c44e631d",
+      "status": "pass",
+      "witness": "play"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "7edd469a0aab2bdd6be47ead162d6a89fea48cf56a1d75676f1ae26e2c2b4a89",
+      "status": "pass",
+      "witness": "behaviour"
+    }
+  ],
+  "written_at": "2026-11-06T20:35:46+00:00"
+}

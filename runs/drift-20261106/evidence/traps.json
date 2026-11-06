@@ -1,0 +1,60 @@
+{
+  "coverage": {
+    "rules": 11
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T20:25:19+00:00",
+  "grade": "C",
+  "instrument": {
+    "rules": [
+      "color-emissive-white",
+      "color-range",
+      "glsl-reserved-active",
+      "metadata-containerfield",
+      "movie-not-still",
+      "no-script-under-host",
+      "route-before-def",
+      "route-undefined",
+      "shader-raw-source",
+      "splat-bbox",
+      "version-fits-nodes"
+    ],
+    "rules_sha256": "7079495c69d211928167639261199a015de127d66901404b5758b673c546d492",
+    "tool": "loomkit.traps"
+  },
+  "limitations": [
+    "Portable subset of x3d.onto loom_gate.py rules; the family gate itself is not on this machine.",
+    "Runtime-labelled rules describe the runtime they were observed on."
+  ],
+  "measurements": {
+    "errors": 0,
+    "files": 10,
+    "hits": {
+      "cars/banshee.x3d": [],
+      "cars/koi.x3d": [],
+      "cars/ronin.x3d": [],
+      "cars/tempest.x3d": [],
+      "garage.x3d": [],
+      "levels/cliffside.x3d": [],
+      "levels/kessel-pass.x3d": [],
+      "levels/neon-overpass.x3d": [],
+      "levels/practice-pad.x3d": [],
+      "levels/salt-ring.x3d": []
+    },
+    "seen": {
+      "bytes": 10592404,
+      "scenes": 10
+    },
+    "warnings": 0
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "c5821a908021b14e001ad92197530ff64aa815eba819ad49d838f3f284605565",
+  "witness": "traps"
+}

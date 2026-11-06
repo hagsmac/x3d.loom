@@ -1,0 +1,33 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [
+    {
+      "path": "data-true.log",
+      "sha256": "86bafa1be49620c494c2cd1373d8681ac4760ff07bcc543561f450fc8e21b231"
+    }
+  ],
+  "finished_at": "2026-11-06T06:54:56+00:00",
+  "grade": "C",
+  "instrument": {
+    "command": [
+      "python3",
+      "scene_truth.py"
+    ],
+    "tool": "project gate (adapter)"
+  },
+  "limitations": [],
+  "measurements": {
+    "exit_code": 0,
+    "stdout_tail": "\n1n0z: ok atoms 13 bonds 4 glowing 4 tubes 1\n1rgo: ok atoms 34 bonds 8 glowing 8 tubes 3\n1ubd: ok atoms 84 bonds 16 glowing 16 tubes 6\n1zaa: ok atoms 63 bonds 12 glowing 12 tubes 5\n2jvx: ok atoms 17 bonds 4 glowing 4 tubes 1\n2k1p: ok atoms 13 bonds 4 glowing 4 tubes 1\n3g9y: ok atoms 13 bonds 4 glowing 4 tubes 2\n4av1: ok atoms 68 bonds 16 glowing 16 tubes 6\n6dnh: ok atoms 42 bonds 9 glowing 6 tubes 4\n6fuw: ok atoms 51 bonds 12 glowing 10 tubes 4\n6nzl: ok atoms 34 bonds 8 glowing 8 tubes 2\n6uro: ok atoms 42 bonds 9 glowing 7 tubes 4\nchecked 14 scenes: 554 atoms, 122 bonds (115 glowing), 45 tubes"
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "979dec13377e906f95a4736ee6c5fabd00a49c4c48f40bc23c0bacac3d6fc7b0",
+  "witness": "data-true"
+}

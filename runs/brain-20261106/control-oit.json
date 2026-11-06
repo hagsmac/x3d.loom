@@ -1,0 +1,9 @@
+{
+ "witness": "data-true",
+ "status": "fail",
+ "rejected": "BRAIN_OIT_WITH_SHADER",
+ "codes": [
+  "BRAIN_OIT_WITH_SHADER"
+ ],
+ "detail": "scenes/brain_hero_lite.x3d: OIT enabled (<meta name='OrderIndependentTransparency' content='true'>) with 4 custom shader node(s): glass vanishes on X_ITE 16.6.0 (GL_INVALID_OPERATION)"
+}

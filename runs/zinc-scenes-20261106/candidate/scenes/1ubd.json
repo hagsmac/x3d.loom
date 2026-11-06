@@ -1,0 +1,211 @@
+{
+  "atoms_drawn": [
+    "A_C_CYS_298_CA",
+    "A_C_CYS_298_CB",
+    "A_C_CYS_298_SG",
+    "A_C_CYS_303_CA",
+    "A_C_CYS_303_CB",
+    "A_C_CYS_303_SG",
+    "A_C_CYS_327_CA",
+    "A_C_CYS_327_CB",
+    "A_C_CYS_327_SG",
+    "A_C_CYS_330_CA",
+    "A_C_CYS_330_CB",
+    "A_C_CYS_330_SG",
+    "A_C_CYS_355_CA",
+    "A_C_CYS_355_CB",
+    "A_C_CYS_355_SG",
+    "A_C_CYS_360_CA",
+    "A_C_CYS_360_CB",
+    "A_C_CYS_360_SG",
+    "A_C_CYS_385_CA",
+    "A_C_CYS_385_CB",
+    "A_C_CYS_385_SG",
+    "A_C_CYS_390_CA",
+    "A_C_CYS_390_CB",
+    "A_C_CYS_390_SG",
+    "A_C_HIS_316_CA",
+    "A_C_HIS_316_CB",
+    "A_C_HIS_316_CD2",
+    "A_C_HIS_316_CE1",
+    "A_C_HIS_316_CG",
+    "A_C_HIS_316_ND1",
+    "A_C_HIS_316_NE2",
+    "A_C_HIS_320_CA",
+    "A_C_HIS_320_CB",
+    "A_C_HIS_320_CD2",
+    "A_C_HIS_320_CE1",
+    "A_C_HIS_320_CG",
+    "A_C_HIS_320_ND1",
+    "A_C_HIS_320_NE2",
+    "A_C_HIS_343_CA",
+    "A_C_HIS_343_CB",
+    "A_C_HIS_343_CD2",
+    "A_C_HIS_343_CE1",
+    "A_C_HIS_343_CG",
+    "A_C_HIS_343_ND1",
+    "A_C_HIS_343_NE2",
+    "A_C_HIS_347_CA",
+    "A_C_HIS_347_CB",
+    "A_C_HIS_347_CD2",
+    "A_C_HIS_347_CE1",
+    "A_C_HIS_347_CG",
+    "A_C_HIS_347_ND1",
+    "A_C_HIS_347_NE2",
+    "A_C_HIS_373_CA",
+    "A_C_HIS_373_CB",
+    "A_C_HIS_373_CD2",
+    "A_C_HIS_373_CE1",
+    "A_C_HIS_373_CG",
+    "A_C_HIS_373_ND1",
+    "A_C_HIS_373_NE2",
+    "A_C_HIS_377_CA",
+    "A_C_HIS_377_CB",
+    "A_C_HIS_377_CD2",
+    "A_C_HIS_377_CE1",
+    "A_C_HIS_377_CG",
+    "A_C_HIS_377_ND1",
+    "A_C_HIS_377_NE2",
+    "A_C_HIS_403_CA",
+    "A_C_HIS_403_CB",
+    "A_C_HIS_403_CD2",
+    "A_C_HIS_403_CE1",
+    "A_C_HIS_403_CG",
+    "A_C_HIS_403_ND1",
+    "A_C_HIS_403_NE2",
+    "A_C_HIS_407_CA",
+    "A_C_HIS_407_CB",
+    "A_C_HIS_407_CD2",
+    "A_C_HIS_407_CE1",
+    "A_C_HIS_407_CG",
+    "A_C_HIS_407_ND1",
+    "A_C_HIS_407_NE2",
+    "A_C_ZN_501_ZN",
+    "A_C_ZN_502_ZN",
+    "A_C_ZN_503_ZN",
+    "A_C_ZN_504_ZN"
+  ],
+  "bonds": [
+    {
+      "angstrom": 2.3321,
+      "donor": "CYS298.SG",
+      "glow": true,
+      "label": "2.33 \u00c5",
+      "site": "C501"
+    },
+    {
+      "angstrom": 2.3216,
+      "donor": "CYS303.SG",
+      "glow": true,
+      "label": "2.32 \u00c5",
+      "site": "C501"
+    },
+    {
+      "angstrom": 1.9967,
+      "donor": "HIS316.NE2",
+      "glow": true,
+      "label": "2.00 \u00c5",
+      "site": "C501"
+    },
+    {
+      "angstrom": 2.0076,
+      "donor": "HIS320.NE2",
+      "glow": true,
+      "label": "2.01 \u00c5",
+      "site": "C501"
+    },
+    {
+      "angstrom": 2.2781,
+      "donor": "CYS327.SG",
+      "glow": true,
+      "label": "2.28 \u00c5",
+      "site": "C502"
+    },
+    {
+      "angstrom": 2.3071,
+      "donor": "CYS330.SG",
+      "glow": true,
+      "label": "2.31 \u00c5",
+      "site": "C502"
+    },
+    {
+      "angstrom": 2.0415,
+      "donor": "HIS343.NE2",
+      "glow": true,
+      "label": "2.04 \u00c5",
+      "site": "C502"
+    },
+    {
+      "angstrom": 2.0072,
+      "donor": "HIS347.NE2",
+      "glow": true,
+      "label": "2.01 \u00c5",
+      "site": "C502"
+    },
+    {
+      "angstrom": 2.2881,
+      "donor": "CYS355.SG",
+      "glow": true,
+      "label": "2.29 \u00c5",
+      "site": "C503"
+    },
+    {
+      "angstrom": 2.2856,
+      "donor": "CYS360.SG",
+      "glow": true,
+      "label": "2.29 \u00c5",
+      "site": "C503"
+    },
+    {
+      "angstrom": 2.0009,
+      "donor": "HIS373.NE2",
+      "glow": true,
+      "label": "2.00 \u00c5",
+      "site": "C503"
+    },
+    {
+      "angstrom": 1.9984,
+      "donor": "HIS377.NE2",
+      "glow": true,
+      "label": "2.00 \u00c5",
+      "site": "C503"
+    },
+    {
+      "angstrom": 2.3214,
+      "donor": "CYS385.SG",
+      "glow": true,
+      "label": "2.32 \u00c5",
+      "site": "C504"
+    },
+    {
+      "angstrom": 2.3606,
+      "donor": "CYS390.SG",
+      "glow": true,
+      "label": "2.36 \u00c5",
+      "site": "C504"
+    },
+    {
+      "angstrom": 2.0091,
+      "donor": "HIS403.NE2",
+      "glow": true,
+      "label": "2.01 \u00c5",
+      "site": "C504"
+    },
+    {
+      "angstrom": 2.018,
+      "donor": "HIS407.NE2",
+      "glow": true,
+      "label": "2.02 \u00c5",
+      "site": "C504"
+    }
+  ],
+  "pdb": "1ubd",
+  "tubes": [
+    "Backbone_C501_295",
+    "Backbone_C502_323",
+    "Backbone_C503_351",
+    "Backbone_C504_381",
+    "Nucleic_A",
+    "Nucleic_B"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "atoms_drawn": [
+    "A_A_CYS_17_CA",
+    "A_A_CYS_17_CB",
+    "A_A_CYS_17_SG",
+    "A_A_CYS_22_CA",
+    "A_A_CYS_22_CB",
+    "A_A_CYS_22_SG",
+    "A_A_CYS_33_CA",
+    "A_A_CYS_33_CB",
+    "A_A_CYS_33_SG",
+    "A_A_CYS_36_CA",
+    "A_A_CYS_36_CB",
+    "A_A_CYS_36_SG",
+    "A_A_ZN_46_ZN"
+  ],
+  "bonds": [
+    {
+      "angstrom": 2.2392,
+      "donor": "CYS17.SG",
+      "glow": true,
+      "label": "2.24 \u00c5",
+      "site": "A46"
+    },
+    {
+      "angstrom": 2.2768,
+      "donor": "CYS22.SG",
+      "glow": true,
+      "label": "2.28 \u00c5",
+      "site": "A46"
+    },
+    {
+      "angstrom": 2.2903,
+      "donor": "CYS33.SG",
+      "glow": true,
+      "label": "2.29 \u00c5",
+      "site": "A46"
+    },
+    {
+      "angstrom": 2.2902,
+      "donor": "CYS36.SG",
+      "glow": true,
+      "label": "2.29 \u00c5",
+      "site": "A46"
+    }
+  ],
+  "cages": [
+    "A46"
+  ],
+  "labels_name_donor": true,
+  "look": "v2",
+  "pdb": "1n0z",
+  "tubes": [
+    "Backbone_A46_13"
+  ]
+}

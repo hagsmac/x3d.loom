@@ -1,0 +1,83 @@
+{
+  "candidate_sha256": "57b72390a79cc783297d85f4e989ba1af2db1728bb3c8228475cc3e3c2c902c5",
+  "files": [
+    {
+      "bytes": 565,
+      "path": "behaviour.json",
+      "role": "witness-record",
+      "sha256": "06c911f54cf8e3af6015f9c1e9c80b1046499c3077dd4aa93357cb9f0fea4c6b"
+    },
+    {
+      "bytes": 1332,
+      "path": "data-true.json",
+      "role": "witness-record",
+      "sha256": "4a2e0a4fd932c86f68d9329d289b12f5a877049a46c8c4760ed87f20dacd0a14"
+    },
+    {
+      "bytes": 1425,
+      "path": "data-true.log",
+      "role": "log",
+      "sha256": "b7a2cef800692fd26389d2aeec07252cebb5362198b838d707b5b5d99261dddf"
+    },
+    {
+      "bytes": 1379,
+      "path": "eyes.json",
+      "role": "witness-record",
+      "sha256": "ca2090686c2a27134fcca9f4b3a9ba3133552f19467f57fcd8ef7d2f88a8b22e"
+    },
+    {
+      "bytes": 2303,
+      "path": "grammar.json",
+      "role": "witness-record",
+      "sha256": "44e4dada87ba59123d21a565b1231efcb7679f53a7222cec5340013ab09329f4"
+    },
+    {
+      "bytes": 2625,
+      "path": "meaning.json",
+      "role": "witness-record",
+      "sha256": "66ecc40b6cd7326e90b8191d1ff17cccb831727a7c0267ecfbb876583318aabf"
+    },
+    {
+      "bytes": 566,
+      "path": "page-traps.json",
+      "role": "witness-record",
+      "sha256": "40d69f43beb47982d2af0f1a17cb11bd83fad4c10e1b6f23f85d02c46733e0d1"
+    },
+    {
+      "bytes": 566,
+      "path": "simulation.json",
+      "role": "witness-record",
+      "sha256": "437cc32fe3379823ce18a7b68eea5e1eba0edfb972f119da6e5bb00c82d85bbf"
+    },
+    {
+      "bytes": 1549,
+      "path": "traps.json",
+      "role": "witness-record",
+      "sha256": "88cb39ceb8d841d7a6ba96c1c6231fd8114a538a004961789be76cecf3346441"
+    }
+  ],
+  "not_run": [
+    {
+      "reason": "Static scenes: no ROUTEs, scripts or host page, and nothing was simulated.",
+      "status": "not_run",
+      "witness": "behaviour"
+    },
+    {
+      "reason": "Static scenes: no ROUTEs, scripts or host page, and nothing was simulated.",
+      "status": "not_run",
+      "witness": "page-traps"
+    },
+    {
+      "reason": "Static scenes: no ROUTEs, scripts or host page, and nothing was simulated.",
+      "status": "not_run",
+      "witness": "simulation"
+    }
+  ],
+  "profile": "zinc-scenes/v2",
+  "receipt": {
+    "path": "receipt.json",
+    "sha256": "8b78120d93e45b88eb03eeb8d36d8b4e1eb8734ba17fb7955ef454d4e6e837aa"
+  },
+  "schema": "loom.evidence-manifest/1",
+  "subject": "Zinc finger Site scenes, look v2, model 1 of 14 deposited structures (wwPDB snapshot 2026-01-01)"
+}

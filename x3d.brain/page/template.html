@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#04070d">
+<meta name="generator" content="x3d.brain/tools/build_page.py">
+<style>
+{{CSS}}
+</style>
+</head>
+<body>
+<noscript><p style="padding:24px;font:16px system-ui;color:#eef3f9">This page needs JavaScript and WebGL 2 to draw the 3D brain.</p></noscript>
+
+<div class="app" id="app" data-tab="brain" data-build="{{BUILD}}" data-state="boot">
+
+  <x3d-canvas class="stage" id="stage" splashScreen="false" contextMenu="false" notifications="false" timings="false"
+              tabindex="0" role="application" aria-label="Interactive 3D view. Drag to orbit, scroll or pinch to zoom, click a region to learn about it."></x3d-canvas>
+
+  <div class="stage-veil" id="veil" aria-hidden="true"><img id="veilImg" alt=""></div>
+
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader__ring" aria-hidden="true"></div>
+    <div class="loader__label" id="loaderLabel">Loading the template brain</div>
+    <div class="loader__sub num" id="loaderSub"></div>
+  </div>
+
+  <div class="hud" id="hud">
+
+    <header class="hud__top">
+      <div class="brand">
+        <h1 class="brand__title" id="brandTitle">Neural Canvas</h1>
+        <p class="brand__tag" id="brandTag">Explore human brain anatomy in luminous interactive 3D.</p>
+      </div>
+      <div class="tabs tabs--top" role="tablist" aria-label="Scene">
+        <button class="tab" role="tab" id="tab-brain" data-tab="brain" aria-selected="true" aria-controls="stage">Brain</button>
+        <button class="tab" role="tab" id="tab-torso" data-tab="torso" aria-selected="false" aria-controls="stage" tabindex="-1">Torso CT</button>
+      </div>
+      <div class="hud__actions">
+        <span class="badge badge--synthetic" id="badge">Synthetic illustration</span>
+        <button class="icon-btn" id="btnSound" type="button" aria-pressed="false" aria-label="Music bed: off" title="Music bed (needs a click to start)" hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path class="wave" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+        </button>
+        <button class="icon-btn" id="btnLog" type="button" aria-label="Open the Loom log: sources, licences and notices" title="Loom log">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 16h7"/></svg>
+        </button>
+        <button class="icon-btn" id="btnHelp" type="button" aria-label="Help and keyboard shortcuts" title="Help (?)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 1 1 3.6 2.2c-.8.4-1.2.9-1.2 1.9M12 16.8v.1"/></svg>
+        </button>
+        <button class="icon-btn" id="btnFull" type="button" aria-label="Full screen" title="Full screen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <aside class="hud__left" id="left" aria-label="Layers and looks">
+
+      <section class="panel panel--sheet" id="pLayers" data-sheet="layers" aria-labelledby="hLayers">
+        <header class="panel__head">
+          <h2 class="panel__title" id="hLayers">Layers</h2>
+          <span class="readout" id="fpsBox" title="Frames per second drawn by this browser"><span>fps</span><span class="num" id="fps">-</span></span>
+          <button class="icon-btn icon-btn--sm panel__fold" type="button" aria-expanded="true" aria-controls="layersBody" aria-label="Collapse the layers panel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </header>
+        <div class="panel__body" id="layersBody">
+          <ul class="layer-list" id="layerList"></ul>
+          <div class="opt" id="optBlock">
+            <span class="opt__label" id="optLabel">Show</span>
+            <div class="chip-row" id="optRow" role="group" aria-labelledby="optLabel"></div>
+          </div>
+          <div class="opt opt--row" id="soundBlock" hidden>
+            <span class="opt__label" id="soundLabel">Music</span>
+            <div class="opt__inline">
+              <button class="btn btn--ghost btn--sm" type="button" id="btnSound2" aria-pressed="false">Play</button>
+              <input class="slider" type="range" id="vol" min="0" max="100" value="70" aria-label="Music volume">
+            </div>
+          </div>
+          <div class="opt opt--row">
+            <span class="opt__label" id="qualLabel">Detail</span>
+            <div class="chip-row" id="qualRow" role="group" aria-labelledby="qualLabel"></div>
+          </div>
+        </div>
+        <footer class="panel__foot">
+          <span class="hint-keys"><span class="kbd">1</span>-<span class="kbd">7</span> views</span>
+          <button class="btn btn--ghost btn--sm" type="button" id="btnReset">Reset</button>
+        </footer>
+      </section>
+
+    </aside>
+
+    <aside class="hud__right" id="right" aria-label="Region information">
+      <section class="panel panel--sheet" id="pRegion" data-sheet="region" aria-labelledby="hRegion">
+        <header class="panel__head">
+          <h2 class="panel__title" id="hRegion">Region</h2>
+          <button class="icon-btn icon-btn--sm panel__fold" type="button" aria-expanded="true" aria-controls="regionBody" aria-label="Collapse the region panel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </header>
+        <div class="panel__body" id="regionBody">
+          <p class="empty" id="regionEmpty">Click or tap the brain, pick a region from the list, or take the tour.</p>
+          <article id="regionCard" hidden aria-live="polite">
+            <div class="region-card" id="rCard">
+              <span class="region-card__swatch" aria-hidden="true"></span>
+              <div>
+                <h3 class="region-card__name" id="rName"></h3>
+                <p class="region-card__lobe" id="rLobe"></p>
+              </div>
+            </div>
+            <div class="tabs tabs--facts" role="tablist" aria-label="Region facts" id="rTabs"></div>
+            <dl class="facts" id="rFacts"></dl>
+            <p class="gen-note" id="rNote"></p>
+            <div class="chip-row">
+              <button class="btn btn--ghost btn--sm" type="button" id="btnFocus">Focus view</button>
+              <button class="btn btn--ghost btn--sm" type="button" id="btnClear">Clear</button>
+            </div>
+          </article>
+          <details class="browse" id="browse">
+            <summary><span>Browse regions</span> <span class="num" id="regionCount"></span></summary>
+            <div class="browse__tools">
+              <input class="field" type="search" id="regionFilter" placeholder="Filter regions" aria-label="Filter regions" autocomplete="off" spellcheck="false">
+              <div class="chip-row" id="hemiRow" role="group" aria-label="Hemisphere for cortical regions"></div>
+            </div>
+            <ul class="browse__list" id="regionList"></ul>
+          </details>
+        </div>
+        <footer class="panel__foot"><span id="regionFoot">Generated text. Not medical advice.</span></footer>
+      </section>
+    </aside>
+
+    <footer class="hud__bottom" id="bottom">
+      <div class="dock">
+        <section class="tour" id="tour" hidden aria-labelledby="tourTitle">
+          <div class="tour__top">
+            <span class="tour__step" id="tourStep">Step 1 of 8</span>
+            <button class="icon-btn icon-btn--sm" type="button" id="tourExit" aria-label="Exit the tour (Escape)" title="Exit the tour">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </button>
+          </div>
+          <h2 class="tour__title" id="tourTitle"></h2>
+          <p class="tour__text" id="tourText"></p>
+          <div class="tour__nav">
+            <button class="btn btn--ghost" type="button" id="tourBack">Back</button>
+            <div class="tour__dots" id="tourDots" role="group" aria-label="Tour steps"></div>
+            <button class="btn btn--primary" type="button" id="tourNext">Next</button>
+          </div>
+        </section>
+        <section class="panel panel--sheet panel--strip" id="pLook" data-sheet="look" aria-labelledby="hLook">
+          <header class="panel__head">
+            <h2 class="panel__title" id="hLook">Look</h2>
+            <span class="readout look-name" id="lookName">Scene default</span>
+          </header>
+          <div class="panel__body" id="lookBody">
+            <div class="look-grid" id="lookGrid" role="group" aria-label="Twelve looks"></div>
+            <p class="look-note" id="lookNote">Twelve palettes measured from reference imagery, pushed into the live scene.</p>
+            <div class="look-actions">
+              <button class="btn btn--ghost btn--sm" type="button" id="btnCompare" disabled title="Hold to see the previous look">Hold to compare</button>
+              <button class="btn btn--ghost btn--sm" type="button" id="btnLookReset">Scene default</button>
+            </div>
+          </div>
+        </section>
+        <div class="viewbar" id="viewbar">
+          <button class="btn btn--primary" type="button" id="btnTour">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            <span id="btnTourLabel">Take the tour</span>
+          </button>
+          <div class="chip-row views" id="views" role="group" aria-label="Camera views"></div>
+        </div>
+        <p class="legal" id="legal">Educational demo. Region text is model-written: check it before any clinical use. Not for diagnosis. No patient data.</p>
+        <nav class="phone-nav" id="phoneNav" aria-label="Panels"></nav>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="tip" id="tip" aria-hidden="true" hidden></div>
+  <div class="banner" id="banner" role="alert" hidden>
+    <div class="banner__msg"><strong id="bannerTitle">Something went wrong</strong><span id="bannerText"></span></div>
+    <div class="banner__actions">
+      <button class="btn btn--ghost btn--sm" type="button" id="bannerRetry" hidden>Retry</button>
+      <button class="btn btn--ghost btn--sm" type="button" id="bannerLog">Details</button>
+      <button class="icon-btn icon-btn--sm" type="button" id="bannerClose" aria-label="Dismiss">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <div class="dlg-back" id="dlgBack" hidden>
+    <section class="panel dialog" id="dlg" role="dialog" aria-modal="true" aria-labelledby="dlgTitle" tabindex="-1">
+      <header class="panel__head">
+        <h2 class="panel__title" id="dlgTitle">Loom log</h2>
+        <button class="icon-btn icon-btn--sm" type="button" id="dlgClose" aria-label="Close (Escape)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </header>
+      <div class="tabs" role="tablist" aria-label="Loom log sections" id="dlgTabs">
+        <button class="tab" role="tab" type="button" id="dt-prov" data-pane="prov" aria-selected="true" aria-controls="paneProv">Provenance</button>
+        <button class="tab" role="tab" type="button" id="dt-session" data-pane="session" aria-selected="false" aria-controls="paneSession" tabindex="-1">Session</button>
+        <button class="tab" role="tab" type="button" id="dt-help" data-pane="help" aria-selected="false" aria-controls="paneHelp" tabindex="-1">Help</button>
+      </div>
+      <div class="panel__body dlg__body">
+        <div id="paneProv" role="tabpanel" aria-labelledby="dt-prov"></div>
+        <div id="paneSession" role="tabpanel" aria-labelledby="dt-session" hidden></div>
+        <div id="paneHelp" role="tabpanel" aria-labelledby="dt-help" hidden></div>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+<script>window.PAGE_CONFIG = {{CONFIG}};</script>
+<script>
+{{JS}}
+</script>
+</body>
+</html>

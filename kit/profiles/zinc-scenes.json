@@ -1,0 +1,19 @@
+{
+  "schema": "loom.profile/1",
+  "name": "zinc-scenes/v0",
+  "purpose": "P1 Site scenes: one X3D world per deposited zinc finger structure (model 1), drawn by a stated rule. Accepting under it means each scene is valid X3D at the family validator pin, carries no known trap, and draws only what the deposited coordinates say: every atom at its coordinate, exactly the atoms the rule selects, every zinc bond ending on its two atoms, glowing exactly when it measures under 2.5 angstrom and labelled with its measured length. It says nothing about how the scenes look; that reading is the eyes record, graded S.",
+  "required": [
+    {"witness": "grammar", "coverage": {"files": 14}},
+    {"witness": "meaning", "coverage": {"files": 14}},
+    {"witness": "traps", "coverage": {"rules": 11}},
+    {"witness": "data-true"}
+  ],
+  "visible_not_run": ["eyes", "behaviour", "page-traps", "simulation"],
+  "limitations": [
+    "Model 1 of each deposited file only; the per-model spread is in the P1 census, not in the scenes.",
+    "The data-true reader shares the donor table, the side-chain atom lists, the 2.5 angstrom glow line and the spline sampling with the builder; it is independent in parsing (MDAnalysis), selection and arithmetic.",
+    "The glow line is a display rule, not the metal-site window: a bond can glow and still fail the witness (for example a Zn-S of 2.461 A).",
+    "The scenes have no ROUTEs or scripts, so there is no behaviour to judge; the camera is the only thing that moves.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ]
+}

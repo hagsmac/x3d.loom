@@ -1,0 +1,236 @@
+{
+  "schema": "loom.zinc-render/1",
+  "rig": {
+    "runtime": "X_ITE",
+    "runtime_version": "16.7.0",
+    "gl": {
+      "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+      "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)"
+    },
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+    "browser_options": {
+      "ToneMapping": "KHR_PBR_NEUTRAL",
+      "Exposure": 1,
+      "PrimitiveQuality": "HIGH"
+    },
+    "chromium": "153.0.8010.12",
+    "canvas": "960x720 at device scale 2",
+    "binding": "scene Viewpoints bound in order via SAI set_bind; frame taken 1.5 s after each bind"
+  },
+  "frames": [
+    {
+      "scene": "1aay",
+      "viewpoint": "Site A201",
+      "file": "1aay-1.png",
+      "sha256": "c7a3aae3cceb34e69b47e849ea9ccb55c50398d34f88b0f35183a4117eb7570c"
+    },
+    {
+      "scene": "1aay",
+      "viewpoint": "Site A202",
+      "file": "1aay-2.png",
+      "sha256": "8499796ece773ff4843bf5dd421f8db67451f828f069dfdc95d01ef61a1a70fa"
+    },
+    {
+      "scene": "1aay",
+      "viewpoint": "Site A203",
+      "file": "1aay-3.png",
+      "sha256": "ec3e3ad31c74759cb40f22fa825f8019c4e1e86bee198adbe7d4de713c698b17"
+    },
+    {
+      "scene": "1m9o",
+      "viewpoint": "Site A78",
+      "file": "1m9o-1.png",
+      "sha256": "edd9d9099a5e276fc85e7f8c28686311755eb1e46a11d8ceb9c2dd420199920e"
+    },
+    {
+      "scene": "1n0z",
+      "viewpoint": "Site A46",
+      "file": "1n0z-1.png",
+      "sha256": "af0408c1476bacd2b5b0e5939ef515cbbbcff8dfa2183b56e1b0156bfec739e8"
+    },
+    {
+      "scene": "1rgo",
+      "viewpoint": "Site A221",
+      "file": "1rgo-1.png",
+      "sha256": "2f4a12c304df1d876a727c639b1520c9573b4b7b5766c74a737ea5c842ca8694"
+    },
+    {
+      "scene": "1rgo",
+      "viewpoint": "Site A222",
+      "file": "1rgo-2.png",
+      "sha256": "ed39005bc15bba5476c9fe960fd08466aee7a8ccb4ce5b4c5adcc5957fbe2d6b"
+    },
+    {
+      "scene": "1ubd",
+      "viewpoint": "Site C501",
+      "file": "1ubd-1.png",
+      "sha256": "ddd92f323e4d0a821c7ce83c369b29efef8927b4dd4a1ea3cc811b93b3e2b717"
+    },
+    {
+      "scene": "1ubd",
+      "viewpoint": "Site C502",
+      "file": "1ubd-2.png",
+      "sha256": "9324ea6cba30c7325f1a6517c60c5b75e8b88da99416ce85251f7c09e5a49db1"
+    },
+    {
+      "scene": "1ubd",
+      "viewpoint": "Site C503",
+      "file": "1ubd-3.png",
+      "sha256": "aa5e34418edf207d748cea7960f9eb8b7bd5d269cd2da68b57950c660376db93"
+    },
+    {
+      "scene": "1ubd",
+      "viewpoint": "Site C504",
+      "file": "1ubd-4.png",
+      "sha256": "fdff80627d1d3e578f1a9b04bf776c1e72dda4fd2e0a4c5cc6c37ac64a11c570"
+    },
+    {
+      "scene": "1zaa",
+      "viewpoint": "Site C201",
+      "file": "1zaa-1.png",
+      "sha256": "a700ff1e77219efbf9e19ed3af71b1d7b8a8f477e07571e61fa3b6d3c44f5fbe"
+    },
+    {
+      "scene": "1zaa",
+      "viewpoint": "Site C202",
+      "file": "1zaa-2.png",
+      "sha256": "e828675eca410e01a84ecec49ee07e488a11b0d5021807bc08b0310dc05cba3e"
+    },
+    {
+      "scene": "1zaa",
+      "viewpoint": "Site C203",
+      "file": "1zaa-3.png",
+      "sha256": "dd7042e8c7e6b6bb3a7c7b5c7d69d19ce14041483deba466dda020a46542caa0"
+    },
+    {
+      "scene": "2jvx",
+      "viewpoint": "Site A29",
+      "file": "2jvx-1.png",
+      "sha256": "1761d743db1a6037eaea57f13baaa73413a6a81e28ad0f5565a4dfa95314d302"
+    },
+    {
+      "scene": "2k1p",
+      "viewpoint": "Site A96",
+      "file": "2k1p-1.png",
+      "sha256": "014cde2cb77e9839f3dfaacf0d7524d1c06b919fec11876aad743615810b5920"
+    },
+    {
+      "scene": "3g9y",
+      "viewpoint": "Site A1",
+      "file": "3g9y-1.png",
+      "sha256": "d118ed59ebe00241092e0c16c2b7d9bd919fa1fe5409d9f0c48caca4fb84ddb7"
+    },
+    {
+      "scene": "4av1",
+      "viewpoint": "Site A1600",
+      "file": "4av1-1.png",
+      "sha256": "290c86e95cad05dfc6af821e87c860a1b0a103dc382a474035b4d8d20ab0fc3e"
+    },
+    {
+      "scene": "4av1",
+      "viewpoint": "Site B1600",
+      "file": "4av1-2.png",
+      "sha256": "2b01b742b7e38abf46187d5b13b2b2b90cc0bf0de07893cb76d5cd6c27ba503a"
+    },
+    {
+      "scene": "4av1",
+      "viewpoint": "Site C1600",
+      "file": "4av1-3.png",
+      "sha256": "5f2a5831d094625b9be001f5e11ad2e76120910b4f0c661d747249ac36409cac"
+    },
+    {
+      "scene": "4av1",
+      "viewpoint": "Site D1600",
+      "file": "4av1-4.png",
+      "sha256": "7e68af78807a23630a07afce82e4c9ecb99a45e035204cf29f78a0a546cc109f"
+    },
+    {
+      "scene": "6dnh",
+      "viewpoint": "Site C301",
+      "file": "6dnh-1.png",
+      "sha256": "eb4a5d70a58d5fb8a2bad475a41a9072d98f7a8557f2fb69532763c772f61e7d"
+    },
+    {
+      "scene": "6dnh",
+      "viewpoint": "Site C302",
+      "file": "6dnh-2.png",
+      "sha256": "e2223201e350da1c965edfc07395831536f681c3bd938c0dee5f63846931e78c"
+    },
+    {
+      "scene": "6dnh",
+      "viewpoint": "Site C303",
+      "file": "6dnh-3.png",
+      "sha256": "537f579a4a0c707e0084b825dcfcb4f86d4cdae77761667831084054c64fd1d1"
+    },
+    {
+      "scene": "6fuw",
+      "viewpoint": "Site C201",
+      "file": "6fuw-1.png",
+      "sha256": "a8583477af69104093d66d5e5bf0f4996677fc5cb8dcd5322ff99d442dc61b2e"
+    },
+    {
+      "scene": "6fuw",
+      "viewpoint": "Site C202",
+      "file": "6fuw-2.png",
+      "sha256": "f642b9d9de1cfb9623f3f35d5f818357ef4598b0509f58f9942d1df471fb353e"
+    },
+    {
+      "scene": "6fuw",
+      "viewpoint": "Site C203",
+      "file": "6fuw-3.png",
+      "sha256": "4a03a00552bd5eed83c04f0f4001850f38e3ccfca0415595af580facb8a1867c"
+    },
+    {
+      "scene": "6nzl",
+      "viewpoint": "Site A201",
+      "file": "6nzl-1.png",
+      "sha256": "c05c71b235875d91f3237a60a2cd8e2f147e45fb6e308474c948dcb846c36a38"
+    },
+    {
+      "scene": "6nzl",
+      "viewpoint": "Site A202",
+      "file": "6nzl-2.png",
+      "sha256": "acfb96622f732cb2c763ae6be7a44a00e1b9563b4247522eeb4b6ac19ead5f62"
+    },
+    {
+      "scene": "6uro",
+      "viewpoint": "Site C301",
+      "file": "6uro-1.png",
+      "sha256": "f127c3978023361e2fb9f658cf75cbe56b0c5bd723295de3d767738d75d584ba"
+    },
+    {
+      "scene": "6uro",
+      "viewpoint": "Site C302",
+      "file": "6uro-2.png",
+      "sha256": "14a5950299c9c26ad8885243cf387e9fe3c2c8aeb4f77c3a5df2ec4c1b469248"
+    },
+    {
+      "scene": "6uro",
+      "viewpoint": "Site C303",
+      "file": "6uro-3.png",
+      "sha256": "60f2fdad017bd4a70ed568734a62fc6eb500e7b0b24fbd4505bee04923202bfd"
+    }
+  ],
+  "console": [
+    {
+      "scene": "1aay",
+      "type": "warning",
+      "text": "[.WebGL-0x278c001a5400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "scene": "1aay",
+      "type": "warning",
+      "text": "[.WebGL-0x278c001a5400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "scene": "1aay",
+      "type": "warning",
+      "text": "[.WebGL-0x278c001a5400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels"
+    },
+    {
+      "scene": "1aay",
+      "type": "warning",
+      "text": "[.WebGL-0x278c001a5400]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)"
+    }
+  ]
+}

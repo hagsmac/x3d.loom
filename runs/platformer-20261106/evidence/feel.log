@@ -1,0 +1,12 @@
+{"check":"FEEL_apexHeightFull","value":3.1039,"window":[3,3.6],"status":"pass"}
+{"check":"FEEL_apexHeightTap","value":1.1724,"window":[0.9,1.6],"status":"pass"}
+{"check":"FEEL_timeToApex","value":0.4583,"window":[0.36,0.5],"status":"pass"}
+{"check":"FEEL_runJumpDistance","value":7.0233,"window":[6,8.2],"status":"pass"}
+{"check":"FEEL_timeToFullSpeed","value":0.1083,"window":[0.08,0.16],"status":"pass"}
+{"check":"FEEL_stopDistance","value":0.3347,"window":[0.25,0.6],"status":"pass"}
+{"check":"FEEL_coyoteFrames","value":12,"window":[10,14],"status":"pass"}
+{"check":"FEEL_bufferFrames","value":14,"window":[12,17],"status":"pass"}
+{"check":"FEEL_wallJumpHeight","value":2.4293,"window":[2,3.2],"status":"pass"}
+{"feel":"pass","failed":0,"checks":9}
+
+--- stderr ---

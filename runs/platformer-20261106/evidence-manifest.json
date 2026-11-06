@@ -1,0 +1,112 @@
+{
+  "candidate_sha256": "6244fe7cf628640beb8f2cc791fda25243749b8f3242459490abaaac96d9928f",
+  "files": [
+    {
+      "bytes": 1412,
+      "path": "behaviour.json",
+      "role": "witness-record",
+      "sha256": "4604c585fc5965e4912ddb05c990d862c3517be527789b6f27906b292b366f17"
+    },
+    {
+      "bytes": 1567,
+      "path": "behaviour.log",
+      "role": "log",
+      "sha256": "94026a94a1e85546ca5d8c833a6285bb38af13b5fc486b67c4754f09f03ed358"
+    },
+    {
+      "bytes": 615,
+      "path": "cross-engine.json",
+      "role": "witness-record",
+      "sha256": "ca8439a405b20f93b78e29feae22aaa8742d693009851205f26d9619c88c25ea"
+    },
+    {
+      "bytes": 678,
+      "path": "eyes.json",
+      "role": "witness-record",
+      "sha256": "f4189d41209e8034572f65c4c6af38e78e0cc75106b55d4c253f3ee9e64ceef4"
+    },
+    {
+      "bytes": 1412,
+      "path": "feel.json",
+      "role": "witness-record",
+      "sha256": "65a5340c8b06bb54c8590bd52de825ea7c8f72ec151aabfe3721ee0be171bd45"
+    },
+    {
+      "bytes": 769,
+      "path": "feel.log",
+      "role": "log",
+      "sha256": "92c85c19e9cc2c20c97100083f21f1de6af072a3e8b148d901151070eeeb4f0e"
+    },
+    {
+      "bytes": 587,
+      "path": "fun.json",
+      "role": "witness-record",
+      "sha256": "f3bab4b51064b83a6184e6b7eb95bd029ba2dfbb4a24733347ac7635e3b0e146"
+    },
+    {
+      "bytes": 1276,
+      "path": "grammar.json",
+      "role": "witness-record",
+      "sha256": "b7eacbdc9d9a3206957f32e4f0d2a9e082e9137f90288b68e98127e03edcfee6"
+    },
+    {
+      "bytes": 533,
+      "path": "host.json",
+      "role": "witness-record",
+      "sha256": "84c13dcd011212670d3bba2f166e3a4f38be572a0dbfbaf325e7d347fe412967"
+    },
+    {
+      "bytes": 1368,
+      "path": "meaning.json",
+      "role": "witness-record",
+      "sha256": "1de9075d7995f485eb332d728cf91e111e6483a704f9fa05b1b21001c835b80e"
+    },
+    {
+      "bytes": 1947,
+      "path": "page-traps.json",
+      "role": "witness-record",
+      "sha256": "bbe7e5e2b01f0cd81ddaa5dac8519e0c39613f03a8ed728506bfaf242e165814"
+    },
+    {
+      "bytes": 2590,
+      "path": "play.json",
+      "role": "witness-record",
+      "sha256": "51eb7803e7d36fd5cfc0bddf551277dd17fe802017c45559bf87fb33208e588b"
+    },
+    {
+      "bytes": 1370,
+      "path": "traps.json",
+      "role": "witness-record",
+      "sha256": "4d5aea0e4af476e57d1ca029d455b0430f5a2e47a5b3a7affc0a1f0322bdbcfc"
+    }
+  ],
+  "not_run": [
+    {
+      "reason": "Stills and a clip were reviewed by the builder only (a look pass that changed the gorge background, the spire facades and the climb camera); the owner has not looked at or played the game yet.",
+      "status": "not_run",
+      "witness": "eyes"
+    },
+    {
+      "reason": "No person has played it. Bots finished every level; that proves possible, not fun, fair or well paced.",
+      "status": "not_run",
+      "witness": "fun"
+    },
+    {
+      "reason": "Tapes were replayed in Node (V8) and Chromium (V8) only; Firefox (SpiderMonkey) and Safari (JavaScriptCore) were not run.",
+      "status": "not_run",
+      "witness": "cross-engine"
+    },
+    {
+      "reason": "No strict host copy was published for this run.",
+      "status": "not_run",
+      "witness": "host"
+    }
+  ],
+  "profile": "x3d-game/v1",
+  "receipt": {
+    "path": "receipt.json",
+    "sha256": "2ed32c7b0d895fb1594e5e7d9f7c327fc406c4be436e1c56faf0083ee5d9aae4"
+  },
+  "schema": "loom.evidence-manifest/1",
+  "subject": "x3d.platformer NIB, three worlds"
+}

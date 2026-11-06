@@ -1,0 +1,91 @@
+{
+  "coverage": {
+    "levels": 3,
+    "tapes": 3
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T08:32:05+00:00",
+  "grade": "C",
+  "instrument": {
+    "node": "v22.23.4",
+    "rules_sha256": "50ed60d5c5c02bb54f03e9d431669e2ef490825ddbe6719fe40980810c344cf4",
+    "runner": "tools/replay.mjs",
+    "runner_sha256": "896a95590440b6fb085e45774a30320acbce224c745b41321c9af994cac98196",
+    "tool": "loomkit.play"
+  },
+  "limitations": [
+    "Determinism is shown on the runner's JavaScript engine only; other engines need their own replay (the browser witness).",
+    "A tape proves one way through a level, not that the level is fair, fun or free of shortcuts."
+  ],
+  "measurements": {
+    "levels_proven": [
+      "1-1-tinker-meadow.x3d",
+      "2-1-pendulum-gorge.x3d",
+      "3-1-clockwork-spire.x3d"
+    ],
+    "repeats": 2,
+    "tapes": {
+      "1-1-tinker-meadow.tape.json": {
+        "cogs": 65,
+        "deaths": 0,
+        "engine": "nib-engine/2",
+        "goal_tick": 5034,
+        "hash": "78653115e278cfc3",
+        "level": "1-1-tinker-meadow.x3d",
+        "level_sha256": "979542fde81943ec096e1e1df9a14aad45377e811b2769a47ccaf051d5651bf3",
+        "replays": 2,
+        "runner_cpu_ms": [
+          224.5,
+          274
+        ],
+        "runtime": "v22.23.4",
+        "stars": 3,
+        "ticks": 5154
+      },
+      "2-1-pendulum-gorge.tape.json": {
+        "cogs": 47,
+        "deaths": 0,
+        "engine": "nib-engine/2",
+        "goal_tick": 4006,
+        "hash": "f2a7a49770611e45",
+        "level": "2-1-pendulum-gorge.x3d",
+        "level_sha256": "5c15c1abd2fa5725380a6f2098f36bc248a27d1d06188f38f46af9e19017757e",
+        "replays": 2,
+        "runner_cpu_ms": [
+          268.7,
+          250.7
+        ],
+        "runtime": "v22.23.4",
+        "stars": 3,
+        "ticks": 4126
+      },
+      "3-1-clockwork-spire.tape.json": {
+        "cogs": 34,
+        "deaths": 0,
+        "engine": "nib-engine/2",
+        "goal_tick": 2256,
+        "hash": "4fdab334d2fa7441",
+        "level": "3-1-clockwork-spire.x3d",
+        "level_sha256": "6844f58f418a2c9010521da26ff35c428e946d368ff709c07c6eca25acc0e157",
+        "replays": 2,
+        "runner_cpu_ms": [
+          126.4,
+          136
+        ],
+        "runtime": "v22.23.4",
+        "stars": 3,
+        "ticks": 2376
+      }
+    }
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "6244fe7cf628640beb8f2cc791fda25243749b8f3242459490abaaac96d9928f",
+  "witness": "play"
+}

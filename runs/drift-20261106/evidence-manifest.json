@@ -1,0 +1,124 @@
+{
+  "candidate_sha256": "c5821a908021b14e001ad92197530ff64aa815eba819ad49d838f3f284605565",
+  "files": [
+    {
+      "bytes": 1412,
+      "path": "behaviour.json",
+      "role": "witness-record",
+      "sha256": "7edd469a0aab2bdd6be47ead162d6a89fea48cf56a1d75676f1ae26e2c2b4a89"
+    },
+    {
+      "bytes": 15088,
+      "path": "behaviour.log",
+      "role": "log",
+      "sha256": "0bc2f4f19292d4e3624163ed1ea02c1e0ea79681502b907948d31c45caa544c8"
+    },
+    {
+      "bytes": 615,
+      "path": "cross-engine.json",
+      "role": "witness-record",
+      "sha256": "a533b9121fab5bdd8f6f02515e37ecc6f3151a0f484bdcf2ecf230d7802a4f92"
+    },
+    {
+      "bytes": 743,
+      "path": "eyes.json",
+      "role": "witness-record",
+      "sha256": "886c81ef27759c1b1b91a11503a370e67c24ce56116ad2a84affba7a69d3dd2c"
+    },
+    {
+      "bytes": 766,
+      "path": "fun.json",
+      "role": "witness-record",
+      "sha256": "5c4908971da61335ccdc74eed7b5ab5835512e92e9f564497d818e3e3c1a9ca3"
+    },
+    {
+      "bytes": 1896,
+      "path": "grammar.json",
+      "role": "witness-record",
+      "sha256": "2ac5a1a6e920a8643d44848c08ac438ccd74bb401a44f7db433a3ca035ff5c23"
+    },
+    {
+      "bytes": 1336,
+      "path": "handling.json",
+      "role": "witness-record",
+      "sha256": "6ecf58b3fd77ed8552ee97b336659fa72ccffbc295d6144c05735d49b47c17b4"
+    },
+    {
+      "bytes": 2308,
+      "path": "handling.log",
+      "role": "log",
+      "sha256": "e46828c5bf6205af70fccc0660f817b5bd5b4b4d9d57c72c5c6b85576de2e915"
+    },
+    {
+      "bytes": 533,
+      "path": "host.json",
+      "role": "witness-record",
+      "sha256": "3e0215b3a40d8edcfac5639773ec561b8bddd897e6ef8517edcdb6755a2d2c7e"
+    },
+    {
+      "bytes": 2126,
+      "path": "meaning.json",
+      "role": "witness-record",
+      "sha256": "06aa3e1ed8488b615fe256ee86441136e03507263ecb1e3105fdac17d2fa6277"
+    },
+    {
+      "bytes": 1910,
+      "path": "page-traps.json",
+      "role": "witness-record",
+      "sha256": "2ad36f92d97e43da7953c3dc1038360c9a142870e5837f649ee087e5ea8c4164"
+    },
+    {
+      "bytes": 10003,
+      "path": "play.json",
+      "role": "witness-record",
+      "sha256": "08d59b66b8854d54c7f5dec7fbd925512f5abeeb744a923be9e13976c44e631d"
+    },
+    {
+      "bytes": 1322,
+      "path": "suite.json",
+      "role": "witness-record",
+      "sha256": "1b83ef42eccc22f90587bd58ed9ac2c9b7234df3757687611715e84f16ea50b4"
+    },
+    {
+      "bytes": 2663,
+      "path": "suite.log",
+      "role": "log",
+      "sha256": "e74e7614488168994a9ee241c43cd99d71d4147c5dc4c305c124167d5b0469a4"
+    },
+    {
+      "bytes": 1525,
+      "path": "traps.json",
+      "role": "witness-record",
+      "sha256": "5902c2e275ac52412d9a4544ab7264222546309b2ba579c685db3a2b1a6ed54e"
+    }
+  ],
+  "not_run": [
+    {
+      "reason": "Stills, a clip and a side-by-side A/B were reviewed by the builders only (reviews changed the start-gantry lights, the clip's smoke density, the car screen's fold, the phone framing and a stale HUD still); the owner has not looked at or played the game yet.",
+      "status": "not_run",
+      "witness": "eyes"
+    },
+    {
+      "reason": "No person has played it. The AI, scripted keyboard drivers and scripted exploit drivers finished, drifted or failed to farm every circuit; that proves possible and not trivially farmable, not fun, fair or well paced, and says nothing about keyboard, pad or touch feel or the sound.",
+      "status": "not_run",
+      "witness": "fun"
+    },
+    {
+      "reason": "Tapes were replayed in Node (V8) and Chromium (V8) only; Firefox (SpiderMonkey) and Safari (JavaScriptCore) were not run.",
+      "status": "not_run",
+      "witness": "cross-engine"
+    },
+    {
+      "reason": "No strict host copy was published for this run.",
+      "status": "not_run",
+      "witness": "host"
+    }
+  ],
+  "profile": "x3d-drift/v1",
+  "receipt": {
+    "path": "receipt.json",
+    "sha256": "1c409eee601fe4c8dcf065c3af7baba83d8f5aea810888186059134e22c602a3"
+  },
+  "schema": "loom.evidence-manifest/1",
+  "subject": "x3d.drift KANSEI, five circuits"
+}

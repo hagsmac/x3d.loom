@@ -1,0 +1,18 @@
+{
+  "min_intact_fraction": 0.99,
+  "note": "1N0Z: ZRANB2 first finger (RanBP2 type) (NMR, 20 models). Ligand classes from the family's literature (L); tau4, windows and radius as declared for the synthetic rehearsal.",
+  "schema": "loom.metal-site-spec/1",
+  "search_radius": 3.0,
+  "sites": [
+    {
+      "class": "CCCC",
+      "coordination": 4,
+      "metal": {
+        "chain": "A",
+        "resname": "ZN",
+        "resseq": 46
+      },
+      "tau4_min": 0.7
+    }
+  ]
+}

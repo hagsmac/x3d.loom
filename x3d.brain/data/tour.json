@@ -1,0 +1,134 @@
+{
+ "_meta": {
+  "note": "Guided tour for the brain atlas page. viewpoint = Viewpoint DEF; preset = key in presets.json; layers = which layer groups are on (map below); region = id in regions.json. Copy drafted with a text model, then rewritten and checked against data/facts.json and standard neuroanatomy (no expert or clinical review is claimed). Steps 6 and 7 state plainly that fibre arcs and activation blobs are synthetic / illustrative."
+ },
+ "title": "Neural Canvas",
+ "title_options": [
+  "Neural Canvas",
+  "Synapse 3D",
+  "Cerebro Glass"
+ ],
+ "working_title": "Brain Loom",
+ "tagline": "Explore human brain anatomy in luminous interactive 3D.",
+ "subtitle": "Orbit an open-access template brain, peel back its layers and meet its regions. Fibre arcs and activation glows are illustrative.",
+ "badge": "Synthetic illustration",
+ "loading": "Loading the template brain",
+ "hint": "Drag to orbit, scroll to zoom, and tap structures to explore.",
+ "footer": "Built with open neuroimaging templates for educational curiosity; not for clinical use or medical advice.",
+ "layer_switches": {
+  "cortex": "SW_CORTEX",
+  "wet": "SW_WET",
+  "deep": "SW_DEEP",
+  "tracts": "SW_TRACTS",
+  "slices": "SW_SLICES",
+  "labels": "SW_LABELS",
+  "activation": "SW_ACTIV"
+ },
+ "steps": [
+  {
+   "n": 1,
+   "title": "A glass brain",
+   "viewpoint": "VP_HOME",
+   "preset": "glass",
+   "layers": [
+    "cortex",
+    "deep"
+   ],
+   "region": "ctx-lh-precentral",
+   "narration": "You are looking at a template brain, drawn as a glass shell of folded cortex with deep structures glowing inside. Drag to orbit. The highlighted precentral gyrus sends out the commands for voluntary movement, and its body map gives the hands and face disproportionately large territory.",
+   "words": 46
+  },
+  {
+   "n": 2,
+   "title": "Where speech takes shape",
+   "viewpoint": "VP_LEFT",
+   "preset": "labels",
+   "layers": [
+    "wet",
+    "labels"
+   ],
+   "region": "ctx-lh-parsopercularis",
+   "narration": "From the left side, labels mark the regions of a solid cortex. In most people, language depends mainly on the left hemisphere. The pars opercularis, part of Broca's area, helps turn thought into speech, and it shows mirror-like activity when you watch someone else talk.",
+   "words": 45
+  },
+  {
+   "n": 3,
+   "title": "Touch, seen from above",
+   "viewpoint": "VP_TOP",
+   "preset": "slices",
+   "layers": [
+    "cortex",
+    "slices"
+   ],
+   "region": "ctx-lh-postcentral",
+   "narration": "Seen from above, slices of a template MRI cut through the glass. Just behind the central sulcus, the postcentral gyrus turns touch, temperature and pain into sensation. Its body map gives disproportionate space to the lips and fingertips, which helps explain their fine sensitivity.",
+   "words": 44
+  },
+  {
+   "n": 4,
+   "title": "Planning ahead",
+   "viewpoint": "VP_FRONT",
+   "preset": "wet",
+   "layers": [
+    "wet"
+   ],
+   "region": "ctx-lh-frontalpole",
+   "narration": "From the front, the solid cortex ends at the frontal pole. This tip of the prefrontal cortex helps you hold one intention in mind while you attend to another. Like the rest of the prefrontal cortex, it matures late, with pruning and myelination continuing into your twenties.",
+   "words": 47
+  },
+  {
+   "n": 5,
+   "title": "Memory's seahorse",
+   "viewpoint": "VP_MEDIAL",
+   "preset": "golden",
+   "layers": [
+    "wet",
+    "deep"
+   ],
+   "region": "deep-hippocampus",
+   "narration": "With one hemisphere cut away, warm metal reveals the hippocampus, a curled structure central to forming new long-term memories. London taxi drivers show a larger posterior hippocampus, and the difference tracks their years of learning the city's streets, a hint that experience may shape the brain.",
+   "words": 46
+  },
+  {
+   "n": 6,
+   "title": "Wiring, illustrated",
+   "viewpoint": "VP_INSIDE",
+   "preset": "inside",
+   "layers": [
+    "cortex",
+    "deep",
+    "tracts"
+   ],
+   "region": "deep-thalamus",
+   "narration": "Standing inside the brain, looking forward, glowing arcs sweep between points on the cortex. They are synthetic illustrations, not real tractography. Ahead and below, the highlighted thalamus is a central relay that passes nearly all sensory signals on to the cortex, with smell as the main exception.",
+   "words": 47
+  },
+  {
+   "n": 7,
+   "title": "Where vision begins",
+   "viewpoint": "VP_RIGHT",
+   "preset": "activation",
+   "layers": [
+    "cortex",
+    "activation"
+   ],
+   "region": "ctx-rh-pericalcarine",
+   "narration": "From the right side, the glowing blobs are illustrative, not measured data. At the back of the head, the pericalcarine cortex is the primary visual cortex, where signals from the eyes first arrive. A stripe of myelin, the line of Gennari, runs through it and can be seen by eye.",
+   "words": 50
+  },
+  {
+   "n": 8,
+   "title": "The quiet majority",
+   "viewpoint": "VP_HOME",
+   "preset": "glass",
+   "layers": [
+    "cortex",
+    "deep",
+    "tracts"
+   ],
+   "region": "deep-cerebellum",
+   "narration": "Back at the full view, look low and behind: the cerebellum holds only about ten percent of the brain's volume, yet roughly eighty percent of its neurons. It fine-tunes balance, movement and timing. Now explore freely: tap any region for its story, and switch layers on and off.",
+   "words": 48
+  }
+ ]
+}

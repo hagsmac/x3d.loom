@@ -1,0 +1,34 @@
+{
+  "coverage": {
+    "levels": 1,
+    "tapes": 1
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T20:22:16+00:00",
+  "grade": "C",
+  "instrument": {
+    "node": "v22.23.4",
+    "rules_sha256": "50ed60d5c5c02bb54f03e9d431669e2ef490825ddbe6719fe40980810c344cf4",
+    "runner": "tools/replay.mjs",
+    "runner_sha256": "23e6f8d4c02ef4e3c36660caf026e4a709a8067c105b3fcc041c1a168de89816",
+    "tool": "loomkit.play"
+  },
+  "limitations": [
+    "Determinism is shown on the runner's JavaScript engine only; other engines need their own replay (the browser witness).",
+    "A tape proves one way through a level, not that the level is fair, fun or free of shortcuts."
+  ],
+  "measurements": {
+    "detail": "kessel-pass-attack.tape.json: tape 'kansei-engine/3', runner 'kansei-engine/4'",
+    "rejected": "PLAY_ENGINE_DRIFT"
+  },
+  "reason": "PLAY_ENGINE_DRIFT: kessel-pass-attack.tape.json: tape 'kansei-engine/3', runner 'kansei-engine/4'",
+  "schema": "loom.witness/1",
+  "status": "fail",
+  "subject_sha256": "746700c2f051923dcb07f8487b6aa3f3ad0513970b8487f21ba454c4edc740da",
+  "witness": "play"
+}

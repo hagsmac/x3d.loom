@@ -1,0 +1,33 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [
+    {
+      "path": "feel.log",
+      "sha256": "92c85c19e9cc2c20c97100083f21f1de6af072a3e8b148d901151070eeeb4f0e"
+    }
+  ],
+  "finished_at": "2026-11-06T08:32:03+00:00",
+  "grade": "C",
+  "instrument": {
+    "command": [
+      "node",
+      "tests/feel.test.mjs"
+    ],
+    "tool": "project gate (adapter)"
+  },
+  "limitations": [],
+  "measurements": {
+    "exit_code": 0,
+    "stdout_tail": ":\"pass\"}\n{\"check\":\"FEEL_timeToApex\",\"value\":0.4583,\"window\":[0.36,0.5],\"status\":\"pass\"}\n{\"check\":\"FEEL_runJumpDistance\",\"value\":7.0233,\"window\":[6,8.2],\"status\":\"pass\"}\n{\"check\":\"FEEL_timeToFullSpeed\",\"value\":0.1083,\"window\":[0.08,0.16],\"status\":\"pass\"}\n{\"check\":\"FEEL_stopDistance\",\"value\":0.3347,\"window\":[0.25,0.6],\"status\":\"pass\"}\n{\"check\":\"FEEL_coyoteFrames\",\"value\":12,\"window\":[10,14],\"status\":\"pass\"}\n{\"check\":\"FEEL_bufferFrames\",\"value\":14,\"window\":[12,17],\"status\":\"pass\"}\n{\"check\":\"FEEL_wallJumpHeight\",\"value\":2.4293,\"window\":[2,3.2],\"status\":\"pass\"}\n{\"feel\":\"pass\",\"failed\":0,\"checks\":9}"
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "6244fe7cf628640beb8f2cc791fda25243749b8f3242459490abaaac96d9928f",
+  "witness": "feel"
+}

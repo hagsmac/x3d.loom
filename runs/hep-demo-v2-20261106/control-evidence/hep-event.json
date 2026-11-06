@@ -1,0 +1,34 @@
+{
+  "coverage": {
+    "events": 5,
+    "scenes": 0,
+    "towers": 0,
+    "tracks": 0
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T16:18:29+00:00",
+  "grade": "C",
+  "instrument": {
+    "rules_sha256": "c1576dcd90a6164102c7d71f96f58d31405be730a527c5355531c12dd6310071",
+    "spec_sha256": "cfaf4f9c5ea4633266cbd0cdc651abadb6c66938865064f52b80b6f535279929",
+    "tool": "loomkit.hepevent"
+  },
+  "limitations": [
+    "Demo plausibility only: loose physics tolerances, declared in the spec; no mass shell, resonance or calorimeter sum rule.",
+    "Nothing is rendered and no GLSL is compiled here: the shader check proves the binding (shader, attributes, clock route), not the look."
+  ],
+  "measurements": {
+    "detail": "event tracks not drawn: trk_7",
+    "rejected": "EVT_SCENE_BIJECTION"
+  },
+  "reason": "EVT_SCENE_BIJECTION: event tracks not drawn: trk_7",
+  "schema": "loom.witness/1",
+  "status": "fail",
+  "subject_sha256": "f1aeeee0b7cd21e467b789569fbb4027b8cb9c1efe092c2450225b0209b3a9e2",
+  "witness": "hep-event"
+}

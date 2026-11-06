@@ -1,0 +1,232 @@
+{
+  "candidate_sha256": "7e9e184ffabfec6a161905a818b7adf743728ee98bdf8f8cee9d7e58abdf7e05",
+  "files": [
+    {
+      "bytes": 594,
+      "path": "behaviour.json",
+      "role": "witness-record",
+      "sha256": "73dc605328c3a97da9997c585a75a413043057a43934a5f315450d15c4b9526b"
+    },
+    {
+      "bytes": 1351,
+      "path": "cross-check.json",
+      "role": "witness-record",
+      "sha256": "528b05b4fa4bb2a78cab97455c8077dbdc78d35d39b5acbd63d4c1883f87ad3c"
+    },
+    {
+      "bytes": 1116,
+      "path": "cross-check.log",
+      "role": "log",
+      "sha256": "cc51dac518903078c8e93886d75aef9362ecc0e9e0826b57cd762968636b6061"
+    },
+    {
+      "bytes": 589,
+      "path": "eyes.json",
+      "role": "witness-record",
+      "sha256": "8d5f4ca2a0b6845c8ce4bba2489875784eed69720d9bfe02fb6f620227af5273"
+    },
+    {
+      "bytes": 592,
+      "path": "grammar.json",
+      "role": "witness-record",
+      "sha256": "d7d53bfc8fb8b2060418028b1027fdcc9d00710bcb88a835a9ff022c1f4887e9"
+    },
+    {
+      "bytes": 592,
+      "path": "meaning.json",
+      "role": "witness-record",
+      "sha256": "6a21ad83d14bff6e31a08a5d0ced980710a6b635d95e17d8a0fd0b99ca750aae"
+    },
+    {
+      "bytes": 1037,
+      "path": "metal-site-1aay.json",
+      "role": "witness-record",
+      "sha256": "39b1b3236c9b1ec98df2be5b8a39af24fbdadc0ceaa3b2dd63f2e92b8fc89e3c"
+    },
+    {
+      "bytes": 2209,
+      "path": "metal-site-1m9o.json",
+      "role": "witness-record",
+      "sha256": "53c8b0e568f8e058a1a2d0d97a39e6f46fe27a1fde4c26cdc7483bb9ad159a64"
+    },
+    {
+      "bytes": 1249,
+      "path": "metal-site-1n0z.json",
+      "role": "witness-record",
+      "sha256": "1d44fea5523e878169923e005d6f784e6bf07ee1ec4c4915a687404c37809c53"
+    },
+    {
+      "bytes": 3245,
+      "path": "metal-site-1rgo.json",
+      "role": "witness-record",
+      "sha256": "9e21579674547c34bc319c9d0a22668b16897faff7daca3cf67e5bea5e8388ee"
+    },
+    {
+      "bytes": 5295,
+      "path": "metal-site-1ubd.json",
+      "role": "witness-record",
+      "sha256": "16179eb3ba30a387c345776137f6d9143c3ffae598752ab542b93aa74a93016a"
+    },
+    {
+      "bytes": 1035,
+      "path": "metal-site-1zaa.json",
+      "role": "witness-record",
+      "sha256": "c98669abd033eabef6450a5e9e4ff814bb3b6a63008c2b8e961e7ff188a18c38"
+    },
+    {
+      "bytes": 1307,
+      "path": "metal-site-2jvx.json",
+      "role": "witness-record",
+      "sha256": "3977a122972b2fd28a13353c1d377fd5ec91618defd5c4143c384e55632a9f3a"
+    },
+    {
+      "bytes": 2210,
+      "path": "metal-site-2k1p.json",
+      "role": "witness-record",
+      "sha256": "a59c2a90b5a346d0eba8877b70b1cb16f01cd8e4c3caa9162ed79dd6c2e71d7c"
+    },
+    {
+      "bytes": 2205,
+      "path": "metal-site-3g9y.json",
+      "role": "witness-record",
+      "sha256": "d0d645fb950d7b22c8738345eea99f1d0712b468f0911f9e44bd5e24419971f8"
+    },
+    {
+      "bytes": 1035,
+      "path": "metal-site-4av1.json",
+      "role": "witness-record",
+      "sha256": "6369ffd57eb77ec7be6e1b981a15c783afdcc66a5d367044b4c1f8c705c1d77e"
+    },
+    {
+      "bytes": 1035,
+      "path": "metal-site-6dnh.json",
+      "role": "witness-record",
+      "sha256": "983548a4daae9d3d3f26a7af0a194e91e4223f98cec8497293bdc42df2709577"
+    },
+    {
+      "bytes": 1033,
+      "path": "metal-site-6fuw.json",
+      "role": "witness-record",
+      "sha256": "3ca167889c094bc0c4f868687396e24c682aeb5eac5116ef630daf68d80586a8"
+    },
+    {
+      "bytes": 1251,
+      "path": "metal-site-6nzl.json",
+      "role": "witness-record",
+      "sha256": "60d2c6199d3860cd1ca51daaf9c6a6e3fbce2791799ec0dcf889b3076db0e46a"
+    },
+    {
+      "bytes": 1027,
+      "path": "metal-site-6uro.json",
+      "role": "witness-record",
+      "sha256": "e9e9349b1f76a860b09ef9ed15566f46b6f313404a51becdbb68cb982241e64c"
+    },
+    {
+      "bytes": 595,
+      "path": "page-traps.json",
+      "role": "witness-record",
+      "sha256": "26c907dfdc5dfb0d5355a4db9788ea1c85342a33f9e230ce386410d95ba5df1e"
+    },
+    {
+      "bytes": 595,
+      "path": "simulation.json",
+      "role": "witness-record",
+      "sha256": "2651d89f6d6c76e88ebaf962ca1fc1dc82adc82b78cf4d8321881878da9555fc"
+    },
+    {
+      "bytes": 590,
+      "path": "traps.json",
+      "role": "witness-record",
+      "sha256": "9936a9d6f73a284a66772244199ea70c2985d34a85264e5b1e121cb42789b59f"
+    }
+  ],
+  "not_run": [
+    {
+      "reason": "SITE_DISTANCE: ZN A201: HIS 129 NE2 at 1.940 A, window [1.95, 2.2]",
+      "status": "fail",
+      "witness": "metal-site-1aay"
+    },
+    {
+      "reason": "SITE_DISTANCE: ZN C201: HIS 29 NE2 at 1.876 A, window [1.95, 2.2]",
+      "status": "fail",
+      "witness": "metal-site-1zaa"
+    },
+    {
+      "reason": "SITE_INTACT_FRACTION: ZN A201: intact in 0 of 20 frames, declared at least 0.99; first failure at frame 0: SITE_DISTANCE (ZN A201: CYS 119 SG at 1.986 A, window [2.2, 2.45])",
+      "status": "fail",
+      "witness": "metal-site-6nzl"
+    },
+    {
+      "reason": "SITE_INTACT_FRACTION: ZN A46: intact in 19 of 20 frames, declared at least 0.99; first failure at frame 14: SITE_DISTANCE (ZN A46: CYS 33 SG at 2.193 A, window [2.2, 2.45])",
+      "status": "fail",
+      "witness": "metal-site-1n0z"
+    },
+    {
+      "reason": "SITE_INTACT_FRACTION: ZN A29: intact in 8 of 10 frames, declared at least 0.99; first failure at frame 2: SITE_COORDINATION (ZN A29: 5 donors within 3.0 A, declared 4 (not in the donor table: GLU28.O))",
+      "status": "fail",
+      "witness": "metal-site-2jvx"
+    },
+    {
+      "reason": "SITE_DISTANCE: ZN A1600: CYS 56 SG at 2.142 A, window [2.2, 2.45]",
+      "status": "fail",
+      "witness": "metal-site-4av1"
+    },
+    {
+      "reason": "SITE_DISTANCE: ZN C201: CYS 41 SG at 2.461 A, window [2.2, 2.45]",
+      "status": "fail",
+      "witness": "metal-site-6fuw"
+    },
+    {
+      "reason": "SITE_DISTANCE: ZN C301: HIS 59 NE2 at 2.209 A, window [1.95, 2.2]",
+      "status": "fail",
+      "witness": "metal-site-6dnh"
+    },
+    {
+      "reason": "SITE_COORDINATION: ZN C301: 3 donors within 3.0 A, declared 4",
+      "status": "fail",
+      "witness": "metal-site-6uro"
+    },
+    {
+      "reason": "P1 checks deposited structures only: no simulation ran and the Site scenes are judged in their own run.",
+      "status": "not_run",
+      "witness": "simulation"
+    },
+    {
+      "reason": "P1 checks deposited structures only: no simulation ran and the Site scenes are judged in their own run.",
+      "status": "not_run",
+      "witness": "grammar"
+    },
+    {
+      "reason": "P1 checks deposited structures only: no simulation ran and the Site scenes are judged in their own run.",
+      "status": "not_run",
+      "witness": "meaning"
+    },
+    {
+      "reason": "P1 checks deposited structures only: no simulation ran and the Site scenes are judged in their own run.",
+      "status": "not_run",
+      "witness": "traps"
+    },
+    {
+      "reason": "P1 checks deposited structures only: no simulation ran and the Site scenes are judged in their own run.",
+      "status": "not_run",
+      "witness": "page-traps"
+    },
+    {
+      "reason": "P1 checks deposited structures only: no simulation ran and the Site scenes are judged in their own run.",
+      "status": "not_run",
+      "witness": "behaviour"
+    },
+    {
+      "reason": "P1 checks deposited structures only: no simulation ran and the Site scenes are judged in their own run.",
+      "status": "not_run",
+      "witness": "eyes"
+    }
+  ],
+  "profile": "zinc-structures/v0",
+  "receipt": {
+    "path": "receipt.json",
+    "sha256": "267b877a28cb65721bd9ca4393cf09dd18f5f7a278837167543529976d8f72f2"
+  },
+  "schema": "loom.evidence-manifest/1",
+  "subject": "Zinc finger structures as deposited (wwPDB snapshot 2026-01-01), P1 reference set"
+}

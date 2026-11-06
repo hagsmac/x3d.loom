@@ -1,0 +1,18 @@
+{
+  "min_intact_fraction": 0.99,
+  "note": "2K1P: ZRANB2 second finger (NMR, 20 models). Ligand classes from the family's literature (L); tau4, windows and radius as declared for the synthetic rehearsal.",
+  "schema": "loom.metal-site-spec/1",
+  "search_radius": 3.0,
+  "sites": [
+    {
+      "class": "CCCC",
+      "coordination": 4,
+      "metal": {
+        "chain": "A",
+        "resname": "ZN",
+        "resseq": 96
+      },
+      "tau4_min": 0.7
+    }
+  ]
+}

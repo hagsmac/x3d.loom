@@ -1,0 +1,7 @@
+site/x_ite/
+site/.pack/
+site/scenes/
+site/looks/
+shots/
+results_*.json
+log_*.txt

@@ -1,0 +1,100 @@
+{
+  "budget": {
+    "cloud_resources": 0,
+    "paid_calls": 0
+  },
+  "candidate_files": 64,
+  "candidate_sha256": "57b72390a79cc783297d85f4e989ba1af2db1728bb3c8228475cc3e3c2c902c5",
+  "grade": "C",
+  "inputs": {
+    "candidate_sha256": "57b72390a79cc783297d85f4e989ba1af2db1728bb3c8228475cc3e3c2c902c5"
+  },
+  "kind": "artifact",
+  "limitations": [
+    "Model 1 of each deposited file only; the per-model spread is in the P1 census, not in the scenes.",
+    "The data-true reader shares the donor table, the side-chain atom lists, the 2.5 angstrom glow line and the spline sampling with the builder; it is independent in parsing (MDAnalysis), selection and arithmetic.",
+    "The glow line is a display rule, not the metal-site window: a bond can glow and still fail the witness (for example a Zn-S of 2.461 A).",
+    "The studio environment is a generated 32-pixel cube map so software GL can render it; it is look, not data, and it reflects no real room.",
+    "The cage and colour checks bind the drawn names and coordinates, not the pixels: a renderer that ignores PhysicalMaterial would still pass.",
+    "The scenes have no ROUTEs or scripts, so there is no behaviour to judge; the camera is the only thing that moves.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ],
+  "model_calls": [],
+  "not_run": [
+    {
+      "reason": "Read 32 frames, one per scene Viewpoint (X_ITE 16.7.0, ToneMapping KHR_PBR_NEUTRAL, PrimitiveQuality HIGH; headless Chromium 153 on SwiftShader; 960x720 at device scale 2; Viewpoints bound through SAI set_bind; eyes-render-log.json). Every frame draws its zinc as a metal with environment highlights, its donors, bonds and labels; none is blank; 4 console messages, all the driver's ReadPixels stall warning. Each label sits in front of the atoms and names its donor. Cages appear only on sites whose four bonds glow; the long cryo-EM sites (6DNH C301-C303, 6URO C301-C303, 6FUW C201) draw dark thin bonds and no cage, as the rule says. Left as found: neighbouring chains crowd the background of 1ZAA and 6DNH C301, some small far labels overlap a stick, and the environment is aligned to each scene's first Viewpoint, so later sites get a less frontal key. A model reading of pictures: graded S.",
+      "status": "pass",
+      "witness": "eyes"
+    },
+    {
+      "reason": "Static scenes: no ROUTEs, scripts or host page, and nothing was simulated.",
+      "status": "not_run",
+      "witness": "behaviour"
+    },
+    {
+      "reason": "Static scenes: no ROUTEs, scripts or host page, and nothing was simulated.",
+      "status": "not_run",
+      "witness": "page-traps"
+    },
+    {
+      "reason": "Static scenes: no ROUTEs, scripts or host page, and nothing was simulated.",
+      "status": "not_run",
+      "witness": "simulation"
+    }
+  ],
+  "outputs": {
+    "eyes-render-log.json": {
+      "bytes": 7307,
+      "sha256": "5e2c8da7e11af99cbbe8fd13ca8cd634698fd3720d630747607a837be3d53e64"
+    }
+  },
+  "prev": "ec0dd864c6b65db83b7c26d2c407141107d91af99bf08467faa1cc928e57e782",
+  "profile": "zinc-scenes/v2",
+  "schema": "loom.receipt/1",
+  "sha256": "bb6c79667bc98d25fe9225aec24383c0118311743caa0241c0e7ff6e0771fd9d",
+  "signed": false,
+  "subject": "Zinc finger Site scenes, look v2, model 1 of 14 deposited structures (wwPDB snapshot 2026-01-01)",
+  "tools": {
+    "data-true": {
+      "tool": "project gate (adapter)"
+    },
+    "grammar": {
+      "commit": "327c5c4ee21268fcb5c4526da7c2f39932019e72",
+      "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+    },
+    "meaning": {
+      "commit": "327c5c4ee21268fcb5c4526da7c2f39932019e72",
+      "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+    },
+    "traps": {
+      "tool": "loomkit.traps"
+    }
+  },
+  "witnesses": [
+    {
+      "grade": "C",
+      "record_sha256": "44e4dada87ba59123d21a565b1231efcb7679f53a7222cec5340013ab09329f4",
+      "status": "pass",
+      "witness": "grammar"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "66ecc40b6cd7326e90b8191d1ff17cccb831727a7c0267ecfbb876583318aabf",
+      "status": "pass",
+      "witness": "meaning"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "88cb39ceb8d841d7a6ba96c1c6231fd8114a538a004961789be76cecf3346441",
+      "status": "pass",
+      "witness": "traps"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "4a2e0a4fd932c86f68d9329d289b12f5a877049a46c8c4760ed87f20dacd0a14",
+      "status": "pass",
+      "witness": "data-true"
+    }
+  ],
+  "written_at": "2026-11-06T09:28:54+00:00"
+}

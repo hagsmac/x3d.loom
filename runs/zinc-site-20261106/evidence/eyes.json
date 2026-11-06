@@ -1,0 +1,22 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T06:58:00+00:00",
+  "grade": "L",
+  "instrument": {
+    "by": "operator",
+    "tool": "declared"
+  },
+  "limitations": [],
+  "measurements": {},
+  "reason": "No X3D scene exists yet: this run rehearses the structure witness only.",
+  "schema": "loom.witness/1",
+  "status": "not_run",
+  "subject_sha256": "43dd849560ada574be59dbf4ee450ae57c2bdd3567070ebc047177432e9a4b61",
+  "witness": "eyes"
+}

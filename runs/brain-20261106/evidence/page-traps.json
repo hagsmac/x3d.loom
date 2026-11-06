@@ -1,0 +1,22 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T17:51:32+00:00",
+  "grade": "L",
+  "instrument": {
+    "by": "operator",
+    "tool": "declared"
+  },
+  "limitations": [],
+  "measurements": {},
+  "reason": "The page (page/) is outside the candidate and its JavaScript and HTML were not read by kit pagetraps. Run it over the final page files, and read its seen counts.",
+  "schema": "loom.witness/1",
+  "status": "not_run",
+  "subject_sha256": "d59bb5b7b778c1f533b00e0af5b2e09da9c09750a130b65a432f275f9f7d5f03",
+  "witness": "page-traps"
+}

@@ -1,0 +1,462 @@
+{
+ "_meta": {
+  "title": "Brain atlas region facts",
+  "regions": 44,
+  "key": "region id without its prefix: ctx-lh-<label> / ctx-rh-<label> -> <label> (34 Desikan labels), deep-<name> -> <name> (10 structures)",
+  "lookup": "facts[key] where key = region id without its 'ctx-lh-' / 'ctx-rh-' / 'deep-' prefix, or by_fact_key[region.fact_key] to get the same key",
+  "fields": [
+   "name",
+   "lobe_or_system",
+   "function",
+   "fact",
+   "clinical",
+   "imaging",
+   "accent"
+  ],
+  "notice": "Educational copy drafted with a text model, then rewritten and checked against standard neuroanatomy, hedged where evidence is debated. No expert or clinical review is claimed. Not medical advice. Atlas: Desikan-Killiany parcellation (Desikan et al. 2006) on a template brain; the corpus callosum label is a medial-wall boundary, not a cortical region, and is omitted."
+ },
+ "facts": {
+  "accumbens": {
+   "name": "Nucleus accumbens",
+   "lobe_or_system": "Ventral striatum (basal ganglia)",
+   "function": "The motivation hub: it turns dopamine-driven anticipation into drive, desire and goal pursuit.",
+   "fact": "Its activity tracks reward prediction error: it responds more to unexpected rewards than to fully predicted ones.",
+   "clinical": "Altered reward circuitry here is implicated in addiction, compulsive gambling and the anhedonia of depression.",
+   "imaging": "fMRI shows ventral striatal responses to unexpected rewards such as money, food and music.",
+   "accent": "#EC4899"
+  },
+  "amygdala": {
+   "name": "Amygdala",
+   "lobe_or_system": "Limbic system (medial temporal lobe)",
+   "function": "Instantly scans your surroundings for salient threats, emotional significance, and biological survival cues.",
+   "fact": "Patients with rare bilateral amygdala calcification (Urbach-Wiethe disease) can show strikingly little fear, even when handling snakes.",
+   "clinical": "Overactivity is linked to anxiety disorders and PTSD; in monkeys, bilateral lesions produce unusual tameness.",
+   "imaging": "fMRI shows heightened responses to fearful faces, even when they are masked from awareness.",
+   "accent": "#AA4347"
+  },
+  "bankssts": {
+   "name": "Banks of the superior temporal sulcus",
+   "lobe_or_system": "Temporal lobe",
+   "function": "Helps read social signals: biological motion, voices and the direction of another person's gaze.",
+   "fact": "In monkeys, neurons in the superior temporal sulcus respond to where another individual is looking; human imaging suggests a similar role in following gaze.",
+   "clinical": "Differences here are often reported in autism, alongside trouble reading gaze and vocal emotion; the findings vary between studies.",
+   "imaging": "Task-based fMRI shows activation here, building over several seconds, while people watch animated walking figures or shifting gaze.",
+   "accent": "#9B59B6"
+  },
+  "brainstem": {
+   "name": "Brainstem",
+   "lobe_or_system": "Brainstem",
+   "function": "The ancient conduit of life: it runs breathing, heart rate and arousal, and relays signals between brain and body.",
+   "fact": "Lesions only millimetres across near the pons-midbrain junction, in the reticular activating system, can cause coma.",
+   "clinical": "A ventral pons stroke can cause locked-in syndrome: awareness intact, but nearly all voluntary muscles paralysed apart from vertical eye movement and blinking.",
+   "imaging": "DTI colour maps show the descending corticospinal tracts as bright blue, vertical bundles.",
+   "accent": "#F59E0B"
+  },
+  "caudalanteriorcingulate": {
+   "name": "Caudal anterior cingulate",
+   "lobe_or_system": "Cingulate cortex (limbic)",
+   "function": "Often described as the brain's internal alarm: it helps monitor cognitive conflict and is active during both physical and social pain.",
+   "fact": "Social rejection and physical pain activate overlapping parts of this region on fMRI, though how specific the overlap is remains debated.",
+   "clinical": "Damage or dysfunction here is linked to apathy and, with bilateral lesions, akinetic mutism; it is also implicated in severe obsessive-compulsive disorder.",
+   "imaging": "fMRI activity here rises during Stroop-type conflict tasks and when people notice their own errors.",
+   "accent": "#E63946"
+  },
+  "caudalmiddlefrontal": {
+   "name": "Caudal middle frontal",
+   "lobe_or_system": "Frontal lobe",
+   "function": "Links planning to action: it helps prepare movements and steer the eyes during deliberate visual attention.",
+   "fact": "The frontal eye fields lie at or near this region; electrical stimulation there makes the eyes jump toward the opposite side.",
+   "clinical": "An acute lesion can make both eyes deviate toward the damaged side, usually improving over days to weeks.",
+   "imaging": "fMRI activity here rises during visual search and the planning of eye and hand movements.",
+   "accent": "#E67E22"
+  },
+  "caudate": {
+   "name": "Caudate nucleus",
+   "lobe_or_system": "Basal ganglia",
+   "function": "A C-shaped nucleus curving around the thalamus that steers goal-directed action, learning and mental flexibility.",
+   "fact": "Its name is Latin for tail: a plump head bulges into the lateral ventricle, then the body tapers into a long tail that arcs back toward the temporal lobe.",
+   "clinical": "Loss of its medium spiny neurons is the hallmark of Huntington's disease, causing involuntary movements and cognitive decline.",
+   "imaging": "On T1 MRI it is a grey-matter ridge lining the walls of the lateral ventricles, which makes it easy to outline in volume studies.",
+   "accent": "#3B82F6"
+  },
+  "cerebellum": {
+   "name": "Cerebellum",
+   "lobe_or_system": "Hindbrain",
+   "function": "Tucked under the cortex, it fine-tunes balance, movement and timing by comparing predicted with actual sensory feedback.",
+   "fact": "It holds only about 10 percent of the brain's volume but roughly 80 percent of its neurons.",
+   "clinical": "Damage causes ataxia: unsteady, uncoordinated movement, intention tremor and misjudged reach (dysmetria) without true weakness.",
+   "imaging": "DTI tractography shows the cerebellar peduncles, the thick fibre bundles linking the cerebellum with brainstem and cortex.",
+   "accent": "#10B981"
+  },
+  "cuneus": {
+   "name": "Cuneus",
+   "lobe_or_system": "Occipital lobe",
+   "function": "Receives input from the upper retina, so it represents the lower half of the visual field.",
+   "fact": "Bound between the parieto-occipital and calcarine fissures, this region takes its name from the Latin word for 'wedge.'",
+   "clinical": "A stroke here can cause a lower quadrantanopia: loss of sight in the lower opposite quarter of the visual field.",
+   "imaging": "T1 MRI shows its wedge on the medial surface; DTI traces the optic radiation ending in the calcarine cortex beside it.",
+   "accent": "#FCC419"
+  },
+  "entorhinal": {
+   "name": "Entorhinal cortex",
+   "lobe_or_system": "Medial temporal lobe",
+   "function": "The gateway to the hippocampus: it maps space with internal grids and funnels sensory experience into memory.",
+   "fact": "Grid cells here fire in a repeating hexagonal pattern that acts like a built-in coordinate system; their discovery in rats earned a 2014 Nobel Prize.",
+   "clinical": "Among the first areas to develop the tangles of Alzheimer's disease, often before memory loss is obvious.",
+   "imaging": "In group studies, high-resolution MRI has shown thinning here years before a dementia diagnosis; it is not a reliable test for any one person.",
+   "accent": "#8E44AD"
+  },
+  "frontalpole": {
+   "name": "Frontal pole",
+   "lobe_or_system": "Frontal lobe",
+   "function": "Sits at the very front of the brain and helps juggle several goals at once, holding an intention in mind while you attend to something else.",
+   "fact": "Part of the prefrontal cortex, which matures later than most of the brain: myelination and cortical pruning continue into the twenties.",
+   "clinical": "Frontopolar damage can leave people able to follow instructions yet poor at multitasking and at carrying out multi-step plans.",
+   "imaging": "Comparative MRI suggests it is disproportionately large in humans compared with other apes; fMRI links it to tasks that need switching between goals.",
+   "accent": "#4A90E2"
+  },
+  "fusiform": {
+   "name": "Fusiform gyrus",
+   "lobe_or_system": "Temporal lobe (ventral visual stream)",
+   "function": "A ventral visual hub that sorts what you see into categories, most famously turning faces into recognisable identities.",
+   "fact": "Its face-selective patch may also be recruited by visual expertise, as in bird watchers or car enthusiasts, though this is debated.",
+   "clinical": "Damage to this region, often on both sides, can cause prosopagnosia (face blindness): familiar faces look unfamiliar.",
+   "imaging": "fMRI shows a face-selective patch, the fusiform face area, responding more to faces than to houses or objects.",
+   "accent": "#E74C3C"
+  },
+  "hippocampus": {
+   "name": "Hippocampus",
+   "lobe_or_system": "Limbic system (medial temporal lobe)",
+   "function": "Central to forming new long-term memories and to spatial navigation.",
+   "fact": "In London taxi drivers the posterior hippocampus is larger, and the difference tracks how many years they have spent learning the city's streets.",
+   "clinical": "Bilateral damage can cause profound anterograde amnesia: new episodic memories fail to form, as in the famous patient H.M.",
+   "imaging": "High-resolution T2-weighted MRI can resolve its curled subfields, such as CA1 and the dentate gyrus.",
+   "accent": "#F4A261"
+  },
+  "inferiorparietal": {
+   "name": "Inferior parietal",
+   "lobe_or_system": "Parietal lobe",
+   "function": "Acts as a multimodal crossroads, weaving attention, language, and mathematical calculation into a unified conscious experience.",
+   "fact": "A 1999 post-mortem study of Einstein's brain reported unusually wide inferior parietal regions, though the interpretation is debated.",
+   "clinical": "Right-hemisphere lesions here can cause hemispatial neglect: patients may fail to notice things on their left side.",
+   "imaging": "Diffusion imaging shows dense white-matter links between this hub and frontal language and attention regions.",
+   "accent": "#6366F1"
+  },
+  "inferiortemporal": {
+   "name": "Inferior temporal",
+   "lobe_or_system": "Temporal lobe (ventral visual stream)",
+   "function": "A visual catalogue that assembles shapes, contours and colours into recognisable objects.",
+   "fact": "Neurons here largely keep their object preference when an object changes size or position, helping you recognise a cup from many angles.",
+   "clinical": "Damage can cause visual agnosia: seeing an object clearly yet being unable to recognise or name it.",
+   "imaging": "fMRI shows category-selective patches along this cortex for tools, animals and everyday objects.",
+   "accent": "#E67E22"
+  },
+  "insula": {
+   "name": "Insula",
+   "lobe_or_system": "Insular cortex",
+   "function": "Translates internal bodily states like heartbeat, gut sensations, and temperature into subjective emotional feelings and gut instincts.",
+   "fact": "In a 2007 study, smokers with insula damage from stroke were far more likely to quit easily and lose the urge to smoke.",
+   "clinical": "Insular degeneration, as in some frontotemporal dementias, can blunt empathy and the recognition of disgust.",
+   "imaging": "Resting-state fMRI identifies the anterior insula as an anchor of the salience network, coordinating switches between internal and external attention.",
+   "accent": "#845EF7"
+  },
+  "isthmuscingulate": {
+   "name": "Isthmus cingulate",
+   "lobe_or_system": "Cingulate cortex (limbic)",
+   "function": "Serves as a crucial spatial and memory bridge linking the cingulate gyrus to the parahippocampal cortex.",
+   "fact": "Though small, this strip behind the corpus callosum is thought to link spatial navigation with episodic memory.",
+   "clinical": "Thinning here has been associated with mild cognitive impairment that later converts to Alzheimer's disease.",
+   "imaging": "DTI traces the cingulum bundle fibres that run through this region toward the temporal lobe.",
+   "accent": "#2A9D8F"
+  },
+  "lateraloccipital": {
+   "name": "Lateral occipital",
+   "lobe_or_system": "Occipital lobe",
+   "function": "Assembles fragmented edges, textures, and contours into recognizable, coherent visual shapes and everyday objects.",
+   "fact": "It contains the lateral occipital complex, which responds to object shape whether sensed by sight or by touch.",
+   "clinical": "Focal damage can cause visual object agnosia: patients see, but fail to recognise everyday objects by sight alone.",
+   "imaging": "On fMRI, it shows selective BOLD signal increases when subjects view intact objects compared to scrambled geometric noise.",
+   "accent": "#FF6B6B"
+  },
+  "lateralorbitofrontal": {
+   "name": "Lateral orbitofrontal",
+   "lobe_or_system": "Frontal lobe",
+   "function": "This region evaluates changing rules and suppresses choices that no longer yield beneficial outcomes.",
+   "fact": "It often responds when a once-rewarding cue stops paying off or starts to be punished, as in reversal-learning tasks.",
+   "clinical": "Lesions can cause perseveration: patients keep repeating a strategy that no longer works.",
+   "imaging": "Air-filled sinuses nearby cause signal dropout in fMRI here, so tilted slices are often used to recover the signal.",
+   "accent": "#E67E22"
+  },
+  "lingual": {
+   "name": "Lingual gyrus",
+   "lobe_or_system": "Occipital lobe",
+   "function": "Helps process colour and shape in the ventral visual stream and supports recognising visual landmarks.",
+   "fact": "Its name comes from the Latin lingua, tongue, for its tongue-like shape; it lies below the calcarine sulcus and processes the upper half of the visual field.",
+   "clinical": "Lesions here and in the adjacent fusiform gyrus can cause cerebral achromatopsia: the world loses colour and looks grey.",
+   "imaging": "T1 MRI shows it as a gyrus below the calcarine sulcus; fMRI responds to colour, landmark and scene tasks.",
+   "accent": "#FF922B"
+  },
+  "medialorbitofrontal": {
+   "name": "Medial orbitofrontal",
+   "lobe_or_system": "Frontal lobe",
+   "function": "It calculates the subjective, moment-to-moment value of rewards like delicious food, social approval, and aesthetic beauty.",
+   "fact": "In taste experiments, activity here rose when people believed a wine was expensive, even when it was the same wine.",
+   "clinical": "Damage can lead to socially inappropriate choices, poor economic decision-making, and an inability to weigh future consequences.",
+   "imaging": "Resting-state fMRI shows strong functional connectivity with the default mode network, though sinus air pockets can cause signal loss.",
+   "accent": "#F39C12"
+  },
+  "middletemporal": {
+   "name": "Middle temporal",
+   "lobe_or_system": "Temporal lobe",
+   "function": "Contributes to word meaning and semantic memory; its posterior part helps process visual motion.",
+   "fact": "It tends to activate when you classify tools, tell animals apart or process action verbs, as if consulting a mental encyclopedia.",
+   "clinical": "Atrophy of the anterior temporal lobe, including this gyrus, can cause semantic dementia, in which objects lose their meaning.",
+   "imaging": "Structural MRI measures cortical thinning here to follow decline in semantic dementia.",
+   "accent": "#F59E0B"
+  },
+  "pallidum": {
+   "name": "Globus pallidus",
+   "lobe_or_system": "Basal ganglia",
+   "function": "The basal ganglia's brake: it suppresses unwanted muscle contractions so intended movements can proceed smoothly.",
+   "fact": "It is one of the most iron-rich parts of the brain, which is why it looks dark on susceptibility-weighted MRI.",
+   "clinical": "Carbon monoxide poisoning can damage it, sometimes causing delayed parkinsonism and apathy.",
+   "imaging": "Its iron content gives strong signal loss on T2* and susceptibility-weighted MRI.",
+   "accent": "#8B5CF6"
+  },
+  "paracentral": {
+   "name": "Paracentral lobule",
+   "lobe_or_system": "Frontal lobe (medial surface; the lobule straddles the central sulcus)",
+   "function": "A medial patch where the motor and sensory strips meet; it controls and senses the legs and feet and is thought to help control bladder and bowel.",
+   "fact": "It straddles the central sulcus on the medial surface: its front part is mainly motor and its back part mainly somatosensory.",
+   "clinical": "Ischemia from anterior cerebral artery strokes can cause contralateral leg weakness paired with unexpected, sudden urinary incontinence.",
+   "imaging": "Midline sagittal T1 MRI shows it where the central sulcus reaches the medial surface, just above the cingulate sulcus.",
+   "accent": "#E67E22"
+  },
+  "parahippocampal": {
+   "name": "Parahippocampal gyrus",
+   "lobe_or_system": "Medial temporal lobe",
+   "function": "Encodes scenes and spatial layout, anchoring memories to the places where they happened.",
+   "fact": "A subregion, the parahippocampal place area, responds more to scenes, rooms and landscapes than to faces.",
+   "clinical": "Damage can cause topographical disorientation (landmark agnosia): getting lost in familiar places despite normal vision.",
+   "imaging": "fMRI reliably lights this gyrus up when people view photographs of streets, rooms or landscapes.",
+   "accent": "#27AE60"
+  },
+  "parsopercularis": {
+   "name": "Pars opercularis (Broca's area)",
+   "lobe_or_system": "Frontal lobe",
+   "function": "Coordinates the physical mechanics of speech, transforming abstract thoughts into complex vocal and motor articulatory patterns.",
+   "fact": "Part of Broca's area, it shows mirror-like responses: active both when you produce speech gestures and when you watch someone else make them.",
+   "clinical": "Left-hemisphere damage here and nearby can cause Broca's (expressive) aphasia: effortful, halting speech with comprehension largely preserved.",
+   "imaging": "DTI tractography shows the arcuate fasciculus linking this area with posterior language regions, a loop used when repeating speech.",
+   "accent": "#D32F2F"
+  },
+  "parsorbitalis": {
+   "name": "Pars orbitalis",
+   "lobe_or_system": "Frontal lobe",
+   "function": "Helps retrieve and select word meanings, linking language to context in the lower front of the inferior frontal gyrus.",
+   "fact": "Though often grouped with Broca's area, it is more often linked to meaning (semantic retrieval) than to the mechanics of speech.",
+   "clinical": "Damage in the left inferior frontal gyrus can make it hard to pick the right word or meaning.",
+   "imaging": "Left-hemisphere fMRI activity rises here during tasks that require choosing between competing word meanings.",
+   "accent": "#4A90E2"
+  },
+  "parstriangularis": {
+   "name": "Pars triangularis (Broca's area)",
+   "lobe_or_system": "Frontal lobe",
+   "function": "Helps select the right word and build grammatical sentences, filtering out competing meanings.",
+   "fact": "Pars triangularis is often larger in the left hemisphere than the right, a leftward asymmetry linked to language dominance, though it varies between people.",
+   "clinical": "Left-hemisphere damage here and nearby can cause halting, non-fluent speech with simplified grammar.",
+   "imaging": "fMRI activity rises in this area during sentence reading and when a task forces a choice between competing word meanings.",
+   "accent": "#F39C12"
+  },
+  "pericalcarine": {
+   "name": "Pericalcarine (primary visual cortex)",
+   "lobe_or_system": "Occipital lobe",
+   "function": "Acts as vision's primary gateway, deconstructing incoming light into raw orientation, spatial frequency, and contrast coordinates.",
+   "fact": "A thick myelinated stripe called the line of Gennari runs through layer IV, visible to the naked eye upon dissection.",
+   "clinical": "Damage on both sides causes cortical blindness, though some patients show blindsight, reacting to stimuli they report not seeing.",
+   "imaging": "Retinotopic fMRI maps the visual field across this cortex in an orderly, inverted layout; ultra-high-field scanners can resolve column-scale detail.",
+   "accent": "#51CF66"
+  },
+  "postcentral": {
+   "name": "Postcentral gyrus (somatosensory)",
+   "lobe_or_system": "Parietal lobe",
+   "function": "This strip transforms raw touches, temperatures, and pain signals from across your body into conscious sensory awareness.",
+   "fact": "Sensory inputs are mapped upside-down, dedicating disproportionately massive cortical real estate to your sensitive lips and fingertips.",
+   "clinical": "Damage often impairs tactile discrimination and proprioception on the opposite side of the body without fully abolishing coarse touch sensation.",
+   "imaging": "Structural MRI clearly defines it behind the central sulcus, while fMRI registers peak BOLD signals seconds after tactile skin stimulation.",
+   "accent": "#4A90E2"
+  },
+  "posteriorcingulate": {
+   "name": "Posterior cingulate",
+   "lobe_or_system": "Cingulate cortex (limbic)",
+   "function": "A hub of the default mode network, linked to autobiographical memory and to whether attention points inward or outward.",
+   "fact": "Its activity dips when you focus on a demanding task and rises again when your mind wanders.",
+   "clinical": "Reduced metabolism here is an early feature of Alzheimer's disease on PET imaging.",
+   "imaging": "Structural MRI shows cortical thinning in early dementia, while resting-state fMRI maps its DMN connectivity.",
+   "accent": "#457B9D"
+  },
+  "precentral": {
+   "name": "Precentral gyrus (motor)",
+   "lobe_or_system": "Frontal lobe",
+   "function": "It generates and dispatches the final neural commands that drive voluntary, skilled muscle contractions across the body.",
+   "fact": "It holds the famous motor homunculus, a body map in which the hands and face get disproportionately large territory.",
+   "clinical": "Strokes affecting this gyrus cause contralateral hemiparesis or focal paralysis, stripping away voluntary fine-motor control.",
+   "imaging": "Diffusion tensor imaging traces its massive corticospinal tract through the internal capsule down into the brainstem.",
+   "accent": "#E74C3C"
+  },
+  "precuneus": {
+   "name": "Precuneus",
+   "lobe_or_system": "Parietal lobe (default mode network)",
+   "function": "Linked to self-reflection, taking a first-person perspective and vivid mental imagery; a hub of the default mode network.",
+   "fact": "With the posterior cingulate it is among the most metabolically active cortical regions at rest, humming along when the mind wanders.",
+   "clinical": "Reduced metabolism and amyloid build-up here are among the earliest imaging changes in Alzheimer's disease.",
+   "imaging": "Resting-state fMRI identifies it as an exceptionally connected core hub within the default mode network.",
+   "accent": "#EC4899"
+  },
+  "putamen": {
+   "name": "Putamen",
+   "lobe_or_system": "Basal ganglia",
+   "function": "A dense hub that automates learned movements, turning conscious effort into fluent habit.",
+   "fact": "Its name is Latin for 'husk' or 'shell'; with the globus pallidus it forms the lentiform nucleus.",
+   "clinical": "Dopamine loss here underlies the slowness and rigidity of Parkinson's disease; the circuit is also implicated in Tourette syndrome.",
+   "imaging": "Iron builds up in the putamen with age, so it looks darker on T2-weighted and susceptibility-weighted MRI.",
+   "accent": "#6366F1"
+  },
+  "rostralanteriorcingulate": {
+   "name": "Rostral anterior cingulate",
+   "lobe_or_system": "Cingulate cortex (limbic)",
+   "function": "Thought to help regulate emotion by damping amygdala responses and weighing distressing impulses against goals.",
+   "fact": "Activity here before treatment has been found to predict which people with major depression respond to antidepressants, a marker still under study.",
+   "clinical": "Altered activity here is implicated in depression and obsessive-compulsive disorder.",
+   "imaging": "PET and fMRI studies show altered activity here in depression; DTI suggests changed links with prefrontal cortex.",
+   "accent": "#339AF0"
+  },
+  "rostralmiddlefrontal": {
+   "name": "Rostral middle frontal",
+   "lobe_or_system": "Frontal lobe",
+   "function": "A hub for working memory, planning and weighing options; it overlaps the dorsolateral prefrontal cortex.",
+   "fact": "Prefrontal cortex is proportionally larger in humans than in other primates, which is thought to support abstract, hypothetical reasoning.",
+   "clinical": "The overlapping dorsolateral prefrontal cortex is the usual target of magnetic stimulation (rTMS) for treatment-resistant depression.",
+   "imaging": "Diffusion MRI traces dense white-matter links between here and parietal cortex in the frontoparietal control network.",
+   "accent": "#8E44AD"
+  },
+  "superiorfrontal": {
+   "name": "Superior frontal",
+   "lobe_or_system": "Frontal lobe",
+   "function": "Supports working memory, movement planning and cognitive control; its medial strip helps start voluntary actions.",
+   "fact": "Its medial strip holds the supplementary motor area, active both when you move and when you merely imagine moving.",
+   "clinical": "Lesions of the medial frontal region can cause alien hand syndrome, in which a limb acts as if it has a will of its own.",
+   "imaging": "fMRI shows supplementary-motor activity for planned and imagined movements; the medial part also belongs to the default-mode network.",
+   "accent": "#2E7D32"
+  },
+  "superiorparietal": {
+   "name": "Superior parietal",
+   "lobe_or_system": "Parietal lobe",
+   "function": "Integrates sensory and visual signals to construct an ongoing internal map of where your body exists in space.",
+   "fact": "Parietal cortex including this area supports stereognosis, recognising a coin or key in your pocket by touch alone.",
+   "clinical": "Damage can cause optic ataxia, leaving a person able to see an object clearly yet unable to reach out and grasp it.",
+   "imaging": "Functional MRI shows activation in this region during mental rotation of 3D objects.",
+   "accent": "#3B82F6"
+  },
+  "superiortemporal": {
+   "name": "Superior temporal (auditory, Wernicke)",
+   "lobe_or_system": "Temporal lobe",
+   "function": "Turns sound into music and speech; its posterior part (Wernicke's area) is key to understanding spoken language.",
+   "fact": "Auditory cortex on its upper surface keeps a tonotopic map: sound frequencies laid out in order, a little like piano keys.",
+   "clinical": "Damage to its posterior part, usually on the left, can cause Wernicke's aphasia: fluent, effortless speech that makes little sense, with poor comprehension.",
+   "imaging": "High-resolution fMRI resolves frequency gradients in Heschl's gyrus; DTI traces the arcuate fasciculus running forward to frontal language areas.",
+   "accent": "#10B981"
+  },
+  "supramarginal": {
+   "name": "Supramarginal gyrus",
+   "lobe_or_system": "Parietal lobe",
+   "function": "Supports phonological processing in language and, on the right, is thought to help separate your own feelings from other people's.",
+   "fact": "Right supramarginal activity has been linked to overcoming egocentric bias: judging others' feelings without projecting your own.",
+   "clinical": "Left-hemisphere lesions here can cause conduction aphasia or phonological reading problems, with difficulty repeating what was heard.",
+   "imaging": "fMRI highlights this region when individuals must rapidly distinguish real words from nonsense pseudo-words.",
+   "accent": "#8B5CF6"
+  },
+  "temporalpole": {
+   "name": "Temporal pole",
+   "lobe_or_system": "Temporal lobe",
+   "function": "Perched at the temporal tip, it joins sights, sounds and emotions into concepts, autobiographical memory and social understanding.",
+   "fact": "It acts as a semantic hub, likely binding abstract facts to emotional tone to help decipher other people's hidden social intentions.",
+   "clinical": "Degeneration of the anterior temporal lobe, including the pole, causes semantic dementia: word and object meanings fade.",
+   "imaging": "Diffusion MRI shows the uncinate fasciculus linking the temporal pole with orbitofrontal cortex, a route implicated in social and emotional processing.",
+   "accent": "#F39C12"
+  },
+  "thalamus": {
+   "name": "Thalamus",
+   "lobe_or_system": "Diencephalon",
+   "function": "A central relay that routes sensory signals to the cortex and takes part in attention and arousal.",
+   "fact": "Almost all sensory data passes through its gates, except smell, which largely bypasses it initially.",
+   "clinical": "Thalamic stroke can cause sensory loss or severe central pain; thalamic degeneration is central to fatal familial insomnia.",
+   "imaging": "DTI tractography shows thalamocortical fibres radiating outward to the cortex.",
+   "accent": "#8338EC"
+  },
+  "transversetemporal": {
+   "name": "Transverse temporal (Heschl's gyrus)",
+   "lobe_or_system": "Temporal lobe",
+   "function": "Buried in the lateral fissure, this is primary auditory cortex: it receives sound from the ears and begins decoding pitch and timbre.",
+   "fact": "Heschl's gyrus holds a map of sound frequency, with low to high pitches laid out in ordered gradients, like a keyboard.",
+   "clinical": "Damage on both sides can cause cortical deafness: the ears work, but sound is not consciously perceived.",
+   "imaging": "Tractography can follow auditory fibres from the thalamus toward Heschl's gyrus, though this is technically difficult.",
+   "accent": "#2980B9"
+  },
+  "ventricles": {
+   "name": "Ventricular system",
+   "lobe_or_system": "Ventricular system (CSF)",
+   "function": "The fluid-filled cavities deep in the brain (lateral, third and fourth ventricles) cushion it and circulate cerebrospinal fluid, made largely by the choroid plexus.",
+   "fact": "Cerebrospinal fluid is renewed several times a day; the textbook route drains it through arachnoid granulations into the venous sinuses, though other routes are debated.",
+   "clinical": "Blockages in fluid pathways cause hydrocephalus, producing elevated intracranial pressure that can expand these chambers and damage adjacent brain tissue.",
+   "imaging": "T2-weighted MRI displays these chambers as brilliantly bright pockets of fluid that sharply contrast with surrounding darker neural tissue.",
+   "accent": "#1ABC9C"
+  }
+ },
+ "by_fact_key": {
+  "amygdala": "amygdala",
+  "banks_of_the_superior_temporal_sulcus": "bankssts",
+  "brainstem": "brainstem",
+  "caudal_anterior_cingulate": "caudalanteriorcingulate",
+  "caudal_middle_frontal": "caudalmiddlefrontal",
+  "caudate_nucleus": "caudate",
+  "cerebellum": "cerebellum",
+  "cuneus": "cuneus",
+  "entorhinal": "entorhinal",
+  "frontal_pole": "frontalpole",
+  "fusiform": "fusiform",
+  "globus_pallidus": "pallidum",
+  "hippocampus": "hippocampus",
+  "inferior_parietal": "inferiorparietal",
+  "inferior_temporal": "inferiortemporal",
+  "insula": "insula",
+  "isthmus_cingulate": "isthmuscingulate",
+  "lateral_occipital": "lateraloccipital",
+  "lateral_orbitofrontal": "lateralorbitofrontal",
+  "lingual": "lingual",
+  "medial_orbitofrontal": "medialorbitofrontal",
+  "middle_temporal": "middletemporal",
+  "nucleus_accumbens": "accumbens",
+  "paracentral": "paracentral",
+  "parahippocampal": "parahippocampal",
+  "pars_opercularis": "parsopercularis",
+  "pars_orbitalis": "parsorbitalis",
+  "pars_triangularis": "parstriangularis",
+  "pericalcarine": "pericalcarine",
+  "postcentral": "postcentral",
+  "posterior_cingulate": "posteriorcingulate",
+  "precentral": "precentral",
+  "precuneus": "precuneus",
+  "putamen": "putamen",
+  "rostral_anterior_cingulate": "rostralanteriorcingulate",
+  "rostral_middle_frontal": "rostralmiddlefrontal",
+  "superior_frontal": "superiorfrontal",
+  "superior_parietal": "superiorparietal",
+  "superior_temporal": "superiortemporal",
+  "supramarginal": "supramarginal",
+  "temporal_pole": "temporalpole",
+  "thalamus": "thalamus",
+  "transverse_temporal": "transversetemporal",
+  "ventricles": "ventricles"
+ }
+}

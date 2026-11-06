@@ -1,0 +1,38 @@
+{
+  "min_intact_fraction": 0.99,
+  "note": "1AAY: Zif268 (Egr-1) three fingers on DNA (X-ray 1.60 A). Ligand classes from the family's literature (L); tau4, windows and radius as declared for the synthetic rehearsal.",
+  "schema": "loom.metal-site-spec/1",
+  "search_radius": 3.0,
+  "sites": [
+    {
+      "class": "CCHH",
+      "coordination": 4,
+      "metal": {
+        "chain": "A",
+        "resname": "ZN",
+        "resseq": 201
+      },
+      "tau4_min": 0.7
+    },
+    {
+      "class": "CCHH",
+      "coordination": 4,
+      "metal": {
+        "chain": "A",
+        "resname": "ZN",
+        "resseq": 202
+      },
+      "tau4_min": 0.7
+    },
+    {
+      "class": "CCHH",
+      "coordination": 4,
+      "metal": {
+        "chain": "A",
+        "resname": "ZN",
+        "resseq": 203
+      },
+      "tau4_min": 0.7
+    }
+  ]
+}

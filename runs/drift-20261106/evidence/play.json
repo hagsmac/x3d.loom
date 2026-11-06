@@ -1,0 +1,351 @@
+{
+  "coverage": {
+    "levels": 8,
+    "tapes": 18
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T20:26:30+00:00",
+  "grade": "C",
+  "instrument": {
+    "node": "v22.23.4",
+    "rules_sha256": "50ed60d5c5c02bb54f03e9d431669e2ef490825ddbe6719fe40980810c344cf4",
+    "runner": "tools/replay.mjs",
+    "runner_sha256": "23e6f8d4c02ef4e3c36660caf026e4a709a8067c105b3fcc041c1a168de89816",
+    "tool": "loomkit.play"
+  },
+  "limitations": [
+    "Determinism is shown on the runner's JavaScript engine only; other engines need their own replay (the browser witness).",
+    "A tape proves one way through a level, not that the level is fair, fun or free of shortcuts."
+  ],
+  "measurements": {
+    "levels_proven": [
+      "cliffside.x3d",
+      "kessel-pass.x3d",
+      "neon-overpass.x3d",
+      "oval.x3d",
+      "practice-pad.x3d",
+      "salt-ring.x3d",
+      "skidpad.x3d",
+      "twisty.x3d"
+    ],
+    "repeats": 2,
+    "tapes": {
+      "cliffside-attack.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 10906,
+        "hash": "1da6bda349830455",
+        "level": "cliffside.x3d",
+        "level_sha256": "e920c1b198b5b8b51628730ec181d70a1c34e71c121ce18e64e2ec55fed4e1be",
+        "replays": 2,
+        "runner_cpu_ms": [
+          366.9,
+          314
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 21092
+      },
+      "cliffside-rush.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 10878,
+        "hash": "452f9f942182edbe",
+        "level": "cliffside.x3d",
+        "level_sha256": "e920c1b198b5b8b51628730ec181d70a1c34e71c121ce18e64e2ec55fed4e1be",
+        "replays": 2,
+        "runner_cpu_ms": [
+          378.2,
+          317.6
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 10878
+      },
+      "kessel-pass-attack.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 10071,
+        "hash": "ec33e43f3e56c4b5",
+        "level": "kessel-pass.x3d",
+        "level_sha256": "087d444dcbd5a7170c5136c6f6c84f030f979be904e0093b5aa641c4a8c7f8ad",
+        "replays": 2,
+        "runner_cpu_ms": [
+          310.4,
+          291.1
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 19521
+      },
+      "kessel-pass-rush.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 10877,
+        "hash": "da38e18416960a54",
+        "level": "kessel-pass.x3d",
+        "level_sha256": "087d444dcbd5a7170c5136c6f6c84f030f979be904e0093b5aa641c4a8c7f8ad",
+        "replays": 2,
+        "runner_cpu_ms": [
+          326.4,
+          353.7
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 10877
+      },
+      "neon-overpass-attack.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 10018,
+        "hash": "40537c4f41155458",
+        "level": "neon-overpass.x3d",
+        "level_sha256": "2508d243ad800588c871380561fd4e948bbf85e244d54953742b4969b5b2712f",
+        "replays": 2,
+        "runner_cpu_ms": [
+          341.1,
+          302.3
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 19291
+      },
+      "neon-overpass-rush.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 10877,
+        "hash": "54f46e4ffe22ad6b",
+        "level": "neon-overpass.x3d",
+        "level_sha256": "2508d243ad800588c871380561fd4e948bbf85e244d54953742b4969b5b2712f",
+        "replays": 2,
+        "runner_cpu_ms": [
+          345.8,
+          403.1
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 10877
+      },
+      "oval-attack.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 5341,
+        "hash": "05b2be080cbd2646",
+        "level": "oval.x3d",
+        "level_sha256": "497e518131634be14e62bb3d083568e8fc6625be5232b3bce5bc66cb66d838cf",
+        "replays": 2,
+        "runner_cpu_ms": [
+          218.2,
+          228.7
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 10046
+      },
+      "oval-rush.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 10876,
+        "hash": "5445d80abfac5cc6",
+        "level": "oval.x3d",
+        "level_sha256": "497e518131634be14e62bb3d083568e8fc6625be5232b3bce5bc66cb66d838cf",
+        "replays": 2,
+        "runner_cpu_ms": [
+          330.1,
+          398.6
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 10876
+      },
+      "practice-pad-attack.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 2147,
+        "hash": "b0003ff19b6be1fd",
+        "level": "practice-pad.x3d",
+        "level_sha256": "81ce47b2c8c3272e35352fb41eb6795c38dd69917bf2b619dc2f0bd8a950f1a0",
+        "replays": 2,
+        "runner_cpu_ms": [
+          146.4,
+          138.2
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 3865
+      },
+      "practice-pad-rush.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 10877,
+        "hash": "8bd5550519544f0f",
+        "level": "practice-pad.x3d",
+        "level_sha256": "81ce47b2c8c3272e35352fb41eb6795c38dd69917bf2b619dc2f0bd8a950f1a0",
+        "replays": 2,
+        "runner_cpu_ms": [
+          199.8,
+          207.1
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 10877
+      },
+      "salt-ring-attack.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 6484,
+        "hash": "e5c7a18d5342722a",
+        "level": "salt-ring.x3d",
+        "level_sha256": "634b5da529dc501bcd244ad482de70f80ebc42bfa9e9c2660866a4b68b4b77ad",
+        "replays": 2,
+        "runner_cpu_ms": [
+          251.9,
+          255.8
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 12348
+      },
+      "salt-ring-race.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 12623,
+        "hash": "e1231725dffd7701",
+        "level": "salt-ring.x3d",
+        "level_sha256": "634b5da529dc501bcd244ad482de70f80ebc42bfa9e9c2660866a4b68b4b77ad",
+        "replays": 2,
+        "runner_cpu_ms": [
+          781.3,
+          837.9
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 12623
+      },
+      "salt-ring-rush.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 10878,
+        "hash": "d79a8da2ffc02c35",
+        "level": "salt-ring.x3d",
+        "level_sha256": "634b5da529dc501bcd244ad482de70f80ebc42bfa9e9c2660866a4b68b4b77ad",
+        "replays": 2,
+        "runner_cpu_ms": [
+          330.3,
+          284
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 10878
+      },
+      "salt-ring-tandem.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 16220,
+        "hash": "1ccd9e3a0c30c26b",
+        "level": "salt-ring.x3d",
+        "level_sha256": "634b5da529dc501bcd244ad482de70f80ebc42bfa9e9c2660866a4b68b4b77ad",
+        "replays": 2,
+        "runner_cpu_ms": [
+          671.6,
+          674.4
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 16220
+      },
+      "skidpad-attack.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 2175,
+        "hash": "885c0014f42b9d68",
+        "level": "skidpad.x3d",
+        "level_sha256": "a0765cf4abbf5057ac33e8d592cfc41d542a4b7de190f8d5846c839110eb583e",
+        "replays": 2,
+        "runner_cpu_ms": [
+          128.8,
+          115.5
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 3912
+      },
+      "skidpad-rush.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 10877,
+        "hash": "a4fc45dbea1e3fd4",
+        "level": "skidpad.x3d",
+        "level_sha256": "a0765cf4abbf5057ac33e8d592cfc41d542a4b7de190f8d5846c839110eb583e",
+        "replays": 2,
+        "runner_cpu_ms": [
+          156.4,
+          172
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 10877
+      },
+      "twisty-attack.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 7344,
+        "hash": "77aa92654fe222ab",
+        "level": "twisty.x3d",
+        "level_sha256": "ef670cf5f4efd39f3cb1f1cbe5357d0356b127ffd1b1b45434dfba2a4bc642a5",
+        "replays": 2,
+        "runner_cpu_ms": [
+          241.2,
+          254.8
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 14108
+      },
+      "twisty-rush.tape.json": {
+        "cogs": null,
+        "deaths": null,
+        "engine": "kansei-engine/4",
+        "goal_tick": 10880,
+        "hash": "32c01af4a74bad2f",
+        "level": "twisty.x3d",
+        "level_sha256": "ef670cf5f4efd39f3cb1f1cbe5357d0356b127ffd1b1b45434dfba2a4bc642a5",
+        "replays": 2,
+        "runner_cpu_ms": [
+          330.8,
+          361.1
+        ],
+        "runtime": "v22.23.4",
+        "stars": null,
+        "ticks": 10880
+      }
+    }
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "c5821a908021b14e001ad92197530ff64aa815eba819ad49d838f3f284605565",
+  "witness": "play"
+}

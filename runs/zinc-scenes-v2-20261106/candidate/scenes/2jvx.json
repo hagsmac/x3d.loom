@@ -1,0 +1,60 @@
+{
+  "atoms_drawn": [
+    "A_A_CYS_26_CA",
+    "A_A_CYS_26_CB",
+    "A_A_CYS_26_SG",
+    "A_A_CYS_6_CA",
+    "A_A_CYS_6_CB",
+    "A_A_CYS_6_SG",
+    "A_A_CYS_9_CA",
+    "A_A_CYS_9_CB",
+    "A_A_CYS_9_SG",
+    "A_A_HIS_22_CA",
+    "A_A_HIS_22_CB",
+    "A_A_HIS_22_CD2",
+    "A_A_HIS_22_CE1",
+    "A_A_HIS_22_CG",
+    "A_A_HIS_22_ND1",
+    "A_A_HIS_22_NE2",
+    "A_A_ZN_29_ZN"
+  ],
+  "bonds": [
+    {
+      "angstrom": 2.0842,
+      "donor": "HIS22.NE2",
+      "glow": true,
+      "label": "2.08 \u00c5",
+      "site": "A29"
+    },
+    {
+      "angstrom": 2.3361,
+      "donor": "CYS26.SG",
+      "glow": true,
+      "label": "2.34 \u00c5",
+      "site": "A29"
+    },
+    {
+      "angstrom": 2.2997,
+      "donor": "CYS6.SG",
+      "glow": true,
+      "label": "2.30 \u00c5",
+      "site": "A29"
+    },
+    {
+      "angstrom": 2.3228,
+      "donor": "CYS9.SG",
+      "glow": true,
+      "label": "2.32 \u00c5",
+      "site": "A29"
+    }
+  ],
+  "cages": [
+    "A29"
+  ],
+  "labels_name_donor": true,
+  "look": "v2",
+  "pdb": "2jvx",
+  "tubes": [
+    "Backbone_A29_2"
+  ]
+}

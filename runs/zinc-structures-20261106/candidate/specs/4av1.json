@@ -1,0 +1,48 @@
+{
+  "min_intact_fraction": 0.99,
+  "note": "4AV1: PARP1 first and second fingers on DNA, two copies (X-ray 3.10 A). Ligand classes from the family's literature (L); tau4, windows and radius as declared for the synthetic rehearsal.",
+  "schema": "loom.metal-site-spec/1",
+  "search_radius": 3.0,
+  "sites": [
+    {
+      "class": "CCHC",
+      "coordination": 4,
+      "metal": {
+        "chain": "A",
+        "resname": "ZN",
+        "resseq": 1600
+      },
+      "tau4_min": 0.7
+    },
+    {
+      "class": "CCHC",
+      "coordination": 4,
+      "metal": {
+        "chain": "B",
+        "resname": "ZN",
+        "resseq": 1600
+      },
+      "tau4_min": 0.7
+    },
+    {
+      "class": "CCHC",
+      "coordination": 4,
+      "metal": {
+        "chain": "C",
+        "resname": "ZN",
+        "resseq": 1600
+      },
+      "tau4_min": 0.7
+    },
+    {
+      "class": "CCHC",
+      "coordination": 4,
+      "metal": {
+        "chain": "D",
+        "resname": "ZN",
+        "resseq": 1600
+      },
+      "tau4_min": 0.7
+    }
+  ]
+}

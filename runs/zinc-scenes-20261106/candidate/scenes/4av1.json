@@ -1,0 +1,195 @@
+{
+  "atoms_drawn": [
+    "A_A_CYS_21_CA",
+    "A_A_CYS_21_CB",
+    "A_A_CYS_21_SG",
+    "A_A_CYS_24_CA",
+    "A_A_CYS_24_CB",
+    "A_A_CYS_24_SG",
+    "A_A_CYS_56_CA",
+    "A_A_CYS_56_CB",
+    "A_A_CYS_56_SG",
+    "A_A_HIS_53_CA",
+    "A_A_HIS_53_CB",
+    "A_A_HIS_53_CD2",
+    "A_A_HIS_53_CE1",
+    "A_A_HIS_53_CG",
+    "A_A_HIS_53_ND1",
+    "A_A_HIS_53_NE2",
+    "A_A_ZN_1600_ZN",
+    "A_B_CYS_125_CA",
+    "A_B_CYS_125_CB",
+    "A_B_CYS_125_SG",
+    "A_B_CYS_128_CA",
+    "A_B_CYS_128_CB",
+    "A_B_CYS_128_SG",
+    "A_B_CYS_162_CA",
+    "A_B_CYS_162_CB",
+    "A_B_CYS_162_SG",
+    "A_B_HIS_159_CA",
+    "A_B_HIS_159_CB",
+    "A_B_HIS_159_CD2",
+    "A_B_HIS_159_CE1",
+    "A_B_HIS_159_CG",
+    "A_B_HIS_159_ND1",
+    "A_B_HIS_159_NE2",
+    "A_B_ZN_1600_ZN",
+    "A_C_CYS_21_CA",
+    "A_C_CYS_21_CB",
+    "A_C_CYS_21_SG",
+    "A_C_CYS_24_CA",
+    "A_C_CYS_24_CB",
+    "A_C_CYS_24_SG",
+    "A_C_CYS_56_CA",
+    "A_C_CYS_56_CB",
+    "A_C_CYS_56_SG",
+    "A_C_HIS_53_CA",
+    "A_C_HIS_53_CB",
+    "A_C_HIS_53_CD2",
+    "A_C_HIS_53_CE1",
+    "A_C_HIS_53_CG",
+    "A_C_HIS_53_ND1",
+    "A_C_HIS_53_NE2",
+    "A_C_ZN_1600_ZN",
+    "A_D_CYS_125_CA",
+    "A_D_CYS_125_CB",
+    "A_D_CYS_125_SG",
+    "A_D_CYS_128_CA",
+    "A_D_CYS_128_CB",
+    "A_D_CYS_128_SG",
+    "A_D_CYS_162_CA",
+    "A_D_CYS_162_CB",
+    "A_D_CYS_162_SG",
+    "A_D_HIS_159_CA",
+    "A_D_HIS_159_CB",
+    "A_D_HIS_159_CD2",
+    "A_D_HIS_159_CE1",
+    "A_D_HIS_159_CG",
+    "A_D_HIS_159_ND1",
+    "A_D_HIS_159_NE2",
+    "A_D_ZN_1600_ZN"
+  ],
+  "bonds": [
+    {
+      "angstrom": 2.1884,
+      "donor": "CYS21.SG",
+      "glow": true,
+      "label": "2.19 \u00c5",
+      "site": "A1600"
+    },
+    {
+      "angstrom": 2.2315,
+      "donor": "CYS24.SG",
+      "glow": true,
+      "label": "2.23 \u00c5",
+      "site": "A1600"
+    },
+    {
+      "angstrom": 1.9868,
+      "donor": "HIS53.ND1",
+      "glow": true,
+      "label": "1.99 \u00c5",
+      "site": "A1600"
+    },
+    {
+      "angstrom": 2.1422,
+      "donor": "CYS56.SG",
+      "glow": true,
+      "label": "2.14 \u00c5",
+      "site": "A1600"
+    },
+    {
+      "angstrom": 2.1269,
+      "donor": "CYS125.SG",
+      "glow": true,
+      "label": "2.13 \u00c5",
+      "site": "B1600"
+    },
+    {
+      "angstrom": 2.166,
+      "donor": "CYS128.SG",
+      "glow": true,
+      "label": "2.17 \u00c5",
+      "site": "B1600"
+    },
+    {
+      "angstrom": 1.9117,
+      "donor": "HIS159.ND1",
+      "glow": true,
+      "label": "1.91 \u00c5",
+      "site": "B1600"
+    },
+    {
+      "angstrom": 2.1797,
+      "donor": "CYS162.SG",
+      "glow": true,
+      "label": "2.18 \u00c5",
+      "site": "B1600"
+    },
+    {
+      "angstrom": 2.2221,
+      "donor": "CYS21.SG",
+      "glow": true,
+      "label": "2.22 \u00c5",
+      "site": "C1600"
+    },
+    {
+      "angstrom": 2.1868,
+      "donor": "CYS24.SG",
+      "glow": true,
+      "label": "2.19 \u00c5",
+      "site": "C1600"
+    },
+    {
+      "angstrom": 1.9731,
+      "donor": "HIS53.ND1",
+      "glow": true,
+      "label": "1.97 \u00c5",
+      "site": "C1600"
+    },
+    {
+      "angstrom": 2.1777,
+      "donor": "CYS56.SG",
+      "glow": true,
+      "label": "2.18 \u00c5",
+      "site": "C1600"
+    },
+    {
+      "angstrom": 2.0761,
+      "donor": "CYS125.SG",
+      "glow": true,
+      "label": "2.08 \u00c5",
+      "site": "D1600"
+    },
+    {
+      "angstrom": 2.1235,
+      "donor": "CYS128.SG",
+      "glow": true,
+      "label": "2.12 \u00c5",
+      "site": "D1600"
+    },
+    {
+      "angstrom": 1.961,
+      "donor": "HIS159.ND1",
+      "glow": true,
+      "label": "1.96 \u00c5",
+      "site": "D1600"
+    },
+    {
+      "angstrom": 2.2054,
+      "donor": "CYS162.SG",
+      "glow": true,
+      "label": "2.21 \u00c5",
+      "site": "D1600"
+    }
+  ],
+  "pdb": "4av1",
+  "tubes": [
+    "Backbone_A1600_17",
+    "Backbone_B1600_121",
+    "Backbone_C1600_17",
+    "Backbone_D1600_121",
+    "Nucleic_X",
+    "Nucleic_Y"
+  ]
+}

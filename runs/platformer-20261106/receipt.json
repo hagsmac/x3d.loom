@@ -1,0 +1,120 @@
+{
+  "budget": {
+    "cloud_resources": 0,
+    "paid_calls": 0
+  },
+  "candidate_files": 40,
+  "candidate_sha256": "6244fe7cf628640beb8f2cc791fda25243749b8f3242459490abaaac96d9928f",
+  "grade": "C",
+  "inputs": {
+    "candidate_sha256": "6244fe7cf628640beb8f2cc791fda25243749b8f3242459490abaaac96d9928f"
+  },
+  "kind": "artifact",
+  "limitations": [
+    "Grammar and Meaning ran on the local x3d_mcp fork checkout (327c5c4), not the family pin.",
+    "Behaviour is one headless Chromium with software WebGL (SwiftShader) on one machine: it shows outcomes, not pixels or frame rate.",
+    "The tapes were recorded by closed-loop route bots, not by people; a tape proves one way through a level, not that it is fair or fun.",
+    "Feel windows were set by the builder from genre practice, not from playtests.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ],
+  "model_calls": [],
+  "not_run": [
+    {
+      "reason": "Stills and a clip were reviewed by the builder only (a look pass that changed the gorge background, the spire facades and the climb camera); the owner has not looked at or played the game yet.",
+      "status": "not_run",
+      "witness": "eyes"
+    },
+    {
+      "reason": "No person has played it. Bots finished every level; that proves possible, not fun, fair or well paced.",
+      "status": "not_run",
+      "witness": "fun"
+    },
+    {
+      "reason": "Tapes were replayed in Node (V8) and Chromium (V8) only; Firefox (SpiderMonkey) and Safari (JavaScriptCore) were not run.",
+      "status": "not_run",
+      "witness": "cross-engine"
+    },
+    {
+      "reason": "No strict host copy was published for this run.",
+      "status": "not_run",
+      "witness": "host"
+    }
+  ],
+  "outputs": {},
+  "prev": null,
+  "profile": "x3d-game/v1",
+  "schema": "loom.receipt/1",
+  "sha256": "1b9ec76e08edd958fb8f162d502f9dda2c1c4bc029f2635ac884b02f91765451",
+  "signed": false,
+  "subject": "x3d.platformer NIB, three worlds",
+  "tools": {
+    "behaviour": {
+      "tool": "project gate (adapter)"
+    },
+    "feel": {
+      "tool": "project gate (adapter)"
+    },
+    "grammar": {
+      "commit": "327c5c4ee21268fcb5c4526da7c2f39932019e72",
+      "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+    },
+    "meaning": {
+      "commit": "327c5c4ee21268fcb5c4526da7c2f39932019e72",
+      "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+    },
+    "page-traps": {
+      "tool": "loomkit.pagetraps"
+    },
+    "play": {
+      "tool": "loomkit.play"
+    },
+    "traps": {
+      "tool": "loomkit.traps"
+    }
+  },
+  "witnesses": [
+    {
+      "grade": "C",
+      "record_sha256": "b7eacbdc9d9a3206957f32e4f0d2a9e082e9137f90288b68e98127e03edcfee6",
+      "status": "pass",
+      "witness": "grammar"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "1de9075d7995f485eb332d728cf91e111e6483a704f9fa05b1b21001c835b80e",
+      "status": "pass",
+      "witness": "meaning"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "4d5aea0e4af476e57d1ca029d455b0430f5a2e47a5b3a7affc0a1f0322bdbcfc",
+      "status": "pass",
+      "witness": "traps"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "bbe7e5e2b01f0cd81ddaa5dac8519e0c39613f03a8ed728506bfaf242e165814",
+      "status": "pass",
+      "witness": "page-traps"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "65a5340c8b06bb54c8590bd52de825ea7c8f72ec151aabfe3721ee0be171bd45",
+      "status": "pass",
+      "witness": "feel"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "51eb7803e7d36fd5cfc0bddf551277dd17fe802017c45559bf87fb33208e588b",
+      "status": "pass",
+      "witness": "play"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "4604c585fc5965e4912ddb05c990d862c3517be527789b6f27906b292b366f17",
+      "status": "pass",
+      "witness": "behaviour"
+    }
+  ],
+  "written_at": "2026-11-06T08:35:19+00:00"
+}

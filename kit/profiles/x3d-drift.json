@@ -1,0 +1,33 @@
+{
+  "schema": "loom.profile/1",
+  "name": "x3d-drift/v1",
+  "purpose": "Loom profile for a racing game whose circuits and cars are X3D files (x3d.drift, KANSEI, 6 Nov 2026). Accepting under it means: every circuit, car and the showroom is grammatical and meaningful on the fork with no known scene trap; the page code has no known X_ITE trap and its simulation uses no math that differs between JavaScript engines; the measured handling card holds for all four cars; the project's own suite holds (byte-identical world rebuild, track contract on every circuit, scoring rules, AI on every circuit, determinism); every listed level, test fixtures included, has a tape that replays twice, deterministically, to the finish it recorded, bound to the exact level bytes and engine version; and a real browser running the shipped page reached the same final state from every circuit tape (attack, rush, a four-car race and a tandem) at two very different frame rates. It says nothing about fun, fairness, difficulty, how a person handles the cars with a keyboard, pad or touch, other JavaScript engines, real GPUs or frame rate.",
+  "required": [
+    {"witness": "grammar", "coverage": {"files": 10}},
+    {"witness": "meaning", "coverage": {"files": 10}},
+    {"witness": "traps", "coverage": {"rules": 11}},
+    {"witness": "page-traps", "coverage": {"rules": 7}},
+    {"witness": "handling"},
+    {"witness": "suite"},
+    {"witness": "play", "coverage": {"tapes": 18, "levels": 8}},
+    {"witness": "behaviour"}
+  ],
+  "visible_not_run": ["eyes", "fun", "cross-engine", "host"],
+  "gate_map": {
+    "DRIFT-GRAMMAR": "grammar and meaning on the five circuits, the four cars and the showroom (garage.x3d)",
+    "DRIFT-PAGE": "page-traps on engine/*.js, main.js and index.html; sim-nonportable-math binds the files marked // loom:sim",
+    "DRIFT-HANDLING": "handling (in place of feel): tests/handling.test.mjs measures 0-100 km/h, top speed, 100-0 braking, skidpad g, wet grip ratio, held drift, left/right symmetry and load conservation for every car against the windows in docs/CONTRACT.md",
+    "DRIFT-SUITE": "suite: tests/run_all.mjs (fixture and world rebuilds byte-identical, portable math, the track contract on every circuit, handling, keyboard driving, scoring and race rules, AI on every circuit, adversarial scoring (wobbles, spinners, wall riders, car, tune and surface fairness), then every tape)",
+    "DRIFT-PROOF-OF-PLAY": "play: each tape in tapes/ and tests/fixtures/tapes/ replays twice in Node; level sha256, engine version, determinism, goal and final state hash are each a stable code",
+    "DRIFT-RENDER-INDEPENDENCE": "behaviour: tools/check_browser.cjs replays every circuit tape in the shipped page at 200 and 37 ticks per frame and requires the tape's final hash and state with 0 page errors",
+    "DRIFT-FUN": "visible_not_run: only a person driving it can say it is fun",
+    "DRIFT-CROSS-ENGINE": "visible_not_run: replays in Firefox (SpiderMonkey) and Safari (JavaScriptCore) were not run"
+  },
+  "limitations": [
+    "Grammar and Meaning ran on the local x3d_mcp fork checkout (327c5c4), not the family pin.",
+    "Behaviour is one headless Chromium with software WebGL (SwiftShader) on one machine: it shows outcomes, not pixels or frame rate.",
+    "The tapes were recorded by the game's own AI driving the player's car, not by people; a tape proves one way round a circuit, not that the medal targets are fair. The tandem tape's chaser grades D.",
+    "Handling windows were set by the builders from genre practice and real-car figures, not from playtests.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ]
+}

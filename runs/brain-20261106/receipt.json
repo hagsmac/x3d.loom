@@ -1,0 +1,120 @@
+{
+  "budget": {
+    "cloud_resources": 0,
+    "paid_calls": 0
+  },
+  "candidate_files": 45,
+  "candidate_sha256": "d59bb5b7b778c1f533b00e0af5b2e09da9c09750a130b65a432f275f9f7d5f03",
+  "grade": "C",
+  "inputs": {
+    "candidate_sha256": "d59bb5b7b778c1f533b00e0af5b2e09da9c09750a130b65a432f275f9f7d5f03"
+  },
+  "kind": "artifact",
+  "limitations": [
+    "A demo, not an x3d.STEM science study: there is no model, reference solution or convergence behind these scenes. Accepting under this profile says nothing about physical accuracy; looks come first and honesty about what is synthetic comes with them.",
+    "The tracts are SYNTHETIC arcs generated between Desikan region vertices and the activation blobs are ILLUSTRATIVE; neither is tractography or measured activity. The witness checks that they are labelled so, in WorldInfo and in the scene's metadata, not that they are anatomically plausible.",
+    "Alignment is approximate: the fsaverage cortex and the MNI152 deep structures are joined by a per-axis scale and shift of their bounding boxes (3 to 5 percent per axis), not by a registration, and the torso's brain ghost is an ICP fit of the template into one subject. The deep-structure check shares that assumption (law 25): it catches a gross misplacement (a structure tens of millimetres outside the cortex box, or whose region centroid left its mesh) and cannot see an in-box error; the controls pin four such blind spots as undetected: a thalamus moved 20 mm sideways, a glass shader whose opacity fields are 0, an unlabelled extra line shape outside the TRACTS group, and a viewpoint a thousand kilometres away.",
+    "Collapsed triangles are counted and capped, not forbidden: the ventricle meshes of the lite brain scene hold 30 of 56,488 triangles whose vertices coincide after the builder rounds coordinates to 0.1 mm (0.053 percent, cap 0.1 percent). They draw nothing and are reported in the witness.",
+    "Counts are checked against the build sidecar (bound to the scene by sha256), the WorldInfo tract counts and the label data. WorldInfo does not itself declare the cortex vertex and triangle counts; the reader accepts a 'counts:' line if a builder adds one. Raw template file hashes are recorded in NOTICE.md and in the downloader's manifest, not in the scene, so the source-data hash is not machine-checked.",
+    "The profile pins two scenes (grammar and meaning coverage 2 files): the lite hero brain and the lite torso CT. The full-size scenes are not in the repository and are not covered by a receipt made from it. The page, the audio files and the style board are outside the candidate.",
+    "Eyes, behaviour, page-traps and real-gpu did not run: the scenes were rendered on headless Chromium with SwiftShader software GL and X_ITE 16.6.0, whose frame rates are relative only; no scripted browser test, page-code reading or real-GPU timing is part of this acceptance. Valid is not visible (law 2).",
+    "Grammar and Meaning ran on a local x3d_mcp fork checkout, not the family pin.",
+    "Not a medical device and not for diagnosis. Data licences: the fsaverage lineage is graded Suspected, the MNI152 template Confirmed (permissive text), the torso subject Likely CC BY 4.0; see x3d.brain/NOTICE.md.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ],
+  "model_calls": [],
+  "not_run": [
+    {
+      "reason": "No eyes witness is bound to this candidate. The lite scenes were rendered on headless Chromium with SwiftShader software GL and X_ITE 16.6.0 and looked at while building, but no frame set carries this candidate's hash and no judge or person has reviewed them here. Valid is not visible.",
+      "status": "not_run",
+      "witness": "eyes"
+    },
+    {
+      "reason": "No scripted browser run (load, DEF contract through the SAI, touch sensors, switches, audio start) is bound to this candidate; the page is outside it.",
+      "status": "not_run",
+      "witness": "behaviour"
+    },
+    {
+      "reason": "The page (page/) is outside the candidate and its JavaScript and HTML were not read by kit pagetraps. Run it over the final page files, and read its seen counts.",
+      "status": "not_run",
+      "witness": "page-traps"
+    },
+    {
+      "reason": "Only software GL (SwiftShader) was available. Frame rates and the glass shader on a real GPU, and OIT behaviour there, were not measured.",
+      "status": "not_run",
+      "witness": "real-gpu"
+    }
+  ],
+  "outputs": {
+    "brain_hero_lite.x3d": {
+      "bytes": 2646870,
+      "sha256": "3f249a3d9953dff7d3b0471e611a3d031723905b89c0b387b5fa9326477cbd1c"
+    },
+    "brain_hero_lite.x3d.build.json": {
+      "bytes": 2469,
+      "sha256": "dad8ef18c5a1ba9dbf78a18ca1765cc7fbe897abb65af56f182f9308363860c7"
+    },
+    "torso_ct_lite.x3d": {
+      "bytes": 2778885,
+      "sha256": "12b5774972b71867bf17c85f8e0598507c19b3092519eff7dd41b036b6aa3368"
+    }
+  },
+  "prev": null,
+  "profile": "brain-demo/v1",
+  "schema": "loom.receipt/1",
+  "sha256": "da1ad1e1553aa6df6c41ae2610ac74312655f5c87c9d7e1959b1fd691b622db2",
+  "signed": false,
+  "subject": "Brain Loom demo: lite hero brain and lite torso CT (brain-demo/v1)",
+  "tools": {
+    "data-true": {
+      "tool": "project gate (adapter)"
+    },
+    "data-true-controls": {
+      "tool": "project gate (adapter)"
+    },
+    "grammar": {
+      "commit": "13121b68e6d9c8ffe12cb8bc9996c1bf01a90d67",
+      "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+    },
+    "meaning": {
+      "commit": "13121b68e6d9c8ffe12cb8bc9996c1bf01a90d67",
+      "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+    },
+    "traps": {
+      "tool": "loomkit.traps"
+    }
+  },
+  "witnesses": [
+    {
+      "grade": "C",
+      "record_sha256": "789b66a570803d51d9bca8b6069cf1ddbd0a102ca172de8c0d871c9d428fa740",
+      "status": "pass",
+      "witness": "grammar"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "39191c238f1da8a7bb84abb3dbbca4f433b43b1f08b860a0a3b5b46fb7505931",
+      "status": "pass",
+      "witness": "meaning"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "92767fc209b4018e148b405d884b61ba82a6434da387b32613bc5f9d50466e84",
+      "status": "pass",
+      "witness": "traps"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "6eb5fb0440abe27680027b6242ab7f7eab403a0069f610bde3c820e973734205",
+      "status": "pass",
+      "witness": "data-true"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "f2988d770868acf08e5d8504874705ada563f2551ad71ac046e76e631ac22029",
+      "status": "pass",
+      "witness": "data-true-controls"
+    }
+  ],
+  "written_at": "2026-11-06T17:51:32+00:00"
+}

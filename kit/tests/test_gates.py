@@ -8,7 +8,9 @@ A negative that passes raises SURVIVING_CONTROL. Fixtures are synthetic and labe
 """
 from __future__ import annotations
 
+import contextlib
 import copy
+import io
 import json
 import subprocess
 import sys
@@ -19,8 +21,8 @@ KIT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(KIT))
 
 from loomkit import accept as acc  # noqa: E402
-from loomkit import pagetraps, picture, receipt, sci, sweep, traps  # noqa: E402
-from loomkit.core import GateError, candidate, sha256_file, write_witness  # noqa: E402
+from loomkit import cli, pagetraps, picture, play, receipt, sci, sweep, traps  # noqa: E402
+from loomkit.core import GateError, InstrumentError, candidate, sha256_file, write_witness  # noqa: E402
 
 PROFILE = {"schema": "loom.profile/1", "name": "synthetic/test", "required": [
     {"witness": "grammar"}, {"witness": "traps"},
@@ -154,6 +156,7 @@ PAGE_CASES = {
     "window-global-shadow": CLEAN_PAGE.replace("const topOf = 1;", "const t" + "op = 1;"),
     "loadurl-unbudgeted": CLEAN_PAGE.replace(_LOAD, "  await B.load" + "URL(u);\n"),
     "js-syntax": CLEAN_PAGE.replace("console.error(e); } });", "console.error(e); } }););"),
+    "sim-nonportable-math": "// loom" + ":sim\n" + CLEAN_PAGE.replace("const t = B.getCurrentTime();", "const t = Math." + "sin(B.getCurrentTime());"),
 }
 
 
@@ -169,7 +172,17 @@ def _html(js: str, attrs: str = ' type="module"') -> str:
             f"<script{attrs}>\n{js}</script>\n")
 
 
+_SIM = "// loom" + ":sim\n"
+_SIN = "const a = Math." + "sin(t);\n"
+
+
 PAGE_FORMS = [  # (label, rule, reader, passing source, failing source, expected line of the hit or None)
+    # x3d.platformer, 6 Nov: the rule binds only code that declares itself sim; render code may use Math.sin
+    ("sim marker scopes the rule", "sim-nonportable-math", "js", "const t = 1;\n" + _SIN, _SIM + "const t = 1;\n" + _SIN, 3),
+    ("sim exponent operator", "sim-nonportable-math", "js", _SIM + "/** doc */\nlet q = x * x; q *= 2;\n", _SIM + "/** doc */\nlet q = x *" + "* 2;\n", 3),
+    ("sim randomness and clocks", "sim-nonportable-math", "js", _SIM + "// never Math." + "random() here\nconst r = rng.next();\n",
+     _SIM + "const r = Date" + ".now() % 7;\n", 2),
+    ("sim inline script", "sim-nonportable-math", "html", _html("const t = 1;\n" + _SIN), _html(_SIM + "const t = 1;\n" + _SIN), 8),
     ("callback passed by name", "xite-callback-unguarded", "js", _NAMED_OK, _NAMED_BAD, 4),
     ("inline module script", "xite-callback-unguarded", "html", _html(CLEAN_PAGE), _html(PAGE_CASES["xite-callback-unguarded"]), 11),
     ("inline classic script", "window-global-shadow", "html", _html(CLEAN_PAGE, ""), _html(PAGE_CASES["window-global-shadow"], ""), 6),
@@ -255,6 +268,16 @@ def receipt_controls() -> list[dict]:
         rows.append({"case": "overwrite refused", **expect("RECEIPT_EXISTS", lambda: receipt.write(r, dest))})
         t = json.loads(dest.read_text()); t["grade"] = "S"; dest.write_text(json.dumps(t))
         rows.append({"case": "edited receipt", **expect("RECEIPT_DRIFT", lambda: receipt.verify(dest))})
+        # two outputs that share a basename (look v1 and look v2 of one event) are both kept, by their path
+        for sub in ("a", "b"):
+            (root / sub).mkdir()
+            (root / sub / "world.x3d").write_text(sub)
+        two = receipt.build("synthetic", result, candidate(root)["files"], [root / "a/world.x3d", root / "b/world.x3d"], {}, {}, [], [], {}, None, [])
+        if sorted(two["outputs"]) != ["a/world.x3d", "b/world.x3d"]:
+            raise RuntimeError(f"SURVIVING_CONTROL: an output with a shared basename was dropped: {sorted(two['outputs'])}")
+        rows.append({"case": "two outputs with one basename both kept, named by path", "result": "kept"})
+        rows.append({"case": "the same output listed twice", **expect("RECEIPT_OUTPUTS", lambda: receipt.build(
+            "synthetic", result, candidate(root)["files"], [root / "a/world.x3d", root / "a/world.x3d"], {}, {}, [], [], {}, None, []))})
     return rows
 
 
@@ -353,7 +376,7 @@ def sci_controls() -> list[dict]:
     return rows
 
 
-def cli_controls() -> list[dict]:
+def cli_subprocess_controls() -> list[dict]:
     """Run the witness commands themselves (kit/loom traps, pagetraps), not only their libraries: a replace-all
     edit once broke cmd_traps with an undefined name while every library-level test passed (6 Nov)."""
     rows = []
@@ -378,10 +401,123 @@ def cli_controls() -> list[dict]:
     return rows
 
 
+# Play witness (x3d.platformer, 6 Nov): a synthetic toy "game" so the controls need no real engine. The level is a
+# text 'gap=N'; the toy hero crosses when the tape holds jump (bit 16) for N ticks; the state hash covers the level
+# bytes and every input. Labelled synthetic: it exercises the witness's predicates, not a game.
+_TOY = ("// synthetic replay runner for loomkit's play controls (not a game)\n"
+        "const fs = require('fs'), path = require('path'), crypto = require('crypto');\n"
+        "const tp = process.argv[2], t = JSON.parse(fs.readFileSync(tp, 'utf8'));\n"
+        "const lv = fs.readFileSync(path.join(path.dirname(tp), '..', 'levels', t.level));\n"
+        "const gap = +/gap=(\\d+)/.exec(lv.toString())[1];\n"
+        "const h = crypto.createHash('sha256').update(lv); let x = 0;\n"
+        "for (const [b, n] of t.rle) for (let i = 0; i < n; i++) { if (b & 16) x++; h.update(String(b)); }\n"
+        "/*CHAOS*/\n"
+        "console.log(JSON.stringify({ level_sha256: crypto.createHash('sha256').update(lv).digest('hex'), engine: 'toy/1',\n"
+        "  state: x >= gap ? 'won' : 'play', frame: x, hash: h.digest('hex').slice(0, 16) }));\n")
+
+
+def quiet_cli(argv: list[str]) -> int:
+    """Run the CLI in-process with its stdout captured (the child's stdout carries this test's JSON report)."""
+    with contextlib.redirect_stdout(io.StringIO()):
+        return cli.main(argv)
+
+
+def play_fixture(td: Path) -> tuple[Path, dict]:
+    root = td / "game"
+    for d in ("levels", "tapes", "tools"):
+        (root / d).mkdir(parents=True)
+    (root / "levels/1-1.txt").write_text("gap=5\n")
+    (root / "tools/replay.cjs").write_text(_TOY)
+    (root / "tools/chaos.cjs").write_text(_TOY.replace("/*CHAOS*/", "h.update(String(Math." + "random()));"))
+    (root / "tools/broken.cjs").write_text("process.exit(3);\n")
+    tape = {"schema": "synthetic.tape/1", "level": "1-1.txt", "level_sha256": sha256_file(root / "levels/1-1.txt"),
+            "engine": "toy/1", "ticks": 8, "rle": [[0, 2], [16, 6]], "expect": {}}
+    (root / "tapes/1-1.tape.json").write_text(json.dumps(tape))
+    rec = play.run_tape("node", root / "tools/replay.cjs", root / "tapes/1-1.tape.json")   # record the outcome once
+    tape["expect"] = {"hash": rec["hash"]}
+    (root / "tapes/1-1.tape.json").write_text(json.dumps(tape))
+    return root, tape
+
+
+def play_controls() -> list[dict]:
+    def run(root, runner="tools/replay.cjs", levels="levels/*.txt"):
+        return lambda: play.check(sorted(root.glob("tapes/*.json")), sorted(root.glob(levels)), root / runner)
+
+    def retape(root, **kv):
+        p = root / "tapes/1-1.tape.json"; t = json.loads(p.read_text()); t.update(kv); p.write_text(json.dumps(t))
+
+    def widen(root):  # the level gets harder AND the tape is re-stamped onto it: the stamp must not stand in for play
+        (root / "levels/1-1.txt").write_text("gap=9\n"); retape(root, level_sha256=sha256_file(root / "levels/1-1.txt"))
+
+    cases = [
+        ("level edited after the run was recorded", "PLAY_LEVEL_STALE", lambda r: (r / "levels/1-1.txt").write_text("gap=5 \n"), {}),
+        ("level widened and the tape re-stamped", "PLAY_GOAL_NOT_REACHED", widen, {}),
+        ("tape truncated", "PLAY_GOAL_NOT_REACHED", lambda r: retape(r, rle=[[0, 2], [16, 3]], ticks=5), {}),
+        ("recorded outcome tampered", "PLAY_HASH_DRIFT", lambda r: retape(r, expect={"hash": "0" * 16}), {}),
+        ("engine version changed", "PLAY_ENGINE_DRIFT", lambda r: retape(r, engine="toy/2"), {}),
+        ("runner that is not deterministic", "PLAY_NONDETERMINISTIC", lambda r: None, {"runner": "tools/chaos.cjs"}),
+        ("a listed level with no tape", "PLAY_LEVEL_UNPROVEN", lambda r: (r / "levels/1-2.txt").write_text("gap=1\n"), {}),
+        ("a tape for a level not listed", "PLAY_LEVEL_MISSING", lambda r: None, {"levels": "levels/none*"}),
+        ("no tapes", "PLAY_NO_TAPES", lambda r: (r / "tapes/1-1.tape.json").unlink(), {}),
+    ]
+    rows = []
+    with tempfile.TemporaryDirectory(prefix="loomkit-play-") as d:
+        root, _ = play_fixture(Path(d))
+        res = play.check(sorted(root.glob("tapes/*.json")), sorted(root.glob("levels/*.txt")), root / "tools/replay.cjs")
+        if res["levels_proven"] != ["1-1.txt"]:
+            raise RuntimeError(f"PLAY_CLEAN_FIXTURE: {res}")
+        rows.append({"case": "clean fixture", "result": "pass", "levels_proven": 1})
+    for label, code, mutate, kw in cases:
+        with tempfile.TemporaryDirectory(prefix="loomkit-play-") as d:
+            root, _ = play_fixture(Path(d)); mutate(root)
+            rows.append({"case": label, **expect(code, run(root, **kw))})
+    with tempfile.TemporaryDirectory(prefix="loomkit-play-") as d:   # a crashing runner is an instrument error, not a fail
+        root, _ = play_fixture(Path(d))
+        try:
+            run(root, runner="tools/broken.cjs")()
+            raise RuntimeError("SURVIVING_CONTROL: broken runner passed")
+        except InstrumentError:
+            rows.append({"case": "runner exits non-zero", "expected": "InstrumentError", "caught": "InstrumentError"})
+        ev = Path(d) / "ev"
+        if quiet_cli(["play", str(root), "--evidence", str(ev), "--tapes", "tapes/*.json", "--levels", "levels/*.txt",
+                     "--runner", "tools/broken.cjs"]) != 2:
+            raise RuntimeError("CLI_EXIT: a crashing runner must exit 2")
+        rows.append({"case": "CLI: crashing runner exits 2", "expected": "exit 2", "caught": "exit 2"})
+        if quiet_cli(["play", str(root), "--evidence", str(ev), "--tapes", "tapes/*.json", "--levels", "levels/*.txt",
+                     "--runner", "tools/replay.cjs"]) != 0 or json.loads((ev / "play.json").read_text())["status"] != "pass":
+            raise RuntimeError("CLI_PLAY: the clean fixture must pass through the CLI")
+        rows.append({"case": "CLI: clean fixture", "result": "exit 0, witness pass"})
+    return rows
+
+
+def cli_controls() -> list[dict]:
+    """The CLI itself, not only the predicates: `loom traps` crashed with NameError on every call until 6 Nov and the
+    self-test never noticed, because it called traps.check directly. A crash used to exit 1, which reads as a violation."""
+    rows = []
+    with tempfile.TemporaryDirectory(prefix="loomkit-cli-") as d:
+        root, ev = Path(d) / "cand", Path(d) / "ev"
+        root.mkdir(); (root / "w.x3d").write_text("<X3D version='4.0'><Scene><Shape/></Scene></X3D>\n")
+        code = quiet_cli(["traps", str(root), "--evidence", str(ev), "--files", "*.x3d", "--host", "strict"])
+        w = json.loads((ev / "traps.json").read_text())
+        if code != 0 or w["measurements"]["seen"] != {"scenes": 1, "bytes": 49}:
+            raise RuntimeError(f"CLI_TRAPS: exit {code}, seen {w['measurements'].get('seen')}")
+        rows.append({"case": "CLI: traps runs end to end and says what it read", "result": "exit 0, seen 1 scene"})
+        real = traps.check
+        traps.check = lambda *a, **k: 1 / 0
+        try:
+            code = quiet_cli(["traps", str(root), "--evidence", str(ev), "--files", "*.x3d"])
+        finally:
+            traps.check = real
+        if code != 2:
+            raise RuntimeError(f"CLI_CRASH_EXIT: a witness bug exited {code}, not 2")
+        rows.append({"case": "CLI: a bug inside a witness exits 2 (instrument), never 1 (violation)", "expected": "exit 2", "caught": "exit 2"})
+    return rows
+
+
 def run_all() -> dict:
     return {"acceptance": acceptance_controls(), "traps": trap_controls(),
             "picture": picture_controls(), "receipt": receipt_controls(), "sweep": sweep_controls(), "sci": sci_controls(),
-            "pagetraps": page_controls(), "cli": cli_controls(), "optimized": bool(sys.flags.optimize)}
+            "pagetraps": page_controls(), "play": play_controls(), "cli": cli_controls(), "cli_subprocess": cli_subprocess_controls(), "optimized": bool(sys.flags.optimize)}
 
 
 if __name__ == "__main__":
@@ -395,7 +531,7 @@ if __name__ == "__main__":
             print(p.stdout, p.stderr, file=sys.stderr)
             sys.exit(1)
         res = json.loads(p.stdout)
-        negatives = sum(1 for k in ("acceptance", "picture", "receipt", "sweep", "sci") for row in res[k] if "caught" in row)
+        negatives = sum(1 for k in ("acceptance", "picture", "receipt", "sweep", "sci", "play", "cli") for row in res[k] if "caught" in row)
         report["modes"].append({"optimized": res["optimized"], "negative_controls_caught": negatives,
                                 "trap_rules_two_sided": len(res["traps"]),
                                 "page_trap_rules_two_sided": sum(1 for r in res["pagetraps"] if "rule" in r and "form" not in r),

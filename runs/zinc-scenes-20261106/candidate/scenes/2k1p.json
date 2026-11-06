@@ -1,0 +1,51 @@
+{
+  "atoms_drawn": [
+    "A_A_CYS_71_CA",
+    "A_A_CYS_71_CB",
+    "A_A_CYS_71_SG",
+    "A_A_CYS_74_CA",
+    "A_A_CYS_74_CB",
+    "A_A_CYS_74_SG",
+    "A_A_CYS_85_CA",
+    "A_A_CYS_85_CB",
+    "A_A_CYS_85_SG",
+    "A_A_CYS_88_CA",
+    "A_A_CYS_88_CB",
+    "A_A_CYS_88_SG",
+    "A_A_ZN_96_ZN"
+  ],
+  "bonds": [
+    {
+      "angstrom": 2.2359,
+      "donor": "CYS71.SG",
+      "glow": true,
+      "label": "2.24 \u00c5",
+      "site": "A96"
+    },
+    {
+      "angstrom": 2.2512,
+      "donor": "CYS74.SG",
+      "glow": true,
+      "label": "2.25 \u00c5",
+      "site": "A96"
+    },
+    {
+      "angstrom": 2.3012,
+      "donor": "CYS85.SG",
+      "glow": true,
+      "label": "2.30 \u00c5",
+      "site": "A96"
+    },
+    {
+      "angstrom": 2.2707,
+      "donor": "CYS88.SG",
+      "glow": true,
+      "label": "2.27 \u00c5",
+      "site": "A96"
+    }
+  ],
+  "pdb": "2k1p",
+  "tubes": [
+    "Backbone_A96_67"
+  ]
+}

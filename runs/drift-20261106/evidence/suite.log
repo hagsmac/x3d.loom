@@ -1,0 +1,30 @@
+PASS fixtures rebuild identical  {"fixtures_identical":true}  (0.1 s)
+PASS world rebuilds identical  {"rebuild_identical": true, "files": 81, "differs": []}  (8.3 s)
+PASS portable math  {"fmath":"pass","checks":14,"failed":0}  (0.1 s)
+PASS shipped circuits against the track contract  {"levels":"pass","checks":80,"failed":0}  (0.3 s)
+PASS handling card  {"handling":"pass","failed":0}  (2.2 s)
+PASS a keyboard player can drift every car  {"keyboard":"pass","checks":9,"failed":0}  (1.3 s)
+PASS race, scoring, AI, determinism  {"race":"pass","checks":40,"failed":0}  (9.5 s)
+PASS the AI on the shipped circuits  {"circuits":"pass","checks":70,"failed":0}  (19.3 s)
+PASS drivers that farm points earn no medal  {"exploits":"pass","checks":32,"failed":0}  (4.9 s)
+PASS tape tapes/cliffside-attack.tape.json  1da6bda349830455  lap 84.8855 s (gold)  goal tick 10906
+PASS tape tapes/cliffside-rush.tape.json  452f9f942182edbe  score 11170 (gold)  goal tick 10878
+PASS tape tapes/kessel-pass-attack.tape.json  ec33e43f3e56c4b5  lap 78.7447 s (gold)  goal tick 10071
+PASS tape tapes/kessel-pass-rush.tape.json  da38e18416960a54  score 10435 (gold)  goal tick 10877
+PASS tape tapes/neon-overpass-attack.tape.json  40537c4f41155458  lap 77.2769 s (gold)  goal tick 10018
+PASS tape tapes/neon-overpass-rush.tape.json  54f46e4ffe22ad6b  score 28070 (gold)  goal tick 10877
+PASS tape tapes/practice-pad-attack.tape.json  b0003ff19b6be1fd  lap 14.3171 s (gold)  goal tick 2147
+PASS tape tapes/practice-pad-rush.tape.json  8bd5550519544f0f  score 177268 (platinum)  goal tick 10877
+PASS tape tapes/salt-ring-attack.tape.json  e5c7a18d5342722a  lap 48.8644 s (gold)  goal tick 6484
+PASS tape tapes/salt-ring-race.tape.json  e1231725dffd7701  finished P3  goal tick 12623
+PASS tape tapes/salt-ring-rush.tape.json  d79a8da2ffc02c35  score 35666 (gold)  goal tick 10878
+PASS tape tapes/salt-ring-tandem.tape.json  1ccd9e3a0c30c26b  grade D (quality 0.19)  goal tick 16220
+PASS tape tests/fixtures/tapes/oval-attack.tape.json  05b2be080cbd2646  lap 39.2062 s (gold)  goal tick 5341
+PASS tape tests/fixtures/tapes/oval-rush.tape.json  5445d80abfac5cc6  score 25264 (platinum)  goal tick 10876
+PASS tape tests/fixtures/tapes/skidpad-attack.tape.json  885c0014f42b9d68  lap 14.473 s (gold)  goal tick 2175
+PASS tape tests/fixtures/tapes/skidpad-rush.tape.json  a4fc45dbea1e3fd4  score 178862 (platinum)  goal tick 10877
+PASS tape tests/fixtures/tapes/twisty-attack.tape.json  77aa92654fe222ab  lap 56.3609 s (gold)  goal tick 7344
+PASS tape tests/fixtures/tapes/twisty-rush.tape.json  32c01af4a74bad2f  score 10543 (gold)  goal tick 10880
+{"run_all":"pass","tapes":18}
+
+--- stderr ---

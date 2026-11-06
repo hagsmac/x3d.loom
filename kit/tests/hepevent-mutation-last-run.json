@@ -1,0 +1,1138 @@
+{
+ "instrument": "kit/tests/mutate_hepevent.py, 4 workers, normal Python; a mutant is caught when the suite child exits non-zero, by 'control' when a control's own assertion failed, by 'crash' when the witness raised some other exception",
+ "sites": 161,
+ "caught": 161,
+ "caught_by_control": 126,
+ "caught_by_crash": 35,
+ "survivors": [],
+ "all": [
+  {
+   "site": 0,
+   "line": 122,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 1,
+   "line": 124,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_PARSE, got EVT_UNITS (detector.b_field_t = 0 T is outside 0.001 to 100 T: gauss or kilogauss read as tesla?)"
+  },
+  {
+   "site": 2,
+   "line": 126,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_PARSE, got EVT_UNITS (detector.tracker.r_max_m = 0 is outside 0.05 to 50.0 m: millimetres read as metres?)"
+  },
+  {
+   "site": 3,
+   "line": 127,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 4,
+   "line": 130,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'E'"
+  },
+  {
+   "site": 5,
+   "line": 132,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_PARSE raised, but 'particles: at least one' is not in its detail: track 0: particle index"
+  },
+  {
+   "site": 6,
+   "line": 134,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 7,
+   "line": 135,
+   "caught": true,
+   "by": "crash",
+   "why": "TypeError: unsupported operand type(s) for ** or pow(): 'str' and 'int'"
+  },
+  {
+   "site": 8,
+   "line": 137,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_PARSE, got EVT_SCENE_BIJECTION (the spec requires a scene and the event names none: nothing is drawn)"
+  },
+  {
+   "site": 9,
+   "line": 140,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 10,
+   "line": 142,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 11,
+   "line": 144,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 12,
+   "line": 145,
+   "caught": true,
+   "by": "crash",
+   "why": "IndexError: list index out of range"
+  },
+  {
+   "site": 13,
+   "line": 146,
+   "caught": true,
+   "by": "crash",
+   "why": "ZeroDivisionError: float division by zero"
+  },
+  {
+   "site": 14,
+   "line": 148,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_PARSE, got EVT_UNITS (track 0: helix radius -1 m and pT 43.0594 GeV give no finite radius ratio)"
+  },
+  {
+   "site": 15,
+   "line": 151,
+   "caught": true,
+   "by": "crash",
+   "why": "IndexError: list index out of range"
+  },
+  {
+   "site": 16,
+   "line": 153,
+   "caught": true,
+   "by": "crash",
+   "why": "IndexError: list index out of range"
+  },
+  {
+   "site": 17,
+   "line": 155,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 18,
+   "line": 157,
+   "caught": true,
+   "by": "crash",
+   "why": "TypeError: 'int' object is not iterable"
+  },
+  {
+   "site": 19,
+   "line": 159,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 20,
+   "line": 161,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 21,
+   "line": 162,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 22,
+   "line": 169,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 23,
+   "line": 173,
+   "caught": true,
+   "by": "crash",
+   "why": "AttributeError: 'NoneType' object has no attribute 'get'"
+  },
+  {
+   "site": 24,
+   "line": 175,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'point_resolution_m'"
+  },
+  {
+   "site": 25,
+   "line": 179,
+   "caught": true,
+   "by": "crash",
+   "why": "ValueError: not enough values to unpack (expected 2, got 1)"
+  },
+  {
+   "site": 26,
+   "line": 181,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 27,
+   "line": 183,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 28,
+   "line": 186,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 29,
+   "line": 187,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_SPEC raised, but 'point_resolution_m must lie' is not in its detail: curvature.resolvable_sagitta_m must be at least point_resolution_m: a bend smaller than the rounding is not a measurement"
+  },
+  {
+   "site": 30,
+   "line": 188,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 31,
+   "line": 193,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 32,
+   "line": 194,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 33,
+   "line": 196,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 34,
+   "line": 197,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 35,
+   "line": 198,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 36,
+   "line": 200,
+   "caught": true,
+   "by": "crash",
+   "why": "TypeError: 'NoneType' object is not subscriptable"
+  },
+  {
+   "site": 37,
+   "line": 202,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 38,
+   "line": 206,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_SPEC, got EVT_SHADER (trk_0: the shader declares no field )"
+  },
+  {
+   "site": 39,
+   "line": 208,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 40,
+   "line": 211,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 41,
+   "line": 213,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_SPEC raised, but 'scene.shader.attributes:' is not in its detail: scene.shader.attributes must list the ident attribute with 4 components"
+  },
+  {
+   "site": 42,
+   "line": 217,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_SPEC, got EVT_SHADER (trk_0: the vertex shader never declares attribute a_other)"
+  },
+  {
+   "site": 43,
+   "line": 220,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'birth'"
+  },
+  {
+   "site": 44,
+   "line": 224,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'a_nowhere'"
+  },
+  {
+   "site": 45,
+   "line": 228,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'species'"
+  },
+  {
+   "site": 46,
+   "line": 234,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'shader'"
+  },
+  {
+   "site": 47,
+   "line": 236,
+   "caught": true,
+   "by": "crash",
+   "why": "IndexError: list index out of range"
+  },
+  {
+   "site": 48,
+   "line": 239,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 49,
+   "line": 242,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 50,
+   "line": 245,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 51,
+   "line": 246,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'cell_dphi'"
+  },
+  {
+   "site": 52,
+   "line": 249,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 53,
+   "line": 253,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'pdg'"
+  },
+  {
+   "site": 54,
+   "line": 256,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_SPEC, got EVT_CONTAINMENT (trk_6 extension point (0.337, 0.577, -2.800) m is outside the muon system)"
+  },
+  {
+   "site": 55,
+   "line": 257,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SPEC"
+  },
+  {
+   "site": 56,
+   "line": 258,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'join_angle_deg'"
+  },
+  {
+   "site": 57,
+   "line": 268,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_CURVATURE"
+  },
+  {
+   "site": 58,
+   "line": 378,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_CURVATURE"
+  },
+  {
+   "site": 59,
+   "line": 386,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_CURVATURE"
+  },
+  {
+   "site": 60,
+   "line": 393,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_CURVATURE, got EVT_SENSE (track 1 hits: bends cw, charge +1 in B +3.8 T bends cw)"
+  },
+  {
+   "site": 61,
+   "line": 398,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SENSE"
+  },
+  {
+   "site": 62,
+   "line": 412,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_PARSE raised, but 'non-finite number' is not in its detail: scene: IndexedLineSet Coordinate.point is not a list of xyz triples"
+  },
+  {
+   "site": 63,
+   "line": 433,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_PARSE, got EVT_SHADER (trk_0: the shader needs a VERTEX ShaderPart url data:x-shader/x-vertex, and a FRAGMENT one data:x-shader/x-fragment,)"
+  },
+  {
+   "site": 64,
+   "line": 465,
+   "caught": true,
+   "by": "crash",
+   "why": "IndexError: list index out of range"
+  },
+  {
+   "site": 65,
+   "line": 500,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_PARSE raised, but 'scene: empty' is not in its detail: scene is not XML: no element found: line 2, column 1"
+  },
+  {
+   "site": 66,
+   "line": 501,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_PARSE raised, but 'entity declarations' is not in its detail: scene is not XML: XML or text declaration not at start of entity: line 1, column 32"
+  },
+  {
+   "site": 67,
+   "line": 506,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 68,
+   "line": 511,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'ghost'"
+  },
+  {
+   "site": 69,
+   "line": 541,
+   "caught": true,
+   "by": "crash",
+   "why": "IndexError: tuple index out of range"
+  },
+  {
+   "site": 70,
+   "line": 544,
+   "caught": true,
+   "by": "crash",
+   "why": "IndexError: list index out of range"
+  },
+  {
+   "site": 71,
+   "line": 549,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_PARSE, got EVT_SHADER (trk_1: attribute a_ident has numComponents 7 and 40 values, expected 4 and 40)"
+  },
+  {
+   "site": 72,
+   "line": 562,
+   "caught": true,
+   "by": "crash",
+   "why": "IndexError: tuple index out of range"
+  },
+  {
+   "site": 73,
+   "line": 565,
+   "caught": true,
+   "by": "crash",
+   "why": "IndexError: list index out of range"
+  },
+  {
+   "site": 74,
+   "line": 571,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_PARSE, got EVT_SHADER (trk_0: attribute a_species has numComponents 5 and 20 values, expected 1 and 4)"
+  },
+  {
+   "site": 75,
+   "line": 577,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_SHADER raised, but 'expected 4 and' is not in its detail: trk_38: attribute a_ident differs between the two vertices of a ribbon pair: the two edges of one ribbon would disagree"
+  },
+  {
+   "site": 76,
+   "line": 582,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'a_look'"
+  },
+  {
+   "site": 77,
+   "line": 604,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 78,
+   "line": 699,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 79,
+   "line": 752,
+   "caught": true,
+   "by": "crash",
+   "why": "RecursionError: maximum recursion depth exceeded"
+  },
+  {
+   "site": 80,
+   "line": 756,
+   "caught": true,
+   "by": "crash",
+   "why": "AttributeError: 'NoneType' object has no attribute 'tag'"
+  },
+  {
+   "site": 81,
+   "line": 776,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_UNITS, got EVT_CURVATURE (track 0: declared helix radius 12.97 m, pT 14.8 GeV in 1e-06 T gives 4.927e+07 m)"
+  },
+  {
+   "site": 82,
+   "line": 780,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_UNITS, got EVT_SCENE_BIJECTION (the spec requires a scene and the event names none: nothing is drawn)"
+  },
+  {
+   "site": 83,
+   "line": 790,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_UNITS, got EVT_CURVATURE (track 0 hits: pT 1.48e+04 GeV bends this 960.0 mm path by at most 0.009 mm (below the 0.3 mm that can be fitted) but it departs from a straight line by 8.681 mm)"
+  },
+  {
+   "site": 84,
+   "line": 798,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_UNITS, got EVT_CURVATURE (track 1: declared helix radius 1e+300 m, pT 1e-300 GeV in 3.8 T gives 8.778e-301 m)"
+  },
+  {
+   "site": 85,
+   "line": 800,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_UNITS, got EVT_CURVATURE (track 0: declared helix radius 3.78e+04 m, pT 43.1 GeV in 3.8 T gives 37.8 m)"
+  },
+  {
+   "site": 86,
+   "line": 806,
+   "caught": true,
+   "by": "crash",
+   "why": "ValueError: math domain error"
+  },
+  {
+   "site": 87,
+   "line": 808,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_UNITS, got EVT_CONTAINMENT (scene trk_0: point (-326.500, 167.100, 189.000) m is outside the tracker)"
+  },
+  {
+   "site": 88,
+   "line": 810,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_UNITS, got EVT_SCENE_BIJECTION (scene trk_0 reaches 0.000 m from its vertex in xy, its own helix reaches 1.100 m inside the tracker: the drawing stops short)"
+  },
+  {
+   "site": 89,
+   "line": 818,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_4MOM raised, but 'no final-state particles' is not in its detail: final state minus declared incoming: dpx=-20.63, dpy=-14.12, dpz=-38.84, dE=-102.2 GeV (tolerance 0.51)"
+  },
+  {
+   "site": 90,
+   "line": 821,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_CHARGE raised, but 'final-state charge' is not in its detail: track 0 has charge +1 but its particle 0 has -1"
+  },
+  {
+   "site": 91,
+   "line": 824,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_CHARGE, got EVT_SENSE (track 1: declared sense -1, charge -1 in B +3.8 T gives +1)"
+  },
+  {
+   "site": 92,
+   "line": 828,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_4MOM, got EVT_SCENE_BIJECTION (the spec requires a scene and the event names none: nothing is drawn)"
+  },
+  {
+   "site": 93,
+   "line": 833,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_4MOM"
+  },
+  {
+   "site": 94,
+   "line": 845,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_CURVATURE"
+  },
+  {
+   "site": 95,
+   "line": 849,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_CURVATURE, got EVT_SCENE_BIJECTION (the spec requires a scene and the event names none: nothing is drawn)"
+  },
+  {
+   "site": 96,
+   "line": 851,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_SENSE, got EVT_SCENE_BIJECTION (the spec requires a scene and the event names none: nothing is drawn)"
+  },
+  {
+   "site": 97,
+   "line": 872,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_CONTAINMENT, got EVT_SCENE_BIJECTION (the spec requires a scene and the event names none: nothing is drawn)"
+  },
+  {
+   "site": 98,
+   "line": 877,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_CONTAINMENT, got EVT_SCENE_BIJECTION (the spec requires a scene and the event names none: nothing is drawn)"
+  },
+  {
+   "site": 99,
+   "line": 907,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 100,
+   "line": 909,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_SCENE_BIJECTION raised, but 'not a Shape' is not in its detail: scene draws trk_998, which maps to no track of the event"
+  },
+  {
+   "site": 101,
+   "line": 915,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 102,
+   "line": 916,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 999"
+  },
+  {
+   "site": 103,
+   "line": 917,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 104,
+   "line": 918,
+   "caught": true,
+   "by": "crash",
+   "why": "TypeError: object of type 'NoneType' has no len()"
+  },
+  {
+   "site": 105,
+   "line": 921,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 106,
+   "line": 923,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_SCENE_BIJECTION raised, but 'spec needs' is not in its detail: scene trk_1 reaches 0.000 m from its vertex in xy, its own helix reaches 1.100 m inside the tracker: the drawing stops short"
+  },
+  {
+   "site": 107,
+   "line": 927,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 108,
+   "line": 928,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_SCENE_BIJECTION raised, but 'both map to particle' is not in its detail: 1 drawable particles have no drawn track, first: particle 1 (pdg 211)"
+  },
+  {
+   "site": 109,
+   "line": 933,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 110,
+   "line": 944,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 999"
+  },
+  {
+   "site": 111,
+   "line": 945,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 112,
+   "line": 946,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 113,
+   "line": 961,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_CONTAINMENT, got EVT_SCENE_BIJECTION (scene trk_1 rises -0.746 m in z over 2.041 m in xy (dip -0.350 rad), eta -0.612 gives -0.577 rad: it is not this track's path)"
+  },
+  {
+   "site": 114,
+   "line": 966,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_CONTAINMENT"
+  },
+  {
+   "site": 115,
+   "line": 982,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 116,
+   "line": 986,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_SCENE_BIJECTION, got EVT_SHADER (trk_1: a_arc spans 1.369 m, the drawn path is 0.001368 m long: the growth and pulses would not follow it)"
+  },
+  {
+   "site": 117,
+   "line": 992,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 118,
+   "line": 997,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_SCENE_BIJECTION, got EVT_CONTAINMENT (trk_6 is drawn on past the tracker, but its track never leaves the tracker)"
+  },
+  {
+   "site": 119,
+   "line": 1009,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_SHADER raised, but 'no ComposedShader' is not in its detail: trk_1: the shader needs a VERTEX ShaderPart url data:x-shader/x-vertex, and a FRAGMENT one data:x-shader/x-fragment,"
+  },
+  {
+   "site": 120,
+   "line": 1012,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_SHADER raised, but 'data:x-shader/x-vertex' is not in its detail: trk_0: the vertex shader never declares attribute a_ident"
+  },
+  {
+   "site": 121,
+   "line": 1014,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 122,
+   "line": 1015,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 123,
+   "line": 1018,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 124,
+   "line": 1041,
+   "caught": true,
+   "by": "crash",
+   "why": "KeyError: 'a_species'"
+  },
+  {
+   "site": 125,
+   "line": 1043,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_SHADER raised, but 'expected' is not in its detail: trk_1: a_arc spans 1.216 m, the drawn path is 1.368 m long: the growth and pulses would not follow it"
+  },
+  {
+   "site": 126,
+   "line": 1047,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 127,
+   "line": 1050,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 128,
+   "line": 1055,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 129,
+   "line": 1056,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 130,
+   "line": 1058,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 131,
+   "line": 1061,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 132,
+   "line": 1067,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 133,
+   "line": 1070,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 134,
+   "line": 1077,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 135,
+   "line": 1092,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 136,
+   "line": 1094,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 137,
+   "line": 1098,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 138,
+   "line": 1116,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 139,
+   "line": 1122,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 140,
+   "line": 1125,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 141,
+   "line": 1128,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 142,
+   "line": 1130,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 143,
+   "line": 1139,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_CONTAINMENT"
+  },
+  {
+   "site": 144,
+   "line": 1150,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_REASON: EVT_SHADER raised, but 'has 3 components' is not in its detail: trk_0: a_look seed, drawn_m or kind differ along the strip or between a ribbon pair: they are one per particle"
+  },
+  {
+   "site": 145,
+   "line": 1153,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 146,
+   "line": 1156,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 147,
+   "line": 1157,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SHADER"
+  },
+  {
+   "site": 148,
+   "line": 1177,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_CONTAINMENT, got EVT_SHADER (trk_0: a_look.drawn_m is 1.238, the path it fades along ends at 3.70089 m of arc)"
+  },
+  {
+   "site": 149,
+   "line": 1179,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_CONTAINMENT, got EVT_SCENE_BIJECTION (trk_4 extension starts at r 0.833 m, z -0.747 m: inside the tracker, not on its boundary)"
+  },
+  {
+   "site": 150,
+   "line": 1182,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 151,
+   "line": 1185,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_SCENE_BIJECTION, got EVT_CONTAINMENT (trk_0 extension point (0.092, 0.118, 2.770) m is back inside the tracker: an extension only runs outward)"
+  },
+  {
+   "site": 152,
+   "line": 1192,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 153,
+   "line": 1195,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_CONTAINMENT, got EVT_SHADER (trk_0 extension (muext_0 strip 0): a_arc spans 3.223 m, the drawn path is 12.91 m long: the growth and pulses would not follow it)"
+  },
+  {
+   "site": 154,
+   "line": 1197,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_CONTAINMENT, got EVT_SHADER (trk_0 extension (muext_0 strip 0): a_arc spans 3.223 m, the drawn path is 7.753 m long: the growth and pulses would not follow it)"
+  },
+  {
+   "site": 155,
+   "line": 1206,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_SCENE_BIJECTION, got EVT_SHADER (trk_0: a_look.drawn_m is 4.842, the path it fades along ends at 1.6194 m of arc)"
+  },
+  {
+   "site": 156,
+   "line": 1227,
+   "caught": true,
+   "by": "crash",
+   "why": "TypeError: 'NoneType' object is not subscriptable"
+  },
+  {
+   "site": 157,
+   "line": 1231,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_SCENE_BIJECTION"
+  },
+  {
+   "site": 158,
+   "line": 1249,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: SURVIVING_CONTROL: EVT_PARSE"
+  },
+  {
+   "site": 159,
+   "line": 1257,
+   "caught": true,
+   "by": "control",
+   "why": "RuntimeError: WRONG_DIAGNOSTIC: expected EVT_PARSE, got EVT_SCENE_BIJECTION (event tracks not drawn: trk_0, trk_1, trk_2, trk_3, trk_4, trk_5 ...)"
+  },
+  {
+   "site": 160,
+   "line": 1259,
+   "caught": true,
+   "by": "crash",
+   "why": "FileNotFoundError: [Errno 2] No such file or directory: '/tmp/hepevent-files-_yzmoz41/nope.x3d'"
+  }
+ ],
+ "date": "2026-11-06"
+}

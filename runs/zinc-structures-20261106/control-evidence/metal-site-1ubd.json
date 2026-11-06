@@ -1,0 +1,202 @@
+{
+  "coverage": {
+    "class_declared": 4,
+    "files": 1,
+    "min_intact_fraction": 0.99,
+    "sites": 4,
+    "tau4_floor_declared": 4
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T07:00:39+00:00",
+  "grade": "C",
+  "instrument": {
+    "rules_sha256": "5b1bbcf223c019cb2bf1d68511dc2fe6d1ac5d36a1c4d7d00379c0dc0a8e3bd8",
+    "spec_sha256": "1e6c7bcc268961723d366899fe52e85c0235c17ca5ba840a435d0a28758d0934",
+    "tool": "loomkit.metalsite"
+  },
+  "limitations": [
+    "PDB format only; distance windows are typical values (L), declared in the spec."
+  ],
+  "measurements": {
+    "structures/pdb1ubd.ent.gz": {
+      "inventory": {
+        "altloc_skipped": 0,
+        "atoms_per_frame": 1809,
+        "frames": 1,
+        "median_nn_angstrom": 1.4143,
+        "metal_atoms_in_file": [
+          "ZN C501",
+          "ZN C502",
+          "ZN C503",
+          "ZN C504"
+        ],
+        "metals_checked": 4,
+        "undeclared_metals": []
+      },
+      "sites": [
+        {
+          "class": "CCHH",
+          "distance_max": 2.3321,
+          "distance_min": 1.9967,
+          "failures": [],
+          "first_frame": {
+            "class": "CCHH",
+            "coordination": 4,
+            "distances": [
+              {
+                "angstrom": 1.9967,
+                "donor": "HIS316.NE2",
+                "element": "N"
+              },
+              {
+                "angstrom": 2.0076,
+                "donor": "HIS320.NE2",
+                "element": "N"
+              },
+              {
+                "angstrom": 2.3216,
+                "donor": "CYS303.SG",
+                "element": "S"
+              },
+              {
+                "angstrom": 2.3321,
+                "donor": "CYS298.SG",
+                "element": "S"
+              }
+            ],
+            "site": "ZN C501",
+            "tau4": 0.984
+          },
+          "frames": 1,
+          "frames_intact": 1,
+          "site": "ZN C501",
+          "tau4_min": 0.984
+        },
+        {
+          "class": "CCHH",
+          "distance_max": 2.3071,
+          "distance_min": 2.0072,
+          "failures": [],
+          "first_frame": {
+            "class": "CCHH",
+            "coordination": 4,
+            "distances": [
+              {
+                "angstrom": 2.0072,
+                "donor": "HIS347.NE2",
+                "element": "N"
+              },
+              {
+                "angstrom": 2.0415,
+                "donor": "HIS343.NE2",
+                "element": "N"
+              },
+              {
+                "angstrom": 2.2781,
+                "donor": "CYS327.SG",
+                "element": "S"
+              },
+              {
+                "angstrom": 2.3071,
+                "donor": "CYS330.SG",
+                "element": "S"
+              }
+            ],
+            "site": "ZN C502",
+            "tau4": 0.9631
+          },
+          "frames": 1,
+          "frames_intact": 1,
+          "site": "ZN C502",
+          "tau4_min": 0.9631
+        },
+        {
+          "class": "CCHH",
+          "distance_max": 2.2881,
+          "distance_min": 1.9984,
+          "failures": [],
+          "first_frame": {
+            "class": "CCHH",
+            "coordination": 4,
+            "distances": [
+              {
+                "angstrom": 1.9984,
+                "donor": "HIS377.NE2",
+                "element": "N"
+              },
+              {
+                "angstrom": 2.0009,
+                "donor": "HIS373.NE2",
+                "element": "N"
+              },
+              {
+                "angstrom": 2.2856,
+                "donor": "CYS360.SG",
+                "element": "S"
+              },
+              {
+                "angstrom": 2.2881,
+                "donor": "CYS355.SG",
+                "element": "S"
+              }
+            ],
+            "site": "ZN C503",
+            "tau4": 0.9487
+          },
+          "frames": 1,
+          "frames_intact": 1,
+          "site": "ZN C503",
+          "tau4_min": 0.9487
+        },
+        {
+          "class": "CCHH",
+          "distance_max": 2.3606,
+          "distance_min": 2.0091,
+          "failures": [],
+          "first_frame": {
+            "class": "CCHH",
+            "coordination": 4,
+            "distances": [
+              {
+                "angstrom": 2.0091,
+                "donor": "HIS403.NE2",
+                "element": "N"
+              },
+              {
+                "angstrom": 2.018,
+                "donor": "HIS407.NE2",
+                "element": "N"
+              },
+              {
+                "angstrom": 2.3214,
+                "donor": "CYS385.SG",
+                "element": "S"
+              },
+              {
+                "angstrom": 2.3606,
+                "donor": "CYS390.SG",
+                "element": "S"
+              }
+            ],
+            "site": "ZN C504",
+            "tau4": 0.9526
+          },
+          "frames": 1,
+          "frames_intact": 1,
+          "site": "ZN C504",
+          "tau4_min": 0.9526
+        }
+      ]
+    }
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "7e9e184ffabfec6a161905a818b7adf743728ee98bdf8f8cee9d7e58abdf7e05",
+  "witness": "metal-site-1ubd"
+}

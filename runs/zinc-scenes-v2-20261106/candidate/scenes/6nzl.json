@@ -1,0 +1,107 @@
+{
+  "atoms_drawn": [
+    "A_A_CYS_104_CA",
+    "A_A_CYS_104_CB",
+    "A_A_CYS_104_SG",
+    "A_A_CYS_113_CA",
+    "A_A_CYS_113_CB",
+    "A_A_CYS_113_SG",
+    "A_A_CYS_119_CA",
+    "A_A_CYS_119_CB",
+    "A_A_CYS_119_SG",
+    "A_A_CYS_147_CA",
+    "A_A_CYS_147_CB",
+    "A_A_CYS_147_SG",
+    "A_A_CYS_156_CA",
+    "A_A_CYS_156_CB",
+    "A_A_CYS_156_SG",
+    "A_A_CYS_162_CA",
+    "A_A_CYS_162_CB",
+    "A_A_CYS_162_SG",
+    "A_A_HIS_123_CA",
+    "A_A_HIS_123_CB",
+    "A_A_HIS_123_CD2",
+    "A_A_HIS_123_CE1",
+    "A_A_HIS_123_CG",
+    "A_A_HIS_123_ND1",
+    "A_A_HIS_123_NE2",
+    "A_A_HIS_166_CA",
+    "A_A_HIS_166_CB",
+    "A_A_HIS_166_CD2",
+    "A_A_HIS_166_CE1",
+    "A_A_HIS_166_CG",
+    "A_A_HIS_166_ND1",
+    "A_A_HIS_166_NE2",
+    "A_A_ZN_201_ZN",
+    "A_A_ZN_202_ZN"
+  ],
+  "bonds": [
+    {
+      "angstrom": 2.027,
+      "donor": "CYS104.SG",
+      "glow": true,
+      "label": "2.03 \u00c5",
+      "site": "A201"
+    },
+    {
+      "angstrom": 2.0053,
+      "donor": "CYS113.SG",
+      "glow": true,
+      "label": "2.01 \u00c5",
+      "site": "A201"
+    },
+    {
+      "angstrom": 1.9864,
+      "donor": "CYS119.SG",
+      "glow": true,
+      "label": "1.99 \u00c5",
+      "site": "A201"
+    },
+    {
+      "angstrom": 2.0269,
+      "donor": "HIS123.NE2",
+      "glow": true,
+      "label": "2.03 \u00c5",
+      "site": "A201"
+    },
+    {
+      "angstrom": 2.1046,
+      "donor": "CYS147.SG",
+      "glow": true,
+      "label": "2.10 \u00c5",
+      "site": "A202"
+    },
+    {
+      "angstrom": 2.0046,
+      "donor": "CYS156.SG",
+      "glow": true,
+      "label": "2.00 \u00c5",
+      "site": "A202"
+    },
+    {
+      "angstrom": 1.9829,
+      "donor": "CYS162.SG",
+      "glow": true,
+      "label": "1.98 \u00c5",
+      "site": "A202"
+    },
+    {
+      "angstrom": 1.9718,
+      "donor": "HIS166.NE2",
+      "glow": true,
+      "label": "1.97 \u00c5",
+      "site": "A202"
+    }
+  ],
+  "cages": [
+    "A201",
+    "A202"
+  ],
+  "labels_name_donor": true,
+  "look": "v2",
+  "pdb": "6nzl",
+  "tubes": [
+    "Backbone_A201_100",
+    "Backbone_A202_143"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [
+    {
+      "path": "behaviour.log",
+      "sha256": "94026a94a1e85546ca5d8c833a6285bb38af13b5fc486b67c4754f09f03ed358"
+    }
+  ],
+  "finished_at": "2026-11-06T08:35:19+00:00",
+  "grade": "C",
+  "instrument": {
+    "command": [
+      "node",
+      "tools/check_browser.cjs"
+    ],
+    "tool": "project gate (adapter)"
+  },
+  "limitations": [],
+  "measurements": {
+    "exit_code": 0,
+    "stdout_tail": "\"cogs\":47,\"stars\":3,\"deaths\":0,\"frames_rendered\":112,\"x_ite\":\"16.5.1\",\"page_errors\":[]},{\"tape\":\"3-1-clockwork-spire.tape.json\",\"ticks_per_frame\":200,\"ok\":true,\"state\":\"won\",\"hash\":\"4fdab334d2fa7441\",\"expect\":\"4fdab334d2fa7441\",\"level_sha256_ok\":true,\"cogs\":34,\"stars\":3,\"deaths\":0,\"frames_rendered\":12,\"x_ite\":\"16.5.1\",\"page_errors\":[]},{\"tape\":\"3-1-clockwork-spire.tape.json\",\"ticks_per_frame\":37,\"ok\":true,\"state\":\"won\",\"hash\":\"4fdab334d2fa7441\",\"expect\":\"4fdab334d2fa7441\",\"level_sha256_ok\":true,\"cogs\":34,\"stars\":3,\"deaths\":0,\"frames_rendered\":65,\"x_ite\":\"16.5.1\",\"page_errors\":[]}],\"pass\":true}"
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "6244fe7cf628640beb8f2cc791fda25243749b8f3242459490abaaac96d9928f",
+  "witness": "behaviour"
+}

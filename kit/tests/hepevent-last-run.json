@@ -1,0 +1,4257 @@
+{
+  "modes": [
+    {
+      "cli_controls": 2,
+      "detail": {
+        "cli": [
+          {
+            "case": "CLI writes the hep-event witness (clean)",
+            "coverage": {
+              "events": 1,
+              "scenes": 1,
+              "towers": 30,
+              "tracks": 39
+            },
+            "reason": "",
+            "status": "pass"
+          },
+          {
+            "case": "CLI writes the hep-event witness (a track deleted from the scene)",
+            "coverage": {
+              "events": 1,
+              "scenes": 0,
+              "towers": 0,
+              "tracks": 0
+            },
+            "reason": "EVT_SCENE_BIJECTION: event tracks not drawn: trk_1",
+            "status": "fail"
+          }
+        ],
+        "controls": [
+          {
+            "case": "exact Z -> mu mu with its scene (positive control, inventory read back)",
+            "inventory": {
+              "charged_tracks": 2,
+              "final_state": 2,
+              "hits": 16,
+              "particles": 3,
+              "scene": {
+                "bytes": 105365,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 13,
+                "tower_shapes": 2,
+                "track_shapes": 2,
+                "transforms": 6,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 2,
+              "tracks": 2
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 2,
+                "towers_drawn": 2,
+                "tracks_drawn": 2
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 2,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 0,
+                "scene_points": 8
+              },
+              "shader": {
+                "attribute_rows": 8,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 2
+              },
+              "tracks": {
+                "declared": 2,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "toy shower of 40 with loopers, tracks, towers and shader binding (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 219562,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 84,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 12,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 1425
+              },
+              "shader": {
+                "attribute_rows": 1425,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "toy shower of 400 particles (positive control, scale)",
+            "inventory": {
+              "charged_tracks": 283,
+              "final_state": 400,
+              "hits": 1887,
+              "particles": 400,
+              "scene": {
+                "bytes": 1131512,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 682,
+                "tower_shapes": 275,
+                "track_shapes": 392,
+                "transforms": 12,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 275,
+              "tracks": 392
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 392,
+                "towers_drawn": 275,
+                "tracks_drawn": 392
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 392,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 109,
+                "scene_points": 12168
+              },
+              "shader": {
+                "attribute_rows": 12168,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 392
+              },
+              "tracks": {
+                "declared": 283,
+                "hits": 283,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "scene points in millimetres under a Transform scale 0.001: the reader applies transforms (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 226021,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 84,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 14,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 1425
+              },
+              "shader": {
+                "attribute_rows": 1425,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "a track inside a Switch that selects it is drawn (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 220280,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 84,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 12,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 1425
+              },
+              "shader": {
+                "attribute_rows": 1425,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "event alone, spec without a scene section: passes and reports scene None (positive control)",
+            "inventory": {
+              "charged_tracks": 2,
+              "final_state": 2,
+              "hits": 16,
+              "particles": 3,
+              "scene": null,
+              "towers": 2,
+              "tracks": 2
+            },
+            "measured": {
+              "tracks": {
+                "declared": 2,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "declared helix radius 10 percent off, inside the 15 percent curvature tolerance (positive control, edge)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": null,
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "a track with exactly 3 hits on the right circle is fitted, not called straight (regression: real displaced tracks)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 201,
+              "particles": 40,
+              "scene": null,
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "3 collinear hits for a track that pT says must curl",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1 hits: curvature 0/m, pT 1.31 GeV and B 3.8 T give 0.8708/m (tolerance 0.156, of which 0.015 is point rounding)",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "a charged particle born 2 m from the axis owes no track: its decay in flight is outside the tracker (positive control)",
+            "inventory": {
+              "charged_tracks": 29,
+              "final_state": 40,
+              "hits": 198,
+              "particles": 40,
+              "scene": {
+                "bytes": 218726,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 83,
+                "tower_shapes": 30,
+                "track_shapes": 38,
+                "transforms": 12,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 38
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 38,
+                "towers_drawn": 30,
+                "tracks_drawn": 38
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 38,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 1415
+              },
+              "shader": {
+                "attribute_rows": 1415,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 38
+              },
+              "tracks": {
+                "declared": 29,
+                "hits": 29,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "forward tracks (a 47.6 GeV muon at eta 3.6, soft pions at eta +-6.6 and -7.2): paths shorter than their own bend can be fitted pass as UNRESOLVED and the pass counts them (positive control)",
+            "inventory": {
+              "charged_tracks": 4,
+              "final_state": 4,
+              "hits": 11,
+              "particles": 4,
+              "scene": {
+                "bytes": 106238,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 16,
+                "tower_shapes": 1,
+                "track_shapes": 4,
+                "transforms": 8,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 1,
+              "tracks": 4
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 4,
+                "towers_drawn": 1,
+                "tracks_drawn": 4
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 4,
+                "scene_curvature_unresolved": 3,
+                "scene_drawn_straight": 0,
+                "scene_points": 17
+              },
+              "shader": {
+                "attribute_rows": 17,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 4
+              },
+              "tracks": {
+                "declared": 4,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 1
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "an unresolved (50 GeV) track whose hits kink by 5 mm: judged as a straight line, so it is still caught",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 0 hits: pT 47.6 GeV bends this 70.1 mm path by at most 0.015 mm (below the 0.3 mm that can be fitted) but it departs from a straight line by 3.092 mm",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "a forward soft track (eta 6.6, 8 mm of xy path) drawn with a 3 mm kink",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1 scene: pT 0.888 GeV bends this 7.7 mm path by at most 0.009 mm (below the 0.3 mm that can be fitted) but it departs from a straight line by 2.721 mm",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "spec without the point resolution of the stored coordinates",
+            "caught": "EVT_SPEC",
+            "detail": "curvature.point_resolution_m: a non-negative number",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec that resolves a bend smaller than the rounding it also declares",
+            "caught": "EVT_SPEC",
+            "detail": "curvature.resolvable_sagitta_m must be at least point_resolution_m: a bend smaller than the rounding is not a measurement",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "event is not JSON",
+            "caught": "EVT_PARSE",
+            "detail": "event is not JSON: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a NaN energy (Python writes it, JSON forbids it)",
+            "caught": "EVT_PARSE",
+            "detail": "non-finite number NaN in the event file",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a mother index that does not exist",
+            "caught": "EVT_PARSE",
+            "detail": "particle 3: mothers [99] must be earlier particle indices",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "scene file truncated mid-element",
+            "caught": "EVT_PARSE",
+            "detail": "scene is not XML: unclosed token: line 40, column 3521",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a USE before any DEF in the scene",
+            "caught": "EVT_PARSE",
+            "detail": "scene: USE ghost before any DEF of that name",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a Script node the reader cannot expand",
+            "caught": "EVT_PARSE",
+            "detail": "scene uses nodes this reader cannot expand: Script x1",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "spec without a curvature section",
+            "caught": "EVT_SPEC",
+            "detail": "missing section curvature",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec whose ident layout is not id, charge, pt, birth_s",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.ident: {name, layout: [id, charge, pt, birth_s]}",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "every momentum in MeV but read as GeV (mass of the muons comes out 105.7)",
+            "caught": "EVT_UNITS",
+            "detail": "median mass of known final-state particles is 10^+3.00 times its PDG value: MeV read as GeV, or the reverse?",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "detector radii written in millimetres",
+            "caught": "EVT_UNITS",
+            "detail": "detector.tracker.r_max_m = 1100.0 is outside 0.05 to 50.0 m: millimetres read as metres?",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "scene exported in millimetres with no Transform",
+            "caught": "EVT_UNITS",
+            "detail": "scene extent is 10^+3.00 times the tracker radius: the scene is in the wrong unit (mm?)",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "one particle's charge flipped (sum no longer matches the incoming)",
+            "caught": "EVT_CHARGE",
+            "detail": "final-state charge +0, declared incoming +2",
+            "expected": "EVT_CHARGE"
+          },
+          {
+            "case": "a track whose charge disagrees with its particle (the hue and the bend would be wrong)",
+            "caught": "EVT_CHARGE",
+            "detail": "track 1 has charge -1 but its particle 1 has +1",
+            "expected": "EVT_CHARGE"
+          },
+          {
+            "case": "one particle's pz shifted by 5 GeV (final state no longer balances the incoming)",
+            "caught": "EVT_4MOM",
+            "detail": "final state minus declared incoming: dpx=+1.776e-15, dpy=+0, dpz=+5, dE=+0 GeV (tolerance 0.513)",
+            "expected": "EVT_4MOM"
+          },
+          {
+            "case": "declared helix radius doubled against its pT",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1: declared helix radius 2.297 m, pT 1.31 GeV in 3.8 T gives 1.148 m",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "declared helix radius 35 percent off, outside the 15 percent tolerance",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1: declared helix radius 1.55 m, pT 1.31 GeV in 3.8 T gives 1.148 m",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "hits on a straight line for a track that pT says must curl",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1 hits: curvature 0/m, pT 1.31 GeV and B 3.8 T give 0.8708/m (tolerance 0.147, of which 0.00667 is point rounding)",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "the DRAWN helix has twice the radius its pT allows (event is right, scene is wrong)",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1 scene: curvature 0.4354/m, pT 1.31 GeV and B 3.8 T give 0.8708/m (tolerance 0.143, of which 0.00198 is point rounding)",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "a charged particle drawn as a straight line",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1 scene: drawn with 2 points (straight) but pT 1.31 GeV bends it by 131.7 mm",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "declared bend sense inverted against the charge",
+            "caught": "EVT_SENSE",
+            "detail": "track 1: declared sense +1, charge +1 in B +3.8 T gives -1",
+            "expected": "EVT_SENSE"
+          },
+          {
+            "case": "the drawn helix bends the wrong way for its charge (same radius)",
+            "caught": "EVT_SENSE",
+            "detail": "track 1 scene: bends ccw, charge +1 in B +3.8 T bends cw",
+            "expected": "EVT_SENSE"
+          },
+          {
+            "case": "a production vertex 2 m from the axis, outside the tracker",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "track 1: point (2.000, 0.000, 0.000) m is outside the tracker (r 1.1 m, |z| 2.8 m)",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "a calorimeter tower at eta 2.0, beyond the barrel",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "tower 0: eta 2.000, phi 0.305 is outside the barrel calorimeter (|eta| <= 1.633)",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "one drawn track point outside the tracker volume",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "scene trk_1: point (-1.670, 0.863, -0.746) m is outside the tracker",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "a drawn tower stretched outside the calorimeter",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "scene twr_0: point (1.881, 0.518, -4.445) m is outside the calorimeter",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "a track deleted from the scene (the negative control from the brief)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "event tracks not drawn: trk_1",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a tower deleted from the scene",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "event towers not drawn: twr_0",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a drawn track that maps to no particle (trk_999)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene draws trk_999, which maps to no track of the event",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track drawn twice (a USE of its shape)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_1 is drawn 2 times (1 DEF, 1 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track present but hidden by a Switch that selects nothing",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_1 is in the scene but hidden (a Switch that does not select it, or a Collision proxy)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "trk_ shape with no line geometry (named, but nothing drawn)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_1 has no IndexedLineSet with a Coordinate: nothing is drawn",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a drawable charged particle with no track at all (event and scene agree, the particle is simply not drawn)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "1 drawable particles have no drawn track, first: particle 18 (pdg 13)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "two tracks mapped to one particle",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "tracks 0 and 1 both map to particle 0",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track whose Appearance has a Material and no shader (flat default look)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1 has no ComposedShader in its Appearance: it would draw with the flat default look",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a track with no a_species attribute (the shader would read zeros)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1 supplies no vertex attribute a_species: the shader would read zeros (flat look)",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a_ident charge contradicts the event (the hue would be wrong)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.charge -1 contradicts the event charge +1: the hue would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a_ident track id is not the track's index",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.id is 2, expected 1",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a_ident pT is twice the event pT (the brightness would be wrong)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.pt 2.617 differs from the event pT 1.308: the brightness would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a_ident varies along one track (it must be one value per particle)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: attribute a_ident varies along the track; the spec says it is one constant per particle",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "an attribute with one value too few",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: attribute a_arc has numComponents 1 and 9 values, expected 1 and 10",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "no ROUTE from the TimeSensor to the shader clock field",
+            "caught": "EVT_SHADER",
+            "detail": "no ROUTE from a TimeSensor to the shader field u_phase: the pulses and the growth would never move",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "ShaderPart url points at a file instead of a data: URL",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0: the shader needs a VERTEX ShaderPart url data:x-shader/x-vertex, and a FRAGMENT one data:x-shader/x-fragment,",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "malformed event: schema is not loom.hep-event/1",
+            "caught": "EVT_PARSE",
+            "detail": "schema must be loom.hep-event/1",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: detector field is zero",
+            "caught": "EVT_PARSE",
+            "detail": "detector.b_field_t",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: tracker radius is zero",
+            "caught": "EVT_PARSE",
+            "detail": "detector.tracker",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: calorimeter inner radius beyond the outer",
+            "caught": "EVT_PARSE",
+            "detail": "detector.calorimeter",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: incoming without its energy",
+            "caught": "EVT_PARSE",
+            "detail": "incoming",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: no particles at all",
+            "caught": "EVT_PARSE",
+            "detail": "particles: at least one",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a pdg code written as a float",
+            "caught": "EVT_PARSE",
+            "detail": "particle 1: pdg/status",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a momentum written as a string",
+            "caught": "EVT_PARSE",
+            "detail": "particle 1: charge or four-momentum",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a vertex with two coordinates",
+            "caught": "EVT_PARSE",
+            "detail": "particle 1: vertex_m must be [x, y, z] in metres",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: tracks is an object",
+            "caught": "EVT_PARSE",
+            "detail": "tracks",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a track whose i is not its position",
+            "caught": "EVT_PARSE",
+            "detail": "track at position 1: i must equal its position",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a track pointing at particle 99",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: particle index",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a track with pT zero",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: charge, pt, eta, phi",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a negative helix radius",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: helix",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a helix vertex with one coordinate",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: helix.vertex_m",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a hit with two coordinates",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: hits must be [x, y, z] in metres",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a negative production time",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: t_prod_ns",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: towers is a number",
+            "caught": "EVT_PARSE",
+            "detail": "towers",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a tower whose i is not its position",
+            "caught": "EVT_PARSE",
+            "detail": "tower 0: i, eta, phi, E",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a tower with negative energy",
+            "caught": "EVT_PARSE",
+            "detail": "tower 0: negative energy -1.0",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: scene given as a number",
+            "caught": "EVT_PARSE",
+            "detail": "scene must be a relative path string",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed spec: schema is not loom.hep-event-spec/1",
+            "caught": "EVT_SPEC",
+            "detail": "schema must be loom.hep-event-spec/1",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: length range with one number",
+            "caught": "EVT_SPEC",
+            "detail": "units.length_range_m: [low, high]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: unit tolerance of 1.5 decades",
+            "caught": "EVT_SPEC",
+            "detail": "units.ratio_log10_tol must lie in (0, 1) decades",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: momentum tolerance loosened to 10 percent",
+            "caught": "EVT_SPEC",
+            "detail": "p4.rel_tol above 5 percent is no longer a momentum balance",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: curvature tolerance of 90 percent",
+            "caught": "EVT_SPEC",
+            "detail": "curvature.rel_tol must lie in (0, 0.5]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: scene.required written as a word",
+            "caught": "EVT_SPEC",
+            "detail": "scene.required: true or false",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: unreadable_nodes: ignore",
+            "caught": "EVT_SPEC",
+            "detail": "scene.unreadable_nodes: reject or count",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: a negative draw_eta_max",
+            "caught": "EVT_SPEC",
+            "detail": "scene.draw_eta_max",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: invisible_pdg holds a string",
+            "caught": "EVT_SPEC",
+            "detail": "scene.invisible_pdg",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: min_points of 1",
+            "caught": "EVT_SPEC",
+            "detail": "scene.min_points: an integer of at least 2",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: an empty time_field",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.time_field",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: a shader pT tolerance of 90 percent",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.pt_rel_tol",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: an empty attribute list",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.attributes: [{name, components, constant?}]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: attribute list that omits the ident attribute",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.attributes must list the ident attribute with 4 components",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "a point resolution of one metre (a rounding step that coarse judges nothing)",
+            "caught": "EVT_SPEC",
+            "detail": "curvature.point_resolution_m must lie in (0, 0.01] metres",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "the circle fit is asked for a circle through two points",
+            "caught": "EVT_CURVATURE",
+            "detail": "a circle fit needs at least 3 points",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "a scene is supplied but the spec has no scene section",
+            "caught": "EVT_SPEC",
+            "detail": "a scene was supplied but the spec has no scene section",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "the spec requires a scene and the event brings none",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "the spec requires a scene and the event names none: nothing is drawn",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "every helix radius in millimetres (pT untouched)",
+            "caught": "EVT_UNITS",
+            "detail": "track 0: helix radius is 10^+3.00 times what pT and B give: metres and millimetres mixed?",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "declared incoming charge +1 with a neutral final state",
+            "caught": "EVT_CHARGE",
+            "detail": "final-state charge +2, declared incoming +3",
+            "expected": "EVT_CHARGE"
+          },
+          {
+            "case": "every particle decayed: no final state",
+            "caught": "EVT_4MOM",
+            "detail": "no final-state particles (status 1)",
+            "expected": "EVT_4MOM"
+          },
+          {
+            "case": "a beam particle whose momentum is not the declared incoming",
+            "caught": "EVT_4MOM",
+            "detail": "declared incoming px differs from the beam particles",
+            "expected": "EVT_4MOM"
+          },
+          {
+            "case": "a charged track declared straight (event alone)",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 0: charged (-1) but declared straight (helix.radius_m is null)",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "scene is whitespace",
+            "caught": "EVT_PARSE",
+            "detail": "scene: empty",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "scene declares an entity",
+            "caught": "EVT_PARSE",
+            "detail": "scene: entity declarations are not read",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "root element is not X3D",
+            "caught": "EVT_PARSE",
+            "detail": "scene: root element is not X3D",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "no Scene element",
+            "caught": "EVT_PARSE",
+            "detail": "scene: no <Scene> element",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a coordinate that is NaN",
+            "caught": "EVT_PARSE",
+            "detail": "scene: non-finite number",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a coordinate that is not a number",
+            "caught": "EVT_PARSE",
+            "detail": "scene: 'abc' is not a number",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a Coordinate whose number count is not a multiple of 3",
+            "caught": "EVT_PARSE",
+            "detail": "scene: IndexedLineSet Coordinate.point is not a list of xyz triples",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a coordIndex past the end of its Coordinate",
+            "caught": "EVT_PARSE",
+            "detail": "scene: IndexedLineSet coordIndex points outside its Coordinate",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a FloatVertexAttribute with numComponents 7",
+            "caught": "EVT_PARSE",
+            "detail": "scene: FloatVertexAttribute.numComponents",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a ShaderPart url whose quote is never closed",
+            "caught": "EVT_PARSE",
+            "detail": "scene: unterminated MFString",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a Transform whose scale has two numbers",
+            "caught": "EVT_PARSE",
+            "detail": "scene: Transform.scale needs 3 numbers",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a DEF named trk_998 on a node that is not a Shape",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_998 is a Group, not a Shape",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track drawn with a single point",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_1 has 1 points, spec needs 2",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track mapped to a particle that is not a final-state particle",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "track 3 maps to particle 3, which is not a final-state particle",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a ShaderPart that carries raw source text with no url",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0: ShaderPart carries raw source instead of a data: url",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "the shader declares no clock field",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0: the shader declares no field u_phase",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "the vertex shader never declares an attribute the geometry supplies",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0: the vertex shader never declares attribute a_species",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a_ident birth time is negative",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.birth_s -1, the production time 0 ns in slow motion gives 0 (+ up to 0.1 s jitter): the track would appear at the wrong time",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "no event files matched",
+            "caught": "EVT_PARSE",
+            "detail": "no event files matched",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "the event names a scene above its own directory",
+            "caught": "EVT_PARSE",
+            "detail": "scene path '../x.x3d' must be relative and stay below the event file",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "the event names a scene file that is not there",
+            "caught": "EVT_PARSE",
+            "detail": "scene file nope.x3d named by the event is missing",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "builder shader hygiene: no '#', '%', quote, '//' or 'active', and no integer literal where a float is meant (positive control)",
+            "detail": {
+              "flash": {
+                "fragment_chars": 550,
+                "vertex_chars": 385
+              },
+              "flash2": {
+                "fragment_chars": 838,
+                "vertex_chars": 248
+              },
+              "haze2": {
+                "fragment_chars": 1002,
+                "vertex_chars": 154
+              },
+              "ring": {
+                "fragment_chars": 478,
+                "vertex_chars": 266
+              },
+              "shell2": {
+                "fragment_chars": 1567,
+                "vertex_chars": 527
+              },
+              "trk": {
+                "fragment_chars": 1153,
+                "vertex_chars": 404
+              },
+              "trk2": {
+                "fragment_chars": 1930,
+                "vertex_chars": 1142
+              },
+              "twr": {
+                "fragment_chars": 595,
+                "vertex_chars": 471
+              },
+              "twr2": {
+                "fragment_chars": 1087,
+                "vertex_chars": 1024
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v2: exact Z -> mu mu, both muons merged into one strip set and drawn on through the calorimeter (positive control)",
+            "inventory": {
+              "charged_tracks": 2,
+              "final_state": 2,
+              "hits": 16,
+              "particles": 3,
+              "scene": {
+                "bytes": 572963,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 2,
+                "track_shapes": 2,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 2,
+              "tracks": 2
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 2,
+                "towers_drawn": 2,
+                "tracks_drawn": 2
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 2,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 0,
+                "scene_points": 8
+              },
+              "shader": {
+                "attribute_rows": 44,
+                "extensions_with_shader": 2,
+                "shader_nodes": 1,
+                "tracks_with_shader": 2
+              },
+              "tracks": {
+                "declared": 2,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v2: toy shower of 40, merged ribbons, muon extensions, tower spikes (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 1128402,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 2438
+              },
+              "shader": {
+                "attribute_rows": 2510,
+                "extensions_with_shader": 4,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v2: toy shower of 400 (positive control, scale)",
+            "inventory": {
+              "charged_tracks": 283,
+              "final_state": 400,
+              "hits": 1887,
+              "particles": 400,
+              "scene": {
+                "bytes": 5555495,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 275,
+                "track_shapes": 392,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 275,
+              "tracks": 392
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 392,
+                "towers_drawn": 275,
+                "tracks_drawn": 392
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 392,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 109,
+                "scene_points": 20761
+              },
+              "shader": {
+                "attribute_rows": 21679,
+                "extensions_with_shader": 51,
+                "shader_nodes": 1,
+                "tracks_with_shader": 392
+              },
+              "tracks": {
+                "declared": 283,
+                "hits": 283,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v2 build is deterministic (two builds byte-identical; positive control)",
+            "passed": true
+          },
+          {
+            "case": "look v3: exact Z -> mu mu (positive control)",
+            "inventory": {
+              "charged_tracks": 2,
+              "final_state": 2,
+              "hits": 16,
+              "particles": 3,
+              "scene": {
+                "bytes": 575575,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 2,
+                "track_shapes": 2,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 2,
+              "tracks": 2
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 2,
+                "towers_drawn": 2,
+                "tracks_drawn": 2
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 2,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 0,
+                "scene_points": 8
+              },
+              "shader": {
+                "attribute_rows": 44,
+                "extensions_with_shader": 2,
+                "shader_nodes": 1,
+                "tracks_with_shader": 2
+              },
+              "tracks": {
+                "declared": 2,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v3: toy shower of 40 (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 1131014,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 2438
+              },
+              "shader": {
+                "attribute_rows": 2510,
+                "extensions_with_shader": 4,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v3 keeps every coordinate, strip and vertex attribute of v2 and changes the shaders (positive control)",
+            "passed": true
+          },
+          {
+            "case": "look v3: one track's strip deleted from the merged set",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "event tracks not drawn: trk_1",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a merged shape read with a spec that declares no scene.merged",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 is a merged shape, but the spec declares no scene.merged convention to read it by; muext_0 is a merged shape, but the spec declares no scene.merged convention to read it by; twrset_0 is a merged shape, but the spec declares no scene.merged convention to read it by",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "scene.merged.offset_tol_m as wide as the ribbon itself",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.offset_tol_m must lie in (0, half the smallest pair gap): a looser tolerance cannot tell a ribbon from two paths",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged without scene.shader",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged needs scene.shader (the ident attribute names each strip)",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged.extensions.pdg missing",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.extensions.pdg: the |pdg| codes that may pass the calorimeter, e.g. [13]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "look v2: one track's strip deleted from the merged set",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "event tracks not drawn: trk_1",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: one track's strip copied, so it is drawn twice",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_1 is drawn 2 times (2 DEF, 0 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a USE of the whole merged track set",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is drawn 2 times (1 DEF, 1 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: the merged track set inside a Switch that selects nothing",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is in the scene but hidden (a Switch that does not select it, or a Collision proxy)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a strip whose a_ident names track 999",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene draws trk_999, which maps to no track of the event",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a strip whose a_ident id is 1.5, not an index",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 strip 1: a_ident.id is 1.5, not a track or tower index",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a strip with an odd vertex count",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 strip 1 has 31 vertices: a ribbon has a vertex pair per point",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a vertex pair collapsed to one point (the zero-area crash trap, and no longer the declared ribbon)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 strip 1 (id 1): vertex pair 0 is not offset by the declared -/+ offset_m, so the pair midpoints are not the drawn path",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a merged track set with no TriangleStripSet",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 is a merged shape without a TriangleStripSet",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: stripCount adds up to more vertices than the Coordinate holds",
+            "caught": "EVT_PARSE",
+            "detail": "scene: trkset_0 stripCount adds up to 4878 vertices, its Coordinate has 4876",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "look v2: a ribbon's last pair moved outside the tracker",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "scene trk_1: point (-4.340, 0.726, -2.985) m is outside the tracker",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: a_ident charge flipped on one strip (the hue would be wrong)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.charge -1 contradicts the event charge +1: the hue would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a_ident differs between the two edges of a ribbon",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: attribute a_ident differs between the two vertices of a ribbon pair: the two edges of one ribbon would disagree",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the merged track set drawn with a Material and no shader",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0 has no ComposedShader in its Appearance: it would draw with the flat default look",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the muon extensions deleted, so muons stop at the tracker",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "muon trk_0 leaves the tracker but is not drawn on through the calorimeter: a muon is the one particle that passes",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a muon extension shifted 10 cm off its track's exit point",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 extension starts 0.100 m from where its track ends: it is not the same trajectory",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a muon extension running out past the muon system",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "trk_0 extension point (-1.200, 9.794, 10.660) m is outside the muon system",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: a muon drawn with two extensions",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 has 2 extensions drawn: at most one each",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a muon extension whose a_ident pT is not its track's",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0 extension (muext_0 strip 0): a_ident.pt 64.59 differs from the event pT 43.06: the brightness would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a charged hadron drawn on through the calorimeter like a muon",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "trk_0 is drawn on past the tracker, but its particle is pdg 321: only [13] may pass the calorimeter",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: every spike of tower 0 deleted",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "event towers not drawn: twr_0",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: tower 0's a_cell energy doubled (the spikes would lie)",
+            "caught": "EVT_SHADER",
+            "detail": "twr_0: a_cell.E 5.007 differs from the event tower energy 2.503: the spike length and light would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: one spike of tower 0 carries a different a_cell row",
+            "caught": "EVT_SHADER",
+            "detail": "twr_0: a_cell varies between its spikes; it is one row per tower",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the whole tower set copied into a second merged shape",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "twr_0 is drawn 2 times (2 DEF, 0 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a spike of tower 0 stretched outside the calorimeter",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "scene twr_0: point (3.812, 1.029, -7.023) m is outside the calorimeter",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: the tower set carries no a_cell attribute",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "twrset_0 carries no a_cell attribute, so its strips name no track or tower",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: tower 0's em fraction is 1.5",
+            "caught": "EVT_SHADER",
+            "detail": "twr_0: a_cell em_frac or arrival_s out of range",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a muon extension whose pT is 0.5 percent off its track's (inside the pT tolerance, so only the one-row rule sees it)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0 extension carries ident row [0.0, -1.0, 43.2743, 0.0], its track [0.0, -1.0, 43.059, 0.0]: one particle, one row",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a muon extension of a single point (one vertex pair draws nothing)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "muext_0 strip 0 has 2 vertices: a ribbon needs two vertex pairs at least, or it draws nothing",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: the muon extensions inside a Switch that selects nothing",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 extension is hidden (a Switch that does not select it, or a Collision proxy)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: an extension strip naming track 999",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "an extension strip names trk_999, which maps to no track of the event",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: the merged Coordinate is not a list of xyz triples",
+            "caught": "EVT_PARSE",
+            "detail": "scene: trkset_0 Coordinate.point is not a list of xyz triples",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "look v2: a merged attribute with numComponents 5",
+            "caught": "EVT_PARSE",
+            "detail": "scene: FloatVertexAttribute.numComponents",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "look v2: the merged a_ident one value short",
+            "caught": "EVT_SHADER",
+            "detail": "trkset_0: attribute a_ident has numComponents 4 and 19503 values, expected 4 and 19504",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "scene.merged.offset_m with two components",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.offset_m: [dx, dy, dz], not all zero",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged.tower_cell with the wrong layout",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.tower_cell: {name, layout: [id, E, em_frac, arrival_s], e_rel_tol}",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged.tower_cell.e_rel_tol of 0.9",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.tower_cell.e_rel_tol must lie in (0, 0.5]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged.extensions.r_max_m of 0",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.extensions.r_max_m: a positive number",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged.extensions.join_tol_m of half a metre",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.extensions.join_tol_m must lie in (0, 0.1]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "look v1: a rotated Group USE='tracks' draws every track a second time",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is drawn 2 times (1 DEF, 1 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: Group USE='tracks' draws every ribbon and muon extension a second time",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is drawn 2 times (1 DEF, 1 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "the tracks inside an LOD, which shows one level picked at run time",
+            "caught": "EVT_PARSE",
+            "detail": "scene uses nodes this reader cannot expand: LOD x1",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "the tracks inside a grouping node this reader does not model (CADAssembly)",
+            "caught": "EVT_PARSE",
+            "detail": "scene uses nodes this reader cannot expand: CADAssembly x1",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "the tracks as a Collision proxy, which is never rendered",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is in the scene but hidden (a Switch that does not select it, or a Collision proxy)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a Switch whose first XML child is metadata: whichChoice 1 selects nothing, the tracks are choice 0",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is in the scene but hidden (a Switch that does not select it, or a Collision proxy)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a Switch whose first XML child is metadata selects the tracks with whichChoice 0 (positive control: metadata is not a choice)",
+            "inventory": {
+              "charged_tracks": 2,
+              "final_state": 2,
+              "hits": 16,
+              "particles": 3,
+              "scene": {
+                "bytes": 573233,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 2,
+                "track_shapes": 2,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 2,
+              "tracks": 2
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 2,
+                "towers_drawn": 2,
+                "tracks_drawn": 2
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 2,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 0,
+                "scene_points": 8
+              },
+              "shader": {
+                "attribute_rows": 44,
+                "extensions_with_shader": 2,
+                "shader_nodes": 1,
+                "tracks_with_shader": 2
+              },
+              "tracks": {
+                "declared": 2,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "a track inside a Billboard, which turns it toward the viewer at run time",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_3 is inside a Billboard, which turns it toward the viewer at run time: its drawn path is not fixed",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a second Shape that USEs one track's IndexedLineSet",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "a USE of lineK (IndexedLineSet) reuses the geometry of trk_1: it would be drawn a second time",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track Shape tucked inside a ParticleSystem, where the reader does not look",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_3 sits inside a ParticleSystem, where this reader does not look: it cannot be counted",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a Group USE='tracks' tucked inside a ParticleSystem",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "a USE of tracks sits inside a ParticleSystem, where this reader does not look: it cannot be counted",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a Group that USEs itself (a cycle)",
+            "caught": "EVT_PARSE",
+            "detail": "scene: USE loopG sits inside its own DEF (a cycle)",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "USE nested six deep, twenty wide (64 million node visits)",
+            "caught": "EVT_PARSE",
+            "detail": "scene: expands to more than 2000000 nodes through USE; it is refused, not walked",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "look v2: one looping track drawn as a 1 mm stub at the vertex",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene trk_1 reaches 0.001 m from its vertex in xy, its own helix reaches 1.100 m inside the tracker: the drawing stops short",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: one track's ribbon moved 15 mm off its vertex",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene trk_1 starts 0.015 m from its vertex (0.000, 0.000, 0.000): it is not this track's path",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: the tracks rotated 0.5 rad about the beam (they no longer point at their towers)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene trk_0 leaves its vertex heading +0.486 rad off the event phi 2.683: it points the wrong way",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: the tracks squashed to half their z (every dip angle wrong)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene trk_0 rises 0.284 m in z over 1.100 m in xy (dip 0.252 rad), eta 0.495 gives 0.476 rad: it is not this track's path",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v1: the tracks shrunk a million times (every track below what can be fitted)",
+            "caught": "EVT_UNITS",
+            "detail": "scene extent is 10^-6.00 times the tracker radius: the drawing is shrunk, not the detector",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "look v1: the tracks scaled to 0 (every point on the beam axis)",
+            "caught": "EVT_UNITS",
+            "detail": "scene: every drawn track point sits on the beam axis (a scale of 0?): nothing is drawn",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "a field of 1 microtesla (gauss read as tesla)",
+            "caught": "EVT_UNITS",
+            "detail": "detector.b_field_t = 1e-06 T is outside 0.001 to 100 T: gauss or kilogauss read as tesla?",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "a declared helix radius of 1e300 m for a track of pT 1e-300 GeV (no finite radius ratio)",
+            "caught": "EVT_UNITS",
+            "detail": "track 1: helix radius 1e+300 m and pT 1e-300 GeV give no finite radius ratio",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "look v2: a track born one second late (its production time says now)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.birth_s 1.0922, the production time 0 ns in slow motion gives 0 (+ up to 0.1 s jitter): the track would appear at the wrong time",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a pion coloured as an electron",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_species 1, the particle (pdg 211) is species 3: the colour would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: two interior points' a_arc swapped (the growth front would jump back)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_arc runs backwards along the path: the growth front would jump",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v1: a_arc starts 5 cm along instead of at the vertex",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_arc starts at 0.05 m, expected 0 m (0 at the vertex, or where its track ends)",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v1: a_arc runs twice as long as the drawn path (the pulses would outrun it)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_arc spans 2.737 m, the drawn path is 1.368 m long: the growth and pulses would not follow it",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a muon extension's a_arc starts 5 cm past where its track ends",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0 extension (muext_0 strip 0): a_arc starts at 1.6694 m, expected 1.6194 m (0 at the vertex, or where its track ends)",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the tower set without a_look (the shader could not take the offset off)",
+            "caught": "EVT_SHADER",
+            "detail": "twrset_0: no a_look attribute with one row per vertex: the shader could not take the ribbon offset off",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a_look side signs swapped on one ribbon pair",
+            "caught": "EVT_SHADER",
+            "detail": "trkset_0 strip 1 (id 1): a_look.side is 1 on vertex 0, the convention says -1 (the shader takes side * offset_m off, so the ribbon would not sit on the drawn path)",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the last pair of one strip names another track",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 strip 1: a_ident.id changes along the strip: one strip, one track",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: tower 0's odd vertices carry 0.5 percent more energy (inside the energy tolerance)",
+            "caught": "EVT_SHADER",
+            "detail": "twr_0: a_cell differs between the two vertices of a spike pair: the two edges of one spike would disagree",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: tower 0's spikes turned 0.2 rad into another phi cell",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "twr_0: a spike point sits +0.159 rad, +0.015 in eta and +0.000 m in z off its tower's cell: it is drawn in another cell",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: a spike of tower 0 tilted 3 cm in z (no longer radial in its cell)",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "twr_0: a spike point sits -0.041 rad, +0.015 in eta and +0.030 m in z off its tower's cell: it is drawn in another cell",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: the tower set drawn with a Material, no shader",
+            "caught": "EVT_SHADER",
+            "detail": "twrset_0 has no ComposedShader in its Appearance: it would draw with the flat default look",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the tower set bound to the haze shader, which declares no a_cell",
+            "caught": "EVT_SHADER",
+            "detail": "twrset_0: the vertex shader never declares attribute a_cell",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the tower shader's clock ROUTE removed",
+            "caught": "EVT_SHADER",
+            "detail": "twrset_0: its shader twrShader2 gets no ROUTE from a TimeSensor to u_phase: the crown would never light",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a_look with 3 components (the kind is gone)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0: a_look has 3 components, the convention has 4 (side, seed, drawn_m, kind)",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a_look seed changes at one point of a ribbon",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_look seed, drawn_m or kind differ along the strip or between a ribbon pair: they are one per particle",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a neutral drawn with the charged kind (solid, not dashed)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_3: a_look.kind is 0, a neutral path is 1: it would be drawn as another kind",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a_look.drawn_m one metre longer than the path",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_look.drawn_m is 2.368, the path it fades along ends at 1.3685 m of arc",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a looping muon that never leaves the tracker, drawn with no extension (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 1128402,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 2438
+              },
+              "shader": {
+                "attribute_rows": 2510,
+                "extensions_with_shader": 4,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v2: that looping muon given an extension straight out from its looping end",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "trk_4 is drawn on past the tracker, but its track never leaves the tracker",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: a forward muon's extension starting 3 cm inside the endcap face",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 extension starts at r 0.150 m, z 2.770 m: inside the tracker, not on its boundary",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a muon extension turned 20 degrees where it joins its track",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 extension turns 13.6 degrees where it joins its track (spec 10): it is not the same trajectory",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a muon extension whose last point is back inside the tracker",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "trk_0 extension point (0.500, 0.000, 0.000) m is back inside the tracker: an extension only runs outward",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "spec without scene.reach",
+            "caught": "EVT_SPEC",
+            "detail": "scene.reach: {start_tol_m, reach_tol_m, dir_tol_rad, pitch_tol_rad}, all positive",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec whose reach start tolerance is half a metre",
+            "caught": "EVT_SPEC",
+            "detail": "scene.reach: start and reach within 5 cm, heading and pitch within 0.35 rad: looser is not the same path",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec without scene.shader.birth",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.birth: {slow_motion_m_per_s > 0, jitter_s in [0, 1]}: birth_s = t_prod * c / slow motion + jitter",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec whose arc attribute is not one it lists",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.arc: {name of a listed 1-component attribute, abs_tol_m in (0, 0.05], rel_tol in (0, 0.1]}",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec without scene.shader.species",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.species: {name, by_pdg {|pdg|: code}, charged, neutral}: the colour code each particle must carry",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec whose a_look layout is reordered",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.look: {name, track_layout [side, seed, drawn_m, kind], kinds {charged 0, neutral 1, extension 2}}",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec without the tower cell size",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.tower_cell: cell_deta and cell_dphi in (0, 0.5], cell_tol in (0, 0.02]: each spike stays in its own cell",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec without the extension join angle",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.extensions.join_angle_deg must lie in (0, 30]",
+            "expected": "EVT_SPEC"
+          }
+        ],
+        "optimized": false
+      },
+      "negative_controls_caught": 207,
+      "optimized": false,
+      "positive_controls_passed": 20
+    },
+    {
+      "cli_controls": 2,
+      "detail": {
+        "cli": [
+          {
+            "case": "CLI writes the hep-event witness (clean)",
+            "coverage": {
+              "events": 1,
+              "scenes": 1,
+              "towers": 30,
+              "tracks": 39
+            },
+            "reason": "",
+            "status": "pass"
+          },
+          {
+            "case": "CLI writes the hep-event witness (a track deleted from the scene)",
+            "coverage": {
+              "events": 1,
+              "scenes": 0,
+              "towers": 0,
+              "tracks": 0
+            },
+            "reason": "EVT_SCENE_BIJECTION: event tracks not drawn: trk_1",
+            "status": "fail"
+          }
+        ],
+        "controls": [
+          {
+            "case": "exact Z -> mu mu with its scene (positive control, inventory read back)",
+            "inventory": {
+              "charged_tracks": 2,
+              "final_state": 2,
+              "hits": 16,
+              "particles": 3,
+              "scene": {
+                "bytes": 105365,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 13,
+                "tower_shapes": 2,
+                "track_shapes": 2,
+                "transforms": 6,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 2,
+              "tracks": 2
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 2,
+                "towers_drawn": 2,
+                "tracks_drawn": 2
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 2,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 0,
+                "scene_points": 8
+              },
+              "shader": {
+                "attribute_rows": 8,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 2
+              },
+              "tracks": {
+                "declared": 2,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "toy shower of 40 with loopers, tracks, towers and shader binding (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 219562,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 84,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 12,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 1425
+              },
+              "shader": {
+                "attribute_rows": 1425,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "toy shower of 400 particles (positive control, scale)",
+            "inventory": {
+              "charged_tracks": 283,
+              "final_state": 400,
+              "hits": 1887,
+              "particles": 400,
+              "scene": {
+                "bytes": 1131512,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 682,
+                "tower_shapes": 275,
+                "track_shapes": 392,
+                "transforms": 12,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 275,
+              "tracks": 392
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 392,
+                "towers_drawn": 275,
+                "tracks_drawn": 392
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 392,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 109,
+                "scene_points": 12168
+              },
+              "shader": {
+                "attribute_rows": 12168,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 392
+              },
+              "tracks": {
+                "declared": 283,
+                "hits": 283,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "scene points in millimetres under a Transform scale 0.001: the reader applies transforms (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 226021,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 84,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 14,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 1425
+              },
+              "shader": {
+                "attribute_rows": 1425,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "a track inside a Switch that selects it is drawn (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 220280,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 84,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 12,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 1425
+              },
+              "shader": {
+                "attribute_rows": 1425,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "event alone, spec without a scene section: passes and reports scene None (positive control)",
+            "inventory": {
+              "charged_tracks": 2,
+              "final_state": 2,
+              "hits": 16,
+              "particles": 3,
+              "scene": null,
+              "towers": 2,
+              "tracks": 2
+            },
+            "measured": {
+              "tracks": {
+                "declared": 2,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "declared helix radius 10 percent off, inside the 15 percent curvature tolerance (positive control, edge)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": null,
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "a track with exactly 3 hits on the right circle is fitted, not called straight (regression: real displaced tracks)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 201,
+              "particles": 40,
+              "scene": null,
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "3 collinear hits for a track that pT says must curl",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1 hits: curvature 0/m, pT 1.31 GeV and B 3.8 T give 0.8708/m (tolerance 0.156, of which 0.015 is point rounding)",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "a charged particle born 2 m from the axis owes no track: its decay in flight is outside the tracker (positive control)",
+            "inventory": {
+              "charged_tracks": 29,
+              "final_state": 40,
+              "hits": 198,
+              "particles": 40,
+              "scene": {
+                "bytes": 218726,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 83,
+                "tower_shapes": 30,
+                "track_shapes": 38,
+                "transforms": 12,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 38
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 38,
+                "towers_drawn": 30,
+                "tracks_drawn": 38
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 38,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 1415
+              },
+              "shader": {
+                "attribute_rows": 1415,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 38
+              },
+              "tracks": {
+                "declared": 29,
+                "hits": 29,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "forward tracks (a 47.6 GeV muon at eta 3.6, soft pions at eta +-6.6 and -7.2): paths shorter than their own bend can be fitted pass as UNRESOLVED and the pass counts them (positive control)",
+            "inventory": {
+              "charged_tracks": 4,
+              "final_state": 4,
+              "hits": 11,
+              "particles": 4,
+              "scene": {
+                "bytes": 106238,
+                "components": [
+                  "Shaders"
+                ],
+                "profile": "Immersive",
+                "routes": 4,
+                "shapes": 16,
+                "tower_shapes": 1,
+                "track_shapes": 4,
+                "transforms": 8,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 1,
+              "tracks": 4
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 4,
+                "towers_drawn": 1,
+                "tracks_drawn": 4
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 4,
+                "scene_curvature_unresolved": 3,
+                "scene_drawn_straight": 0,
+                "scene_points": 17
+              },
+              "shader": {
+                "attribute_rows": 17,
+                "extensions_with_shader": 0,
+                "shader_nodes": 1,
+                "tracks_with_shader": 4
+              },
+              "tracks": {
+                "declared": 4,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 1
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "an unresolved (50 GeV) track whose hits kink by 5 mm: judged as a straight line, so it is still caught",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 0 hits: pT 47.6 GeV bends this 70.1 mm path by at most 0.015 mm (below the 0.3 mm that can be fitted) but it departs from a straight line by 3.092 mm",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "a forward soft track (eta 6.6, 8 mm of xy path) drawn with a 3 mm kink",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1 scene: pT 0.888 GeV bends this 7.7 mm path by at most 0.009 mm (below the 0.3 mm that can be fitted) but it departs from a straight line by 2.721 mm",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "spec without the point resolution of the stored coordinates",
+            "caught": "EVT_SPEC",
+            "detail": "curvature.point_resolution_m: a non-negative number",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec that resolves a bend smaller than the rounding it also declares",
+            "caught": "EVT_SPEC",
+            "detail": "curvature.resolvable_sagitta_m must be at least point_resolution_m: a bend smaller than the rounding is not a measurement",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "event is not JSON",
+            "caught": "EVT_PARSE",
+            "detail": "event is not JSON: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a NaN energy (Python writes it, JSON forbids it)",
+            "caught": "EVT_PARSE",
+            "detail": "non-finite number NaN in the event file",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a mother index that does not exist",
+            "caught": "EVT_PARSE",
+            "detail": "particle 3: mothers [99] must be earlier particle indices",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "scene file truncated mid-element",
+            "caught": "EVT_PARSE",
+            "detail": "scene is not XML: unclosed token: line 40, column 3521",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a USE before any DEF in the scene",
+            "caught": "EVT_PARSE",
+            "detail": "scene: USE ghost before any DEF of that name",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a Script node the reader cannot expand",
+            "caught": "EVT_PARSE",
+            "detail": "scene uses nodes this reader cannot expand: Script x1",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "spec without a curvature section",
+            "caught": "EVT_SPEC",
+            "detail": "missing section curvature",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec whose ident layout is not id, charge, pt, birth_s",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.ident: {name, layout: [id, charge, pt, birth_s]}",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "every momentum in MeV but read as GeV (mass of the muons comes out 105.7)",
+            "caught": "EVT_UNITS",
+            "detail": "median mass of known final-state particles is 10^+3.00 times its PDG value: MeV read as GeV, or the reverse?",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "detector radii written in millimetres",
+            "caught": "EVT_UNITS",
+            "detail": "detector.tracker.r_max_m = 1100.0 is outside 0.05 to 50.0 m: millimetres read as metres?",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "scene exported in millimetres with no Transform",
+            "caught": "EVT_UNITS",
+            "detail": "scene extent is 10^+3.00 times the tracker radius: the scene is in the wrong unit (mm?)",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "one particle's charge flipped (sum no longer matches the incoming)",
+            "caught": "EVT_CHARGE",
+            "detail": "final-state charge +0, declared incoming +2",
+            "expected": "EVT_CHARGE"
+          },
+          {
+            "case": "a track whose charge disagrees with its particle (the hue and the bend would be wrong)",
+            "caught": "EVT_CHARGE",
+            "detail": "track 1 has charge -1 but its particle 1 has +1",
+            "expected": "EVT_CHARGE"
+          },
+          {
+            "case": "one particle's pz shifted by 5 GeV (final state no longer balances the incoming)",
+            "caught": "EVT_4MOM",
+            "detail": "final state minus declared incoming: dpx=+1.776e-15, dpy=+0, dpz=+5, dE=+0 GeV (tolerance 0.513)",
+            "expected": "EVT_4MOM"
+          },
+          {
+            "case": "declared helix radius doubled against its pT",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1: declared helix radius 2.297 m, pT 1.31 GeV in 3.8 T gives 1.148 m",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "declared helix radius 35 percent off, outside the 15 percent tolerance",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1: declared helix radius 1.55 m, pT 1.31 GeV in 3.8 T gives 1.148 m",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "hits on a straight line for a track that pT says must curl",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1 hits: curvature 0/m, pT 1.31 GeV and B 3.8 T give 0.8708/m (tolerance 0.147, of which 0.00667 is point rounding)",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "the DRAWN helix has twice the radius its pT allows (event is right, scene is wrong)",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1 scene: curvature 0.4354/m, pT 1.31 GeV and B 3.8 T give 0.8708/m (tolerance 0.143, of which 0.00198 is point rounding)",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "a charged particle drawn as a straight line",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 1 scene: drawn with 2 points (straight) but pT 1.31 GeV bends it by 131.7 mm",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "declared bend sense inverted against the charge",
+            "caught": "EVT_SENSE",
+            "detail": "track 1: declared sense +1, charge +1 in B +3.8 T gives -1",
+            "expected": "EVT_SENSE"
+          },
+          {
+            "case": "the drawn helix bends the wrong way for its charge (same radius)",
+            "caught": "EVT_SENSE",
+            "detail": "track 1 scene: bends ccw, charge +1 in B +3.8 T bends cw",
+            "expected": "EVT_SENSE"
+          },
+          {
+            "case": "a production vertex 2 m from the axis, outside the tracker",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "track 1: point (2.000, 0.000, 0.000) m is outside the tracker (r 1.1 m, |z| 2.8 m)",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "a calorimeter tower at eta 2.0, beyond the barrel",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "tower 0: eta 2.000, phi 0.305 is outside the barrel calorimeter (|eta| <= 1.633)",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "one drawn track point outside the tracker volume",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "scene trk_1: point (-1.670, 0.863, -0.746) m is outside the tracker",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "a drawn tower stretched outside the calorimeter",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "scene twr_0: point (1.881, 0.518, -4.445) m is outside the calorimeter",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "a track deleted from the scene (the negative control from the brief)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "event tracks not drawn: trk_1",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a tower deleted from the scene",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "event towers not drawn: twr_0",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a drawn track that maps to no particle (trk_999)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene draws trk_999, which maps to no track of the event",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track drawn twice (a USE of its shape)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_1 is drawn 2 times (1 DEF, 1 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track present but hidden by a Switch that selects nothing",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_1 is in the scene but hidden (a Switch that does not select it, or a Collision proxy)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "trk_ shape with no line geometry (named, but nothing drawn)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_1 has no IndexedLineSet with a Coordinate: nothing is drawn",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a drawable charged particle with no track at all (event and scene agree, the particle is simply not drawn)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "1 drawable particles have no drawn track, first: particle 18 (pdg 13)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "two tracks mapped to one particle",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "tracks 0 and 1 both map to particle 0",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track whose Appearance has a Material and no shader (flat default look)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1 has no ComposedShader in its Appearance: it would draw with the flat default look",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a track with no a_species attribute (the shader would read zeros)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1 supplies no vertex attribute a_species: the shader would read zeros (flat look)",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a_ident charge contradicts the event (the hue would be wrong)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.charge -1 contradicts the event charge +1: the hue would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a_ident track id is not the track's index",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.id is 2, expected 1",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a_ident pT is twice the event pT (the brightness would be wrong)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.pt 2.617 differs from the event pT 1.308: the brightness would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a_ident varies along one track (it must be one value per particle)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: attribute a_ident varies along the track; the spec says it is one constant per particle",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "an attribute with one value too few",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: attribute a_arc has numComponents 1 and 9 values, expected 1 and 10",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "no ROUTE from the TimeSensor to the shader clock field",
+            "caught": "EVT_SHADER",
+            "detail": "no ROUTE from a TimeSensor to the shader field u_phase: the pulses and the growth would never move",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "ShaderPart url points at a file instead of a data: URL",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0: the shader needs a VERTEX ShaderPart url data:x-shader/x-vertex, and a FRAGMENT one data:x-shader/x-fragment,",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "malformed event: schema is not loom.hep-event/1",
+            "caught": "EVT_PARSE",
+            "detail": "schema must be loom.hep-event/1",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: detector field is zero",
+            "caught": "EVT_PARSE",
+            "detail": "detector.b_field_t",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: tracker radius is zero",
+            "caught": "EVT_PARSE",
+            "detail": "detector.tracker",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: calorimeter inner radius beyond the outer",
+            "caught": "EVT_PARSE",
+            "detail": "detector.calorimeter",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: incoming without its energy",
+            "caught": "EVT_PARSE",
+            "detail": "incoming",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: no particles at all",
+            "caught": "EVT_PARSE",
+            "detail": "particles: at least one",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a pdg code written as a float",
+            "caught": "EVT_PARSE",
+            "detail": "particle 1: pdg/status",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a momentum written as a string",
+            "caught": "EVT_PARSE",
+            "detail": "particle 1: charge or four-momentum",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a vertex with two coordinates",
+            "caught": "EVT_PARSE",
+            "detail": "particle 1: vertex_m must be [x, y, z] in metres",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: tracks is an object",
+            "caught": "EVT_PARSE",
+            "detail": "tracks",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a track whose i is not its position",
+            "caught": "EVT_PARSE",
+            "detail": "track at position 1: i must equal its position",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a track pointing at particle 99",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: particle index",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a track with pT zero",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: charge, pt, eta, phi",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a negative helix radius",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: helix",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a helix vertex with one coordinate",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: helix.vertex_m",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a hit with two coordinates",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: hits must be [x, y, z] in metres",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a negative production time",
+            "caught": "EVT_PARSE",
+            "detail": "track 0: t_prod_ns",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: towers is a number",
+            "caught": "EVT_PARSE",
+            "detail": "towers",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a tower whose i is not its position",
+            "caught": "EVT_PARSE",
+            "detail": "tower 0: i, eta, phi, E",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: a tower with negative energy",
+            "caught": "EVT_PARSE",
+            "detail": "tower 0: negative energy -1.0",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed event: scene given as a number",
+            "caught": "EVT_PARSE",
+            "detail": "scene must be a relative path string",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "malformed spec: schema is not loom.hep-event-spec/1",
+            "caught": "EVT_SPEC",
+            "detail": "schema must be loom.hep-event-spec/1",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: length range with one number",
+            "caught": "EVT_SPEC",
+            "detail": "units.length_range_m: [low, high]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: unit tolerance of 1.5 decades",
+            "caught": "EVT_SPEC",
+            "detail": "units.ratio_log10_tol must lie in (0, 1) decades",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: momentum tolerance loosened to 10 percent",
+            "caught": "EVT_SPEC",
+            "detail": "p4.rel_tol above 5 percent is no longer a momentum balance",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: curvature tolerance of 90 percent",
+            "caught": "EVT_SPEC",
+            "detail": "curvature.rel_tol must lie in (0, 0.5]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: scene.required written as a word",
+            "caught": "EVT_SPEC",
+            "detail": "scene.required: true or false",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: unreadable_nodes: ignore",
+            "caught": "EVT_SPEC",
+            "detail": "scene.unreadable_nodes: reject or count",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: a negative draw_eta_max",
+            "caught": "EVT_SPEC",
+            "detail": "scene.draw_eta_max",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: invisible_pdg holds a string",
+            "caught": "EVT_SPEC",
+            "detail": "scene.invisible_pdg",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: min_points of 1",
+            "caught": "EVT_SPEC",
+            "detail": "scene.min_points: an integer of at least 2",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: an empty time_field",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.time_field",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: a shader pT tolerance of 90 percent",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.pt_rel_tol",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: an empty attribute list",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.attributes: [{name, components, constant?}]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "malformed spec: attribute list that omits the ident attribute",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.attributes must list the ident attribute with 4 components",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "a point resolution of one metre (a rounding step that coarse judges nothing)",
+            "caught": "EVT_SPEC",
+            "detail": "curvature.point_resolution_m must lie in (0, 0.01] metres",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "the circle fit is asked for a circle through two points",
+            "caught": "EVT_CURVATURE",
+            "detail": "a circle fit needs at least 3 points",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "a scene is supplied but the spec has no scene section",
+            "caught": "EVT_SPEC",
+            "detail": "a scene was supplied but the spec has no scene section",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "the spec requires a scene and the event brings none",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "the spec requires a scene and the event names none: nothing is drawn",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "every helix radius in millimetres (pT untouched)",
+            "caught": "EVT_UNITS",
+            "detail": "track 0: helix radius is 10^+3.00 times what pT and B give: metres and millimetres mixed?",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "declared incoming charge +1 with a neutral final state",
+            "caught": "EVT_CHARGE",
+            "detail": "final-state charge +2, declared incoming +3",
+            "expected": "EVT_CHARGE"
+          },
+          {
+            "case": "every particle decayed: no final state",
+            "caught": "EVT_4MOM",
+            "detail": "no final-state particles (status 1)",
+            "expected": "EVT_4MOM"
+          },
+          {
+            "case": "a beam particle whose momentum is not the declared incoming",
+            "caught": "EVT_4MOM",
+            "detail": "declared incoming px differs from the beam particles",
+            "expected": "EVT_4MOM"
+          },
+          {
+            "case": "a charged track declared straight (event alone)",
+            "caught": "EVT_CURVATURE",
+            "detail": "track 0: charged (-1) but declared straight (helix.radius_m is null)",
+            "expected": "EVT_CURVATURE"
+          },
+          {
+            "case": "scene is whitespace",
+            "caught": "EVT_PARSE",
+            "detail": "scene: empty",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "scene declares an entity",
+            "caught": "EVT_PARSE",
+            "detail": "scene: entity declarations are not read",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "root element is not X3D",
+            "caught": "EVT_PARSE",
+            "detail": "scene: root element is not X3D",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "no Scene element",
+            "caught": "EVT_PARSE",
+            "detail": "scene: no <Scene> element",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a coordinate that is NaN",
+            "caught": "EVT_PARSE",
+            "detail": "scene: non-finite number",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a coordinate that is not a number",
+            "caught": "EVT_PARSE",
+            "detail": "scene: 'abc' is not a number",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a Coordinate whose number count is not a multiple of 3",
+            "caught": "EVT_PARSE",
+            "detail": "scene: IndexedLineSet Coordinate.point is not a list of xyz triples",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a coordIndex past the end of its Coordinate",
+            "caught": "EVT_PARSE",
+            "detail": "scene: IndexedLineSet coordIndex points outside its Coordinate",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a FloatVertexAttribute with numComponents 7",
+            "caught": "EVT_PARSE",
+            "detail": "scene: FloatVertexAttribute.numComponents",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a ShaderPart url whose quote is never closed",
+            "caught": "EVT_PARSE",
+            "detail": "scene: unterminated MFString",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a Transform whose scale has two numbers",
+            "caught": "EVT_PARSE",
+            "detail": "scene: Transform.scale needs 3 numbers",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "a DEF named trk_998 on a node that is not a Shape",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_998 is a Group, not a Shape",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track drawn with a single point",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_1 has 1 points, spec needs 2",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track mapped to a particle that is not a final-state particle",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "track 3 maps to particle 3, which is not a final-state particle",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a ShaderPart that carries raw source text with no url",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0: ShaderPart carries raw source instead of a data: url",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "the shader declares no clock field",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0: the shader declares no field u_phase",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "the vertex shader never declares an attribute the geometry supplies",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0: the vertex shader never declares attribute a_species",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a_ident birth time is negative",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.birth_s -1, the production time 0 ns in slow motion gives 0 (+ up to 0.1 s jitter): the track would appear at the wrong time",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "no event files matched",
+            "caught": "EVT_PARSE",
+            "detail": "no event files matched",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "the event names a scene above its own directory",
+            "caught": "EVT_PARSE",
+            "detail": "scene path '../x.x3d' must be relative and stay below the event file",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "the event names a scene file that is not there",
+            "caught": "EVT_PARSE",
+            "detail": "scene file nope.x3d named by the event is missing",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "builder shader hygiene: no '#', '%', quote, '//' or 'active', and no integer literal where a float is meant (positive control)",
+            "detail": {
+              "flash": {
+                "fragment_chars": 550,
+                "vertex_chars": 385
+              },
+              "flash2": {
+                "fragment_chars": 838,
+                "vertex_chars": 248
+              },
+              "haze2": {
+                "fragment_chars": 1002,
+                "vertex_chars": 154
+              },
+              "ring": {
+                "fragment_chars": 478,
+                "vertex_chars": 266
+              },
+              "shell2": {
+                "fragment_chars": 1567,
+                "vertex_chars": 527
+              },
+              "trk": {
+                "fragment_chars": 1153,
+                "vertex_chars": 404
+              },
+              "trk2": {
+                "fragment_chars": 1930,
+                "vertex_chars": 1142
+              },
+              "twr": {
+                "fragment_chars": 595,
+                "vertex_chars": 471
+              },
+              "twr2": {
+                "fragment_chars": 1087,
+                "vertex_chars": 1024
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v2: exact Z -> mu mu, both muons merged into one strip set and drawn on through the calorimeter (positive control)",
+            "inventory": {
+              "charged_tracks": 2,
+              "final_state": 2,
+              "hits": 16,
+              "particles": 3,
+              "scene": {
+                "bytes": 572963,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 2,
+                "track_shapes": 2,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 2,
+              "tracks": 2
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 2,
+                "towers_drawn": 2,
+                "tracks_drawn": 2
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 2,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 0,
+                "scene_points": 8
+              },
+              "shader": {
+                "attribute_rows": 44,
+                "extensions_with_shader": 2,
+                "shader_nodes": 1,
+                "tracks_with_shader": 2
+              },
+              "tracks": {
+                "declared": 2,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v2: toy shower of 40, merged ribbons, muon extensions, tower spikes (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 1128402,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 2438
+              },
+              "shader": {
+                "attribute_rows": 2510,
+                "extensions_with_shader": 4,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v2: toy shower of 400 (positive control, scale)",
+            "inventory": {
+              "charged_tracks": 283,
+              "final_state": 400,
+              "hits": 1887,
+              "particles": 400,
+              "scene": {
+                "bytes": 5555495,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 275,
+                "track_shapes": 392,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 275,
+              "tracks": 392
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 392,
+                "towers_drawn": 275,
+                "tracks_drawn": 392
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 392,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 109,
+                "scene_points": 20761
+              },
+              "shader": {
+                "attribute_rows": 21679,
+                "extensions_with_shader": 51,
+                "shader_nodes": 1,
+                "tracks_with_shader": 392
+              },
+              "tracks": {
+                "declared": 283,
+                "hits": 283,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v2 build is deterministic (two builds byte-identical; positive control)",
+            "passed": true
+          },
+          {
+            "case": "look v3: exact Z -> mu mu (positive control)",
+            "inventory": {
+              "charged_tracks": 2,
+              "final_state": 2,
+              "hits": 16,
+              "particles": 3,
+              "scene": {
+                "bytes": 575575,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 2,
+                "track_shapes": 2,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 2,
+              "tracks": 2
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 2,
+                "towers_drawn": 2,
+                "tracks_drawn": 2
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 2,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 0,
+                "scene_points": 8
+              },
+              "shader": {
+                "attribute_rows": 44,
+                "extensions_with_shader": 2,
+                "shader_nodes": 1,
+                "tracks_with_shader": 2
+              },
+              "tracks": {
+                "declared": 2,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v3: toy shower of 40 (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 1131014,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 2438
+              },
+              "shader": {
+                "attribute_rows": 2510,
+                "extensions_with_shader": 4,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v3 keeps every coordinate, strip and vertex attribute of v2 and changes the shaders (positive control)",
+            "passed": true
+          },
+          {
+            "case": "look v3: one track's strip deleted from the merged set",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "event tracks not drawn: trk_1",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a merged shape read with a spec that declares no scene.merged",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 is a merged shape, but the spec declares no scene.merged convention to read it by; muext_0 is a merged shape, but the spec declares no scene.merged convention to read it by; twrset_0 is a merged shape, but the spec declares no scene.merged convention to read it by",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "scene.merged.offset_tol_m as wide as the ribbon itself",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.offset_tol_m must lie in (0, half the smallest pair gap): a looser tolerance cannot tell a ribbon from two paths",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged without scene.shader",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged needs scene.shader (the ident attribute names each strip)",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged.extensions.pdg missing",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.extensions.pdg: the |pdg| codes that may pass the calorimeter, e.g. [13]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "look v2: one track's strip deleted from the merged set",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "event tracks not drawn: trk_1",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: one track's strip copied, so it is drawn twice",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_1 is drawn 2 times (2 DEF, 0 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a USE of the whole merged track set",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is drawn 2 times (1 DEF, 1 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: the merged track set inside a Switch that selects nothing",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is in the scene but hidden (a Switch that does not select it, or a Collision proxy)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a strip whose a_ident names track 999",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene draws trk_999, which maps to no track of the event",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a strip whose a_ident id is 1.5, not an index",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 strip 1: a_ident.id is 1.5, not a track or tower index",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a strip with an odd vertex count",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 strip 1 has 31 vertices: a ribbon has a vertex pair per point",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a vertex pair collapsed to one point (the zero-area crash trap, and no longer the declared ribbon)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 strip 1 (id 1): vertex pair 0 is not offset by the declared -/+ offset_m, so the pair midpoints are not the drawn path",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a merged track set with no TriangleStripSet",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 is a merged shape without a TriangleStripSet",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: stripCount adds up to more vertices than the Coordinate holds",
+            "caught": "EVT_PARSE",
+            "detail": "scene: trkset_0 stripCount adds up to 4878 vertices, its Coordinate has 4876",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "look v2: a ribbon's last pair moved outside the tracker",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "scene trk_1: point (-4.340, 0.726, -2.985) m is outside the tracker",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: a_ident charge flipped on one strip (the hue would be wrong)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.charge -1 contradicts the event charge +1: the hue would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a_ident differs between the two edges of a ribbon",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: attribute a_ident differs between the two vertices of a ribbon pair: the two edges of one ribbon would disagree",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the merged track set drawn with a Material and no shader",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0 has no ComposedShader in its Appearance: it would draw with the flat default look",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the muon extensions deleted, so muons stop at the tracker",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "muon trk_0 leaves the tracker but is not drawn on through the calorimeter: a muon is the one particle that passes",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a muon extension shifted 10 cm off its track's exit point",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 extension starts 0.100 m from where its track ends: it is not the same trajectory",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a muon extension running out past the muon system",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "trk_0 extension point (-1.200, 9.794, 10.660) m is outside the muon system",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: a muon drawn with two extensions",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 has 2 extensions drawn: at most one each",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a muon extension whose a_ident pT is not its track's",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0 extension (muext_0 strip 0): a_ident.pt 64.59 differs from the event pT 43.06: the brightness would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a charged hadron drawn on through the calorimeter like a muon",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "trk_0 is drawn on past the tracker, but its particle is pdg 321: only [13] may pass the calorimeter",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: every spike of tower 0 deleted",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "event towers not drawn: twr_0",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: tower 0's a_cell energy doubled (the spikes would lie)",
+            "caught": "EVT_SHADER",
+            "detail": "twr_0: a_cell.E 5.007 differs from the event tower energy 2.503: the spike length and light would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: one spike of tower 0 carries a different a_cell row",
+            "caught": "EVT_SHADER",
+            "detail": "twr_0: a_cell varies between its spikes; it is one row per tower",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the whole tower set copied into a second merged shape",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "twr_0 is drawn 2 times (2 DEF, 0 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a spike of tower 0 stretched outside the calorimeter",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "scene twr_0: point (3.812, 1.029, -7.023) m is outside the calorimeter",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: the tower set carries no a_cell attribute",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "twrset_0 carries no a_cell attribute, so its strips name no track or tower",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: tower 0's em fraction is 1.5",
+            "caught": "EVT_SHADER",
+            "detail": "twr_0: a_cell em_frac or arrival_s out of range",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a muon extension whose pT is 0.5 percent off its track's (inside the pT tolerance, so only the one-row rule sees it)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0 extension carries ident row [0.0, -1.0, 43.2743, 0.0], its track [0.0, -1.0, 43.059, 0.0]: one particle, one row",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a muon extension of a single point (one vertex pair draws nothing)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "muext_0 strip 0 has 2 vertices: a ribbon needs two vertex pairs at least, or it draws nothing",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: the muon extensions inside a Switch that selects nothing",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 extension is hidden (a Switch that does not select it, or a Collision proxy)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: an extension strip naming track 999",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "an extension strip names trk_999, which maps to no track of the event",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: the merged Coordinate is not a list of xyz triples",
+            "caught": "EVT_PARSE",
+            "detail": "scene: trkset_0 Coordinate.point is not a list of xyz triples",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "look v2: a merged attribute with numComponents 5",
+            "caught": "EVT_PARSE",
+            "detail": "scene: FloatVertexAttribute.numComponents",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "look v2: the merged a_ident one value short",
+            "caught": "EVT_SHADER",
+            "detail": "trkset_0: attribute a_ident has numComponents 4 and 19503 values, expected 4 and 19504",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "scene.merged.offset_m with two components",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.offset_m: [dx, dy, dz], not all zero",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged.tower_cell with the wrong layout",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.tower_cell: {name, layout: [id, E, em_frac, arrival_s], e_rel_tol}",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged.tower_cell.e_rel_tol of 0.9",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.tower_cell.e_rel_tol must lie in (0, 0.5]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged.extensions.r_max_m of 0",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.extensions.r_max_m: a positive number",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "scene.merged.extensions.join_tol_m of half a metre",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.extensions.join_tol_m must lie in (0, 0.1]",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "look v1: a rotated Group USE='tracks' draws every track a second time",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is drawn 2 times (1 DEF, 1 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: Group USE='tracks' draws every ribbon and muon extension a second time",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is drawn 2 times (1 DEF, 1 USE): each must appear exactly once",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "the tracks inside an LOD, which shows one level picked at run time",
+            "caught": "EVT_PARSE",
+            "detail": "scene uses nodes this reader cannot expand: LOD x1",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "the tracks inside a grouping node this reader does not model (CADAssembly)",
+            "caught": "EVT_PARSE",
+            "detail": "scene uses nodes this reader cannot expand: CADAssembly x1",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "the tracks as a Collision proxy, which is never rendered",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is in the scene but hidden (a Switch that does not select it, or a Collision proxy)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a Switch whose first XML child is metadata: whichChoice 1 selects nothing, the tracks are choice 0",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 is in the scene but hidden (a Switch that does not select it, or a Collision proxy)",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a Switch whose first XML child is metadata selects the tracks with whichChoice 0 (positive control: metadata is not a choice)",
+            "inventory": {
+              "charged_tracks": 2,
+              "final_state": 2,
+              "hits": 16,
+              "particles": 3,
+              "scene": {
+                "bytes": 573233,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 2,
+                "track_shapes": 2,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 2,
+              "tracks": 2
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 2,
+                "towers_drawn": 2,
+                "tracks_drawn": 2
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 2,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 0,
+                "scene_points": 8
+              },
+              "shader": {
+                "attribute_rows": 44,
+                "extensions_with_shader": 2,
+                "shader_nodes": 1,
+                "tracks_with_shader": 2
+              },
+              "tracks": {
+                "declared": 2,
+                "hits": 2,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "a track inside a Billboard, which turns it toward the viewer at run time",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_3 is inside a Billboard, which turns it toward the viewer at run time: its drawn path is not fixed",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a second Shape that USEs one track's IndexedLineSet",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "a USE of lineK (IndexedLineSet) reuses the geometry of trk_1: it would be drawn a second time",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a track Shape tucked inside a ParticleSystem, where the reader does not look",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_3 sits inside a ParticleSystem, where this reader does not look: it cannot be counted",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a Group USE='tracks' tucked inside a ParticleSystem",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "a USE of tracks sits inside a ParticleSystem, where this reader does not look: it cannot be counted",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "a Group that USEs itself (a cycle)",
+            "caught": "EVT_PARSE",
+            "detail": "scene: USE loopG sits inside its own DEF (a cycle)",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "USE nested six deep, twenty wide (64 million node visits)",
+            "caught": "EVT_PARSE",
+            "detail": "scene: expands to more than 2000000 nodes through USE; it is refused, not walked",
+            "expected": "EVT_PARSE"
+          },
+          {
+            "case": "look v2: one looping track drawn as a 1 mm stub at the vertex",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene trk_1 reaches 0.001 m from its vertex in xy, its own helix reaches 1.100 m inside the tracker: the drawing stops short",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: one track's ribbon moved 15 mm off its vertex",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene trk_1 starts 0.015 m from its vertex (0.000, 0.000, 0.000): it is not this track's path",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: the tracks rotated 0.5 rad about the beam (they no longer point at their towers)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene trk_0 leaves its vertex heading +0.486 rad off the event phi 2.683: it points the wrong way",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: the tracks squashed to half their z (every dip angle wrong)",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "scene trk_0 rises 0.284 m in z over 1.100 m in xy (dip 0.252 rad), eta 0.495 gives 0.476 rad: it is not this track's path",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v1: the tracks shrunk a million times (every track below what can be fitted)",
+            "caught": "EVT_UNITS",
+            "detail": "scene extent is 10^-6.00 times the tracker radius: the drawing is shrunk, not the detector",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "look v1: the tracks scaled to 0 (every point on the beam axis)",
+            "caught": "EVT_UNITS",
+            "detail": "scene: every drawn track point sits on the beam axis (a scale of 0?): nothing is drawn",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "a field of 1 microtesla (gauss read as tesla)",
+            "caught": "EVT_UNITS",
+            "detail": "detector.b_field_t = 1e-06 T is outside 0.001 to 100 T: gauss or kilogauss read as tesla?",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "a declared helix radius of 1e300 m for a track of pT 1e-300 GeV (no finite radius ratio)",
+            "caught": "EVT_UNITS",
+            "detail": "track 1: helix radius 1e+300 m and pT 1e-300 GeV give no finite radius ratio",
+            "expected": "EVT_UNITS"
+          },
+          {
+            "case": "look v2: a track born one second late (its production time says now)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_ident.birth_s 1.0922, the production time 0 ns in slow motion gives 0 (+ up to 0.1 s jitter): the track would appear at the wrong time",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a pion coloured as an electron",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_species 1, the particle (pdg 211) is species 3: the colour would be wrong",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: two interior points' a_arc swapped (the growth front would jump back)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_arc runs backwards along the path: the growth front would jump",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v1: a_arc starts 5 cm along instead of at the vertex",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_arc starts at 0.05 m, expected 0 m (0 at the vertex, or where its track ends)",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v1: a_arc runs twice as long as the drawn path (the pulses would outrun it)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_arc spans 2.737 m, the drawn path is 1.368 m long: the growth and pulses would not follow it",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a muon extension's a_arc starts 5 cm past where its track ends",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0 extension (muext_0 strip 0): a_arc starts at 1.6694 m, expected 1.6194 m (0 at the vertex, or where its track ends)",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the tower set without a_look (the shader could not take the offset off)",
+            "caught": "EVT_SHADER",
+            "detail": "twrset_0: no a_look attribute with one row per vertex: the shader could not take the ribbon offset off",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a_look side signs swapped on one ribbon pair",
+            "caught": "EVT_SHADER",
+            "detail": "trkset_0 strip 1 (id 1): a_look.side is 1 on vertex 0, the convention says -1 (the shader takes side * offset_m off, so the ribbon would not sit on the drawn path)",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the last pair of one strip names another track",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trkset_0 strip 1: a_ident.id changes along the strip: one strip, one track",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: tower 0's odd vertices carry 0.5 percent more energy (inside the energy tolerance)",
+            "caught": "EVT_SHADER",
+            "detail": "twr_0: a_cell differs between the two vertices of a spike pair: the two edges of one spike would disagree",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: tower 0's spikes turned 0.2 rad into another phi cell",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "twr_0: a spike point sits +0.159 rad, +0.015 in eta and +0.000 m in z off its tower's cell: it is drawn in another cell",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: a spike of tower 0 tilted 3 cm in z (no longer radial in its cell)",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "twr_0: a spike point sits -0.041 rad, +0.015 in eta and +0.030 m in z off its tower's cell: it is drawn in another cell",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: the tower set drawn with a Material, no shader",
+            "caught": "EVT_SHADER",
+            "detail": "twrset_0 has no ComposedShader in its Appearance: it would draw with the flat default look",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the tower set bound to the haze shader, which declares no a_cell",
+            "caught": "EVT_SHADER",
+            "detail": "twrset_0: the vertex shader never declares attribute a_cell",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: the tower shader's clock ROUTE removed",
+            "caught": "EVT_SHADER",
+            "detail": "twrset_0: its shader twrShader2 gets no ROUTE from a TimeSensor to u_phase: the crown would never light",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a_look with 3 components (the kind is gone)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_0: a_look has 3 components, the convention has 4 (side, seed, drawn_m, kind)",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a_look seed changes at one point of a ribbon",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_look seed, drawn_m or kind differ along the strip or between a ribbon pair: they are one per particle",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a neutral drawn with the charged kind (solid, not dashed)",
+            "caught": "EVT_SHADER",
+            "detail": "trk_3: a_look.kind is 0, a neutral path is 1: it would be drawn as another kind",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "look v2: a_look.drawn_m one metre longer than the path",
+            "caught": "EVT_SHADER",
+            "detail": "trk_1: a_look.drawn_m is 2.368, the path it fades along ends at 1.3685 m of arc",
+            "expected": "EVT_SHADER"
+          },
+          {
+            "case": "a looping muon that never leaves the tracker, drawn with no extension (positive control)",
+            "inventory": {
+              "charged_tracks": 30,
+              "final_state": 40,
+              "hits": 206,
+              "particles": 40,
+              "scene": {
+                "bytes": 1128402,
+                "components": [
+                  "Shaders",
+                  "Rendering",
+                  "ParticleSystems",
+                  "X_ITE"
+                ],
+                "profile": "Immersive",
+                "routes": 5,
+                "shapes": 8,
+                "tower_shapes": 30,
+                "track_shapes": 39,
+                "transforms": 1,
+                "unreadable_nodes": {},
+                "version": "4.0"
+              },
+              "towers": 30,
+              "tracks": 39
+            },
+            "measured": {
+              "bijection": {
+                "drawable_particles": 39,
+                "towers_drawn": 30,
+                "tracks_drawn": 39
+              },
+              "scene_geometry": {
+                "scene_curvature_judged": 39,
+                "scene_curvature_unresolved": 0,
+                "scene_drawn_straight": 9,
+                "scene_points": 2438
+              },
+              "shader": {
+                "attribute_rows": 2510,
+                "extensions_with_shader": 4,
+                "shader_nodes": 1,
+                "tracks_with_shader": 39
+              },
+              "tracks": {
+                "declared": 30,
+                "hits": 30,
+                "straight_hits": 0,
+                "unresolved_hits": 0
+              }
+            },
+            "passed": true
+          },
+          {
+            "case": "look v2: that looping muon given an extension straight out from its looping end",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "trk_4 is drawn on past the tracker, but its track never leaves the tracker",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "look v2: a forward muon's extension starting 3 cm inside the endcap face",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 extension starts at r 0.150 m, z 2.770 m: inside the tracker, not on its boundary",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a muon extension turned 20 degrees where it joins its track",
+            "caught": "EVT_SCENE_BIJECTION",
+            "detail": "trk_0 extension turns 13.6 degrees where it joins its track (spec 10): it is not the same trajectory",
+            "expected": "EVT_SCENE_BIJECTION"
+          },
+          {
+            "case": "look v2: a muon extension whose last point is back inside the tracker",
+            "caught": "EVT_CONTAINMENT",
+            "detail": "trk_0 extension point (0.500, 0.000, 0.000) m is back inside the tracker: an extension only runs outward",
+            "expected": "EVT_CONTAINMENT"
+          },
+          {
+            "case": "spec without scene.reach",
+            "caught": "EVT_SPEC",
+            "detail": "scene.reach: {start_tol_m, reach_tol_m, dir_tol_rad, pitch_tol_rad}, all positive",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec whose reach start tolerance is half a metre",
+            "caught": "EVT_SPEC",
+            "detail": "scene.reach: start and reach within 5 cm, heading and pitch within 0.35 rad: looser is not the same path",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec without scene.shader.birth",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.birth: {slow_motion_m_per_s > 0, jitter_s in [0, 1]}: birth_s = t_prod * c / slow motion + jitter",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec whose arc attribute is not one it lists",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.arc: {name of a listed 1-component attribute, abs_tol_m in (0, 0.05], rel_tol in (0, 0.1]}",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec without scene.shader.species",
+            "caught": "EVT_SPEC",
+            "detail": "scene.shader.species: {name, by_pdg {|pdg|: code}, charged, neutral}: the colour code each particle must carry",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec whose a_look layout is reordered",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.look: {name, track_layout [side, seed, drawn_m, kind], kinds {charged 0, neutral 1, extension 2}}",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec without the tower cell size",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.tower_cell: cell_deta and cell_dphi in (0, 0.5], cell_tol in (0, 0.02]: each spike stays in its own cell",
+            "expected": "EVT_SPEC"
+          },
+          {
+            "case": "spec without the extension join angle",
+            "caught": "EVT_SPEC",
+            "detail": "scene.merged.extensions.join_angle_deg must lie in (0, 30]",
+            "expected": "EVT_SPEC"
+          }
+        ],
+        "optimized": true
+      },
+      "negative_controls_caught": 207,
+      "optimized": true,
+      "positive_controls_passed": 20
+    }
+  ],
+  "schema": "loomkit.self-test/1",
+  "scope": "Synthetic events (an exact two-body decay and a deterministic toy shower) and scenes written by the scene builder, then damaged one way at a time; not generator output and not rendered.",
+  "suite": "hepevent"
+}

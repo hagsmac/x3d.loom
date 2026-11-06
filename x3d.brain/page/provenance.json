@@ -1,0 +1,67 @@
+{
+  "schema": "brain-page-provenance/v1",
+  "title": "Loom log",
+  "intro": "Where each part of this page comes from, what was changed, and what is made up. This file is the source of the Loom log panel; tools/build_page.py adds the scene hashes and counts of the build it writes.",
+  "grades": {
+    "Confirmed": "licence text or metadata was read",
+    "Likely": "licence inferred from the project that made the data, not read",
+    "Suspected": "no licence file found; kept to derived geometry with attribution"
+  },
+  "sources": [
+    {
+      "id": "fsaverage",
+      "name": "Template cortex surfaces: fsaverage pial, sulc, Desikan-Killiany labels",
+      "used_for": "glass cortex, wet cortex, region anchors and centroids",
+      "grade": "Suspected",
+      "licence": "FreeSurfer lineage; the template bucket carries no licence file",
+      "changes": "the template's own lower-density pial vertex set (about 41k vertices per hemisphere in the full build, about 10k in the repo build; not decimated by us), moved rigidly (axes reordered, origin shifted, scale 1.000), medial-wall triangles removed, per-vertex ambient occlusion baked into the colour channel, labels reduced to centroids and surface anchors. No raw surface or label file is shipped.",
+      "cite": "Fischl et al. 1999, Hum Brain Mapp, doi 10.1002/(sici)1097-0193(1999)8:4<272::aid-hbm10>3.0.co;2-4 (DOI checked against the template description file; title and authors not checked: verify)"
+    },
+    {
+      "id": "mni",
+      "name": "MNI152NLin2009cAsym template: aseg segmentation and T1w",
+      "used_for": "deep structure meshes (thalamus, caudate, putamen, pallidum, hippocampus, amygdala, accumbens, ventricles, brainstem, cerebellum) and six T1 slices",
+      "grade": "Confirmed",
+      "licence": "permissive MNI licence text; the copyright notice is carried in NOTICE-BRAIN-DATA.md",
+      "changes": "marching cubes on the smoothed label masks and mesh smoothing; the meshes and six windowed 2D resamples of the T1 (alpha from intensity) are scaled and shifted per axis (about 3 to 5 percent) so that their cortex bounding box equals the fsaverage cortex bounding box (a look-level fit, not a registration). No raw volume is shipped.",
+      "cite": "Fonov et al. 2011, NeuroImage, doi 10.1016/j.neuroimage.2010.07.033; Fonov et al. 2009, NeuroImage 47 (S1), doi 10.1016/S1053-8119(09)70884-5"
+    },
+    {
+      "id": "totalseg",
+      "name": "TotalSegmentator example subject s1397 (whole-body CT, 117 segmentations at 3 mm)",
+      "used_for": "the Torso CT tab: skeleton, lungs, heart, vessels, organs, skin, lung vessels",
+      "grade": "Likely",
+      "licence": "CC BY 4.0, inferred from the dataset's published terms; the licence record of this copy was not read",
+      "changes": "masks to signed-distance fields, marching cubes, smoothing, decimation of the CT-derived meshes. Skin and lung vessels are CT thresholds, not segmentations. Changes were made. No raw CT or mask volume is shipped.",
+      "cite": "Wasserthal et al. 2023, Radiology: Artificial Intelligence, doi 10.1148/ryai.230024"
+    },
+    {
+      "id": "xite",
+      "name": "X_ITE 16.6.0 (X3D browser in JavaScript)",
+      "used_for": "drawing the scene, picking, camera, sound",
+      "grade": "Confirmed",
+      "licence": "MIT (licence file in the package)",
+      "changes": "none; the page loads the vendor build unchanged (tools/fetch_xite.sh fetches it)",
+      "cite": "create3000/x_ite"
+    }
+  ],
+  "notices": [
+    {"tag": "SYNTHETIC", "text": "The glowing tract arcs are generated curves between region anchors. They are not tractography of any subject or scan."},
+    {"tag": "ILLUSTRATIVE", "text": "Activation blobs are placed sprites, not measured activity. Glow, halos, colours and translucency are artistic choices, not tissue properties."},
+    {"tag": "ALIGNMENT", "text": "The MNI deep structures and slices are scaled and shifted per axis to the cortex template's bounding box (the cortex is not scaled). It is a look-level fit, not a registration; positions are not anatomy."},
+    {"tag": "TORSO", "text": "The template brain in the torso is an affine fit into one subject's brain mask: the folds are the template's, not the subject's. The subject has a forward head posture and raised arms, shown as recorded."},
+    {"tag": "GENERATED", "text": "Region facts and the tour captions were drafted by a text model, then rewritten and checked against standard neuroanatomy. No expert or clinical review was done and they can still be wrong. Check any clinical use against a primary source."},
+    {"tag": "GENERATED", "text": "Look palettes were measured (numbers and hex colours only) from private reference images that are not shipped. The music beds (about 33 s each, loops) were made by a music model."},
+    {"tag": "SAFETY", "text": "Not a medical device. Not for diagnosis or treatment. No patient data is used or collected. The page requests only its own files and the X_ITE script (vendored, or from a public CDN when the vendor folder is missing); it sends nothing anywhere."}
+  ],
+  "generated_content": {
+    "text": "Region function, fact, clinical and imaging lines (44 regions) and the eight tour captions: text model, then rewritten and checked (no expert review).",
+    "images": "No generated images are shipped in the repo build. The private build uses reduced thumbnails of private style references as look cards.",
+    "audio": "Music beds: music model, two clips of about 33 s each (one used as the loop); described in NOTICE.md section 7."
+  },
+  "receipt": {
+    "status": "recorded",
+    "sha256": "da1ad1e1553aa6df6c41ae2610ac74312655f5c87c9d7e1959b1fd691b622db2",
+    "note": "The sha256 of runs/brain-20261106/receipt.json, which accepts the two lite scenes under the brain-demo/v1 profile (grammar, meaning, traps, data-true and its controls pass; eyes, behaviour, page-traps and real-gpu are recorded as not run). The receipt does not cover the full-resolution scenes of the private build or this page folder. Receipts are unsigned (Loom law 35)."
+  }
+}

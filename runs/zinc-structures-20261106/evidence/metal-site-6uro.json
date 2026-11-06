@@ -1,0 +1,34 @@
+{
+  "coverage": {
+    "class_declared": 3,
+    "files": 1,
+    "min_intact_fraction": 0.99,
+    "sites": 0,
+    "tau4_floor_declared": 3
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T07:00:41+00:00",
+  "grade": "C",
+  "instrument": {
+    "rules_sha256": "5b1bbcf223c019cb2bf1d68511dc2fe6d1ac5d36a1c4d7d00379c0dc0a8e3bd8",
+    "spec_sha256": "2aa24617a9de7b8d365d9f59abe26f488efef563ce18f5e73fda573f95b8c567",
+    "tool": "loomkit.metalsite"
+  },
+  "limitations": [
+    "PDB format only; distance windows are typical values (L), declared in the spec."
+  ],
+  "measurements": {
+    "detail": "ZN C301: 3 donors within 3.0 A, declared 4",
+    "rejected": "SITE_COORDINATION"
+  },
+  "reason": "SITE_COORDINATION: ZN C301: 3 donors within 3.0 A, declared 4",
+  "schema": "loom.witness/1",
+  "status": "fail",
+  "subject_sha256": "7e9e184ffabfec6a161905a818b7adf743728ee98bdf8f8cee9d7e58abdf7e05",
+  "witness": "metal-site-6uro"
+}

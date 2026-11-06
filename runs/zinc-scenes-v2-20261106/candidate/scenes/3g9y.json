@@ -1,0 +1,57 @@
+{
+  "atoms_drawn": [
+    "A_A_CYS_71_CA",
+    "A_A_CYS_71_CB",
+    "A_A_CYS_71_SG",
+    "A_A_CYS_74_CA",
+    "A_A_CYS_74_CB",
+    "A_A_CYS_74_SG",
+    "A_A_CYS_85_CA",
+    "A_A_CYS_85_CB",
+    "A_A_CYS_85_SG",
+    "A_A_CYS_88_CA",
+    "A_A_CYS_88_CB",
+    "A_A_CYS_88_SG",
+    "A_A_ZN_1_ZN"
+  ],
+  "bonds": [
+    {
+      "angstrom": 2.3499,
+      "donor": "CYS71.SG",
+      "glow": true,
+      "label": "2.35 \u00c5",
+      "site": "A1"
+    },
+    {
+      "angstrom": 2.2555,
+      "donor": "CYS74.SG",
+      "glow": true,
+      "label": "2.26 \u00c5",
+      "site": "A1"
+    },
+    {
+      "angstrom": 2.3649,
+      "donor": "CYS85.SG",
+      "glow": true,
+      "label": "2.36 \u00c5",
+      "site": "A1"
+    },
+    {
+      "angstrom": 2.3228,
+      "donor": "CYS88.SG",
+      "glow": true,
+      "label": "2.32 \u00c5",
+      "site": "A1"
+    }
+  ],
+  "cages": [
+    "A1"
+  ],
+  "labels_name_donor": true,
+  "look": "v2",
+  "pdb": "3g9y",
+  "tubes": [
+    "Backbone_A1_67",
+    "Nucleic_C"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [
+    {
+      "path": "cross-check.log",
+      "sha256": "cc51dac518903078c8e93886d75aef9362ecc0e9e0826b57cd762968636b6061"
+    }
+  ],
+  "finished_at": "2026-11-06T07:00:44+00:00",
+  "grade": "C",
+  "instrument": {
+    "command": [
+      "python3",
+      "cross_check.py",
+      "../evidence"
+    ],
+    "tool": "project gate (adapter)"
+  },
+  "limitations": [],
+  "measurements": {
+    "exit_code": 0,
+    "stdout_tail": "']\n2k1p: pass, agrees (1 sites, 20 models)\n3g9y: pass, agrees (1 sites, 1 models)\n4av1: fail reproduced=True: ZN A1600 frame 0 CYS56.SG witness 2.142 A, reader 2.1422\n6dnh: fail reproduced=True: ZN C301 frame 0 HIS59.NE2 witness 2.209 A, reader 2.2088\n6fuw: fail reproduced=True: ZN C201 frame 0 CYS41.SG witness 2.461 A, reader 2.4611\n6nzl: fail reproduced=True: ZN A201 frame 0 CYS119.SG witness 1.986 A, reader 1.9864\n6uro: fail reproduced=True: ZN C301 frame 0 donors witness 3, reader 3 ['CYS41.SG', 'CYS55.SG', 'HIS59.NE2']\ncompared 63 values across 177 site-frames in 32 sites of 14 structures"
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "7e9e184ffabfec6a161905a818b7adf743728ee98bdf8f8cee9d7e58abdf7e05",
+  "witness": "cross-check"
+}

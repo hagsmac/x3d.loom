@@ -1,0 +1,60 @@
+{
+  "coverage": {
+    "rules": 11
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T07:07:24+00:00",
+  "grade": "C",
+  "instrument": {
+    "rules": [
+      "color-emissive-white",
+      "color-range",
+      "glsl-reserved-active",
+      "metadata-containerfield",
+      "movie-not-still",
+      "no-script-under-host",
+      "route-before-def",
+      "route-undefined",
+      "shader-raw-source",
+      "splat-bbox",
+      "version-fits-nodes"
+    ],
+    "rules_sha256": "7079495c69d211928167639261199a015de127d66901404b5758b673c546d492",
+    "tool": "loomkit.traps"
+  },
+  "limitations": [
+    "Portable subset of x3d.onto loom_gate.py rules; the family gate itself is not on this machine.",
+    "Runtime-labelled rules describe the runtime they were observed on."
+  ],
+  "measurements": {
+    "errors": 0,
+    "files": 14,
+    "hits": {
+      "scenes/1aay.x3d": [],
+      "scenes/1m9o.x3d": [],
+      "scenes/1n0z.x3d": [],
+      "scenes/1rgo.x3d": [],
+      "scenes/1ubd.x3d": [],
+      "scenes/1zaa.x3d": [],
+      "scenes/2jvx.x3d": [],
+      "scenes/2k1p.x3d": [],
+      "scenes/3g9y.x3d": [],
+      "scenes/4av1.x3d": [],
+      "scenes/6dnh.x3d": [],
+      "scenes/6fuw.x3d": [],
+      "scenes/6nzl.x3d": [],
+      "scenes/6uro.x3d": []
+    },
+    "warnings": 0
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "979dec13377e906f95a4736ee6c5fabd00a49c4c48f40bc23c0bacac3d6fc7b0",
+  "witness": "traps"
+}

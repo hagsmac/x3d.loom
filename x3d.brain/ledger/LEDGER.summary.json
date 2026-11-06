@@ -1,0 +1,69 @@
+{
+ "audio_seconds_generated": 65.5,
+ "by_kind": {
+  "image": 25,
+  "music": 2,
+  "probe": 10,
+  "text": 27
+ },
+ "by_model_label": {
+  "image model": 26,
+  "music model": 2,
+  "text model": 36
+ },
+ "by_step": {
+  "(none)": 12,
+  "brain-facts": 16,
+  "c-facts-fill": 2,
+  "c-judge-render": 1,
+  "c-probe-lobes": 1,
+  "c-probe-thinking0": 1,
+  "c-ui-css": 1,
+  "c-ui-title": 1,
+  "c-ui-tour": 2,
+  "review-visual-judge-after-b01": 1,
+  "review-visual-judge-before-b01": 1,
+  "style-board": 25
+ },
+ "failed_or_retried": 30,
+ "first_ts": "2026-11-06T10:10:05Z",
+ "http_status": {
+  "-1": 10,
+  "200": 34,
+  "404": 7,
+  "429": 13
+ },
+ "last_ts": "2026-11-06T16:11:10Z",
+ "note": "Counts and seconds only. Costs, regions, project and identity fields are not part of the public ledger.",
+ "outputs_with_sha256": 32,
+ "prompts_kept": 54,
+ "public_ledger_sha256": "0cf8d4b8d6f2ab48387334a3d839781c2db33d63ea0de7ec078ae68a6e6e1713",
+ "rate_limited": 13,
+ "retries": 20,
+ "rows": 64,
+ "rows_in_source": 64,
+ "schema": "brain.ledger-summary/1",
+ "seconds_by_kind": {
+  "image": 112.4,
+  "music": 53.9,
+  "probe": 32.1,
+  "text": 489.6
+ },
+ "seconds_total": 688.1,
+ "source_ledger_sha256": "2c5af04af65e3a1072447ec2d6ff3d31c0889ef96bb549d98673368e1da6d592",
+ "succeeded": 34,
+ "timeouts": 9,
+ "tokens_by_kind": {
+  "image": {
+   "tokens": 13440
+  },
+  "music": {},
+  "probe": {
+   "tokens": 61
+  },
+  "text": {
+   "tokens_in": 11318,
+   "tokens_out": 12451
+  }
+ }
+}

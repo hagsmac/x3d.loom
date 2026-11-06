@@ -1,0 +1,22 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T14:42:07+00:00",
+  "grade": "L",
+  "instrument": {
+    "by": "operator",
+    "tool": "declared"
+  },
+  "limitations": [],
+  "measurements": {},
+  "reason": "No GPU timing or frame-rate measurement.",
+  "schema": "loom.witness/1",
+  "status": "not_run",
+  "subject_sha256": "fd8301241b5ca8870b391426d1d9ce56cc13e4e20eb510956a182d036d228101",
+  "witness": "real-gpu"
+}

@@ -1,0 +1,28 @@
+{
+  "min_intact_fraction": 0.99,
+  "note": "1RGO: TIS11d (ZFP36L2) tandem fingers on UUAUUUAUU RNA (NMR, 20 models). Ligand classes from the family's literature (L); tau4, windows and radius as declared for the synthetic rehearsal.",
+  "schema": "loom.metal-site-spec/1",
+  "search_radius": 3.0,
+  "sites": [
+    {
+      "class": "CCCH",
+      "coordination": 4,
+      "metal": {
+        "chain": "A",
+        "resname": "ZN",
+        "resseq": 221
+      },
+      "tau4_min": 0.7
+    },
+    {
+      "class": "CCCH",
+      "coordination": 4,
+      "metal": {
+        "chain": "A",
+        "resname": "ZN",
+        "resseq": 222
+      },
+      "tau4_min": 0.7
+    }
+  ]
+}

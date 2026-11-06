@@ -1,0 +1,305 @@
+{
+ "codes": [
+  "BRAIN_OIT_WITH_SHADER"
+ ],
+ "detail": "scenes/brain_hero_lite.x3d: OIT enabled (<meta name='OrderIndependentTransparency' content='true'>) with 4 custom shader node(s): glass vanishes on X_ITE 16.6.0 (GL_INVALID_OPERATION)",
+ "disclosure": {
+  "alignment": "fsaverage and MNI152NLin2009cAsym are joined by a per-axis scale and shift of their cortex bounding boxes (a 3 to 5 percent per-axis fit). Deep-structure containment shares that assumption (law 25): it catches a gross misplacement, it cannot show that any position is anatomically right.",
+  "scope": "geometry and text of the file only; nothing was rendered; not a registration; not a clinical statement"
+ },
+ "files": {
+  "scenes/brain_hero_lite.x3d": {
+   "bytes": 2646928,
+   "checks_run": [
+    "defs",
+    "textures",
+    "geometry",
+    "visibility",
+    "contract",
+    "alignment",
+    "alignment-notice",
+    "notices",
+    "units-provenance",
+    "attribution",
+    "runtime-traps",
+    "counts",
+    "builder",
+    "regions"
+   ],
+   "inputs": {
+    "builder": "build_brain_scene.py",
+    "regions": "regions.json",
+    "sidecar": "brain_hero_lite.x3d.build.json"
+   },
+   "kind": "brain",
+   "measurements": {
+    "alignment_fit_percent": [
+     3.7,
+     3.4,
+     4.8
+    ],
+    "alignment_scale": [
+     0.963,
+     0.966,
+     0.952
+    ],
+    "builder_file": {
+     "name": "build_brain_scene.py",
+     "sha256": "830c5ea341b388797ea11520941cf1439b0cddfc0c24888c54f9c6bf20e4f75a"
+    },
+    "builder_sha": "830c5ea341b38879",
+    "contract_defs": 57,
+    "cortex_bbox": {
+     "extent": [
+      138.6,
+      127.6,
+      173.8
+     ],
+     "max": [
+      69.3,
+      63.8,
+      86.9
+     ],
+     "min": [
+      -69.3,
+      -63.8,
+      -86.9
+     ]
+    },
+    "counts": {
+     "cortex_tris": 37112,
+     "cortex_verts": 20484,
+     "deep_tris": 19376,
+     "tract_fibres": 497,
+     "tract_points": 13916
+    },
+    "deep_containment": {
+     "infratentorial_descent_frac": 0.2,
+     "structures": {
+      "accumbens": {
+       "ok": true,
+       "overshoot_frac": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "amygdala": {
+       "ok": true,
+       "overshoot_frac": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "brainstem": {
+       "ok": true,
+       "overshoot_frac": [
+        0.0,
+        0.1575,
+        0.0
+       ]
+      },
+      "caudate": {
+       "ok": true,
+       "overshoot_frac": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "cerebellum": {
+       "ok": true,
+       "overshoot_frac": [
+        0.0,
+        0.1136,
+        0.0
+       ]
+      },
+      "hippocampus": {
+       "ok": true,
+       "overshoot_frac": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "pallidum": {
+       "ok": true,
+       "overshoot_frac": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "putamen": {
+       "ok": true,
+       "overshoot_frac": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "thalamus": {
+       "ok": true,
+       "overshoot_frac": [
+        0.0,
+        0.0,
+        0.0
+       ]
+      },
+      "ventricles": {
+       "ok": true,
+       "overshoot_frac": [
+        0.0,
+        0.0431,
+        0.0
+       ]
+      }
+     },
+     "tolerance_frac": 0.05
+    },
+    "defs": 199,
+    "env_faces": 6,
+    "geometry": {
+     "collapsed_by_shape": {
+      "STRUCT_ventricles": 30
+     },
+     "collapsed_fraction": 0.000531,
+     "collapsed_triangles": 30,
+     "shapes": 33,
+     "triangles": 56488,
+     "vertices": 30216
+    },
+    "mesh_sha": "9f0f5d3c3667ac4d",
+    "oit_enabled": true,
+    "regions": {
+     "centroids_checked": 78,
+     "entries": 78
+    },
+    "regions_sha256": "f4e5b85f144c57164c58bc33d76880d7c762c01d6f02e0c8a0f24aecadd2d26e",
+    "shader_nodes": 4,
+    "sidecar_sha256": "63dc5f7e93cc90588deb911bbbc1d39fa958f1b6026ea80bfbfba1cd0ec08d31",
+    "slices": 6,
+    "texture_files": 26,
+    "transfer_functions": 0,
+    "world_info_items": 10
+   },
+   "sha256": "5c801b0f1d17cb16601974140b0a2e53ee1ad67a24f38e0eb660c7a0fa5c27da",
+   "skipped": [],
+   "status": "fail",
+   "violations": [
+    {
+     "code": "BRAIN_OIT_WITH_SHADER",
+     "detail": "OIT enabled (<meta name='OrderIndependentTransparency' content='true'>) with 4 custom shader node(s): glass vanishes on X_ITE 16.6.0 (GL_INVALID_OPERATION)"
+    }
+   ]
+  },
+  "scenes/torso_ct_lite.x3d": {
+   "bytes": 2778885,
+   "checks_run": [
+    "defs",
+    "textures",
+    "geometry",
+    "visibility",
+    "contract",
+    "alignment",
+    "notices",
+    "units-provenance",
+    "attribution",
+    "runtime-traps",
+    "builder",
+    "labels"
+   ],
+   "inputs": {
+    "builder": "build_torso_scene.py",
+    "regions": "torso_regions.json",
+    "sidecar": null
+   },
+   "kind": "torso",
+   "measurements": {
+    "builder_file": {
+     "name": "build_torso_scene.py",
+     "sha256": "23cea36ce451fdc94670bab60e3c02ede8f7df3d921472089ce06d172b4fbf55"
+    },
+    "builder_sha": "23cea36ce451fdc9",
+    "contract_defs": 37,
+    "defs": 213,
+    "env_faces": 6,
+    "geometry": {
+     "collapsed_by_shape": {},
+     "collapsed_fraction": 0.0,
+     "collapsed_triangles": 0,
+     "shapes": 111,
+     "triangles": 84234,
+     "vertices": 42251
+    },
+    "ghost_containment": {
+     "structures": {
+      "STRUCT_brainstem": {
+       "ok": true
+      },
+      "STRUCT_cerebellum": {
+       "ok": true
+      },
+      "STRUCT_cortex_left": {
+       "ok": true
+      },
+      "STRUCT_cortex_right": {
+       "ok": true
+      }
+     },
+     "tolerance_frac": 0.05
+    },
+    "labels": {
+     "entries": 111,
+     "lite_triangles": 84234,
+     "lite_vertices": 42251,
+     "shapes": 111,
+     "variant": "lite"
+    },
+    "oit_enabled": false,
+    "regions_sha256": "70df758e6e5d79ab5fa416dac1470fc89f0c4c5431096585e2d4542d5c748e6e",
+    "shader_nodes": 16,
+    "skin_extent": [
+     437.3,
+     820.8,
+     398.1
+    ],
+    "texture_files": 6,
+    "transfer_functions": 0,
+    "world_info_items": 10
+   },
+   "sha256": "12b5774972b71867bf17c85f8e0598507c19b3092519eff7dd41b036b6aa3368",
+   "skipped": [],
+   "status": "pass",
+   "violations": []
+  }
+ },
+ "limits": {
+  "align_fit_max": 0.05,
+  "area_eps_mm2": 1e-06,
+  "audio_start_min": 2000000000.0,
+  "brain_extent_mm": [
+   80.0,
+   250.0
+  ],
+  "deep_tol_frac": 0.05,
+  "env_face_px": 64,
+  "infra_descent_frac": 0.2,
+  "region_tol_frac": 0.05,
+  "torso_width_mm": [
+   250.0,
+   600.0
+  ],
+  "zero_area_frac_max": 0.001
+ },
+ "page_files": [],
+ "rejected": "BRAIN_OIT_WITH_SHADER",
+ "scenes": 2,
+ "schema": "brain.scene-truth/1",
+ "status": "fail",
+ "strict": true
+}
+
+--- stderr ---

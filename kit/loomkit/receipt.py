@@ -8,11 +8,23 @@ unsigned: it shows drift, it does not authenticate authorship (definition, Recei
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 from .core import canonical, need, sha256_bytes, sha256_file, utc_now
 
 RECEIPT_SCHEMA = "loom.receipt/1"
+
+
+def _output_keys(outputs: list[Path]) -> dict[str, Path]:
+    """Name each output by its basename; when two share one (events/x.x3d and events-v2/x.x3d), name every output by
+    its path below their common folder instead, so none is silently dropped. The same file twice is refused."""
+    keys = {p.name: p for p in outputs}
+    if len(keys) < len(outputs):
+        common = Path(os.path.commonpath([str(p.resolve()) for p in outputs]))
+        keys = {p.resolve().relative_to(common).as_posix(): p for p in outputs}
+        need(len(keys) == len(outputs), "RECEIPT_OUTPUTS", "the same output file is listed twice")
+    return keys
 
 
 def build(subject: str, acceptance: dict, candidate_files: dict, outputs: list[Path], tools: dict,
@@ -27,7 +39,7 @@ def build(subject: str, acceptance: dict, candidate_files: dict, outputs: list[P
         "profile": acceptance["profile"],
         "inputs": inputs,
         "tools": tools,
-        "outputs": {p.name: {"bytes": p.stat().st_size, "sha256": sha256_file(p)} for p in outputs},
+        "outputs": {k: {"bytes": p.stat().st_size, "sha256": sha256_file(p)} for k, p in _output_keys(outputs).items()},
         "witnesses": acceptance["witnesses"],
         "not_run": not_run,
         "model_calls": model_calls,

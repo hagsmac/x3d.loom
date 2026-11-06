@@ -1,0 +1,22 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T06:55:12+00:00",
+  "grade": "L",
+  "instrument": {
+    "by": "operator",
+    "tool": "declared"
+  },
+  "limitations": [],
+  "measurements": {},
+  "reason": "Static scenes: no ROUTEs, scripts or host page, and nothing was simulated.",
+  "schema": "loom.witness/1",
+  "status": "not_run",
+  "subject_sha256": "979dec13377e906f95a4736ee6c5fabd00a49c4c48f40bc23c0bacac3d6fc7b0",
+  "witness": "page-traps"
+}

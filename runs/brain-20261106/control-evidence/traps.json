@@ -1,0 +1,52 @@
+{
+  "coverage": {
+    "rules": 11
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T17:51:36+00:00",
+  "grade": "C",
+  "instrument": {
+    "rules": [
+      "color-emissive-white",
+      "color-range",
+      "glsl-reserved-active",
+      "metadata-containerfield",
+      "movie-not-still",
+      "no-script-under-host",
+      "route-before-def",
+      "route-undefined",
+      "shader-raw-source",
+      "splat-bbox",
+      "version-fits-nodes"
+    ],
+    "rules_sha256": "7079495c69d211928167639261199a015de127d66901404b5758b673c546d492",
+    "tool": "loomkit.traps"
+  },
+  "limitations": [
+    "Portable subset of x3d.onto loom_gate.py rules; the family gate itself is not on this machine.",
+    "Runtime-labelled rules describe the runtime they were observed on."
+  ],
+  "measurements": {
+    "errors": 0,
+    "files": 2,
+    "hits": {
+      "scenes/brain_hero_lite.x3d": [],
+      "scenes/torso_ct_lite.x3d": []
+    },
+    "seen": {
+      "bytes": 5425813,
+      "scenes": 2
+    },
+    "warnings": 0
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "4812fbee4e02496e7366f1cb2eee6b3129ee1cf28ea8ce941b2185f31d116285",
+  "witness": "traps"
+}

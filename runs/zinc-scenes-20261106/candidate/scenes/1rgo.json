@@ -1,0 +1,102 @@
+{
+  "atoms_drawn": [
+    "A_A_CYS_159_CA",
+    "A_A_CYS_159_CB",
+    "A_A_CYS_159_SG",
+    "A_A_CYS_168_CA",
+    "A_A_CYS_168_CB",
+    "A_A_CYS_168_SG",
+    "A_A_CYS_174_CA",
+    "A_A_CYS_174_CB",
+    "A_A_CYS_174_SG",
+    "A_A_CYS_197_CA",
+    "A_A_CYS_197_CB",
+    "A_A_CYS_197_SG",
+    "A_A_CYS_206_CA",
+    "A_A_CYS_206_CB",
+    "A_A_CYS_206_SG",
+    "A_A_CYS_212_CA",
+    "A_A_CYS_212_CB",
+    "A_A_CYS_212_SG",
+    "A_A_HIS_178_CA",
+    "A_A_HIS_178_CB",
+    "A_A_HIS_178_CD2",
+    "A_A_HIS_178_CE1",
+    "A_A_HIS_178_CG",
+    "A_A_HIS_178_ND1",
+    "A_A_HIS_178_NE2",
+    "A_A_HIS_216_CA",
+    "A_A_HIS_216_CB",
+    "A_A_HIS_216_CD2",
+    "A_A_HIS_216_CE1",
+    "A_A_HIS_216_CG",
+    "A_A_HIS_216_ND1",
+    "A_A_HIS_216_NE2",
+    "A_A_ZN_221_ZN",
+    "A_A_ZN_222_ZN"
+  ],
+  "bonds": [
+    {
+      "angstrom": 2.2985,
+      "donor": "CYS159.SG",
+      "glow": true,
+      "label": "2.30 \u00c5",
+      "site": "A221"
+    },
+    {
+      "angstrom": 2.2897,
+      "donor": "CYS168.SG",
+      "glow": true,
+      "label": "2.29 \u00c5",
+      "site": "A221"
+    },
+    {
+      "angstrom": 2.2831,
+      "donor": "CYS174.SG",
+      "glow": true,
+      "label": "2.28 \u00c5",
+      "site": "A221"
+    },
+    {
+      "angstrom": 2.0849,
+      "donor": "HIS178.NE2",
+      "glow": true,
+      "label": "2.08 \u00c5",
+      "site": "A221"
+    },
+    {
+      "angstrom": 2.2988,
+      "donor": "CYS197.SG",
+      "glow": true,
+      "label": "2.30 \u00c5",
+      "site": "A222"
+    },
+    {
+      "angstrom": 2.2917,
+      "donor": "CYS206.SG",
+      "glow": true,
+      "label": "2.29 \u00c5",
+      "site": "A222"
+    },
+    {
+      "angstrom": 2.2849,
+      "donor": "CYS212.SG",
+      "glow": true,
+      "label": "2.28 \u00c5",
+      "site": "A222"
+    },
+    {
+      "angstrom": 2.0801,
+      "donor": "HIS216.NE2",
+      "glow": true,
+      "label": "2.08 \u00c5",
+      "site": "A222"
+    }
+  ],
+  "pdb": "1rgo",
+  "tubes": [
+    "Backbone_A221_155",
+    "Backbone_A222_193",
+    "Nucleic_D"
+  ]
+}

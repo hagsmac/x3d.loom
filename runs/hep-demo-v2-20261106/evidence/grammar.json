@@ -1,0 +1,22 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T16:18:27+00:00",
+  "grade": "L",
+  "instrument": {
+    "by": "operator",
+    "tool": "declared"
+  },
+  "limitations": [],
+  "measurements": {},
+  "reason": "The X3D fork is not on this machine. Written against X3D 4.0 (profile Immersive, Shaders level 3 declared); not validated.",
+  "schema": "loom.witness/1",
+  "status": "not_run",
+  "subject_sha256": "9685212a2e9367604eeccc06ce1fe8de9aa959354f67805d4021588f87e27542",
+  "witness": "grammar"
+}

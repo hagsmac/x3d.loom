@@ -1,0 +1,22 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T08:35:19+00:00",
+  "grade": "L",
+  "instrument": {
+    "by": "operator",
+    "tool": "declared"
+  },
+  "limitations": [],
+  "measurements": {},
+  "reason": "Stills and a clip were reviewed by the builder only (a look pass that changed the gorge background, the spire facades and the climb camera); the owner has not looked at or played the game yet.",
+  "schema": "loom.witness/1",
+  "status": "not_run",
+  "subject_sha256": "6244fe7cf628640beb8f2cc791fda25243749b8f3242459490abaaac96d9928f",
+  "witness": "eyes"
+}

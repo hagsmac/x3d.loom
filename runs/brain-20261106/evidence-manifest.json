@@ -1,0 +1,100 @@
+{
+  "candidate_sha256": "d59bb5b7b778c1f533b00e0af5b2e09da9c09750a130b65a432f275f9f7d5f03",
+  "files": [
+    {
+      "bytes": 641,
+      "path": "behaviour.json",
+      "role": "witness-record",
+      "sha256": "fedd8d1a23019f318b835daa855bfb6cb371a29970aa9d319f9d1c61a2d360fd"
+    },
+    {
+      "bytes": 1451,
+      "path": "data-true-controls.json",
+      "role": "witness-record",
+      "sha256": "f2988d770868acf08e5d8504874705ada563f2551ad71ac046e76e631ac22029"
+    },
+    {
+      "bytes": 23885,
+      "path": "data-true-controls.log",
+      "role": "log",
+      "sha256": "8d7da9489b8611fc3976684b6fe029efd404bc2ab7ab2a43ab99a24beae138b5"
+    },
+    {
+      "bytes": 1490,
+      "path": "data-true.json",
+      "role": "witness-record",
+      "sha256": "6eb5fb0440abe27680027b6242ab7f7eab403a0069f610bde3c820e973734205"
+    },
+    {
+      "bytes": 6104,
+      "path": "data-true.log",
+      "role": "log",
+      "sha256": "488cb8bce6f68eb8098dfdf7f648269669732c5eb934d92f80e03bc2a87d085a"
+    },
+    {
+      "bytes": 772,
+      "path": "eyes.json",
+      "role": "witness-record",
+      "sha256": "7d7c64698338e101a9ea3539593b4972b96f157a772a1c9eb7b7474059a53c5c"
+    },
+    {
+      "bytes": 1038,
+      "path": "grammar.json",
+      "role": "witness-record",
+      "sha256": "789b66a570803d51d9bca8b6069cf1ddbd0a102ca172de8c0d871c9d428fa740"
+    },
+    {
+      "bytes": 1084,
+      "path": "meaning.json",
+      "role": "witness-record",
+      "sha256": "39191c238f1da8a7bb84abb3dbbca4f433b43b1f08b860a0a3b5b46fb7505931"
+    },
+    {
+      "bytes": 653,
+      "path": "page-traps.json",
+      "role": "witness-record",
+      "sha256": "8866fd4488c9d24133e921058b2e96fcc870832f875137db1e5e65618f84f7fa"
+    },
+    {
+      "bytes": 627,
+      "path": "real-gpu.json",
+      "role": "witness-record",
+      "sha256": "0ece98e8fdb42e3476b55676a89e6e41a83afbb086524534993f7e4f76958d67"
+    },
+    {
+      "bytes": 1283,
+      "path": "traps.json",
+      "role": "witness-record",
+      "sha256": "92767fc209b4018e148b405d884b61ba82a6434da387b32613bc5f9d50466e84"
+    }
+  ],
+  "not_run": [
+    {
+      "reason": "No eyes witness is bound to this candidate. The lite scenes were rendered on headless Chromium with SwiftShader software GL and X_ITE 16.6.0 and looked at while building, but no frame set carries this candidate's hash and no judge or person has reviewed them here. Valid is not visible.",
+      "status": "not_run",
+      "witness": "eyes"
+    },
+    {
+      "reason": "No scripted browser run (load, DEF contract through the SAI, touch sensors, switches, audio start) is bound to this candidate; the page is outside it.",
+      "status": "not_run",
+      "witness": "behaviour"
+    },
+    {
+      "reason": "The page (page/) is outside the candidate and its JavaScript and HTML were not read by kit pagetraps. Run it over the final page files, and read its seen counts.",
+      "status": "not_run",
+      "witness": "page-traps"
+    },
+    {
+      "reason": "Only software GL (SwiftShader) was available. Frame rates and the glass shader on a real GPU, and OIT behaviour there, were not measured.",
+      "status": "not_run",
+      "witness": "real-gpu"
+    }
+  ],
+  "profile": "brain-demo/v1",
+  "receipt": {
+    "path": "receipt.json",
+    "sha256": "327e2c669c58b28f3b12e4969437f1f9467392eb54c40c87175fd0f1fffddfbf"
+  },
+  "schema": "loom.evidence-manifest/1",
+  "subject": "Brain Loom demo: lite hero brain and lite torso CT (brain-demo/v1)"
+}

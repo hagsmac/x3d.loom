@@ -1,0 +1,118 @@
+{
+  "atoms_drawn": [
+    "A_C_CYS_110_CA",
+    "A_C_CYS_110_CB",
+    "A_C_CYS_110_SG",
+    "A_C_CYS_41_CA",
+    "A_C_CYS_41_CB",
+    "A_C_CYS_41_SG",
+    "A_C_CYS_49_CA",
+    "A_C_CYS_49_CB",
+    "A_C_CYS_49_SG",
+    "A_C_CYS_55_CA",
+    "A_C_CYS_55_CB",
+    "A_C_CYS_55_SG",
+    "A_C_CYS_76_CA",
+    "A_C_CYS_76_CB",
+    "A_C_CYS_76_SG",
+    "A_C_CYS_96_CA",
+    "A_C_CYS_96_CB",
+    "A_C_CYS_96_SG",
+    "A_C_HIS_114_CA",
+    "A_C_HIS_114_CB",
+    "A_C_HIS_114_CD2",
+    "A_C_HIS_114_CE1",
+    "A_C_HIS_114_CG",
+    "A_C_HIS_114_ND1",
+    "A_C_HIS_114_NE2",
+    "A_C_HIS_59_CA",
+    "A_C_HIS_59_CB",
+    "A_C_HIS_59_CD2",
+    "A_C_HIS_59_CE1",
+    "A_C_HIS_59_CG",
+    "A_C_HIS_59_ND1",
+    "A_C_HIS_59_NE2",
+    "A_C_HIS_86_CA",
+    "A_C_HIS_86_CB",
+    "A_C_HIS_86_CD2",
+    "A_C_HIS_86_CE1",
+    "A_C_HIS_86_CG",
+    "A_C_HIS_86_ND1",
+    "A_C_HIS_86_NE2",
+    "A_C_ZN_301_ZN",
+    "A_C_ZN_302_ZN",
+    "A_C_ZN_303_ZN"
+  ],
+  "bonds": [
+    {
+      "angstrom": 2.7982,
+      "donor": "CYS41.SG",
+      "glow": false,
+      "label": "2.80 \u00c5",
+      "site": "C301"
+    },
+    {
+      "angstrom": 2.4716,
+      "donor": "CYS49.SG",
+      "glow": true,
+      "label": "2.47 \u00c5",
+      "site": "C301"
+    },
+    {
+      "angstrom": 2.8553,
+      "donor": "CYS55.SG",
+      "glow": false,
+      "label": "2.86 \u00c5",
+      "site": "C301"
+    },
+    {
+      "angstrom": 2.2088,
+      "donor": "HIS59.NE2",
+      "glow": true,
+      "label": "2.21 \u00c5",
+      "site": "C301"
+    },
+    {
+      "angstrom": 2.4903,
+      "donor": "CYS76.SG",
+      "glow": true,
+      "label": "2.49 \u00c5",
+      "site": "C302"
+    },
+    {
+      "angstrom": 1.9541,
+      "donor": "HIS86.NE2",
+      "glow": true,
+      "label": "1.95 \u00c5",
+      "site": "C302"
+    },
+    {
+      "angstrom": 2.4382,
+      "donor": "CYS110.SG",
+      "glow": true,
+      "label": "2.44 \u00c5",
+      "site": "C303"
+    },
+    {
+      "angstrom": 2.3039,
+      "donor": "HIS114.NE2",
+      "glow": true,
+      "label": "2.30 \u00c5",
+      "site": "C303"
+    },
+    {
+      "angstrom": 2.7455,
+      "donor": "CYS96.SG",
+      "glow": false,
+      "label": "2.75 \u00c5",
+      "site": "C303"
+    }
+  ],
+  "pdb": "6dnh",
+  "tubes": [
+    "Backbone_C301_37",
+    "Backbone_C302_72",
+    "Backbone_C303_92",
+    "Nucleic_E"
+  ]
+}

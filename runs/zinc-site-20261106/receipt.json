@@ -1,0 +1,92 @@
+{
+  "budget": {
+    "cloud_resources": 0,
+    "paid_calls": 0
+  },
+  "candidate_files": 4,
+  "candidate_sha256": "43dd849560ada574be59dbf4ee450ae57c2bdd3567070ebc047177432e9a4b61",
+  "grade": "C",
+  "inputs": {
+    "candidate_sha256": "43dd849560ada574be59dbf4ee450ae57c2bdd3567070ebc047177432e9a4b61"
+  },
+  "kind": "artifact",
+  "limitations": [
+    "Version 0: written before any real structure was available to the instrument; the first real run may move the windows, which are typical values (grade L) declared per study.",
+    "The metal-site witness reads PDB format only; trajectories must be written as MODEL records first.",
+    "Geometry is not energy: a site that passes can still come from a force field that is wrong for zinc.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ],
+  "model_calls": [],
+  "not_run": [
+    {
+      "reason": "No experimental zinc-finger structure reached this machine: the structure archives are not reachable from it. The first real run uses an NMR or crystal structure fetched by the operator.",
+      "status": "not_run",
+      "witness": "real-structure"
+    },
+    {
+      "reason": "No molecular dynamics ran. The engine and analysis library install and pass their own self-tests on CPU here; production runs need a GPU and the operator's yes.",
+      "status": "not_run",
+      "witness": "simulation"
+    },
+    {
+      "reason": "No X3D scene exists yet: this run rehearses the structure witness only.",
+      "status": "not_run",
+      "witness": "grammar"
+    },
+    {
+      "reason": "No X3D scene exists yet: this run rehearses the structure witness only.",
+      "status": "not_run",
+      "witness": "meaning"
+    },
+    {
+      "reason": "No X3D scene exists yet: this run rehearses the structure witness only.",
+      "status": "not_run",
+      "witness": "traps"
+    },
+    {
+      "reason": "No X3D scene exists yet: this run rehearses the structure witness only.",
+      "status": "not_run",
+      "witness": "page-traps"
+    },
+    {
+      "reason": "No X3D scene exists yet: this run rehearses the structure witness only.",
+      "status": "not_run",
+      "witness": "behaviour"
+    },
+    {
+      "reason": "No X3D scene exists yet: this run rehearses the structure witness only.",
+      "status": "not_run",
+      "witness": "eyes"
+    }
+  ],
+  "outputs": {
+    "ccch-site-20-frames.pdb": {
+      "bytes": 21263,
+      "sha256": "ceb16cb39764e0f3cbcdd607a3cf59746d20f1ad7142c39631e2aae46e80e0f6"
+    },
+    "ccch-site.pdb": {
+      "bytes": 1214,
+      "sha256": "2da742a3e2ff34517792dcf84b5b35eabc212779e59a1c993cd866f9ed500d48"
+    }
+  },
+  "prev": null,
+  "profile": "zinc-site/v0",
+  "schema": "loom.receipt/1",
+  "sha256": "1c27ec0f099d86a546dd4b4fca0856057d4ab940bdba7d7cd6ab6ea02bc597a6",
+  "signed": false,
+  "subject": "Synthetic zinc-site candidate (instrument rehearsal, no protein)",
+  "tools": {
+    "metal-site": {
+      "tool": "loomkit.metalsite"
+    }
+  },
+  "witnesses": [
+    {
+      "grade": "C",
+      "record_sha256": "1fc410beec2b65a02655cd60eca9c8937126dd4b54c36ec012bf19cbb0f48750",
+      "status": "pass",
+      "witness": "metal-site"
+    }
+  ],
+  "written_at": "2026-11-06T06:58:00+00:00"
+}

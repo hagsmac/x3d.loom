@@ -1,0 +1,820 @@
+{
+ "blind_spots": 4,
+ "cli": 6,
+ "codes_covered": 39,
+ "codes_total": 39,
+ "negative": 75,
+ "optimized_run_agrees": true,
+ "positive": 7,
+ "python": "3.13.18",
+ "result": {
+  "blind_spots": [
+   {
+    "case": "thalamus moved 20 mm sideways but still inside the cortex box",
+    "result": "not detected (known blind spot)"
+   },
+   {
+    "case": "glass opacity fields of the left hemisphere set to 0 (a valid shader that draws nothing)",
+    "result": "not detected (known blind spot)"
+   },
+   {
+    "case": "an unlabelled extra line shape outside the TRACTS group",
+    "result": "not detected (known blind spot)"
+   },
+   {
+    "case": "home viewpoint a thousand kilometres from the brain",
+    "result": "not detected (known blind spot)"
+   }
+  ],
+  "cli": [
+   {
+    "case": "cli: real scenes, strict",
+    "exit": 0,
+    "scenes": 2
+   },
+   {
+    "case": "cli: oit with shader",
+    "exit": 1,
+    "rejected": "BRAIN_OIT_WITH_SHADER"
+   },
+   {
+    "case": "cli: missing file is an instrument error",
+    "exit": 2
+   },
+   {
+    "case": "cli: unknown scene kind is an instrument error",
+    "exit": 2
+   },
+   {
+    "case": "cli: a glob that matches nothing is an instrument error",
+    "exit": 2
+   },
+   {
+    "case": "cli: --list-codes",
+    "codes": 39,
+    "exit": 0
+   }
+  ],
+  "negative": [
+   {
+    "case": "oit enabled together with the glass ComposedShader",
+    "caught": "BRAIN_OIT_WITH_SHADER",
+    "codes": [
+     "BRAIN_OIT_WITH_SHADER"
+    ],
+    "detail": "OIT enabled (<meta name='OrderIndependentTransparency' content='true'>) with 4 custom shader node(s): glass vanishes on X_ITE 16.6.0 (GL_INVALID_OPERATION)",
+    "expected": "BRAIN_OIT_WITH_SHADER"
+   },
+   {
+    "case": "oit switched on by the page JavaScript",
+    "caught": "BRAIN_OIT_WITH_SHADER",
+    "codes": [
+     "BRAIN_OIT_WITH_SHADER"
+    ],
+    "detail": "OIT enabled (page app.js) with 4 custom shader node(s): glass vanishes on X_ITE 16.6.0 (GL_INVALID_OPERATION)",
+    "expected": "BRAIN_OIT_WITH_SHADER"
+   },
+   {
+    "case": "shader used without the Shaders component",
+    "caught": "BRAIN_SHADER_COMPONENT",
+    "codes": [
+     "BRAIN_SHADER_COMPONENT"
+    ],
+    "detail": "4 shader node(s), no <component name='Shaders' level='1'/>, profile='Immersive': X_ITE ignores the shader silently",
+    "expected": "BRAIN_SHADER_COMPONENT"
+   },
+   {
+    "case": "subcortical vertex outside the cortex bounding box",
+    "caught": "BRAIN_DEEP_OUTSIDE",
+    "codes": [
+     "BRAIN_DEEP_OUTSIDE"
+    ],
+    "detail": "thalamus: x max 300.0 > 76.2 (cortex bbox [-69.3, -63.8, -86.9]..[69.3, 63.8, 86.9], tolerance 5% per axis)",
+    "expected": "BRAIN_DEEP_OUTSIDE"
+   },
+   {
+    "case": "brain stem shifted 60 mm down",
+    "caught": "BRAIN_DEEP_OUTSIDE",
+    "codes": [
+     "BRAIN_DEEP_OUTSIDE",
+     "BRAIN_REGION_OUTSIDE"
+    ],
+    "detail": "brainstem: y min -143.9 < -95.7 (cortex bbox [-69.3, -63.8, -86.9]..[69.3, 63.8, 86.9], tolerance 5% per axis)",
+    "expected": "BRAIN_DEEP_OUTSIDE"
+   },
+   {
+    "case": "brain stem shifted 60 mm up (inside the box; caught by its region centroid)",
+    "caught": "BRAIN_REGION_OUTSIDE",
+    "codes": [
+     "BRAIN_REGION_OUTSIDE"
+    ],
+    "detail": "region deep-brainstem: centroid [-0.21, -47.06, 14.19] outside its structure bbox",
+    "expected": "BRAIN_REGION_OUTSIDE"
+   },
+   {
+    "case": "cerebellum shifted 70 mm backwards",
+    "caught": "BRAIN_DEEP_OUTSIDE",
+    "codes": [
+     "BRAIN_DEEP_OUTSIDE",
+     "BRAIN_REGION_OUTSIDE"
+    ],
+    "detail": "cerebellum: z max 144.0 > 95.6 (cortex bbox [-69.3, -63.8, -86.9]..[69.3, 63.8, 86.9], tolerance 5% per axis)",
+    "expected": "BRAIN_DEEP_OUTSIDE"
+   },
+   {
+    "case": "triangle index past the last vertex",
+    "caught": "BRAIN_INDEX_RANGE",
+    "codes": [
+     "BRAIN_INDEX_RANGE"
+    ],
+    "detail": "SHAPE_CORTEX_L: index range 0..99999 against 10242 vertices",
+    "expected": "BRAIN_INDEX_RANGE"
+   },
+   {
+    "case": "negative triangle index",
+    "caught": "BRAIN_INDEX_RANGE",
+    "codes": [
+     "BRAIN_INDEX_RANGE"
+    ],
+    "detail": "SHAPE_CORTEX_L: index range -1..10241 against 10242 vertices",
+    "expected": "BRAIN_INDEX_RANGE"
+   },
+   {
+    "case": "index list is not whole triangles",
+    "caught": "BRAIN_INDEX_SHAPE",
+    "codes": [
+     "BRAIN_INDEX_SHAPE"
+    ],
+    "detail": "SHAPE_CORTEX_L: 55610 indices is not whole triangles",
+    "expected": "BRAIN_INDEX_SHAPE"
+   },
+   {
+    "case": "triangle repeats a vertex",
+    "caught": "BRAIN_DEGENERATE",
+    "codes": [
+     "BRAIN_DEGENERATE"
+    ],
+    "detail": "SHAPE_CORTEX_L: 1 triangles repeat a vertex index",
+    "expected": "BRAIN_DEGENERATE"
+   },
+   {
+    "case": "collapsed triangles above the cap",
+    "caught": "BRAIN_DEGENERATE",
+    "codes": [
+     "BRAIN_DEGENERATE"
+    ],
+    "detail": "628 of 56488 triangles are collapsed (area <= 1e-06 mm2), 1.1117% > cap 0.10%; worst [(598, 'SHAPE_CORTEX_R'), (30, 'STRUCT_ventricles')]",
+    "expected": "BRAIN_DEGENERATE"
+   },
+   {
+    "case": "NaN coordinate",
+    "caught": "BRAIN_NONFINITE",
+    "codes": [
+     "BRAIN_NONFINITE"
+    ],
+    "detail": "SHAPE_CORTEX_R: NaN or infinity in coordinates",
+    "expected": "BRAIN_NONFINITE"
+   },
+   {
+    "case": "normals shorter than the coordinates",
+    "caught": "BRAIN_ATTRIBUTE_COUNT",
+    "codes": [
+     "BRAIN_ATTRIBUTE_COUNT"
+    ],
+    "detail": "SHAPE_CORTEX_L: Normal holds 10241 values for 10242 vertices",
+    "expected": "BRAIN_ATTRIBUTE_COUNT"
+   },
+   {
+    "case": "tracts without the SYNTHETIC metadata",
+    "caught": "BRAIN_SYNTHETIC_TRACTS",
+    "codes": [
+     "BRAIN_SYNTHETIC_TRACTS"
+    ],
+    "detail": "TRACTS metadata SYNTHETIC=None",
+    "expected": "BRAIN_SYNTHETIC_TRACTS"
+   },
+   {
+    "case": "activation without the ILLUSTRATIVE metadata",
+    "caught": "BRAIN_SYNTHETIC_ACTIV",
+    "codes": [
+     "BRAIN_SYNTHETIC_ACTIV"
+    ],
+    "detail": "SW_ACTIV metadata ILLUSTRATIVE=None",
+    "expected": "BRAIN_SYNTHETIC_ACTIV"
+   },
+   {
+    "case": "WorldInfo without the SYNTHETIC notice",
+    "caught": "BRAIN_SYNTHETIC_WORLDINFO",
+    "codes": [
+     "BRAIN_SYNTHETIC_WORLDINFO"
+    ],
+    "detail": "WorldInfo lacks SYNTHETIC",
+    "expected": "BRAIN_SYNTHETIC_WORLDINFO"
+   },
+   {
+    "case": "a contract DEF is missing",
+    "caught": "BRAIN_DEF_MISSING",
+    "codes": [
+     "BRAIN_DEF_MISSING"
+    ],
+    "detail": "SW_ACTIV",
+    "expected": "BRAIN_DEF_MISSING"
+   },
+   {
+    "case": "a contract DEF is the wrong node type",
+    "caught": "BRAIN_DEF_TYPE",
+    "codes": [
+     "BRAIN_DEF_TYPE"
+    ],
+    "detail": "SW_DEEP is <Group>, expected <Switch>",
+    "expected": "BRAIN_DEF_TYPE"
+   },
+   {
+    "case": "a DEF used twice",
+    "caught": "BRAIN_DEF_DUPLICATE",
+    "codes": [
+     "BRAIN_DEF_DUPLICATE"
+    ],
+    "detail": "BG",
+    "expected": "BRAIN_DEF_DUPLICATE"
+   },
+   {
+    "case": "USE of a DEF that does not exist",
+    "caught": "BRAIN_USE_UNRESOLVED",
+    "codes": [
+     "BRAIN_USE_UNRESOLVED"
+    ],
+    "detail": "USE=GEO_NOPE on <IndexedTriangleSet>",
+    "expected": "BRAIN_USE_UNRESOLVED"
+   },
+   {
+    "case": "cortex switch default changed",
+    "caught": "BRAIN_SWITCH_DEFAULT",
+    "codes": [
+     "BRAIN_SWITCH_DEFAULT"
+    ],
+    "detail": "SW_CORTEX.whichChoice='-1', expected 0",
+    "expected": "BRAIN_SWITCH_DEFAULT"
+   },
+   {
+    "case": "WorldInfo tract arc count differs from the geometry",
+    "caught": "BRAIN_COUNT_MISMATCH",
+    "codes": [
+     "BRAIN_COUNT_MISMATCH"
+    ],
+    "detail": "WorldInfo declares 498 tract arcs (13916 points); GEO_TRACTS has 497 (13916)",
+    "expected": "BRAIN_COUNT_MISMATCH"
+   },
+   {
+    "case": "sidecar triangle count differs from the geometry",
+    "caught": "BRAIN_COUNT_MISMATCH",
+    "codes": [
+     "BRAIN_COUNT_MISMATCH"
+    ],
+    "detail": "sidecar declares cortex_tris=37113, geometry has 37112",
+    "expected": "BRAIN_COUNT_MISMATCH"
+   },
+   {
+    "case": "no declaration of the counts (sidecar gone, not strict)",
+    "caught": "BRAIN_COUNT_UNDECLARED",
+    "codes": [
+     "BRAIN_COUNT_UNDECLARED"
+    ],
+    "detail": "neither WorldInfo nor a sidecar declares the cortex and deep counts",
+    "expected": "BRAIN_COUNT_UNDECLARED"
+   },
+   {
+    "case": "strict mode and the sidecar is gone",
+    "caught": "BRAIN_INPUT_MISSING",
+    "codes": [
+     "BRAIN_COUNT_UNDECLARED",
+     "BRAIN_INPUT_MISSING"
+    ],
+    "detail": "build sidecar (<scene>.build.json)",
+    "expected": "BRAIN_INPUT_MISSING"
+   },
+   {
+    "case": "sidecar written for another scene hash",
+    "caught": "BRAIN_SIDECAR_STALE",
+    "codes": [
+     "BRAIN_SIDECAR_STALE"
+    ],
+    "detail": "sidecar brain_hero_lite.x3d.build.json records scene sha256 3f249a3d9953, the file is 5cc37387f5a0",
+    "expected": "BRAIN_SIDECAR_STALE"
+   },
+   {
+    "case": "unclamped transfer-function texture",
+    "caught": "BRAIN_TF_UNCLAMPED",
+    "codes": [
+     "BRAIN_TF_UNCLAMPED"
+    ],
+    "detail": "transfer-function texture under <OpacityMapVolumeStyle> is not CLAMP_TO_EDGE in S and T (unclamped: opaque cube, nonblack .4143 vs .1107)",
+    "expected": "BRAIN_TF_UNCLAMPED"
+   },
+   {
+    "case": "Appearance of a ComposedShader without the transparency flag",
+    "caught": "BRAIN_SHADER_OPAQUE_FLAG",
+    "codes": [
+     "BRAIN_SHADER_OPAQUE_FLAG"
+    ],
+    "detail": "SH_CORTEX_L: Appearance has no Material with 0 < transparency < 1 (X_ITE draws it opaque)",
+    "expected": "BRAIN_SHADER_OPAQUE_FLAG"
+   },
+   {
+    "case": "units not declared",
+    "caught": "BRAIN_UNITS_UNDECLARED",
+    "codes": [
+     "BRAIN_UNITS_UNDECLARED"
+    ],
+    "detail": "WorldInfo has no '1 unit = 1 mm' statement",
+    "expected": "BRAIN_UNITS_UNDECLARED"
+   },
+   {
+    "case": "geometry in centimetres (scaled 0.1)",
+    "caught": "BRAIN_UNITS_SCALE",
+    "codes": [
+     "BRAIN_REGION_OUTSIDE",
+     "BRAIN_UNITS_SCALE"
+    ],
+    "detail": "cortex extent along x is 13.9, plausible millimetres 80 to 250",
+    "expected": "BRAIN_UNITS_SCALE"
+   },
+   {
+    "case": "source-mesh provenance hash not recorded",
+    "caught": "BRAIN_PROVENANCE_HASH",
+    "codes": [
+     "BRAIN_PROVENANCE_HASH"
+    ],
+    "detail": "WorldInfo does not record source mesh sha256",
+    "expected": "BRAIN_PROVENANCE_HASH"
+   },
+   {
+    "case": "builder hash is not the builder file",
+    "caught": "BRAIN_BUILDER_MISMATCH",
+    "codes": [
+     "BRAIN_BUILDER_MISMATCH"
+    ],
+    "detail": "WorldInfo builder sha 0000000000000000 differs from sidecar builder_sha16 830c5ea341b38879",
+    "expected": "BRAIN_BUILDER_MISMATCH"
+   },
+   {
+    "case": "alignment not disclosed",
+    "caught": "BRAIN_ALIGN_UNDECLARED",
+    "codes": [
+     "BRAIN_ALIGN_UNDECLARED"
+    ],
+    "detail": "no WorldInfo item with ALIGNMENT",
+    "expected": "BRAIN_ALIGN_UNDECLARED"
+   },
+   {
+    "case": "declared alignment scale outside the fit range",
+    "caught": "BRAIN_ALIGN_FIT_RANGE",
+    "codes": [
+     "BRAIN_ALIGN_FIT_RANGE"
+    ],
+    "detail": "declared scale along x deviates 20.0% > 5%",
+    "expected": "BRAIN_ALIGN_FIT_RANGE"
+   },
+   {
+    "case": "looping audio that starts at load",
+    "caught": "BRAIN_AUDIO_AUTOSTART",
+    "codes": [
+     "BRAIN_AUDIO_AUTOSTART"
+    ],
+    "detail": "AUDIO.startTime='0' (a looping clip with startTime in the past plays at load)",
+    "expected": "BRAIN_AUDIO_AUTOSTART"
+   },
+   {
+    "case": "environment face is 128 px",
+    "caught": "BRAIN_ENV_FACE_SIZE",
+    "codes": [
+     "BRAIN_ENV_FACE_SIZE"
+    ],
+    "detail": "tex/env64/studio-front.png is (128, 128), expected 64x64",
+    "expected": "BRAIN_ENV_FACE_SIZE"
+   },
+   {
+    "case": "texture file missing",
+    "caught": "BRAIN_TEXTURE_MISSING",
+    "codes": [
+     "BRAIN_TEXTURE_MISSING"
+    ],
+    "detail": "tex/slice_0.png",
+    "expected": "BRAIN_TEXTURE_MISSING"
+   },
+   {
+    "case": "Layout node under profile Immersive",
+    "caught": "BRAIN_LAYOUT_PROFILE",
+    "codes": [
+     "BRAIN_LAYOUT_PROFILE"
+    ],
+    "detail": "<ScreenGroup> used under profile 'Immersive'; X_ITE needs Full (use Billboard + Text)",
+    "expected": "BRAIN_LAYOUT_PROFILE"
+   },
+   {
+    "case": "particle system inside a group",
+    "caught": "BRAIN_PARTICLE_PARENT",
+    "codes": [
+     "BRAIN_PARTICLE_PARENT"
+    ],
+    "detail": "ParticleSystem is not a child of the Scene",
+    "expected": "BRAIN_PARTICLE_PARENT"
+   },
+   {
+    "case": "a region has no label node",
+    "caught": "BRAIN_LABEL_MISSING",
+    "codes": [
+     "BRAIN_LABEL_MISSING"
+    ],
+    "detail": "region ctx-lh-cuneus has no label node LBL_ctx_lh_cuneus",
+    "expected": "BRAIN_LABEL_MISSING"
+   },
+   {
+    "case": "a label shows another region's name",
+    "caught": "BRAIN_LABEL_MISSING",
+    "codes": [
+     "BRAIN_LABEL_MISSING"
+    ],
+    "detail": "label LBL_ctx_lh_cuneus does not display the region name 'Cuneus' (it shows ['lingual', 'lingual'])",
+    "expected": "BRAIN_LABEL_MISSING"
+   },
+   {
+    "case": "a region centroid outside the cortex",
+    "caught": "BRAIN_REGION_OUTSIDE",
+    "codes": [
+     "BRAIN_REGION_OUTSIDE"
+    ],
+    "detail": "region ctx-lh-bankssts: centroid [400.0, 0.0, 0.0] outside its hemisphere bbox",
+    "expected": "BRAIN_REGION_OUTSIDE"
+   },
+   {
+    "case": "not XML",
+    "caught": "BRAIN_NOT_X3D",
+    "codes": [
+     "BRAIN_NOT_X3D"
+    ],
+    "detail": "not well-formed XML: syntax error: line 1, column 0",
+    "expected": "BRAIN_NOT_X3D"
+   },
+   {
+    "case": "slices reduced below the contract",
+    "caught": "BRAIN_DEF_ATTR",
+    "codes": [
+     "BRAIN_DEF_ATTR"
+    ],
+    "detail": "SW_SLICES holds 4 slices, expected 5 to 7",
+    "expected": "BRAIN_DEF_ATTR"
+   },
+   {
+    "case": "headlight on",
+    "caught": "BRAIN_DEF_ATTR",
+    "codes": [
+     "BRAIN_DEF_ATTR"
+    ],
+    "detail": "NAV.headlight='true', expected 'false'",
+    "expected": "BRAIN_DEF_ATTR"
+   },
+   {
+    "case": "glass shader field missing",
+    "caught": "BRAIN_DEF_ATTR",
+    "codes": [
+     "BRAIN_DEF_ATTR"
+    ],
+    "detail": "SH_CORTEX_R lacks fields ['rimPower']",
+    "expected": "BRAIN_DEF_ATTR"
+   },
+   {
+    "case": "attribution removed from WorldInfo",
+    "caught": "BRAIN_ATTRIBUTION",
+    "codes": [
+     "BRAIN_ATTRIBUTION"
+    ],
+    "detail": "WorldInfo lacks ['Fischl']",
+    "expected": "BRAIN_ATTRIBUTION"
+   },
+   {
+    "case": "torso: a structure has no label",
+    "caught": "BRAIN_LABEL_MISSING",
+    "codes": [
+     "BRAIN_LABEL_MISSING"
+    ],
+    "detail": "STRUCT_brachiocephalic_trunk has no label entry in torso_regions.json",
+    "expected": "BRAIN_LABEL_MISSING"
+   },
+   {
+    "case": "torso: a label is blank",
+    "caught": "BRAIN_LABEL_MISSING",
+    "codes": [
+     "BRAIN_LABEL_MISSING"
+    ],
+    "detail": "STRUCT_aorta has no label entry in torso_regions.json",
+    "expected": "BRAIN_LABEL_MISSING"
+   },
+   {
+    "case": "torso: a label names a structure that does not exist",
+    "caught": "BRAIN_LABEL_ORPHAN",
+    "codes": [
+     "BRAIN_LABEL_ORPHAN"
+    ],
+    "detail": "torso_regions.json labels STRUCT_ghost, the scene has no such Shape",
+    "expected": "BRAIN_LABEL_ORPHAN"
+   },
+   {
+    "case": "torso: attribution removed",
+    "caught": "BRAIN_ATTRIBUTION",
+    "codes": [
+     "BRAIN_ATTRIBUTION"
+    ],
+    "detail": "WorldInfo lacks ['Wasserthal']",
+    "expected": "BRAIN_ATTRIBUTION"
+   },
+   {
+    "case": "torso: oit enabled with the shaders",
+    "caught": "BRAIN_OIT_WITH_SHADER",
+    "codes": [
+     "BRAIN_OIT_WITH_SHADER"
+    ],
+    "detail": "OIT enabled (<meta name='OrderIndependentTransparency' content='true'>) with 16 custom shader node(s): glass vanishes on X_ITE 16.6.0 (GL_INVALID_OPERATION)",
+    "expected": "BRAIN_OIT_WITH_SHADER"
+   },
+   {
+    "case": "torso: index out of range",
+    "caught": "BRAIN_INDEX_RANGE",
+    "codes": [
+     "BRAIN_INDEX_RANGE"
+    ],
+    "detail": "STRUCT_heart: index range 0..999999 against 1501 vertices",
+    "expected": "BRAIN_INDEX_RANGE"
+   },
+   {
+    "case": "torso: triangle count differs from the label data",
+    "caught": "BRAIN_COUNT_MISMATCH",
+    "codes": [
+     "BRAIN_COUNT_MISMATCH"
+    ],
+    "detail": "STRUCT_adrenal_gland_right: 161 vertices 318 triangles; torso_regions.json declares 161 and 319",
+    "expected": "BRAIN_COUNT_MISMATCH"
+   },
+   {
+    "case": "torso: brain ghost moved out of the skull",
+    "caught": "BRAIN_DEEP_OUTSIDE",
+    "codes": [
+     "BRAIN_COUNT_MISMATCH",
+     "BRAIN_DEEP_OUTSIDE"
+    ],
+    "detail": "STRUCT_cortex_left: y max 591.2 > 407.6 (skull bbox, tolerance 5% per axis)",
+    "expected": "BRAIN_DEEP_OUTSIDE"
+   },
+   {
+    "case": "torso: ILLUSTRATIVE ghost notice removed",
+    "caught": "BRAIN_SYNTHETIC_WORLDINFO",
+    "codes": [
+     "BRAIN_SYNTHETIC_WORLDINFO"
+    ],
+    "detail": "WorldInfo lacks 'not this subject' (the template folds are not the subject's)",
+    "expected": "BRAIN_SYNTHETIC_WORLDINFO"
+   },
+   {
+    "case": "torso: Shaders component removed",
+    "caught": "BRAIN_SHADER_COMPONENT",
+    "codes": [
+     "BRAIN_SHADER_COMPONENT"
+    ],
+    "detail": "16 shader node(s), no <component name='Shaders' level='1'/>, profile='Interchange': X_ITE ignores the shader silently",
+    "expected": "BRAIN_SHADER_COMPONENT"
+   },
+   {
+    "case": "torso: builder hash differs between scene and label data",
+    "caught": "BRAIN_BUILDER_MISMATCH",
+    "codes": [
+     "BRAIN_BUILDER_MISMATCH"
+    ],
+    "detail": "WorldInfo builder sha 23cea36ce451fdc9 differs from torso_regions.json builder_sha256 0000000000000000",
+    "expected": "BRAIN_BUILDER_MISMATCH"
+   },
+   {
+    "case": "torso: switch default changed",
+    "caught": "BRAIN_SWITCH_DEFAULT",
+    "codes": [
+     "BRAIN_SWITCH_DEFAULT"
+    ],
+    "detail": "SW_BRAIN_CT.whichChoice='0', expected -1",
+    "expected": "BRAIN_SWITCH_DEFAULT"
+   },
+   {
+    "case": "torso: units not declared",
+    "caught": "BRAIN_UNITS_UNDECLARED",
+    "codes": [
+     "BRAIN_UNITS_UNDECLARED"
+    ],
+    "detail": "WorldInfo has no '1 unit = 1 mm' statement",
+    "expected": "BRAIN_UNITS_UNDECLARED"
+   },
+   {
+    "case": "a Transform above the deep structures moves them 300 mm",
+    "caught": "BRAIN_DEF_ATTR",
+    "codes": [
+     "BRAIN_DEF_ATTR"
+    ],
+    "detail": "STRUCT_thalamus sits under <Transform> that moves it; the containment checks read raw coordinates and cannot see through it",
+    "expected": "BRAIN_DEF_ATTR"
+   },
+   {
+    "case": "a Transform above the deep structures shrinks them to 1 percent",
+    "caught": "BRAIN_DEF_ATTR",
+    "codes": [
+     "BRAIN_DEF_ATTR"
+    ],
+    "detail": "STRUCT_thalamus sits under <Transform> that moves it; the containment checks read raw coordinates and cannot see through it",
+    "expected": "BRAIN_DEF_ATTR"
+   },
+   {
+    "case": "a Transform above the left cortex moves it 250 mm",
+    "caught": "BRAIN_DEF_ATTR",
+    "codes": [
+     "BRAIN_DEF_ATTR"
+    ],
+    "detail": "GEO_CORTEX_L sits under <Transform> that moves it; the containment checks read raw coordinates and cannot see through it",
+    "expected": "BRAIN_DEF_ATTR"
+   },
+   {
+    "case": "a Billboard above the deep structures",
+    "caught": "BRAIN_DEF_ATTR",
+    "codes": [
+     "BRAIN_DEF_ATTR"
+    ],
+    "detail": "STRUCT_thalamus sits under <Billboard> that moves it; the containment checks read raw coordinates and cannot see through it",
+    "expected": "BRAIN_DEF_ATTR"
+   },
+   {
+    "case": "deep structures hidden at load (whichChoice -1)",
+    "caught": "BRAIN_SWITCH_DEFAULT",
+    "codes": [
+     "BRAIN_SWITCH_DEFAULT"
+    ],
+    "detail": "STRUCT_thalamus sits in child 0 of Switch SW_DEEP whose whichChoice is -1: it is not drawn at load",
+    "expected": "BRAIN_SWITCH_DEFAULT"
+   },
+   {
+    "case": "deep structures hidden at load (whichChoice missing, X3D default -1)",
+    "caught": "BRAIN_SWITCH_DEFAULT",
+    "codes": [
+     "BRAIN_SWITCH_DEFAULT"
+    ],
+    "detail": "STRUCT_thalamus sits in child 0 of Switch SW_DEEP whose whichChoice is -1: it is not drawn at load",
+    "expected": "BRAIN_SWITCH_DEFAULT"
+   },
+   {
+    "case": "right cortex hemisphere hidden at load",
+    "caught": "BRAIN_SWITCH_DEFAULT",
+    "codes": [
+     "BRAIN_SWITCH_DEFAULT"
+    ],
+    "detail": "G_CORTEX_R sits in child 0 of Switch SW_HEMI_R whose whichChoice is -1: it is not drawn at load",
+    "expected": "BRAIN_SWITCH_DEFAULT"
+   },
+   {
+    "case": "right cortex hemisphere is the second child of a Switch that draws child 0",
+    "caught": "BRAIN_SWITCH_DEFAULT",
+    "codes": [
+     "BRAIN_SWITCH_DEFAULT"
+    ],
+    "detail": "G_CORTEX_R sits in child 1 of Switch SW_CORTEX whose whichChoice is 0: it is not drawn at load",
+    "expected": "BRAIN_SWITCH_DEFAULT"
+   },
+   {
+    "case": "a slice texture is an empty file",
+    "caught": "BRAIN_TEXTURE_MISSING",
+    "codes": [
+     "BRAIN_TEXTURE_MISSING"
+    ],
+    "detail": "tex/slice_0.png: 0 bytes, not a PNG",
+    "expected": "BRAIN_TEXTURE_MISSING"
+   },
+   {
+    "case": "a slice texture is a truncated PNG",
+    "caught": "BRAIN_TEXTURE_MISSING",
+    "codes": [
+     "BRAIN_TEXTURE_MISSING"
+    ],
+    "detail": "tex/slice_1.png: PNG without its closing IEND chunk (truncated)",
+    "expected": "BRAIN_TEXTURE_MISSING"
+   },
+   {
+    "case": "hemispheres mirrored: the left cortex is on the right",
+    "caught": "BRAIN_REGION_OUTSIDE",
+    "codes": [
+     "BRAIN_REGION_OUTSIDE"
+    ],
+    "detail": "region ctx-lh-bankssts: centroid [-54.9, -11.2, 27.0] outside its hemisphere bbox",
+    "expected": "BRAIN_REGION_OUTSIDE"
+   },
+   {
+    "case": "order-independent transparency switched on by a Script node",
+    "caught": "BRAIN_OIT_WITH_SHADER",
+    "codes": [
+     "BRAIN_OIT_WITH_SHADER"
+    ],
+    "detail": "OIT enabled (<Script> text switches it on) with 4 custom shader node(s): glass vanishes on X_ITE 16.6.0 (GL_INVALID_OPERATION)",
+    "expected": "BRAIN_OIT_WITH_SHADER"
+   },
+   {
+    "case": "torso: a Transform above the skull's Switch",
+    "caught": "BRAIN_DEF_ATTR",
+    "codes": [
+     "BRAIN_DEF_ATTR"
+    ],
+    "detail": "STRUCT_skull sits under <Transform> that moves it; the containment checks read raw coordinates and cannot see through it",
+    "expected": "BRAIN_DEF_ATTR"
+   },
+   {
+    "case": "torso: half of the organs in a second Switch child",
+    "caught": "BRAIN_SWITCH_DEFAULT",
+    "codes": [
+     "BRAIN_SWITCH_DEFAULT"
+    ],
+    "detail": "STRUCT_pancreas sits in child 1 of Switch SW_ORGANS whose whichChoice is 0: it is not drawn at load",
+    "expected": "BRAIN_SWITCH_DEFAULT"
+   }
+  ],
+  "optimized": false,
+  "positive": [
+   {
+    "case": "brain lite scene (real file, strict)",
+    "checks": [
+     "defs",
+     "textures",
+     "geometry",
+     "visibility",
+     "contract",
+     "alignment",
+     "alignment-notice",
+     "notices",
+     "units-provenance",
+     "attribution",
+     "runtime-traps",
+     "counts",
+     "builder",
+     "regions"
+    ],
+    "collapsed": 30,
+    "result": "pass",
+    "triangles": 56488
+   },
+   {
+    "case": "torso lite scene (real file, strict)",
+    "checks": [
+     "defs",
+     "textures",
+     "geometry",
+     "visibility",
+     "contract",
+     "alignment",
+     "notices",
+     "units-provenance",
+     "attribution",
+     "runtime-traps",
+     "builder",
+     "labels"
+    ],
+    "collapsed": 0,
+    "result": "pass",
+    "triangles": 84234
+   },
+   {
+    "case": "twin: oit declared off",
+    "result": "pass"
+   },
+   {
+    "case": "twin: oit switched off by the page JavaScript",
+    "result": "pass"
+   },
+   {
+    "case": "twin: profile Full without the Shaders component",
+    "result": "pass"
+   },
+   {
+    "case": "twin: clamped transfer-function texture",
+    "result": "pass"
+   },
+   {
+    "case": "twin: identity Transform above the deep structures",
+    "result": "pass"
+   }
+  ],
+  "python": "3.13.18",
+  "syntax": [
+   {
+    "asserts": 0,
+    "case": "no assert statement in brain_scene_truth.py"
+   },
+   {
+    "asserts": 0,
+    "case": "no assert statement in test_brain_truth.py"
+   }
+  ]
+ },
+ "schema": "brain.truth-controls/1"
+}
+
+--- stderr ---

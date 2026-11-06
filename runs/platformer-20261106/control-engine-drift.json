@@ -1,0 +1,34 @@
+{
+  "coverage": {
+    "levels": 1,
+    "tapes": 1
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T07:51:52+00:00",
+  "grade": "C",
+  "instrument": {
+    "node": "v22.23.4",
+    "rules_sha256": "50ed60d5c5c02bb54f03e9d431669e2ef490825ddbe6719fe40980810c344cf4",
+    "runner": "tools/replay.mjs",
+    "runner_sha256": "896a95590440b6fb085e45774a30320acbce224c745b41321c9af994cac98196",
+    "tool": "loomkit.play"
+  },
+  "limitations": [
+    "Determinism is shown on the runner's JavaScript engine only; other engines need their own replay (the browser witness).",
+    "A tape proves one way through a level, not that the level is fair, fun or free of shortcuts."
+  ],
+  "measurements": {
+    "detail": "1-1-tinker-meadow.tape.json: tape 'nib-engine/1', runner 'nib-engine/2'",
+    "rejected": "PLAY_ENGINE_DRIFT"
+  },
+  "reason": "PLAY_ENGINE_DRIFT: 1-1-tinker-meadow.tape.json: tape 'nib-engine/1', runner 'nib-engine/2'",
+  "schema": "loom.witness/1",
+  "status": "fail",
+  "subject_sha256": "aff21938c0458f663f5b49b1a27e4900682386009d98db3a0c3e011ec587f128",
+  "witness": "play"
+}

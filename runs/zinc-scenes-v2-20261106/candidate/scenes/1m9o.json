@@ -1,0 +1,60 @@
+{
+  "atoms_drawn": [
+    "A_A_CYS_15_CA",
+    "A_A_CYS_15_CB",
+    "A_A_CYS_15_SG",
+    "A_A_CYS_24_CA",
+    "A_A_CYS_24_CB",
+    "A_A_CYS_24_SG",
+    "A_A_CYS_30_CA",
+    "A_A_CYS_30_CB",
+    "A_A_CYS_30_SG",
+    "A_A_HIS_34_CA",
+    "A_A_HIS_34_CB",
+    "A_A_HIS_34_CD2",
+    "A_A_HIS_34_CE1",
+    "A_A_HIS_34_CG",
+    "A_A_HIS_34_ND1",
+    "A_A_HIS_34_NE2",
+    "A_A_ZN_78_ZN"
+  ],
+  "bonds": [
+    {
+      "angstrom": 2.3473,
+      "donor": "CYS15.SG",
+      "glow": true,
+      "label": "2.35 \u00c5",
+      "site": "A78"
+    },
+    {
+      "angstrom": 2.3139,
+      "donor": "CYS24.SG",
+      "glow": true,
+      "label": "2.31 \u00c5",
+      "site": "A78"
+    },
+    {
+      "angstrom": 2.2906,
+      "donor": "CYS30.SG",
+      "glow": true,
+      "label": "2.29 \u00c5",
+      "site": "A78"
+    },
+    {
+      "angstrom": 1.9881,
+      "donor": "HIS34.NE2",
+      "glow": true,
+      "label": "1.99 \u00c5",
+      "site": "A78"
+    }
+  ],
+  "cages": [
+    "A78"
+  ],
+  "labels_name_donor": true,
+  "look": "v2",
+  "pdb": "1m9o",
+  "tubes": [
+    "Backbone_A78_11"
+  ]
+}

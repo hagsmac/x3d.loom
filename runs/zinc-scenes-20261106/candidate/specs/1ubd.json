@@ -1,0 +1,48 @@
+{
+  "min_intact_fraction": 0.99,
+  "note": "1UBD: YY1 four fingers on DNA (X-ray 2.50 A). Ligand classes from the family's literature (L); tau4, windows and radius as declared for the synthetic rehearsal.",
+  "schema": "loom.metal-site-spec/1",
+  "search_radius": 3.0,
+  "sites": [
+    {
+      "class": "CCHH",
+      "coordination": 4,
+      "metal": {
+        "chain": "C",
+        "resname": "ZN",
+        "resseq": 501
+      },
+      "tau4_min": 0.7
+    },
+    {
+      "class": "CCHH",
+      "coordination": 4,
+      "metal": {
+        "chain": "C",
+        "resname": "ZN",
+        "resseq": 502
+      },
+      "tau4_min": 0.7
+    },
+    {
+      "class": "CCHH",
+      "coordination": 4,
+      "metal": {
+        "chain": "C",
+        "resname": "ZN",
+        "resseq": 503
+      },
+      "tau4_min": 0.7
+    },
+    {
+      "class": "CCHH",
+      "coordination": 4,
+      "metal": {
+        "chain": "C",
+        "resname": "ZN",
+        "resseq": 504
+      },
+      "tau4_min": 0.7
+    }
+  ]
+}

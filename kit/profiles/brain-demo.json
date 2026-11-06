@@ -1,0 +1,42 @@
+{
+  "schema": "loom.profile/1",
+  "name": "brain-demo/v1",
+  "purpose": "Acceptance profile for the Brain Loom demo (a high-fidelity brain and wider-medical X3D showcase, 6 Nov 2026), written on the zinc-site pattern: a command witness carries the study's own truth reader. Accepting under it means: the listed scenes (the lite hero brain and the lite torso CT) are grammatical and meaningful on the fork, carry no known trap, and a standard-library reader (tools/brain_scene_truth.py, witness data-true) found from their geometry and text that every contract DEF exists, everything the checks measure is actually drawn at load (every Switch above it selects the child that holds it; no moving Transform above a measured mesh; every PNG is complete), indices are in range with no repeated-vertex triangle and collapsed triangles under a declared cap, vertex and triangle counts equal what the sidecar, WorldInfo and label data declare, deep structures lie inside the cortex bounding box within the declared 5 percent per-axis tolerance, tracts and activation carry their SYNTHETIC and ILLUSTRATIVE notices, order-independent transparency is not combined with the custom glass shader, the Shaders component is declared, every ComposedShader has its transparency-flag Material, volume transfer-function textures are clamped, units and builder/source hashes are recorded, and the torso's attribution and structure labels are complete; and the reader's own controls (witness data-true-controls: 75 negative controls, each rejected with its intended code, under python and python -O) passed. It says nothing about how the scenes look, how they behave in a browser, the page, the audio, frame rates, or whether any position is anatomically right.",
+  "required": [
+    {"witness": "grammar", "coverage": {"files": 2}},
+    {"witness": "meaning", "coverage": {"files": 2}},
+    {"witness": "traps", "coverage": {"rules": 11}},
+    {"witness": "data-true"},
+    {"witness": "data-true-controls"}
+  ],
+  "visible_not_run": ["eyes", "behaviour", "page-traps", "real-gpu"],
+  "gate_map": {
+    "BRAIN-GRAMMAR": "grammar: X3D 4.1 XSD validity of every listed scene on the fork (coverage: 2 files)",
+    "BRAIN-MEANING": "meaning: the fork's semantic checks (ROUTE order, DEF before USE, components, colour range) on every listed scene (coverage: 2 files)",
+    "BRAIN-TRAPS": "traps: the kit's 11 portable trap rules (shader-raw-source, route order, colour range, version fits nodes, ...)",
+    "BRAIN-DEF-CONTRACT": "data-true: BRAIN_NOT_X3D, BRAIN_DEF_DUPLICATE, BRAIN_USE_UNRESOLVED, BRAIN_DEF_MISSING, BRAIN_DEF_TYPE, BRAIN_DEF_ATTR, BRAIN_SWITCH_DEFAULT, BRAIN_AUDIO_AUTOSTART (the DEF contract the page builder relies on; the torso's DEF set; default-visible content sits in the Switch child that is drawn; no moving Transform above a measured mesh)",
+    "BRAIN-GEOMETRY": "data-true: BRAIN_INDEX_RANGE, BRAIN_INDEX_SHAPE, BRAIN_DEGENERATE (repeated vertex; collapsed triangles over 0.1 percent), BRAIN_NONFINITE, BRAIN_ATTRIBUTE_COUNT",
+    "BRAIN-COUNTS": "data-true: BRAIN_COUNT_MISMATCH, BRAIN_COUNT_UNDECLARED, BRAIN_SIDECAR_STALE (geometry recounted against the sha256-bound build sidecar, the WorldInfo tract counts and the label data)",
+    "BRAIN-ALIGNMENT": "data-true: BRAIN_DEEP_OUTSIDE, BRAIN_REGION_OUTSIDE, BRAIN_ALIGN_UNDECLARED, BRAIN_ALIGN_FIT_RANGE, BRAIN_UNITS_SCALE (bounding-box containment inside a declared 5 percent per-axis tolerance, cortical region centroids against their own hemisphere; reads raw coordinates, so a moving Transform above a measured mesh is refused; shares the builder's alignment assumption, law 25)",
+    "BRAIN-SYNTHETIC": "data-true: BRAIN_SYNTHETIC_TRACTS, BRAIN_SYNTHETIC_ACTIV, BRAIN_SYNTHETIC_WORLDINFO (tracts SYNTHETIC, activation and the torso brain ghost ILLUSTRATIVE, not a medical device; law 10 and law 30)",
+    "BRAIN-UNITS-PROVENANCE": "data-true: BRAIN_UNITS_UNDECLARED, BRAIN_PROVENANCE_HASH, BRAIN_BUILDER_MISMATCH (1 unit = 1 mm declared; builder and derived-mesh sha256 recorded and equal to the shipped builder)",
+    "BRAIN-ATTRIBUTION": "data-true: BRAIN_ATTRIBUTION (citations and licence grades in WorldInfo; the torso's data attribution, change note and licence grade)",
+    "BRAIN-RUNTIME-TRAPS": "data-true: BRAIN_OIT_WITH_SHADER, BRAIN_SHADER_COMPONENT, BRAIN_SHADER_OPAQUE_FLAG, BRAIN_TF_UNCLAMPED, BRAIN_LAYOUT_PROFILE, BRAIN_PARTICLE_PARENT, BRAIN_ENV_FACE_SIZE, BRAIN_TEXTURE_MISSING (a missing, empty or truncated PNG) (X_ITE 16.6.0 traps from RENDER-FINDINGS; OIT is also looked for in Script text; law 19 and failure mode 97: the OIT-on and unclamped-transfer-function cases are kept as known-bad controls)",
+    "BRAIN-LABELS": "data-true: BRAIN_LABEL_MISSING, BRAIN_LABEL_ORPHAN (every region has its label node and sits in its geometry; every torso structure has a label, every label a structure, with counts and boxes equal)",
+    "BRAIN-INPUTS": "data-true: BRAIN_INPUT_MISSING (strict mode: a side input the check needs was not found)",
+    "BRAIN-FAIL-CLOSED": "data-true-controls: tests/test_brain_truth.py runs 7 positive controls, 75 negative controls (every one of the reader's 39 codes at least once, each expecting its own code and no other), 6 CLI exit-code controls, a syntax-tree scan for assert, and re-runs itself under python -O and compares the verdicts (law 18, law 19)",
+    "BRAIN-EYES, BRAIN-BEHAVIOUR, BRAIN-PAGE-TRAPS, BRAIN-REAL-GPU": "not in this profile; recorded as not_run in the receipt (visible_not_run)"
+  },
+  "limitations": [
+    "A demo, not an x3d.STEM science study: there is no model, reference solution or convergence behind these scenes. Accepting under this profile says nothing about physical accuracy; looks come first and honesty about what is synthetic comes with them.",
+    "The tracts are SYNTHETIC arcs generated between Desikan region vertices and the activation blobs are ILLUSTRATIVE; neither is tractography or measured activity. The witness checks that they are labelled so, in WorldInfo and in the scene's metadata, not that they are anatomically plausible.",
+    "Alignment is approximate: the fsaverage cortex and the MNI152 deep structures are joined by a per-axis scale and shift of their bounding boxes (3 to 5 percent per axis), not by a registration, and the torso's brain ghost is an ICP fit of the template into one subject. The deep-structure check shares that assumption (law 25): it catches a gross misplacement (a structure tens of millimetres outside the cortex box, or whose region centroid left its mesh) and cannot see an in-box error; the controls pin four such blind spots as undetected: a thalamus moved 20 mm sideways, a glass shader whose opacity fields are 0, an unlabelled extra line shape outside the TRACTS group, and a viewpoint a thousand kilometres away.",
+    "Collapsed triangles are counted and capped, not forbidden: the ventricle meshes of the lite brain scene hold 30 of 56,488 triangles whose vertices coincide after the builder rounds coordinates to 0.1 mm (0.053 percent, cap 0.1 percent). They draw nothing and are reported in the witness.",
+    "Counts are checked against the build sidecar (bound to the scene by sha256), the WorldInfo tract counts and the label data. WorldInfo does not itself declare the cortex vertex and triangle counts; the reader accepts a 'counts:' line if a builder adds one. Raw template file hashes are recorded in NOTICE.md and in the downloader's manifest, not in the scene, so the source-data hash is not machine-checked.",
+    "The profile pins two scenes (grammar and meaning coverage 2 files): the lite hero brain and the lite torso CT. The full-size scenes are not in the repository and are not covered by a receipt made from it. The page, the audio files and the style board are outside the candidate.",
+    "Eyes, behaviour, page-traps and real-gpu did not run: the scenes were rendered on headless Chromium with SwiftShader software GL and X_ITE 16.6.0, whose frame rates are relative only; no scripted browser test, page-code reading or real-GPU timing is part of this acceptance. Valid is not visible (law 2).",
+    "Grammar and Meaning ran on a local x3d_mcp fork checkout, not the family pin.",
+    "Not a medical device and not for diagnosis. Data licences: the fsaverage lineage is graded Suspected, the MNI152 template Confirmed (permissive text), the torso subject Likely CC BY 4.0; see x3d.brain/NOTICE.md.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ]
+}

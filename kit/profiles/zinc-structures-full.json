@@ -1,0 +1,123 @@
+{
+  "schema": "loom.profile/1",
+  "name": "zinc-structures-full/v0",
+  "purpose": "Control profile for P1: every one of the 14 deposited structures must pass the metal-site witness as declared. Expected to reject, because P1 keeps its reds; it exists to show the rejection.",
+  "required": [
+    {
+      "witness": "metal-site-1aay",
+      "coverage": {
+        "files": 1,
+        "sites": 3
+      }
+    },
+    {
+      "witness": "metal-site-1zaa",
+      "coverage": {
+        "files": 1,
+        "sites": 3
+      }
+    },
+    {
+      "witness": "metal-site-1ubd",
+      "coverage": {
+        "files": 1,
+        "sites": 4
+      }
+    },
+    {
+      "witness": "metal-site-1rgo",
+      "coverage": {
+        "files": 1,
+        "sites": 2
+      }
+    },
+    {
+      "witness": "metal-site-1m9o",
+      "coverage": {
+        "files": 1,
+        "sites": 1
+      }
+    },
+    {
+      "witness": "metal-site-6nzl",
+      "coverage": {
+        "files": 1,
+        "sites": 2
+      }
+    },
+    {
+      "witness": "metal-site-1n0z",
+      "coverage": {
+        "files": 1,
+        "sites": 1
+      }
+    },
+    {
+      "witness": "metal-site-2k1p",
+      "coverage": {
+        "files": 1,
+        "sites": 1
+      }
+    },
+    {
+      "witness": "metal-site-3g9y",
+      "coverage": {
+        "files": 1,
+        "sites": 1
+      }
+    },
+    {
+      "witness": "metal-site-2jvx",
+      "coverage": {
+        "files": 1,
+        "sites": 1
+      }
+    },
+    {
+      "witness": "metal-site-4av1",
+      "coverage": {
+        "files": 1,
+        "sites": 4
+      }
+    },
+    {
+      "witness": "metal-site-6fuw",
+      "coverage": {
+        "files": 1,
+        "sites": 3
+      }
+    },
+    {
+      "witness": "metal-site-6dnh",
+      "coverage": {
+        "files": 1,
+        "sites": 3
+      }
+    },
+    {
+      "witness": "metal-site-6uro",
+      "coverage": {
+        "files": 1,
+        "sites": 3
+      }
+    },
+    {
+      "witness": "cross-check"
+    }
+  ],
+  "visible_not_run": [
+    "simulation",
+    "grammar",
+    "meaning",
+    "traps",
+    "page-traps",
+    "behaviour",
+    "eyes"
+  ],
+  "limitations": [
+    "Deposited structures only: geometry as deposited, with each method's own limits (NMR calculation restraints, crystallographic and cryo-EM coordinate error). Nothing here was simulated.",
+    "The distance windows are the typical values declared before P1 (grade L) and were not changed after seeing these files; small misses (0.007 A in one model of 1N0Z, 0.010 A at one 1AAY site) are reported as reds, not hidden.",
+    "The cross-check shares the donor-atom table, search radius and metal identity with the witness; it is independent in parsing, selection and arithmetic.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ]
+}

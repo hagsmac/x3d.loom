@@ -1,0 +1,817 @@
+{
+  "rows": [
+    {
+      "declared": "CCHH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHH",
+      "method": "X-ray 1.60 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "1AAY",
+      "site": "A201",
+      "tau4_min": 0.948,
+      "what": "Zif268 (Egr-1) three fingers on DNA",
+      "zn_n": [
+        1.94,
+        2.081
+      ],
+      "zn_s": [
+        2.215,
+        2.377
+      ]
+    },
+    {
+      "declared": "CCHH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHH",
+      "method": "X-ray 1.60 A",
+      "models": 1,
+      "models_outside_windows": 0,
+      "models_with_such_ligands": 0,
+      "pdb": "1AAY",
+      "site": "A202",
+      "tau4_min": 0.923,
+      "what": "Zif268 (Egr-1) three fingers on DNA",
+      "zn_n": [
+        2.06,
+        2.068
+      ],
+      "zn_s": [
+        2.249,
+        2.284
+      ]
+    },
+    {
+      "declared": "CCHH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHH",
+      "method": "X-ray 1.60 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "1AAY",
+      "site": "A203",
+      "tau4_min": 0.886,
+      "what": "Zif268 (Egr-1) three fingers on DNA",
+      "zn_n": [
+        2.041,
+        2.078
+      ],
+      "zn_s": [
+        2.154,
+        2.254
+      ]
+    },
+    {
+      "declared": "CCHH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHH",
+      "method": "X-ray 2.10 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "1ZAA",
+      "site": "C201",
+      "tau4_min": 0.929,
+      "what": "Zif268 three fingers on DNA, the first structure (1991)",
+      "zn_n": [
+        1.876,
+        2.138
+      ],
+      "zn_s": [
+        2.232,
+        2.44
+      ]
+    },
+    {
+      "declared": "CCHH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHH",
+      "method": "X-ray 2.10 A",
+      "models": 1,
+      "models_outside_windows": 0,
+      "models_with_such_ligands": 0,
+      "pdb": "1ZAA",
+      "site": "C202",
+      "tau4_min": 0.932,
+      "what": "Zif268 three fingers on DNA, the first structure (1991)",
+      "zn_n": [
+        2.004,
+        2.011
+      ],
+      "zn_s": [
+        2.213,
+        2.339
+      ]
+    },
+    {
+      "declared": "CCHH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHH",
+      "method": "X-ray 2.10 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "1ZAA",
+      "site": "C203",
+      "tau4_min": 0.936,
+      "what": "Zif268 three fingers on DNA, the first structure (1991)",
+      "zn_n": [
+        1.984,
+        2.125
+      ],
+      "zn_s": [
+        2.154,
+        2.231
+      ]
+    },
+    {
+      "declared": "CCHH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHH",
+      "method": "X-ray 2.50 A",
+      "models": 1,
+      "models_outside_windows": 0,
+      "models_with_such_ligands": 0,
+      "pdb": "1UBD",
+      "site": "C501",
+      "tau4_min": 0.984,
+      "what": "YY1 four fingers on DNA",
+      "zn_n": [
+        1.997,
+        2.008
+      ],
+      "zn_s": [
+        2.322,
+        2.332
+      ]
+    },
+    {
+      "declared": "CCHH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHH",
+      "method": "X-ray 2.50 A",
+      "models": 1,
+      "models_outside_windows": 0,
+      "models_with_such_ligands": 0,
+      "pdb": "1UBD",
+      "site": "C502",
+      "tau4_min": 0.963,
+      "what": "YY1 four fingers on DNA",
+      "zn_n": [
+        2.007,
+        2.041
+      ],
+      "zn_s": [
+        2.278,
+        2.307
+      ]
+    },
+    {
+      "declared": "CCHH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHH",
+      "method": "X-ray 2.50 A",
+      "models": 1,
+      "models_outside_windows": 0,
+      "models_with_such_ligands": 0,
+      "pdb": "1UBD",
+      "site": "C503",
+      "tau4_min": 0.949,
+      "what": "YY1 four fingers on DNA",
+      "zn_n": [
+        1.998,
+        2.001
+      ],
+      "zn_s": [
+        2.286,
+        2.288
+      ]
+    },
+    {
+      "declared": "CCHH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHH",
+      "method": "X-ray 2.50 A",
+      "models": 1,
+      "models_outside_windows": 0,
+      "models_with_such_ligands": 0,
+      "pdb": "1UBD",
+      "site": "C504",
+      "tau4_min": 0.953,
+      "what": "YY1 four fingers on DNA",
+      "zn_n": [
+        2.009,
+        2.018
+      ],
+      "zn_s": [
+        2.321,
+        2.361
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCH",
+      "method": "NMR, 20 models",
+      "models": 20,
+      "models_outside_windows": 0,
+      "models_with_such_ligands": 0,
+      "pdb": "1RGO",
+      "site": "A221",
+      "tau4_min": 0.958,
+      "what": "TIS11d (ZFP36L2) tandem fingers on UUAUUUAUU RNA",
+      "zn_n": [
+        2.08,
+        2.086
+      ],
+      "zn_s": [
+        2.28,
+        2.3
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCH",
+      "method": "NMR, 20 models",
+      "models": 20,
+      "models_outside_windows": 0,
+      "models_with_such_ligands": 0,
+      "pdb": "1RGO",
+      "site": "A222",
+      "tau4_min": 0.967,
+      "what": "TIS11d (ZFP36L2) tandem fingers on UUAUUUAUU RNA",
+      "zn_n": [
+        2.073,
+        2.083
+      ],
+      "zn_s": [
+        2.284,
+        2.301
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCH",
+      "method": "NMR, 23 models",
+      "models": 23,
+      "models_outside_windows": 0,
+      "models_with_such_ligands": 0,
+      "pdb": "1M9O",
+      "site": "A78",
+      "tau4_min": 0.793,
+      "what": "TTP-family (Nup475) first finger, no RNA",
+      "zn_n": [
+        1.983,
+        1.999
+      ],
+      "zn_s": [
+        2.281,
+        2.355
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCH",
+      "method": "NMR, 20 models",
+      "models": 20,
+      "models_outside_windows": 20,
+      "models_with_such_ligands": 0,
+      "pdb": "6NZL",
+      "site": "A201",
+      "tau4_min": 0.895,
+      "what": "POS-1 tandem fingers (worm), no RNA",
+      "zn_n": [
+        1.91,
+        2.27
+      ],
+      "zn_s": [
+        1.915,
+        2.086
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCH",
+      "method": "NMR, 20 models",
+      "models": 20,
+      "models_outside_windows": 20,
+      "models_with_such_ligands": 0,
+      "pdb": "6NZL",
+      "site": "A202",
+      "tau4_min": 0.904,
+      "what": "POS-1 tandem fingers (worm), no RNA",
+      "zn_n": [
+        1.917,
+        2.195
+      ],
+      "zn_s": [
+        1.937,
+        2.112
+      ]
+    },
+    {
+      "declared": "CCCC",
+      "donors": [
+        4
+      ],
+      "his_donor": "none",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCC",
+      "method": "NMR, 20 models",
+      "models": 20,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "1N0Z",
+      "site": "A46",
+      "tau4_min": 0.935,
+      "what": "ZRANB2 first finger (RanBP2 type)",
+      "zn_n": null,
+      "zn_s": [
+        2.193,
+        2.309
+      ]
+    },
+    {
+      "declared": "CCCC",
+      "donors": [
+        4
+      ],
+      "his_donor": "none",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCC",
+      "method": "NMR, 20 models",
+      "models": 20,
+      "models_outside_windows": 0,
+      "models_with_such_ligands": 0,
+      "pdb": "2K1P",
+      "site": "A96",
+      "tau4_min": 0.946,
+      "what": "ZRANB2 second finger",
+      "zn_n": null,
+      "zn_s": [
+        2.216,
+        2.316
+      ]
+    },
+    {
+      "declared": "CCCC",
+      "donors": [
+        4
+      ],
+      "his_donor": "none",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCC",
+      "method": "X-ray 1.40 A",
+      "models": 1,
+      "models_outside_windows": 0,
+      "models_with_such_ligands": 0,
+      "pdb": "3G9Y",
+      "site": "A1",
+      "tau4_min": 0.887,
+      "what": "ZRANB2 second finger on AGGUAA RNA",
+      "zn_n": null,
+      "zn_s": [
+        2.255,
+        2.365
+      ]
+    },
+    {
+      "declared": "CCHC",
+      "donors": [
+        4,
+        5,
+        6
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [
+        "GLU28.O",
+        "GLU28.OXT"
+      ],
+      "measured": "CCHC/CCHCx/CCHCxx",
+      "method": "NMR, 10 models",
+      "models": 10,
+      "models_outside_windows": 2,
+      "models_with_such_ligands": 2,
+      "pdb": "2JVX",
+      "site": "A29",
+      "tau4_min": 0.897,
+      "what": "NEMO zinc finger",
+      "zn_n": [
+        2.082,
+        2.199
+      ],
+      "zn_s": [
+        2.292,
+        2.458
+      ]
+    },
+    {
+      "declared": "CCHC",
+      "donors": [
+        4
+      ],
+      "his_donor": "ND1",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHC",
+      "method": "X-ray 3.10 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "4AV1",
+      "site": "A1600",
+      "tau4_min": 0.943,
+      "what": "PARP1 first and second fingers on DNA, two copies",
+      "zn_n": [
+        1.987,
+        1.987
+      ],
+      "zn_s": [
+        2.142,
+        2.231
+      ]
+    },
+    {
+      "declared": "CCHC",
+      "donors": [
+        4
+      ],
+      "his_donor": "ND1",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHC",
+      "method": "X-ray 3.10 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "4AV1",
+      "site": "B1600",
+      "tau4_min": 0.927,
+      "what": "PARP1 first and second fingers on DNA, two copies",
+      "zn_n": [
+        1.912,
+        1.912
+      ],
+      "zn_s": [
+        2.127,
+        2.18
+      ]
+    },
+    {
+      "declared": "CCHC",
+      "donors": [
+        4
+      ],
+      "his_donor": "ND1",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHC",
+      "method": "X-ray 3.10 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "4AV1",
+      "site": "C1600",
+      "tau4_min": 0.943,
+      "what": "PARP1 first and second fingers on DNA, two copies",
+      "zn_n": [
+        1.973,
+        1.973
+      ],
+      "zn_s": [
+        2.178,
+        2.222
+      ]
+    },
+    {
+      "declared": "CCHC",
+      "donors": [
+        4
+      ],
+      "his_donor": "ND1",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCHC",
+      "method": "X-ray 3.10 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "4AV1",
+      "site": "D1600",
+      "tau4_min": 0.944,
+      "what": "PARP1 first and second fingers on DNA, two copies",
+      "zn_n": [
+        1.961,
+        1.961
+      ],
+      "zn_s": [
+        2.076,
+        2.205
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCH",
+      "method": "cryo-EM 3.07 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "6FUW",
+      "site": "C201",
+      "tau4_min": 0.648,
+      "what": "CPSF30 fingers 1-3 on the AAUAAA signal (supersedes 6FBS)",
+      "zn_n": [
+        2.097,
+        2.097
+      ],
+      "zn_s": [
+        2.461,
+        2.777
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCH",
+      "method": "cryo-EM 3.07 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "6FUW",
+      "site": "C202",
+      "tau4_min": 0.859,
+      "what": "CPSF30 fingers 1-3 on the AAUAAA signal (supersedes 6FBS)",
+      "zn_n": [
+        2.325,
+        2.325
+      ],
+      "zn_s": [
+        2.28,
+        2.347
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCH",
+      "method": "cryo-EM 3.07 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "6FUW",
+      "site": "C203",
+      "tau4_min": 0.777,
+      "what": "CPSF30 fingers 1-3 on the AAUAAA signal (supersedes 6FBS)",
+      "zn_n": [
+        2.34,
+        2.34
+      ],
+      "zn_s": [
+        2.276,
+        2.431
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        4
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCCH",
+      "method": "cryo-EM 3.40 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "6DNH",
+      "site": "C301",
+      "tau4_min": 0.751,
+      "what": "CPSF30 fingers 1-3 on the AAUAAA signal (supersedes 6BLL)",
+      "zn_n": [
+        2.209,
+        2.209
+      ],
+      "zn_s": [
+        2.472,
+        2.855
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        2
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CH",
+      "method": "cryo-EM 3.40 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "6DNH",
+      "site": "C302",
+      "tau4_min": null,
+      "what": "CPSF30 fingers 1-3 on the AAUAAA signal (supersedes 6BLL)",
+      "zn_n": [
+        1.954,
+        1.954
+      ],
+      "zn_s": [
+        2.49,
+        2.49
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        3
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCH",
+      "method": "cryo-EM 3.40 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "6DNH",
+      "site": "C303",
+      "tau4_min": null,
+      "what": "CPSF30 fingers 1-3 on the AAUAAA signal (supersedes 6BLL)",
+      "zn_n": [
+        2.304,
+        2.304
+      ],
+      "zn_s": [
+        2.438,
+        2.746
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        3
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCH",
+      "method": "cryo-EM 3.60 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "6URO",
+      "site": "C301",
+      "tau4_min": null,
+      "what": "CPSF30 fingers 1-3 on AAUAAA, with CstF77",
+      "zn_n": [
+        2.234,
+        2.234
+      ],
+      "zn_s": [
+        2.461,
+        2.468
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        3
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCH",
+      "method": "cryo-EM 3.60 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "6URO",
+      "site": "C302",
+      "tau4_min": null,
+      "what": "CPSF30 fingers 1-3 on AAUAAA, with CstF77",
+      "zn_n": [
+        2.153,
+        2.153
+      ],
+      "zn_s": [
+        2.479,
+        2.994
+      ]
+    },
+    {
+      "declared": "CCCH",
+      "donors": [
+        3
+      ],
+      "his_donor": "NE2",
+      "ligands_not_in_donor_table": [],
+      "measured": "CCH",
+      "method": "cryo-EM 3.60 A",
+      "models": 1,
+      "models_outside_windows": 1,
+      "models_with_such_ligands": 0,
+      "pdb": "6URO",
+      "site": "C303",
+      "tau4_min": null,
+      "what": "CPSF30 fingers 1-3 on AAUAAA, with CstF77",
+      "zn_n": [
+        2.392,
+        2.392
+      ],
+      "zn_s": [
+        2.465,
+        2.524
+      ]
+    }
+  ],
+  "schema": "loom.zinc-census/1",
+  "windows": {
+    "ZN": {
+      "N": [
+        1.95,
+        2.2
+      ],
+      "O": [
+        1.9,
+        2.3
+      ],
+      "S": [
+        2.2,
+        2.45
+      ]
+    }
+  }
+}

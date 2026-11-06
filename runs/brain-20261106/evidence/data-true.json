@@ -1,0 +1,38 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [
+    {
+      "path": "data-true.log",
+      "sha256": "488cb8bce6f68eb8098dfdf7f648269669732c5eb934d92f80e03bc2a87d085a"
+    }
+  ],
+  "finished_at": "2026-11-06T17:51:07+00:00",
+  "grade": "C",
+  "instrument": {
+    "command": [
+      "python3",
+      "-I",
+      "-B",
+      "tools/brain_scene_truth.py",
+      "--strict",
+      "--glob",
+      "scenes/*.x3d"
+    ],
+    "tool": "project gate (adapter)"
+  },
+  "limitations": [],
+  "measurements": {
+    "exit_code": 0,
+    "stdout_tail": "_info_items\": 10\n   },\n   \"sha256\": \"12b5774972b71867bf17c85f8e0598507c19b3092519eff7dd41b036b6aa3368\",\n   \"skipped\": [],\n   \"status\": \"pass\",\n   \"violations\": []\n  }\n },\n \"limits\": {\n  \"align_fit_max\": 0.05,\n  \"area_eps_mm2\": 1e-06,\n  \"audio_start_min\": 2000000000.0,\n  \"brain_extent_mm\": [\n   80.0,\n   250.0\n  ],\n  \"deep_tol_frac\": 0.05,\n  \"env_face_px\": 64,\n  \"infra_descent_frac\": 0.2,\n  \"region_tol_frac\": 0.05,\n  \"torso_width_mm\": [\n   250.0,\n   600.0\n  ],\n  \"zero_area_frac_max\": 0.001\n },\n \"page_files\": [],\n \"scenes\": 2,\n \"schema\": \"brain.scene-truth/1\",\n \"status\": \"pass\",\n \"strict\": true\n}"
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "d59bb5b7b778c1f533b00e0af5b2e09da9c09750a130b65a432f275f9f7d5f03",
+  "witness": "data-true"
+}

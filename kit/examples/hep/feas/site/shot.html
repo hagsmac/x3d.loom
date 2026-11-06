@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>shot</title>
+<script src="x_ite/x_ite.min.js"></script>
+<style>html,body{margin:0;height:100%;background:#000;overflow:hidden}x3d-canvas{position:fixed;inset:0;width:100%;height:100%;display:block}</style></head>
+<body><x3d-canvas id="c" splashScreen="false" contextMenu="false" notifications="false" timings="false"></x3d-canvas>
+<script>
+// Still-frame page: load a scene, optionally set browser options, optionally add a PAGE-LEVEL bloom overlay
+// (2D canvas fed from the WebGL canvas right after each X_ITE render; CSS blur + screen blend). Not part of X3D.
+(async () => {
+  const Q = new URLSearchParams(location.search), R = { scene: Q.get('scene'), errors: [] };
+  window.__ready = null;
+  try {
+    await customElements.whenDefined('x3d-canvas');
+    const canvas = document.getElementById('c'), B = canvas.browser;
+    for (const k of ['ToneMapping', 'OrderIndependentTransparency', 'Multisampling', 'Exposure', 'LogarithmicDepthBuffer']) {
+      const v = Q.get(k); if (v !== null) B.setBrowserOption(k, v === 'true' ? true : v === 'false' ? false : isNaN(+v) ? v : +v);
+    }
+    const t0 = performance.now();
+    if (Q.get('mode') === 'cs') { const text = await (await fetch(Q.get('scene'))).text(); const sc0 = await B.createX3DFromString(text); await B.replaceWorld(sc0); }
+    else await B.loadURL(new X3D.MFString(Q.get('scene')));
+    R.t_loadURL_ms = performance.now() - t0;
+    const scene = B.currentScene;
+    const vp = (() => { try { return scene.getNamedNode('VP'); } catch (e) { return null; } })();
+    const bl = +(Q.get('bloom') || 0);
+    if (bl) {
+      const host = canvas.shadowRoot || canvas; const src = host.querySelector('canvas');
+      const W = canvas.clientWidth, H = canvas.clientHeight;
+      const ov = document.createElement('canvas'); ov.width = W >> 1; ov.height = H >> 1;
+      ov.style.cssText = `position:fixed;left:0;top:0;width:${W}px;height:${H}px;pointer-events:none;mix-blend-mode:screen;filter:${Q.get('bpre') || ''} blur(${bl}px) brightness(${Q.get('bgain') || 1.8}) saturate(1.25)`;
+      document.body.appendChild(ov); const cx = ov.getContext('2d'); R.bloom_src_found = !!src; let copies = 0;
+      window.__onRendered = () => { if (src) { cx.drawImage(src, 0, 0, ov.width, ov.height); copies++; window.__bloomCopies = copies; } };
+    }
+    if (Q.get('probe')) {
+      const host = canvas.shadowRoot || canvas; const src = host.querySelector('canvas'); const gl = src.getContext('webgl2');
+      R.probe = { renders: 0, lastNonBg: null, canvas: [src.width, src.height] };
+      window.__onRendered = () => { try { const w = src.width, h = src.height, px = new Uint8Array(w * h * 4); gl.readPixels(0, 0, w, h, gl.RGBA, gl.UNSIGNED_BYTE, px);
+        let n = 0, mx = 0; for (let i = 0; i < px.length; i += 4) { const v = px[i] + px[i + 1] + px[i + 2]; if (v > 40) n++; if (v > mx) mx = v; } R.probe.renders++; R.probe.lastNonBg = n; R.probe.maxsum = mx; } catch (e) { R.probe.err = String(e); } };
+    }
+    const raf = () => new Promise(r => requestAnimationFrame(() => r()));
+    const nf = +(Q.get('frames') || 8);
+    // redraw nudge: X_ITE redraws only on change; re-assert the SAME pose each frame (value-equal writes may be ignored, so alternate by 1e-6)
+    const P0 = vp ? [...vp.position] : null, O0 = vp ? [...vp.orientation] : null;
+    for (let i = 0; i < nf; i++) { if (vp && Q.get('jitter')) { vp.position = [P0[0] + (i % 2 ? 1e-6 : 0), P0[1], P0[2]]; vp.orientation = O0; } await raf(); }
+    R.gl = window.__glstats ? window.__glstats() : null;
+  } catch (e) { R.errors.push('EXC ' + (e && e.stack || e)); }
+  window.__ready = R;
+})();
+</script></body></html>

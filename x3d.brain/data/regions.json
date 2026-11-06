@@ -1,0 +1,2143 @@
+[
+ {
+  "id": "ctx-lh-bankssts",
+  "name": "Banks of the superior temporal sulcus",
+  "desikan_label": "bankssts",
+  "desikan_index": 1,
+  "hemi": "L",
+  "centroid": [
+   -54.9,
+   -11.2,
+   27.0
+  ],
+  "anchor": [
+   -54.8,
+   -10.5,
+   26.4
+  ],
+  "anchor_normal": [
+   -0.19,
+   -0.71,
+   0.68
+  ],
+  "lobe": "temporal",
+  "accent": "#9B59B6",
+  "fact_key": "banks_of_the_superior_temporal_sulcus",
+  "has_fact": true,
+  "vertices": 491
+ },
+ {
+  "id": "ctx-lh-caudalanteriorcingulate",
+  "name": "Caudal anterior cingulate",
+  "desikan_label": "caudalanteriorcingulate",
+  "desikan_index": 2,
+  "hemi": "L",
+  "centroid": [
+   -5.5,
+   13.6,
+   -37.7
+  ],
+  "anchor": [
+   -4.6,
+   15.3,
+   -39.5
+  ],
+  "anchor_normal": [
+   0.51,
+   0.72,
+   -0.48
+  ],
+  "lobe": "cingulate",
+  "accent": "#E63946",
+  "fact_key": "caudal_anterior_cingulate",
+  "has_fact": true,
+  "vertices": 278
+ },
+ {
+  "id": "ctx-lh-caudalmiddlefrontal",
+  "name": "Caudal middle frontal",
+  "desikan_label": "caudalmiddlefrontal",
+  "desikan_index": 3,
+  "hemi": "L",
+  "centroid": [
+   -36.0,
+   28.8,
+   -28.4
+  ],
+  "anchor": [
+   -40.8,
+   28.2,
+   -25.5
+  ],
+  "anchor_normal": [
+   -0.82,
+   -0.21,
+   0.53
+  ],
+  "lobe": "frontal",
+  "accent": "#E67E22",
+  "fact_key": "caudal_middle_frontal",
+  "has_fact": true,
+  "vertices": 929
+ },
+ {
+  "id": "ctx-lh-cuneus",
+  "name": "Cuneus",
+  "desikan_label": "cuneus",
+  "desikan_index": 5,
+  "hemi": "L",
+  "centroid": [
+   -7.6,
+   3.1,
+   62.0
+  ],
+  "anchor": [
+   -2.9,
+   1.9,
+   62.8
+  ],
+  "anchor_normal": [
+   0.97,
+   -0.24,
+   0.04
+  ],
+  "lobe": "occipital",
+  "accent": "#FCC419",
+  "fact_key": "cuneus",
+  "has_fact": true,
+  "vertices": 410
+ },
+ {
+  "id": "ctx-lh-entorhinal",
+  "name": "Entorhinal",
+  "desikan_label": "entorhinal",
+  "desikan_index": 6,
+  "hemi": "L",
+  "centroid": [
+   -23.5,
+   -50.6,
+   -9.7
+  ],
+  "anchor": [
+   -21.5,
+   -52.9,
+   -8.8
+  ],
+  "anchor_normal": [
+   0.5,
+   -0.83,
+   0.26
+  ],
+  "lobe": "temporal",
+  "accent": "#8E44AD",
+  "fact_key": "entorhinal",
+  "has_fact": true,
+  "vertices": 190
+ },
+ {
+  "id": "ctx-lh-fusiform",
+  "name": "Fusiform",
+  "desikan_label": "fusiform",
+  "desikan_index": 7,
+  "hemi": "L",
+  "centroid": [
+   -35.7,
+   -37.4,
+   25.9
+  ],
+  "anchor": [
+   -33.3,
+   -40.0,
+   27.2
+  ],
+  "anchor_normal": [
+   0.42,
+   -0.8,
+   0.43
+  ],
+  "lobe": "temporal",
+  "accent": "#E74C3C",
+  "fact_key": "fusiform",
+  "has_fact": true,
+  "vertices": 1214
+ },
+ {
+  "id": "ctx-lh-inferiorparietal",
+  "name": "Inferior parietal",
+  "desikan_label": "inferiorparietal",
+  "desikan_index": 8,
+  "hemi": "L",
+  "centroid": [
+   -41.5,
+   12.7,
+   50.1
+  ],
+  "anchor": [
+   -42.7,
+   13.7,
+   48.8
+  ],
+  "anchor_normal": [
+   -0.55,
+   0.48,
+   -0.69
+  ],
+  "lobe": "parietal",
+  "accent": "#6366F1",
+  "fact_key": "inferior_parietal",
+  "has_fact": true,
+  "vertices": 1949
+ },
+ {
+  "id": "ctx-lh-inferiortemporal",
+  "name": "Inferior temporal",
+  "desikan_label": "inferiortemporal",
+  "desikan_index": 9,
+  "hemi": "L",
+  "centroid": [
+   -50.1,
+   -40.7,
+   17.1
+  ],
+  "anchor": [
+   -48.3,
+   -42.9,
+   16.4
+  ],
+  "anchor_normal": [
+   0.68,
+   -0.73,
+   -0.02
+  ],
+  "lobe": "temporal",
+  "accent": "#E67E22",
+  "fact_key": "inferior_temporal",
+  "has_fact": true,
+  "vertices": 1095
+ },
+ {
+  "id": "ctx-lh-isthmuscingulate",
+  "name": "Isthmus cingulate",
+  "desikan_label": "isthmuscingulate",
+  "desikan_index": 10,
+  "hemi": "L",
+  "centroid": [
+   -7.1,
+   1.6,
+   29.7
+  ],
+  "anchor": [
+   -4.6,
+   2.4,
+   29.1
+  ],
+  "anchor_normal": [
+   0.15,
+   -0.38,
+   -0.91
+  ],
+  "lobe": "cingulate",
+  "accent": "#2A9D8F",
+  "fact_key": "isthmus_cingulate",
+  "has_fact": true,
+  "vertices": 489
+ },
+ {
+  "id": "ctx-lh-lateraloccipital",
+  "name": "Lateral occipital",
+  "desikan_label": "lateraloccipital",
+  "desikan_index": 11,
+  "hemi": "L",
+  "centroid": [
+   -30.6,
+   -16.9,
+   70.9
+  ],
+  "anchor": [
+   -31.2,
+   -16.2,
+   71.3
+  ],
+  "anchor_normal": [
+   -0.76,
+   0.56,
+   0.33
+  ],
+  "lobe": "occipital",
+  "accent": "#FF6B6B",
+  "fact_key": "lateral_occipital",
+  "has_fact": true,
+  "vertices": 1574
+ },
+ {
+  "id": "ctx-lh-lateralorbitofrontal",
+  "name": "Lateral orbitofrontal",
+  "desikan_label": "lateralorbitofrontal",
+  "desikan_index": 12,
+  "hemi": "L",
+  "centroid": [
+   -25.3,
+   -32.4,
+   -46.3
+  ],
+  "anchor": [
+   -25.3,
+   -31.7,
+   -45.9
+  ],
+  "anchor_normal": [
+   0.69,
+   -0.57,
+   -0.45
+  ],
+  "lobe": "frontal",
+  "accent": "#E67E22",
+  "fact_key": "lateral_orbitofrontal",
+  "has_fact": true,
+  "vertices": 996
+ },
+ {
+  "id": "ctx-lh-lingual",
+  "name": "Lingual",
+  "desikan_label": "lingual",
+  "desikan_index": 13,
+  "hemi": "L",
+  "centroid": [
+   -15.0,
+   -20.5,
+   50.0
+  ],
+  "anchor": [
+   -14.2,
+   -21.4,
+   50.7
+  ],
+  "anchor_normal": [
+   0.43,
+   -0.89,
+   -0.13
+  ],
+  "lobe": "occipital",
+  "accent": "#FF922B",
+  "fact_key": "lingual",
+  "has_fact": true,
+  "vertices": 1038
+ },
+ {
+  "id": "ctx-lh-medialorbitofrontal",
+  "name": "Medial orbitofrontal",
+  "desikan_label": "medialorbitofrontal",
+  "desikan_index": 14,
+  "hemi": "L",
+  "centroid": [
+   -5.9,
+   -33.4,
+   -54.5
+  ],
+  "anchor": [
+   -4.0,
+   -32.9,
+   -53.8
+  ],
+  "anchor_normal": [
+   0.85,
+   0.51,
+   0.13
+  ],
+  "lobe": "frontal",
+  "accent": "#F39C12",
+  "fact_key": "medial_orbitofrontal",
+  "has_fact": true,
+  "vertices": 587
+ },
+ {
+  "id": "ctx-lh-middletemporal",
+  "name": "Middle temporal",
+  "desikan_label": "middletemporal",
+  "desikan_index": 15,
+  "hemi": "L",
+  "centroid": [
+   -58.3,
+   -28.7,
+   12.6
+  ],
+  "anchor": [
+   -58.9,
+   -25.7,
+   12.2
+  ],
+  "anchor_normal": [
+   -0.18,
+   0.98,
+   0.06
+  ],
+  "lobe": "temporal",
+  "accent": "#F59E0B",
+  "fact_key": "middle_temporal",
+  "has_fact": true,
+  "vertices": 1166
+ },
+ {
+  "id": "ctx-lh-parahippocampal",
+  "name": "Parahippocampal",
+  "desikan_label": "parahippocampal",
+  "desikan_index": 16,
+  "hemi": "L",
+  "centroid": [
+   -24.4,
+   -34.7,
+   15.6
+  ],
+  "anchor": [
+   -25.8,
+   -36.1,
+   17.5
+  ],
+  "anchor_normal": [
+   -0.38,
+   -0.64,
+   0.67
+  ],
+  "lobe": "temporal",
+  "accent": "#27AE60",
+  "fact_key": "parahippocampal",
+  "has_fact": true,
+  "vertices": 415
+ },
+ {
+  "id": "ctx-lh-paracentral",
+  "name": "Paracentral lobule",
+  "desikan_label": "paracentral",
+  "desikan_index": 17,
+  "hemi": "L",
+  "centroid": [
+   -8.4,
+   40.7,
+   12.1
+  ],
+  "anchor": [
+   -5.5,
+   41.1,
+   9.1
+  ],
+  "anchor_normal": [
+   0.71,
+   0.05,
+   -0.71
+  ],
+  "lobe": "frontal",
+  "accent": "#E67E22",
+  "fact_key": "paracentral",
+  "has_fact": true,
+  "vertices": 821
+ },
+ {
+  "id": "ctx-lh-parsopercularis",
+  "name": "Pars opercularis",
+  "desikan_label": "parsopercularis",
+  "desikan_index": 18,
+  "hemi": "L",
+  "centroid": [
+   -46.3,
+   -3.6,
+   -32.1
+  ],
+  "anchor": [
+   -48.1,
+   -7.2,
+   -35.1
+  ],
+  "anchor_normal": [
+   -0.34,
+   -0.51,
+   -0.79
+  ],
+  "lobe": "frontal",
+  "accent": "#D32F2F",
+  "fact_key": "pars_opercularis",
+  "has_fact": true,
+  "vertices": 722
+ },
+ {
+  "id": "ctx-lh-parsorbitalis",
+  "name": "Pars orbitalis",
+  "desikan_label": "parsorbitalis",
+  "desikan_index": 19,
+  "hemi": "L",
+  "centroid": [
+   -43.0,
+   -29.5,
+   -56.1
+  ],
+  "anchor": [
+   -40.3,
+   -32.0,
+   -56.5
+  ],
+  "anchor_normal": [
+   0.61,
+   -0.79,
+   0.03
+  ],
+  "lobe": "frontal",
+  "accent": "#4A90E2",
+  "fact_key": "pars_orbitalis",
+  "has_fact": true,
+  "vertices": 238
+ },
+ {
+  "id": "ctx-lh-parstriangularis",
+  "name": "Pars triangularis",
+  "desikan_label": "parstriangularis",
+  "desikan_index": 20,
+  "hemi": "L",
+  "centroid": [
+   -44.5,
+   -14.6,
+   -47.9
+  ],
+  "anchor": [
+   -44.2,
+   -15.5,
+   -45.7
+  ],
+  "anchor_normal": [
+   0.04,
+   -0.35,
+   0.94
+  ],
+  "lobe": "frontal",
+  "accent": "#F39C12",
+  "fact_key": "pars_triangularis",
+  "has_fact": true,
+  "vertices": 484
+ },
+ {
+  "id": "ctx-lh-pericalcarine",
+  "name": "Pericalcarine",
+  "desikan_label": "pericalcarine",
+  "desikan_index": 21,
+  "hemi": "L",
+  "centroid": [
+   -12.3,
+   -10.0,
+   63.9
+  ],
+  "anchor": [
+   -11.9,
+   -9.0,
+   64.3
+  ],
+  "anchor_normal": [
+   0.66,
+   0.71,
+   0.26
+  ],
+  "lobe": "occipital",
+  "accent": "#51CF66",
+  "fact_key": "pericalcarine",
+  "has_fact": true,
+  "vertices": 469
+ },
+ {
+  "id": "ctx-lh-postcentral",
+  "name": "Postcentral",
+  "desikan_label": "postcentral",
+  "desikan_index": 22,
+  "hemi": "L",
+  "centroid": [
+   -43.7,
+   28.5,
+   6.0
+  ],
+  "anchor": [
+   -43.7,
+   28.1,
+   2.1
+  ],
+  "anchor_normal": [
+   0.05,
+   -0.34,
+   -0.94
+  ],
+  "lobe": "parietal",
+  "accent": "#4A90E2",
+  "fact_key": "postcentral",
+  "has_fact": true,
+  "vertices": 2358
+ },
+ {
+  "id": "ctx-lh-posteriorcingulate",
+  "name": "Posterior cingulate",
+  "desikan_label": "posteriorcingulate",
+  "desikan_index": 23,
+  "hemi": "L",
+  "centroid": [
+   -6.2,
+   23.1,
+   0.8
+  ],
+  "anchor": [
+   -8.0,
+   26.4,
+   0.6
+  ],
+  "anchor_normal": [
+   -0.42,
+   0.89,
+   -0.16
+  ],
+  "lobe": "cingulate",
+  "accent": "#457B9D",
+  "fact_key": "posterior_cingulate",
+  "has_fact": true,
+  "vertices": 713
+ },
+ {
+  "id": "ctx-lh-precentral",
+  "name": "Precentral",
+  "desikan_label": "precentral",
+  "desikan_index": 24,
+  "hemi": "L",
+  "centroid": [
+   -39.3,
+   27.6,
+   -7.2
+  ],
+  "anchor": [
+   -40.3,
+   29.2,
+   -2.0
+  ],
+  "anchor_normal": [
+   -0.04,
+   0.31,
+   0.95
+  ],
+  "lobe": "frontal",
+  "accent": "#E74C3C",
+  "fact_key": "precentral",
+  "has_fact": true,
+  "vertices": 2703
+ },
+ {
+  "id": "ctx-lh-precuneus",
+  "name": "Precuneus",
+  "desikan_label": "precuneus",
+  "desikan_index": 25,
+  "hemi": "L",
+  "centroid": [
+   -10.2,
+   21.3,
+   40.6
+  ],
+  "anchor": [
+   -8.1,
+   19.5,
+   37.9
+  ],
+  "anchor_normal": [
+   0.55,
+   -0.54,
+   -0.64
+  ],
+  "lobe": "parietal",
+  "accent": "#EC4899",
+  "fact_key": "precuneus",
+  "has_fact": true,
+  "vertices": 1818
+ },
+ {
+  "id": "ctx-lh-rostralanteriorcingulate",
+  "name": "Rostral anterior cingulate",
+  "desikan_label": "rostralanteriorcingulate",
+  "desikan_index": 26,
+  "hemi": "L",
+  "centroid": [
+   -4.9,
+   -15.6,
+   -55.1
+  ],
+  "anchor": [
+   -3.7,
+   -15.6,
+   -55.2
+  ],
+  "anchor_normal": [
+   0.96,
+   -0.27,
+   -0.07
+  ],
+  "lobe": "cingulate",
+  "accent": "#339AF0",
+  "fact_key": "rostral_anterior_cingulate",
+  "has_fact": true,
+  "vertices": 299
+ },
+ {
+  "id": "ctx-lh-rostralmiddlefrontal",
+  "name": "Rostral middle frontal",
+  "desikan_label": "rostralmiddlefrontal",
+  "desikan_index": 27,
+  "hemi": "L",
+  "centroid": [
+   -33.7,
+   1.4,
+   -60.3
+  ],
+  "anchor": [
+   -32.6,
+   4.1,
+   -61.6
+  ],
+  "anchor_normal": [
+   0.57,
+   0.75,
+   -0.33
+  ],
+  "lobe": "frontal",
+  "accent": "#8E44AD",
+  "fact_key": "rostral_middle_frontal",
+  "has_fact": true,
+  "vertices": 1894
+ },
+ {
+  "id": "ctx-lh-superiorfrontal",
+  "name": "Superior frontal",
+  "desikan_label": "superiorfrontal",
+  "desikan_index": 28,
+  "hemi": "L",
+  "centroid": [
+   -11.9,
+   28.0,
+   -41.7
+  ],
+  "anchor": [
+   -7.0,
+   24.6,
+   -39.1
+  ],
+  "anchor_normal": [
+   0.72,
+   -0.5,
+   0.48
+  ],
+  "lobe": "frontal",
+  "accent": "#2E7D32",
+  "fact_key": "superior_frontal",
+  "has_fact": true,
+  "vertices": 3038
+ },
+ {
+  "id": "ctx-lh-superiorparietal",
+  "name": "Superior parietal",
+  "desikan_label": "superiorparietal",
+  "desikan_index": 29,
+  "hemi": "L",
+  "centroid": [
+   -23.9,
+   32.4,
+   44.2
+  ],
+  "anchor": [
+   -23.5,
+   31.7,
+   46.6
+  ],
+  "anchor_normal": [
+   -0.01,
+   -0.35,
+   0.94
+  ],
+  "lobe": "parietal",
+  "accent": "#3B82F6",
+  "fact_key": "superior_parietal",
+  "has_fact": true,
+  "vertices": 2615
+ },
+ {
+  "id": "ctx-lh-superiortemporal",
+  "name": "Superior temporal",
+  "desikan_label": "superiortemporal",
+  "desikan_index": 30,
+  "hemi": "L",
+  "centroid": [
+   -53.9,
+   -19.4,
+   -1.9
+  ],
+  "anchor": [
+   -56.7,
+   -22.8,
+   0.0
+  ],
+  "anchor_normal": [
+   -0.51,
+   -0.73,
+   0.46
+  ],
+  "lobe": "temporal",
+  "accent": "#10B981",
+  "fact_key": "superior_temporal",
+  "has_fact": true,
+  "vertices": 1808
+ },
+ {
+  "id": "ctx-lh-supramarginal",
+  "name": "Supramarginal",
+  "desikan_label": "supramarginal",
+  "desikan_index": 31,
+  "hemi": "L",
+  "centroid": [
+   -52.6,
+   16.1,
+   21.5
+  ],
+  "anchor": [
+   -54.4,
+   14.0,
+   23.3
+  ],
+  "anchor_normal": [
+   -0.63,
+   -0.57,
+   0.53
+  ],
+  "lobe": "parietal",
+  "accent": "#8B5CF6",
+  "fact_key": "supramarginal",
+  "has_fact": true,
+  "vertices": 2178
+ },
+ {
+  "id": "ctx-lh-frontalpole",
+  "name": "Frontal pole",
+  "desikan_label": "frontalpole",
+  "desikan_index": 32,
+  "hemi": "L",
+  "centroid": [
+   -7.3,
+   -26.9,
+   -82.5
+  ],
+  "anchor": [
+   -6.4,
+   -28.0,
+   -83.7
+  ],
+  "anchor_normal": [
+   -0.08,
+   -0.57,
+   -0.81
+  ],
+  "lobe": "frontal",
+  "accent": "#4A90E2",
+  "fact_key": "frontal_pole",
+  "has_fact": true,
+  "vertices": 69
+ },
+ {
+  "id": "ctx-lh-temporalpole",
+  "name": "Temporal pole",
+  "desikan_label": "temporalpole",
+  "desikan_index": 33,
+  "hemi": "L",
+  "centroid": [
+   -29.8,
+   -53.5,
+   -30.5
+  ],
+  "anchor": [
+   -26.6,
+   -49.9,
+   -32.7
+  ],
+  "anchor_normal": [
+   0.61,
+   0.66,
+   -0.45
+  ],
+  "lobe": "temporal",
+  "accent": "#F39C12",
+  "fact_key": "temporal_pole",
+  "has_fact": true,
+  "vertices": 166
+ },
+ {
+  "id": "ctx-lh-transversetemporal",
+  "name": "Transverse temporal",
+  "desikan_label": "transversetemporal",
+  "desikan_index": 34,
+  "hemi": "L",
+  "centroid": [
+   -45.0,
+   -8.1,
+   5.1
+  ],
+  "anchor": [
+   -43.9,
+   -6.8,
+   3.1
+  ],
+  "anchor_normal": [
+   0.4,
+   0.56,
+   -0.73
+  ],
+  "lobe": "temporal",
+  "accent": "#2980B9",
+  "fact_key": "transverse_temporal",
+  "has_fact": true,
+  "vertices": 267
+ },
+ {
+  "id": "ctx-lh-insula",
+  "name": "Insula",
+  "desikan_label": "insula",
+  "desikan_index": 35,
+  "hemi": "L",
+  "centroid": [
+   -37.7,
+   -13.7,
+   -14.1
+  ],
+  "anchor": [
+   -42.0,
+   -13.9,
+   -12.6
+  ],
+  "anchor_normal": [
+   -0.95,
+   0.03,
+   0.32
+  ],
+  "lobe": "insula",
+  "accent": "#845EF7",
+  "fact_key": "insula",
+  "has_fact": true,
+  "vertices": 1302
+ },
+ {
+  "id": "ctx-rh-bankssts",
+  "name": "Banks of the superior temporal sulcus",
+  "desikan_label": "bankssts",
+  "desikan_index": 1,
+  "hemi": "R",
+  "centroid": [
+   52.5,
+   -10.1,
+   23.0
+  ],
+  "anchor": [
+   51.8,
+   -9.3,
+   21.6
+  ],
+  "anchor_normal": [
+   0.06,
+   -0.49,
+   0.87
+  ],
+  "lobe": "temporal",
+  "accent": "#9B59B6",
+  "fact_key": "banks_of_the_superior_temporal_sulcus",
+  "has_fact": true,
+  "vertices": 514
+ },
+ {
+  "id": "ctx-rh-caudalanteriorcingulate",
+  "name": "Caudal anterior cingulate",
+  "desikan_label": "caudalanteriorcingulate",
+  "desikan_index": 2,
+  "hemi": "R",
+  "centroid": [
+   4.5,
+   12.2,
+   -39.8
+  ],
+  "anchor": [
+   2.2,
+   11.6,
+   -39.1
+  ],
+  "anchor_normal": [
+   -1.0,
+   -0.09,
+   -0.0
+  ],
+  "lobe": "cingulate",
+  "accent": "#E63946",
+  "fact_key": "caudal_anterior_cingulate",
+  "has_fact": true,
+  "vertices": 316
+ },
+ {
+  "id": "ctx-rh-caudalmiddlefrontal",
+  "name": "Caudal middle frontal",
+  "desikan_label": "caudalmiddlefrontal",
+  "desikan_index": 3,
+  "hemi": "R",
+  "centroid": [
+   35.1,
+   29.1,
+   -29.9
+  ],
+  "anchor": [
+   39.9,
+   28.9,
+   -27.4
+  ],
+  "anchor_normal": [
+   0.85,
+   -0.11,
+   0.51
+  ],
+  "lobe": "frontal",
+  "accent": "#E67E22",
+  "fact_key": "caudal_middle_frontal",
+  "has_fact": true,
+  "vertices": 887
+ },
+ {
+  "id": "ctx-rh-cuneus",
+  "name": "Cuneus",
+  "desikan_label": "cuneus",
+  "desikan_index": 5,
+  "hemi": "R",
+  "centroid": [
+   6.6,
+   3.8,
+   62.5
+  ],
+  "anchor": [
+   3.4,
+   2.5,
+   62.3
+  ],
+  "anchor_normal": [
+   -0.89,
+   -0.43,
+   0.12
+  ],
+  "lobe": "occipital",
+  "accent": "#FCC419",
+  "fact_key": "cuneus",
+  "has_fact": true,
+  "vertices": 423
+ },
+ {
+  "id": "ctx-rh-entorhinal",
+  "name": "Entorhinal",
+  "desikan_label": "entorhinal",
+  "desikan_index": 6,
+  "hemi": "R",
+  "centroid": [
+   22.2,
+   -49.5,
+   -10.0
+  ],
+  "anchor": [
+   19.9,
+   -51.1,
+   -9.8
+  ],
+  "anchor_normal": [
+   -0.74,
+   -0.66,
+   0.11
+  ],
+  "lobe": "temporal",
+  "accent": "#8E44AD",
+  "fact_key": "entorhinal",
+  "has_fact": true,
+  "vertices": 168
+ },
+ {
+  "id": "ctx-rh-fusiform",
+  "name": "Fusiform",
+  "desikan_label": "fusiform",
+  "desikan_index": 7,
+  "hemi": "R",
+  "centroid": [
+   34.8,
+   -37.0,
+   25.7
+  ],
+  "anchor": [
+   34.4,
+   -39.1,
+   26.3
+  ],
+  "anchor_normal": [
+   -0.25,
+   -0.86,
+   0.44
+  ],
+  "lobe": "temporal",
+  "accent": "#E74C3C",
+  "fact_key": "fusiform",
+  "has_fact": true,
+  "vertices": 1183
+ },
+ {
+  "id": "ctx-rh-inferiorparietal",
+  "name": "Inferior parietal",
+  "desikan_label": "inferiorparietal",
+  "desikan_index": 8,
+  "hemi": "R",
+  "centroid": [
+   43.8,
+   13.2,
+   44.2
+  ],
+  "anchor": [
+   46.5,
+   16.1,
+   47.2
+  ],
+  "anchor_normal": [
+   0.34,
+   0.62,
+   0.71
+  ],
+  "lobe": "parietal",
+  "accent": "#6366F1",
+  "fact_key": "inferior_parietal",
+  "has_fact": true,
+  "vertices": 2450
+ },
+ {
+  "id": "ctx-rh-inferiortemporal",
+  "name": "Inferior temporal",
+  "desikan_label": "inferiortemporal",
+  "desikan_index": 9,
+  "hemi": "R",
+  "centroid": [
+   50.3,
+   -41.6,
+   14.1
+  ],
+  "anchor": [
+   48.6,
+   -42.8,
+   15.3
+  ],
+  "anchor_normal": [
+   -0.81,
+   -0.53,
+   0.24
+  ],
+  "lobe": "temporal",
+  "accent": "#E67E22",
+  "fact_key": "inferior_temporal",
+  "has_fact": true,
+  "vertices": 1056
+ },
+ {
+  "id": "ctx-rh-isthmuscingulate",
+  "name": "Isthmus cingulate",
+  "desikan_label": "isthmuscingulate",
+  "desikan_index": 10,
+  "hemi": "R",
+  "centroid": [
+   6.6,
+   1.3,
+   28.6
+  ],
+  "anchor": [
+   4.2,
+   1.2,
+   29.0
+  ],
+  "anchor_normal": [
+   -0.62,
+   -0.21,
+   -0.76
+  ],
+  "lobe": "cingulate",
+  "accent": "#2A9D8F",
+  "fact_key": "isthmus_cingulate",
+  "has_fact": true,
+  "vertices": 454
+ },
+ {
+  "id": "ctx-rh-lateraloccipital",
+  "name": "Lateral occipital",
+  "desikan_label": "lateraloccipital",
+  "desikan_index": 11,
+  "hemi": "R",
+  "centroid": [
+   30.6,
+   -15.9,
+   70.4
+  ],
+  "anchor": [
+   31.3,
+   -14.9,
+   70.0
+  ],
+  "anchor_normal": [
+   0.45,
+   0.84,
+   0.31
+  ],
+  "lobe": "occipital",
+  "accent": "#FF6B6B",
+  "fact_key": "lateral_occipital",
+  "has_fact": true,
+  "vertices": 1495
+ },
+ {
+  "id": "ctx-rh-lateralorbitofrontal",
+  "name": "Lateral orbitofrontal",
+  "desikan_label": "lateralorbitofrontal",
+  "desikan_index": 12,
+  "hemi": "R",
+  "centroid": [
+   23.7,
+   -33.4,
+   -46.9
+  ],
+  "anchor": [
+   22.7,
+   -34.1,
+   -48.1
+  ],
+  "anchor_normal": [
+   0.85,
+   0.21,
+   0.48
+  ],
+  "lobe": "frontal",
+  "accent": "#E67E22",
+  "fact_key": "lateral_orbitofrontal",
+  "has_fact": true,
+  "vertices": 1055
+ },
+ {
+  "id": "ctx-rh-lingual",
+  "name": "Lingual",
+  "desikan_label": "lingual",
+  "desikan_index": 13,
+  "hemi": "R",
+  "centroid": [
+   14.2,
+   -19.7,
+   49.2
+  ],
+  "anchor": [
+   12.3,
+   -19.6,
+   46.4
+  ],
+  "anchor_normal": [
+   -0.69,
+   -0.43,
+   -0.58
+  ],
+  "lobe": "occipital",
+  "accent": "#FF922B",
+  "fact_key": "lingual",
+  "has_fact": true,
+  "vertices": 987
+ },
+ {
+  "id": "ctx-rh-medialorbitofrontal",
+  "name": "Medial orbitofrontal",
+  "desikan_label": "medialorbitofrontal",
+  "desikan_index": 14,
+  "hemi": "R",
+  "centroid": [
+   5.3,
+   -32.0,
+   -55.2
+  ],
+  "anchor": [
+   4.4,
+   -32.1,
+   -56.4
+  ],
+  "anchor_normal": [
+   -0.87,
+   -0.18,
+   -0.47
+  ],
+  "lobe": "frontal",
+  "accent": "#F39C12",
+  "fact_key": "medial_orbitofrontal",
+  "has_fact": true,
+  "vertices": 649
+ },
+ {
+  "id": "ctx-rh-middletemporal",
+  "name": "Middle temporal",
+  "desikan_label": "middletemporal",
+  "desikan_index": 15,
+  "hemi": "R",
+  "centroid": [
+   57.7,
+   -29.0,
+   10.3
+  ],
+  "anchor": [
+   56.6,
+   -25.6,
+   8.2
+  ],
+  "anchor_normal": [
+   -0.03,
+   0.9,
+   -0.43
+  ],
+  "lobe": "temporal",
+  "accent": "#F59E0B",
+  "fact_key": "middle_temporal",
+  "has_fact": true,
+  "vertices": 1261
+ },
+ {
+  "id": "ctx-rh-parahippocampal",
+  "name": "Parahippocampal",
+  "desikan_label": "parahippocampal",
+  "desikan_index": 16,
+  "hemi": "R",
+  "centroid": [
+   24.9,
+   -33.6,
+   15.4
+  ],
+  "anchor": [
+   25.8,
+   -34.6,
+   17.4
+  ],
+  "anchor_normal": [
+   0.28,
+   -0.61,
+   0.74
+  ],
+  "lobe": "temporal",
+  "accent": "#27AE60",
+  "fact_key": "parahippocampal",
+  "has_fact": true,
+  "vertices": 372
+ },
+ {
+  "id": "ctx-rh-paracentral",
+  "name": "Paracentral lobule",
+  "desikan_label": "paracentral",
+  "desikan_index": 17,
+  "hemi": "R",
+  "centroid": [
+   7.3,
+   40.1,
+   11.0
+  ],
+  "anchor": [
+   4.4,
+   41.7,
+   11.2
+  ],
+  "anchor_normal": [
+   -0.94,
+   0.35,
+   0.01
+  ],
+  "lobe": "frontal",
+  "accent": "#E67E22",
+  "fact_key": "paracentral",
+  "has_fact": true,
+  "vertices": 936
+ },
+ {
+  "id": "ctx-rh-parsopercularis",
+  "name": "Pars opercularis",
+  "desikan_label": "parsopercularis",
+  "desikan_index": 18,
+  "hemi": "R",
+  "centroid": [
+   46.0,
+   -2.0,
+   -31.8
+  ],
+  "anchor": [
+   49.0,
+   -6.2,
+   -34.8
+  ],
+  "anchor_normal": [
+   0.32,
+   -0.54,
+   -0.78
+  ],
+  "lobe": "frontal",
+  "accent": "#D32F2F",
+  "fact_key": "pars_opercularis",
+  "has_fact": true,
+  "vertices": 613
+ },
+ {
+  "id": "ctx-rh-parsorbitalis",
+  "name": "Pars orbitalis",
+  "desikan_label": "parsorbitalis",
+  "desikan_index": 19,
+  "hemi": "R",
+  "centroid": [
+   43.6,
+   -27.4,
+   -56.8
+  ],
+  "anchor": [
+   46.8,
+   -25.2,
+   -58.6
+  ],
+  "anchor_normal": [
+   0.74,
+   0.62,
+   -0.25
+  ],
+  "lobe": "frontal",
+  "accent": "#4A90E2",
+  "fact_key": "pars_orbitalis",
+  "has_fact": true,
+  "vertices": 235
+ },
+ {
+  "id": "ctx-rh-parstriangularis",
+  "name": "Pars triangularis",
+  "desikan_label": "parstriangularis",
+  "desikan_index": 20,
+  "hemi": "R",
+  "centroid": [
+   46.1,
+   -12.1,
+   -47.0
+  ],
+  "anchor": [
+   46.0,
+   -13.6,
+   -43.9
+  ],
+  "anchor_normal": [
+   0.03,
+   -0.59,
+   0.81
+  ],
+  "lobe": "frontal",
+  "accent": "#F39C12",
+  "fact_key": "pars_triangularis",
+  "has_fact": true,
+  "vertices": 560
+ },
+ {
+  "id": "ctx-rh-pericalcarine",
+  "name": "Pericalcarine",
+  "desikan_label": "pericalcarine",
+  "desikan_index": 21,
+  "hemi": "R",
+  "centroid": [
+   12.0,
+   -9.4,
+   62.7
+  ],
+  "anchor": [
+   12.5,
+   -10.1,
+   61.7
+  ],
+  "anchor_normal": [
+   -0.44,
+   0.8,
+   0.41
+  ],
+  "lobe": "occipital",
+  "accent": "#51CF66",
+  "fact_key": "pericalcarine",
+  "has_fact": true,
+  "vertices": 445
+ },
+ {
+  "id": "ctx-rh-postcentral",
+  "name": "Postcentral",
+  "desikan_label": "postcentral",
+  "desikan_index": 22,
+  "hemi": "R",
+  "centroid": [
+   41.8,
+   29.2,
+   4.9
+  ],
+  "anchor": [
+   38.4,
+   31.8,
+   4.7
+  ],
+  "anchor_normal": [
+   -0.76,
+   0.59,
+   -0.28
+  ],
+  "lobe": "parietal",
+  "accent": "#4A90E2",
+  "fact_key": "postcentral",
+  "has_fact": true,
+  "vertices": 2259
+ },
+ {
+  "id": "ctx-rh-posteriorcingulate",
+  "name": "Posterior cingulate",
+  "desikan_label": "posteriorcingulate",
+  "desikan_index": 23,
+  "hemi": "R",
+  "centroid": [
+   5.2,
+   23.5,
+   -0.4
+  ],
+  "anchor": [
+   6.7,
+   27.1,
+   -0.4
+  ],
+  "anchor_normal": [
+   0.35,
+   0.93,
+   -0.09
+  ],
+  "lobe": "cingulate",
+  "accent": "#457B9D",
+  "fact_key": "posterior_cingulate",
+  "has_fact": true,
+  "vertices": 641
+ },
+ {
+  "id": "ctx-rh-precentral",
+  "name": "Precentral",
+  "desikan_label": "precentral",
+  "desikan_index": 24,
+  "hemi": "R",
+  "centroid": [
+   37.4,
+   29.1,
+   -7.8
+  ],
+  "anchor": [
+   38.2,
+   29.3,
+   -4.1
+  ],
+  "anchor_normal": [
+   0.32,
+   0.16,
+   0.93
+  ],
+  "lobe": "frontal",
+  "accent": "#E74C3C",
+  "fact_key": "precentral",
+  "has_fact": true,
+  "vertices": 2660
+ },
+ {
+  "id": "ctx-rh-precuneus",
+  "name": "Precuneus",
+  "desikan_label": "precuneus",
+  "desikan_index": 25,
+  "hemi": "R",
+  "centroid": [
+   9.1,
+   22.4,
+   39.7
+  ],
+  "anchor": [
+   7.9,
+   22.2,
+   37.4
+  ],
+  "anchor_normal": [
+   -0.66,
+   -0.07,
+   -0.75
+  ],
+  "lobe": "parietal",
+  "accent": "#EC4899",
+  "fact_key": "precuneus",
+  "has_fact": true,
+  "vertices": 2016
+ },
+ {
+  "id": "ctx-rh-rostralanteriorcingulate",
+  "name": "Rostral anterior cingulate",
+  "desikan_label": "rostralanteriorcingulate",
+  "desikan_index": 26,
+  "hemi": "R",
+  "centroid": [
+   4.9,
+   -13.7,
+   -54.7
+  ],
+  "anchor": [
+   3.2,
+   -13.4,
+   -54.6
+  ],
+  "anchor_normal": [
+   -0.91,
+   0.24,
+   0.35
+  ],
+  "lobe": "cingulate",
+  "accent": "#339AF0",
+  "fact_key": "rostral_anterior_cingulate",
+  "has_fact": true,
+  "vertices": 224
+ },
+ {
+  "id": "ctx-rh-rostralmiddlefrontal",
+  "name": "Rostral middle frontal",
+  "desikan_label": "rostralmiddlefrontal",
+  "desikan_index": 27,
+  "hemi": "R",
+  "centroid": [
+   33.4,
+   2.3,
+   -60.4
+  ],
+  "anchor": [
+   30.5,
+   2.9,
+   -65.0
+  ],
+  "anchor_normal": [
+   -0.61,
+   0.28,
+   -0.74
+  ],
+  "lobe": "frontal",
+  "accent": "#8E44AD",
+  "fact_key": "rostral_middle_frontal",
+  "has_fact": true,
+  "vertices": 1998
+ },
+ {
+  "id": "ctx-rh-superiorfrontal",
+  "name": "Superior frontal",
+  "desikan_label": "superiorfrontal",
+  "desikan_index": 28,
+  "hemi": "R",
+  "centroid": [
+   11.7,
+   27.7,
+   -43.3
+  ],
+  "anchor": [
+   5.2,
+   28.0,
+   -45.5
+  ],
+  "anchor_normal": [
+   -0.94,
+   0.21,
+   -0.25
+  ],
+  "lobe": "frontal",
+  "accent": "#2E7D32",
+  "fact_key": "superior_frontal",
+  "has_fact": true,
+  "vertices": 2994
+ },
+ {
+  "id": "ctx-rh-superiorparietal",
+  "name": "Superior parietal",
+  "desikan_label": "superiorparietal",
+  "desikan_index": 29,
+  "hemi": "R",
+  "centroid": [
+   22.7,
+   34.3,
+   42.9
+  ],
+  "anchor": [
+   22.9,
+   34.8,
+   42.7
+  ],
+  "anchor_normal": [
+   0.48,
+   0.84,
+   0.26
+  ],
+  "lobe": "parietal",
+  "accent": "#3B82F6",
+  "fact_key": "superior_parietal",
+  "has_fact": true,
+  "vertices": 2530
+ },
+ {
+  "id": "ctx-rh-superiortemporal",
+  "name": "Superior temporal",
+  "desikan_label": "superiortemporal",
+  "desikan_index": 30,
+  "hemi": "R",
+  "centroid": [
+   53.9,
+   -20.5,
+   -5.3
+  ],
+  "anchor": [
+   55.8,
+   -23.5,
+   -3.0
+  ],
+  "anchor_normal": [
+   0.56,
+   -0.69,
+   0.46
+  ],
+  "lobe": "temporal",
+  "accent": "#10B981",
+  "fact_key": "superior_temporal",
+  "has_fact": true,
+  "vertices": 1715
+ },
+ {
+  "id": "ctx-rh-supramarginal",
+  "name": "Supramarginal",
+  "desikan_label": "supramarginal",
+  "desikan_index": 31,
+  "hemi": "R",
+  "centroid": [
+   51.6,
+   15.8,
+   15.5
+  ],
+  "anchor": [
+   52.4,
+   15.5,
+   15.9
+  ],
+  "anchor_normal": [
+   0.45,
+   -0.34,
+   0.83
+  ],
+  "lobe": "parietal",
+  "accent": "#8B5CF6",
+  "fact_key": "supramarginal",
+  "has_fact": true,
+  "vertices": 2013
+ },
+ {
+  "id": "ctx-rh-frontalpole",
+  "name": "Frontal pole",
+  "desikan_label": "frontalpole",
+  "desikan_index": 32,
+  "hemi": "R",
+  "centroid": [
+   8.2,
+   -27.3,
+   -82.0
+  ],
+  "anchor": [
+   7.6,
+   -28.4,
+   -83.1
+  ],
+  "anchor_normal": [
+   0.33,
+   -0.6,
+   -0.73
+  ],
+  "lobe": "frontal",
+  "accent": "#4A90E2",
+  "fact_key": "frontal_pole",
+  "has_fact": true,
+  "vertices": 99
+ },
+ {
+  "id": "ctx-rh-temporalpole",
+  "name": "Temporal pole",
+  "desikan_label": "temporalpole",
+  "desikan_index": 33,
+  "hemi": "R",
+  "centroid": [
+   30.1,
+   -51.2,
+   -31.4
+  ],
+  "anchor": [
+   29.7,
+   -46.7,
+   -32.7
+  ],
+  "anchor_normal": [
+   -0.22,
+   0.91,
+   -0.35
+  ],
+  "lobe": "temporal",
+  "accent": "#F39C12",
+  "fact_key": "temporal_pole",
+  "has_fact": true,
+  "vertices": 169
+ },
+ {
+  "id": "ctx-rh-transversetemporal",
+  "name": "Transverse temporal",
+  "desikan_label": "transversetemporal",
+  "desikan_index": 34,
+  "hemi": "R",
+  "centroid": [
+   44.1,
+   -7.2,
+   3.2
+  ],
+  "anchor": [
+   43.3,
+   -6.6,
+   2.0
+  ],
+  "anchor_normal": [
+   -0.48,
+   0.51,
+   -0.72
+  ],
+  "lobe": "temporal",
+  "accent": "#2980B9",
+  "fact_key": "transverse_temporal",
+  "has_fact": true,
+  "vertices": 202
+ },
+ {
+  "id": "ctx-rh-insula",
+  "name": "Insula",
+  "desikan_label": "insula",
+  "desikan_index": 35,
+  "hemi": "R",
+  "centroid": [
+   37.7,
+   -13.9,
+   -14.6
+  ],
+  "anchor": [
+   41.7,
+   -13.1,
+   -13.0
+  ],
+  "anchor_normal": [
+   0.94,
+   0.27,
+   0.21
+  ],
+  "lobe": "insula",
+  "accent": "#845EF7",
+  "fact_key": "insula",
+  "has_fact": true,
+  "vertices": 1294
+ },
+ {
+  "id": "deep-thalamus",
+  "name": "Thalamus",
+  "desikan_label": null,
+  "aseg_labels": [
+   10,
+   49
+  ],
+  "hemi": "B",
+  "centroid": [
+   -0.44,
+   -8.31,
+   1.43
+  ],
+  "centroid_L": [
+   -12.21,
+   -8.35,
+   1.89
+  ],
+  "centroid_R": [
+   11.89,
+   -8.26,
+   0.95
+  ],
+  "lobe": "Diencephalon",
+  "accent": "#8338EC",
+  "fact_key": "thalamus",
+  "has_fact": true,
+  "shape": "STRUCT_thalamus"
+ },
+ {
+  "id": "deep-caudate",
+  "name": "Caudate nucleus",
+  "desikan_label": null,
+  "aseg_labels": [
+   11,
+   50
+  ],
+  "hemi": "B",
+  "centroid": [
+   -0.15,
+   -4.21,
+   -24.66
+  ],
+  "centroid_L": [
+   -13.03,
+   -4.21,
+   -23.91
+  ],
+  "centroid_R": [
+   12.7,
+   -4.2,
+   -25.41
+  ],
+  "lobe": "Basal ganglia",
+  "accent": "#3B82F6",
+  "fact_key": "caudate_nucleus",
+  "has_fact": true,
+  "shape": "STRUCT_caudate"
+ },
+ {
+  "id": "deep-putamen",
+  "name": "Putamen",
+  "desikan_label": null,
+  "aseg_labels": [
+   12,
+   51
+  ],
+  "hemi": "B",
+  "centroid": [
+   -0.59,
+   -14.52,
+   -17.54
+  ],
+  "centroid_L": [
+   -25.37,
+   -14.47,
+   -16.69
+  ],
+  "centroid_R": [
+   25.05,
+   -14.57,
+   -18.42
+  ],
+  "lobe": "Basal ganglia",
+  "accent": "#6366F1",
+  "fact_key": "putamen",
+  "has_fact": true,
+  "shape": "STRUCT_putamen"
+ },
+ {
+  "id": "deep-pallidum",
+  "name": "Globus pallidus",
+  "desikan_label": null,
+  "aseg_labels": [
+   13,
+   52
+  ],
+  "hemi": "B",
+  "centroid": [
+   -0.61,
+   -15.28,
+   -12.38
+  ],
+  "centroid_L": [
+   -20.31,
+   -15.36,
+   -11.65
+  ],
+  "centroid_R": [
+   20.02,
+   -15.2,
+   -13.15
+  ],
+  "lobe": "Basal ganglia",
+  "accent": "#8B5CF6",
+  "fact_key": "globus_pallidus",
+  "has_fact": true,
+  "shape": "STRUCT_pallidum"
+ },
+ {
+  "id": "deep-hippocampus",
+  "name": "Hippocampus",
+  "desikan_label": null,
+  "aseg_labels": [
+   17,
+   53
+  ],
+  "hemi": "B",
+  "centroid": [
+   0.2,
+   -26.88,
+   5.98
+  ],
+  "centroid_L": [
+   -24.31,
+   -27.16,
+   6.28
+  ],
+  "centroid_R": [
+   24.6,
+   -26.6,
+   5.68
+  ],
+  "lobe": "Limbic / medial temporal",
+  "accent": "#F4A261",
+  "fact_key": "hippocampus",
+  "has_fact": true,
+  "shape": "STRUCT_hippocampus"
+ },
+ {
+  "id": "deep-amygdala",
+  "name": "Amygdala",
+  "desikan_label": null,
+  "aseg_labels": [
+   18,
+   54
+  ],
+  "hemi": "B",
+  "centroid": [
+   -0.09,
+   -33.62,
+   -12.16
+  ],
+  "centroid_L": [
+   -22.71,
+   -33.34,
+   -11.44
+  ],
+  "centroid_R": [
+   21.9,
+   -33.89,
+   -12.85
+  ],
+  "lobe": "Limbic / medial temporal",
+  "accent": "#AA4347",
+  "fact_key": "amygdala",
+  "has_fact": true,
+  "shape": "STRUCT_amygdala"
+ },
+ {
+  "id": "deep-accumbens",
+  "name": "Nucleus accumbens",
+  "desikan_label": null,
+  "aseg_labels": [
+   26,
+   58
+  ],
+  "hemi": "B",
+  "centroid": [
+   -0.3,
+   -21.72,
+   -27.86
+  ],
+  "centroid_L": [
+   -8.61,
+   -22.07,
+   -27.14
+  ],
+  "centroid_R": [
+   7.6,
+   -21.4,
+   -28.54
+  ],
+  "lobe": "Ventral striatum",
+  "accent": "#EC4899",
+  "fact_key": "nucleus_accumbens",
+  "has_fact": true,
+  "shape": "STRUCT_accumbens"
+ },
+ {
+  "id": "deep-ventricles",
+  "name": "Ventricular system",
+  "desikan_label": null,
+  "aseg_labels": [
+   4,
+   43,
+   14,
+   15,
+   5,
+   44
+  ],
+  "hemi": "B",
+  "centroid": [
+   -0.24,
+   -8.89,
+   -0.03
+  ],
+  "centroid_L": [
+   -12.31,
+   -8.89,
+   0.65
+  ],
+  "centroid_R": [
+   12.52,
+   -8.9,
+   -0.76
+  ],
+  "lobe": "Ventricular system (CSF)",
+  "accent": "#1ABC9C",
+  "fact_key": "ventricles",
+  "has_fact": true,
+  "shape": "STRUCT_ventricles"
+ },
+ {
+  "id": "deep-brainstem",
+  "name": "Brainstem",
+  "desikan_label": null,
+  "aseg_labels": [
+   16
+  ],
+  "hemi": "B",
+  "centroid": [
+   -0.21,
+   -47.06,
+   14.19
+  ],
+  "centroid_L": [
+   -7.78,
+   -47.27,
+   14.26
+  ],
+  "centroid_R": [
+   7.62,
+   -46.85,
+   14.11
+  ],
+  "lobe": "Brainstem",
+  "accent": "#F59E0B",
+  "fact_key": "brainstem",
+  "has_fact": true,
+  "shape": "STRUCT_brainstem"
+ },
+ {
+  "id": "deep-cerebellum",
+  "name": "Cerebellum",
+  "desikan_label": null,
+  "aseg_labels": [
+   8,
+   47,
+   7,
+   46
+  ],
+  "hemi": "B",
+  "centroid": [
+   -0.18,
+   -49.32,
+   41.73
+  ],
+  "centroid_L": [
+   -24.13,
+   -49.2,
+   41.8
+  ],
+  "centroid_R": [
+   23.58,
+   -49.44,
+   41.66
+  ],
+  "lobe": "Hindbrain",
+  "accent": "#10B981",
+  "fact_key": "cerebellum",
+  "has_fact": true,
+  "shape": "STRUCT_cerebellum"
+ }
+]

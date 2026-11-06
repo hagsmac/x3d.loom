@@ -1,0 +1,31 @@
+{
+  "schema": "loom.profile/1",
+  "name": "x3d-game/v1",
+  "purpose": "First Loom profile for a playable X3D world (x3d.platformer, 6 Nov 2026). Accepting under it means: every level is grammatical and meaningful on the fork with no known scene trap; the page code has no known X_ITE trap and its simulation uses no math that differs between JavaScript engines; the feel card holds; every listed level is proven beatable by a recorded tape that replays twice, deterministically, to the finish it recorded, bound to the exact level bytes and engine version; and a real browser running the shipped page reached the same finish from every tape at two very different frame rates. It says nothing about fun, fairness, difficulty, shortcuts, touch or gamepad feel, other JavaScript engines, real GPUs or frame rate.",
+  "required": [
+    {"witness": "grammar", "coverage": {"files": 4}},
+    {"witness": "meaning", "coverage": {"files": 4}},
+    {"witness": "traps", "coverage": {"rules": 11}},
+    {"witness": "page-traps", "coverage": {"rules": 7}},
+    {"witness": "feel"},
+    {"witness": "play", "coverage": {"tapes": 3, "levels": 3}},
+    {"witness": "behaviour"}
+  ],
+  "visible_not_run": ["eyes", "fun", "cross-engine", "host"],
+  "gate_map": {
+    "GAME-GRAMMAR": "grammar and meaning on every level file, including the measurement level 0-0",
+    "GAME-PAGE": "page-traps on engine/*.js, main.js and index.html; sim-nonportable-math binds the files marked // loom:sim",
+    "GAME-FEEL": "feel: tests/feel.test.mjs measures nine numbers (apex heights, time to apex, run-jump distance, time to full speed, stop distance, coyote and buffer frames, wall-jump height) against FEEL_WINDOWS in engine/feel.js",
+    "GAME-PROOF-OF-PLAY": "play: each tape replays twice in Node; level sha256, engine version, determinism, goal and final state hash are each a stable code",
+    "GAME-RENDER-INDEPENDENCE": "behaviour: tools/check_browser.cjs replays every tape in the shipped page at 200 and 37 ticks per frame and requires the tape's final hash",
+    "GAME-FUN": "visible_not_run: only a person playing can say it is fun",
+    "GAME-CROSS-ENGINE": "visible_not_run: replays in Firefox (SpiderMonkey) and Safari (JavaScriptCore) were not run"
+  },
+  "limitations": [
+    "Grammar and Meaning ran on the local x3d_mcp fork checkout (327c5c4), not the family pin.",
+    "Behaviour is one headless Chromium with software WebGL (SwiftShader) on one machine: it shows outcomes, not pixels or frame rate.",
+    "The tapes were recorded by closed-loop route bots, not by people; a tape proves one way through a level, not that it is fair or fun.",
+    "Feel windows were set by the builder from genre practice, not from playtests.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ]
+}

@@ -1,0 +1,5 @@
+vendor/
+node_modules/
+.shots/
+__pycache__/
+*.pyc

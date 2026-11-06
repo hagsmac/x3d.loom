@@ -1,0 +1,81 @@
+{
+  "coverage": {
+    "files": 10
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T20:25:19+00:00",
+  "grade": "C",
+  "instrument": {
+    "branch": "HEAD",
+    "commit": "327c5c4ee21268fcb5c4526da7c2f39932019e72",
+    "dirty": false,
+    "path": "/home/user/fork-pin",
+    "python": "/home/user/fork-pin/.venv/bin/python",
+    "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+  },
+  "limitations": [
+    "Fork commit 327c5c4 on branch HEAD; not the family pin unless they match."
+  ],
+  "measurements": {
+    "cars/banshee.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "cars/koi.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "cars/ronin.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "cars/tempest.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "garage.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "levels/cliffside.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "levels/kessel-pass.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "levels/neon-overpass.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "levels/practice-pad.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "levels/salt-ring.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    }
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "c5821a908021b14e001ad92197530ff64aa815eba819ad49d838f3f284605565",
+  "witness": "meaning"
+}

@@ -1,0 +1,118 @@
+{
+ "out": "brain_hero_lite.x3d",
+ "bytes": 2646870,
+ "sha256": "3f249a3d9953dff7d3b0471e611a3d031723905b89c0b387b5fa9326477cbd1c",
+ "cortex_tris": 37112,
+ "cortex_verts": 20484,
+ "deep_tris": 19376,
+ "tract_fibres": 497,
+ "tract_points": 13916,
+ "tract_groups": {
+  "cc": 179,
+  "cst": 48,
+  "thal": 62,
+  "optic": 24,
+  "arcuate": 32,
+  "slf": 24,
+  "cingulum": 24,
+  "uncinate": 18,
+  "ifof": 28,
+  "ilf": 20,
+  "cereb": 14,
+  "u": 24
+ },
+ "tract_points_pulled_inward": false,
+ "ao": "Cycles per-vertex AO bake (bake_out_10k.npz), matches mesh vertex for vertex",
+ "slices": [
+  {
+   "file": "tex/slice_0.png",
+   "y": -40.0,
+   "size": [
+    149,
+    185
+   ],
+   "bytes": 23684,
+   "sha256": "0cb11e3d044daf1e7e5b5945429c715179bbab074d881e83de9c54f62066ffd0"
+  },
+  {
+   "file": "tex/slice_1.png",
+   "y": -22.0,
+   "size": [
+    149,
+    185
+   ],
+   "bytes": 31168,
+   "sha256": "d993461d7053ef9a67b61cb4715ec3a70a5608a015b4de2bec38e8f2ae598727"
+  },
+  {
+   "file": "tex/slice_2.png",
+   "y": -4.0,
+   "size": [
+    149,
+    185
+   ],
+   "bytes": 31438,
+   "sha256": "e40add7476863034206e40e9070c9736c39e2453bb9a968601cd15f96f854389"
+  },
+  {
+   "file": "tex/slice_3.png",
+   "y": 14.0,
+   "size": [
+    149,
+    185
+   ],
+   "bytes": 25654,
+   "sha256": "ff1d6e8be59286b0425d53e4c7b726ab5d701209634853c2f62db1019735cd1c"
+  },
+  {
+   "file": "tex/slice_4.png",
+   "y": 32.0,
+   "size": [
+    149,
+    185
+   ],
+   "bytes": 22804,
+   "sha256": "3fa4b6c69ec7fb517ba05577c8bd5641313ea3351182bd6ccc4cbab652b4f717"
+  },
+  {
+   "file": "tex/slice_5.png",
+   "y": 50.0,
+   "size": [
+    149,
+    185
+   ],
+   "bytes": 12797,
+   "sha256": "35cc6d5b6d5382a52c3ead2973ec68fb159a2b89b2038ccdef30b854edd15561"
+  }
+ ],
+ "slice_window": {
+  "low": 3250.0,
+  "high": 9369.0,
+  "percentiles": [
+   2,
+   99.7
+  ],
+  "gamma": 0.85,
+  "alpha": "smoothstep(0.07,0.42)*0.9",
+  "clipped_fraction_mean": 0.003077066756695437,
+  "clipped_low_fraction_mean": 0.05038332662919032,
+  "transparent_fraction_mean": 0.056413691988346365,
+  "px_mm": 1.1,
+  "source": "tpl-MNI152NLin2009cAsym_res-01_desc-brain_T1w (Fonov 2009/2011, MNI licence text)"
+ },
+ "textures": {
+  "blob.png": 8059,
+  "core_glow.png": 10828,
+  "floor_pool.png": 22095,
+  "glow_halo.png": 6607,
+  "slice_0.png": 23684,
+  "slice_1.png": 31168,
+  "slice_2.png": 31438,
+  "slice_3.png": 25654,
+  "slice_4.png": 22804,
+  "slice_5.png": 12797,
+  "wet_ramp.png": 218
+ },
+ "seconds": 1.2,
+ "builder_sha16": "830c5ea341b38879"
+}

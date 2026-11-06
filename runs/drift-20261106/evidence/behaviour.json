@@ -1,0 +1,33 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [
+    {
+      "path": "behaviour.log",
+      "sha256": "0bc2f4f19292d4e3624163ed1ea02c1e0ea79681502b907948d31c45caa544c8"
+    }
+  ],
+  "finished_at": "2026-11-06T20:35:45+00:00",
+  "grade": "C",
+  "instrument": {
+    "command": [
+      "node",
+      "tools/check_browser.cjs"
+    ],
+    "tool": "project gate (adapter)"
+  },
+  "limitations": [],
+  "measurements": {
+    "exit_code": 0,
+    "stdout_tail": "6220,\"ticks_per_frame\":200,\"ok\":true,\"state\":\"won\",\"expect_state\":\"won\",\"hash\":\"1ccd9e3a0c30c26b\",\"expect\":\"1ccd9e3a0c30c26b\",\"level_sha256_ok\":true,\"frames_rendered\":82,\"score\":23748,\"bestLap\":65.6874093275243,\"medal\":\"none\",\"x_ite\":\"16.5.1\",\"secs\":9,\"page_errors\":[]},{\"tape\":\"salt-ring-tandem.tape.json\",\"ticks\":16220,\"ticks_per_frame\":37,\"ok\":true,\"state\":\"won\",\"expect_state\":\"won\",\"hash\":\"1ccd9e3a0c30c26b\",\"expect\":\"1ccd9e3a0c30c26b\",\"level_sha256_ok\":true,\"frames_rendered\":439,\"score\":23748,\"bestLap\":65.6874093275243,\"medal\":\"none\",\"x_ite\":\"16.5.1\",\"secs\":26,\"page_errors\":[]}],\"pass\":true}"
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "c5821a908021b14e001ad92197530ff64aa815eba819ad49d838f3f284605565",
+  "witness": "behaviour"
+}

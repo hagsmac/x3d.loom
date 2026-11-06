@@ -1,0 +1,22 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T06:57:50+00:00",
+  "grade": "S",
+  "instrument": {
+    "by": "model-reading",
+    "tool": "declared"
+  },
+  "limitations": [],
+  "measurements": {},
+  "reason": "Read 32 frames, one per scene Viewpoint (X_ITE 16.7.0; headless Chromium 153 on SwiftShader; 960x720; Viewpoints bound through SAI set_bind; eyes-render-log.json). Every frame draws its zinc, donors, bonds and labels; none is blank (lowest lit share 0.113, 6DNH C302); 0 console messages. Short bonds glow gold (S) and blue (N); the long cryo-EM bonds draw dark and thin as the rule says (6DNH C301 2.80, C303 2.75; 6FUW C201 2.66 and 2.78; 6URO C302 2.99, C303 2.52) and 6DNH C302 shows two donors. Left as found: neighbouring sites crowd the background of 1ZAA C201 and 6DNH C301, and a side chain crosses a few labels. The frames were read on the previous build (same atoms, bonds and Viewpoints); this build's frames differ from them in at most 0.0002 of their pixels. X_ITE 16.6.0 under the same rig gave 32 of 32 byte-identical frames. A model reading of pictures: graded S.",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "979dec13377e906f95a4736ee6c5fabd00a49c4c48f40bc23c0bacac3d6fc7b0",
+  "witness": "eyes"
+}

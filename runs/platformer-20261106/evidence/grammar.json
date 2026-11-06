@@ -1,0 +1,51 @@
+{
+  "coverage": {
+    "files": 4
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T08:32:02+00:00",
+  "grade": "C",
+  "instrument": {
+    "branch": "HEAD",
+    "commit": "327c5c4ee21268fcb5c4526da7c2f39932019e72",
+    "dirty": false,
+    "path": "/home/user/fork-pin",
+    "python": "/home/user/fork-pin/.venv/bin/python",
+    "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+  },
+  "limitations": [
+    "Fork commit 327c5c4 on branch HEAD; not the family pin unless they match."
+  ],
+  "measurements": {
+    "levels/0-0-feel-lab.x3d": {
+      "xsd_errors": 0,
+      "xsd_valid": true,
+      "xsd_version": "4.0"
+    },
+    "levels/1-1-tinker-meadow.x3d": {
+      "xsd_errors": 0,
+      "xsd_valid": true,
+      "xsd_version": "4.0"
+    },
+    "levels/2-1-pendulum-gorge.x3d": {
+      "xsd_errors": 0,
+      "xsd_valid": true,
+      "xsd_version": "4.0"
+    },
+    "levels/3-1-clockwork-spire.x3d": {
+      "xsd_errors": 0,
+      "xsd_valid": true,
+      "xsd_version": "4.0"
+    }
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "6244fe7cf628640beb8f2cc791fda25243749b8f3242459490abaaac96d9928f",
+  "witness": "grammar"
+}

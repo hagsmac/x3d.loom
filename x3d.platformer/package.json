@@ -1,0 +1,12 @@
+{
+  "name": "x3d.platformer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "NIB: an original physics platformer whose levels are X3D 4.0 files",
+  "license": "MIT",
+  "scripts": {
+    "build": "python3 -I build/build_levels.py",
+    "test": "node tests/run_all.mjs"
+  }
+}

@@ -1,0 +1,1189 @@
+{
+  "modes": [
+    {
+      "cli_controls": 3,
+      "detail": {
+        "cli": [
+          {
+            "case": "CLI writes the metal-site witness (clean)",
+            "coverage": {
+              "class_declared": 1,
+              "files": 1,
+              "min_intact_fraction": 1.0,
+              "sites": 1,
+              "tau4_floor_declared": 1
+            },
+            "reason": "",
+            "status": "pass"
+          },
+          {
+            "case": "CLI writes the metal-site witness (drifted)",
+            "coverage": {
+              "class_declared": 1,
+              "files": 1,
+              "min_intact_fraction": 1.0,
+              "sites": 0,
+              "tau4_floor_declared": 1
+            },
+            "reason": "SITE_COORDINATION: ZN A101: 3 donors within 3.0 A, declared 4",
+            "status": "fail"
+          },
+          {
+            "case": "CLI refuses a spec outside the candidate",
+            "reason": "SITE_SPEC",
+            "status": "rejected"
+          }
+        ],
+        "controls": [
+          {
+            "case": "CCCH site, ideal tetrahedral (positive control)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "Cys2His2 site, ideal tetrahedral (positive control)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCHH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS21.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS25.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS5.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS8.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "Zn-S just inside its window (2.44 of 2.45)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.4405,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "Zn-S just outside its window (2.46)",
+            "caught": "SITE_DISTANCE",
+            "detail": "ZN A101: CYS 10 SG at 2.460 A, window [2.2, 2.45]",
+            "expected": "SITE_DISTANCE"
+          },
+          {
+            "case": "Zn-S stretched to 2.90, still inside the search radius",
+            "caught": "SITE_DISTANCE",
+            "detail": "ZN A101: CYS 19 SG at 2.899 A, window [2.2, 2.45]",
+            "expected": "SITE_DISTANCE"
+          },
+          {
+            "case": "one cysteine drifted to 3.6 (zinc losing a ligand)",
+            "caught": "SITE_COORDINATION",
+            "detail": "ZN A101: 3 donors within 3.0 A, declared 4",
+            "expected": "SITE_COORDINATION"
+          },
+          {
+            "case": "a water joins at 2.10 (five-coordinate)",
+            "caught": "SITE_COORDINATION",
+            "detail": "ZN A101: 5 donors within 3.0 A, declared 4",
+            "expected": "SITE_COORDINATION"
+          },
+          {
+            "case": "declared Cys2His2, structure is CCCH",
+            "caught": "SITE_CLASS",
+            "detail": "ZN A101: ligands CCCH, declared CCHH",
+            "expected": "SITE_CLASS"
+          },
+          {
+            "case": "histidine binds through ND1, declared NE2 (wrong tautomer)",
+            "caught": "SITE_DONOR",
+            "detail": "ZN A101: HIS 29 binds through ND1, declared NE2",
+            "expected": "SITE_DONOR"
+          },
+          {
+            "case": "square-planar site (tau4 0)",
+            "caught": "SITE_GEOMETRY",
+            "detail": "ZN A101: tau4 0.000 below 0.7",
+            "expected": "SITE_GEOMETRY"
+          },
+          {
+            "case": "coordinates in nanometres read as angstrom",
+            "caught": "SITE_UNITS",
+            "detail": "median nearest-neighbour distance 0.152: nanometres read as angstrom?",
+            "expected": "SITE_UNITS"
+          },
+          {
+            "case": "no zinc in the file",
+            "caught": "SITE_NO_METAL",
+            "detail": "{\"chain\": \"A\", \"resname\": \"ZN\", \"resseq\": 101}",
+            "expected": "SITE_NO_METAL"
+          },
+          {
+            "case": "a coordinate that is not a number",
+            "caught": "SITE_PARSE",
+            "detail": "line 3: coordinates are not numbers",
+            "expected": "SITE_PARSE"
+          },
+          {
+            "case": "a window written backwards",
+            "caught": "SITE_SPEC",
+            "detail": "window S",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "a search radius of 5 angstrom (would sweep in second-shell atoms)",
+            "caught": "SITE_SPEC",
+            "detail": "search_radius must lie in 2.5 to 3.5 angstrom",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "20-frame trajectory, site intact throughout",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 20,
+              "median_nn_angstrom": 1.5455,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0858,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3085,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3348,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3719,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 0.9785
+            }
+          },
+          {
+            "case": "zinc loses a cysteine in 6 of 20 frames, declared 0.99",
+            "caught": "SITE_INTACT_FRACTION",
+            "detail": "ZN A101: intact in 14 of 20 frames, declared at least 0.99; first failure at frame 14: SITE_COORDINATION (ZN A101: 3 donors within 3.0 A, declared 4)",
+            "expected": "SITE_INTACT_FRACTION"
+          },
+          {
+            "case": "the same trajectory under a declared 0.6 (the fraction is a declared limit, measured)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 20,
+              "median_nn_angstrom": 1.5455,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0858,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3085,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3348,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3719,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 0.9785
+            }
+          },
+          {
+            "case": "a gzip archive file is read as fetched (positive control)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "a corrupt gzip file",
+            "caught": "SITE_PARSE",
+            "detail": "broken.ent.gz: not a readable gzip file (Unknown compression method)",
+            "expected": "SITE_PARSE"
+          },
+          {
+            "case": "a GROMACS water (SOL OW) joins at 2.10",
+            "caught": "SITE_COORDINATION",
+            "detail": "ZN A101: 5 donors within 3.0 A, declared 4",
+            "expected": "SITE_COORDINATION"
+          },
+          {
+            "case": "a backbone carbonyl O joins at 2.10 (not in the donor table)",
+            "caught": "SITE_COORDINATION",
+            "detail": "ZN A101: 5 donors within 3.0 A, declared 4 (not in the donor table: GLY40.O)",
+            "expected": "SITE_COORDINATION"
+          },
+          {
+            "case": "a chloride joins at 2.30",
+            "caught": "SITE_COORDINATION",
+            "detail": "ZN A101: 5 donors within 3.0 A, declared 4 (not in the donor table: CL401.CL)",
+            "expected": "SITE_COORDINATION"
+          },
+          {
+            "case": "a CHARMM file names the histidine HSD (positive control)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HSD29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "atom order differs between frames",
+            "caught": "SITE_PARSE",
+            "detail": "frame 1: atom order or identity differs from frame 0",
+            "expected": "SITE_PARSE"
+          },
+          {
+            "case": "a broken site written before the first MODEL",
+            "caught": "SITE_PARSE",
+            "detail": "line 14: 13 atom records outside any MODEL",
+            "expected": "SITE_PARSE"
+          },
+          {
+            "case": "frames separated by END without MODEL records",
+            "caught": "SITE_PARSE",
+            "detail": "line 15: frames separated by END without MODEL records",
+            "expected": "SITE_PARSE"
+          },
+          {
+            "case": "a donor_atoms key in lower case ('his')",
+            "caught": "SITE_SPEC",
+            "detail": "site.donor_atoms: {RESNAME: ATOM}, both upper case and from DONORS",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "a tau4 floor on a five-coordinate site",
+            "caught": "SITE_SPEC",
+            "detail": "site.tau4_min applies only to coordination 4",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "windows given but empty",
+            "caught": "SITE_SPEC",
+            "detail": "site.windows, when given, must be a non-empty object",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "two site entries select the same zinc",
+            "caught": "SITE_SPEC",
+            "detail": "two site entries select ZN A101",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "declared ligand residues differ (His33 for His29)",
+            "caught": "SITE_LIGANDS",
+            "detail": "ZN A101: ligand residues ['A10', 'A19', 'A25', 'A29'], declared ['A10', 'A19', 'A25', 'A33']",
+            "expected": "SITE_LIGANDS"
+          },
+          {
+            "case": "declared ligand residues match (positive control)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "a hexadecimal residue number and an undeclared zinc far away (positive; inventory names it)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 15,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101",
+                "ZN A102"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": [
+                "ZN A102"
+              ]
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "tau4 reference values (published /141 form): ideal tetrahedron 1.000408, square plane 0",
+            "inventory": {},
+            "passed": true,
+            "site": {
+              "tau4_plane": 0.0,
+              "tau4_tetrahedron": 1.000408
+            }
+          }
+        ],
+        "optimized": false
+      },
+      "negative_controls_caught": 25,
+      "optimized": false,
+      "positive_controls_passed": 10
+    },
+    {
+      "cli_controls": 3,
+      "detail": {
+        "cli": [
+          {
+            "case": "CLI writes the metal-site witness (clean)",
+            "coverage": {
+              "class_declared": 1,
+              "files": 1,
+              "min_intact_fraction": 1.0,
+              "sites": 1,
+              "tau4_floor_declared": 1
+            },
+            "reason": "",
+            "status": "pass"
+          },
+          {
+            "case": "CLI writes the metal-site witness (drifted)",
+            "coverage": {
+              "class_declared": 1,
+              "files": 1,
+              "min_intact_fraction": 1.0,
+              "sites": 0,
+              "tau4_floor_declared": 1
+            },
+            "reason": "SITE_COORDINATION: ZN A101: 3 donors within 3.0 A, declared 4",
+            "status": "fail"
+          },
+          {
+            "case": "CLI refuses a spec outside the candidate",
+            "reason": "SITE_SPEC",
+            "status": "rejected"
+          }
+        ],
+        "controls": [
+          {
+            "case": "CCCH site, ideal tetrahedral (positive control)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "Cys2His2 site, ideal tetrahedral (positive control)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCHH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS21.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS25.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS5.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS8.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "Zn-S just inside its window (2.44 of 2.45)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.4405,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "Zn-S just outside its window (2.46)",
+            "caught": "SITE_DISTANCE",
+            "detail": "ZN A101: CYS 10 SG at 2.460 A, window [2.2, 2.45]",
+            "expected": "SITE_DISTANCE"
+          },
+          {
+            "case": "Zn-S stretched to 2.90, still inside the search radius",
+            "caught": "SITE_DISTANCE",
+            "detail": "ZN A101: CYS 19 SG at 2.899 A, window [2.2, 2.45]",
+            "expected": "SITE_DISTANCE"
+          },
+          {
+            "case": "one cysteine drifted to 3.6 (zinc losing a ligand)",
+            "caught": "SITE_COORDINATION",
+            "detail": "ZN A101: 3 donors within 3.0 A, declared 4",
+            "expected": "SITE_COORDINATION"
+          },
+          {
+            "case": "a water joins at 2.10 (five-coordinate)",
+            "caught": "SITE_COORDINATION",
+            "detail": "ZN A101: 5 donors within 3.0 A, declared 4",
+            "expected": "SITE_COORDINATION"
+          },
+          {
+            "case": "declared Cys2His2, structure is CCCH",
+            "caught": "SITE_CLASS",
+            "detail": "ZN A101: ligands CCCH, declared CCHH",
+            "expected": "SITE_CLASS"
+          },
+          {
+            "case": "histidine binds through ND1, declared NE2 (wrong tautomer)",
+            "caught": "SITE_DONOR",
+            "detail": "ZN A101: HIS 29 binds through ND1, declared NE2",
+            "expected": "SITE_DONOR"
+          },
+          {
+            "case": "square-planar site (tau4 0)",
+            "caught": "SITE_GEOMETRY",
+            "detail": "ZN A101: tau4 0.000 below 0.7",
+            "expected": "SITE_GEOMETRY"
+          },
+          {
+            "case": "coordinates in nanometres read as angstrom",
+            "caught": "SITE_UNITS",
+            "detail": "median nearest-neighbour distance 0.152: nanometres read as angstrom?",
+            "expected": "SITE_UNITS"
+          },
+          {
+            "case": "no zinc in the file",
+            "caught": "SITE_NO_METAL",
+            "detail": "{\"chain\": \"A\", \"resname\": \"ZN\", \"resseq\": 101}",
+            "expected": "SITE_NO_METAL"
+          },
+          {
+            "case": "a coordinate that is not a number",
+            "caught": "SITE_PARSE",
+            "detail": "line 3: coordinates are not numbers",
+            "expected": "SITE_PARSE"
+          },
+          {
+            "case": "a window written backwards",
+            "caught": "SITE_SPEC",
+            "detail": "window S",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "a search radius of 5 angstrom (would sweep in second-shell atoms)",
+            "caught": "SITE_SPEC",
+            "detail": "search_radius must lie in 2.5 to 3.5 angstrom",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "20-frame trajectory, site intact throughout",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 20,
+              "median_nn_angstrom": 1.5455,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0858,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3085,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3348,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3719,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 0.9785
+            }
+          },
+          {
+            "case": "zinc loses a cysteine in 6 of 20 frames, declared 0.99",
+            "caught": "SITE_INTACT_FRACTION",
+            "detail": "ZN A101: intact in 14 of 20 frames, declared at least 0.99; first failure at frame 14: SITE_COORDINATION (ZN A101: 3 donors within 3.0 A, declared 4)",
+            "expected": "SITE_INTACT_FRACTION"
+          },
+          {
+            "case": "the same trajectory under a declared 0.6 (the fraction is a declared limit, measured)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 20,
+              "median_nn_angstrom": 1.5455,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0858,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3085,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3348,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3719,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 0.9785
+            }
+          },
+          {
+            "case": "a gzip archive file is read as fetched (positive control)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "a corrupt gzip file",
+            "caught": "SITE_PARSE",
+            "detail": "broken.ent.gz: not a readable gzip file (Unknown compression method)",
+            "expected": "SITE_PARSE"
+          },
+          {
+            "case": "a GROMACS water (SOL OW) joins at 2.10",
+            "caught": "SITE_COORDINATION",
+            "detail": "ZN A101: 5 donors within 3.0 A, declared 4",
+            "expected": "SITE_COORDINATION"
+          },
+          {
+            "case": "a backbone carbonyl O joins at 2.10 (not in the donor table)",
+            "caught": "SITE_COORDINATION",
+            "detail": "ZN A101: 5 donors within 3.0 A, declared 4 (not in the donor table: GLY40.O)",
+            "expected": "SITE_COORDINATION"
+          },
+          {
+            "case": "a chloride joins at 2.30",
+            "caught": "SITE_COORDINATION",
+            "detail": "ZN A101: 5 donors within 3.0 A, declared 4 (not in the donor table: CL401.CL)",
+            "expected": "SITE_COORDINATION"
+          },
+          {
+            "case": "a CHARMM file names the histidine HSD (positive control)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HSD29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "atom order differs between frames",
+            "caught": "SITE_PARSE",
+            "detail": "frame 1: atom order or identity differs from frame 0",
+            "expected": "SITE_PARSE"
+          },
+          {
+            "case": "a broken site written before the first MODEL",
+            "caught": "SITE_PARSE",
+            "detail": "line 14: 13 atom records outside any MODEL",
+            "expected": "SITE_PARSE"
+          },
+          {
+            "case": "frames separated by END without MODEL records",
+            "caught": "SITE_PARSE",
+            "detail": "line 15: frames separated by END without MODEL records",
+            "expected": "SITE_PARSE"
+          },
+          {
+            "case": "a donor_atoms key in lower case ('his')",
+            "caught": "SITE_SPEC",
+            "detail": "site.donor_atoms: {RESNAME: ATOM}, both upper case and from DONORS",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "a tau4 floor on a five-coordinate site",
+            "caught": "SITE_SPEC",
+            "detail": "site.tau4_min applies only to coordination 4",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "windows given but empty",
+            "caught": "SITE_SPEC",
+            "detail": "site.windows, when given, must be a non-empty object",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "two site entries select the same zinc",
+            "caught": "SITE_SPEC",
+            "detail": "two site entries select ZN A101",
+            "expected": "SITE_SPEC"
+          },
+          {
+            "case": "declared ligand residues differ (His33 for His29)",
+            "caught": "SITE_LIGANDS",
+            "detail": "ZN A101: ligand residues ['A10', 'A19', 'A25', 'A29'], declared ['A10', 'A19', 'A25', 'A33']",
+            "expected": "SITE_LIGANDS"
+          },
+          {
+            "case": "declared ligand residues match (positive control)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 13,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": []
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "a hexadecimal residue number and an undeclared zinc far away (positive; inventory names it)",
+            "inventory": {
+              "altloc_skipped": 0,
+              "atoms_per_frame": 15,
+              "frames": 1,
+              "median_nn_angstrom": 1.5311,
+              "metal_atoms_in_file": [
+                "ZN A101",
+                "ZN A102"
+              ],
+              "metals_checked": 1,
+              "undeclared_metals": [
+                "ZN A102"
+              ]
+            },
+            "passed": true,
+            "site": {
+              "class": "CCCH",
+              "coordination": 4,
+              "distances": [
+                {
+                  "angstrom": 2.0698,
+                  "donor": "HIS29.NE2",
+                  "element": "N"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS10.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS19.SG",
+                  "element": "S"
+                },
+                {
+                  "angstrom": 2.3296,
+                  "donor": "CYS25.SG",
+                  "element": "S"
+                }
+              ],
+              "site": "ZN A101",
+              "tau4": 1.0004
+            }
+          },
+          {
+            "case": "tau4 reference values (published /141 form): ideal tetrahedron 1.000408, square plane 0",
+            "inventory": {},
+            "passed": true,
+            "site": {
+              "tau4_plane": 0.0,
+              "tau4_tetrahedron": 1.000408
+            }
+          }
+        ],
+        "optimized": true
+      },
+      "negative_controls_caught": 25,
+      "optimized": true,
+      "positive_controls_passed": 10
+    }
+  ],
+  "schema": "loomkit.self-test/1",
+  "scope": "Synthetic zinc sites exercising the real predicates; not a structure from the PDB and not a simulation.",
+  "suite": "metalsite"
+}

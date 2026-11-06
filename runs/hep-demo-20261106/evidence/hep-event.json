@@ -1,0 +1,644 @@
+{
+  "coverage": {
+    "events": 8,
+    "scenes": 8,
+    "towers": 752,
+    "tracks": 2686
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T14:42:06+00:00",
+  "grade": "C",
+  "instrument": {
+    "rules_sha256": "56cb3f6f7663e7798f5629c4b831fd0377e283e7f9e0d9067e9b6a6ecb60182c",
+    "spec_sha256": "f2b4d0e548a95a80cc3d0a3cd69402f2b23738fc03bfeb3775608fbffaee65a5",
+    "tool": "loomkit.hepevent"
+  },
+  "limitations": [
+    "Demo plausibility only: loose physics tolerances, declared in the spec; no mass shell, resonance or calorimeter sum rule.",
+    "Nothing is rendered and no GLSL is compiled here: the shader check proves the binding (shader, attributes, clock route), not the look."
+  ],
+  "measurements": {
+    "events-v2/exact-zmumu.event.json": {
+      "inventory": {
+        "charged_tracks": 2,
+        "final_state": 2,
+        "hits": 16,
+        "particles": 3,
+        "scene": {
+          "bytes": 277812,
+          "components": [
+            "Shaders",
+            "Rendering",
+            "ParticleSystems",
+            "X_ITE"
+          ],
+          "profile": "Immersive",
+          "routes": 5,
+          "shapes": 8,
+          "tower_shapes": 2,
+          "track_shapes": 2,
+          "transforms": 1,
+          "unreadable_nodes": {},
+          "version": "4.0"
+        },
+        "towers": 2,
+        "tracks": 2
+      },
+      "measurements": {
+        "bijection": {
+          "drawable_particles": 2,
+          "towers_drawn": 2,
+          "tracks_drawn": 2
+        },
+        "conservation": {
+          "beams": 0,
+          "charge_sum": 0,
+          "final_state": 2,
+          "p4_residual_gev": {
+            "E": -0.0,
+            "px": 0.0,
+            "py": -0.0,
+            "pz": 0.0
+          },
+          "p4_tolerance_gev": 0.510221811337472
+        },
+        "containment": {
+          "calorimeter_eta_max": 1.6329,
+          "points_checked": 18
+        },
+        "extension_bijection": {
+          "extensions": 2
+        },
+        "merged": {
+          "exiting_muons": 2,
+          "extensions": 2,
+          "merged_shapes": 3,
+          "merged_tower_cells": 2
+        },
+        "scene_geometry": {
+          "scene_curvature_judged": 2,
+          "scene_curvature_unresolved": 0,
+          "scene_drawn_straight": 0,
+          "scene_points": 8
+        },
+        "shader": {
+          "attribute_rows": 44,
+          "extensions_with_shader": 2,
+          "shader_nodes": 1,
+          "tracks_with_shader": 2
+        },
+        "tracks": {
+          "declared": 2,
+          "hits": 2,
+          "straight_hits": 0,
+          "unresolved_hits": 0
+        },
+        "units": {
+          "mass_scale_judged": 2,
+          "radius_scale_judged": 2,
+          "scene_extent_ratio_log10": 0.0
+        }
+      }
+    },
+    "events-v2/pythia-qcd-demo.event.json": {
+      "inventory": {
+        "charged_tracks": 235,
+        "final_state": 607,
+        "hits": 917,
+        "particles": 609,
+        "scene": {
+          "bytes": 2154062,
+          "components": [
+            "Shaders",
+            "Rendering",
+            "ParticleSystems",
+            "X_ITE"
+          ],
+          "profile": "Immersive",
+          "routes": 5,
+          "shapes": 7,
+          "tower_shapes": 132,
+          "track_shapes": 497,
+          "transforms": 1,
+          "unreadable_nodes": {},
+          "version": "4.0"
+        },
+        "towers": 132,
+        "tracks": 497
+      },
+      "measurements": {
+        "bijection": {
+          "drawable_particles": 497,
+          "towers_drawn": 132,
+          "tracks_drawn": 497
+        },
+        "conservation": {
+          "beams": 2,
+          "charge_sum": 2,
+          "final_state": 607,
+          "p4_residual_gev": {
+            "E": 3e-06,
+            "px": 1e-05,
+            "py": -1.6e-05,
+            "pz": -3e-06
+          },
+          "p4_tolerance_gev": 1.86
+        },
+        "containment": {
+          "calorimeter_eta_max": 1.6329,
+          "points_checked": 1414
+        },
+        "extension_bijection": null,
+        "merged": {
+          "exiting_muons": 0,
+          "extensions": 0,
+          "merged_shapes": 2,
+          "merged_tower_cells": 132
+        },
+        "scene_geometry": {
+          "scene_curvature_judged": 497,
+          "scene_curvature_unresolved": 36,
+          "scene_drawn_straight": 262,
+          "scene_points": 9015
+        },
+        "shader": {
+          "attribute_rows": 9015,
+          "extensions_with_shader": 0,
+          "shader_nodes": 1,
+          "tracks_with_shader": 497
+        },
+        "tracks": {
+          "declared": 235,
+          "hits": 159,
+          "straight_hits": 0,
+          "unresolved_hits": 3
+        },
+        "units": {
+          "mass_scale_judged": 284,
+          "radius_scale_judged": 235,
+          "scene_extent_ratio_log10": 0.0
+        }
+      }
+    },
+    "events-v2/pythia-qcd-inflight.event.json": {
+      "inventory": {
+        "charged_tracks": 194,
+        "final_state": 496,
+        "hits": 756,
+        "particles": 498,
+        "scene": {
+          "bytes": 1896429,
+          "components": [
+            "Shaders",
+            "Rendering",
+            "ParticleSystems",
+            "X_ITE"
+          ],
+          "profile": "Immersive",
+          "routes": 5,
+          "shapes": 7,
+          "tower_shapes": 118,
+          "track_shapes": 382,
+          "transforms": 1,
+          "unreadable_nodes": {},
+          "version": "4.0"
+        },
+        "towers": 118,
+        "tracks": 382
+      },
+      "measurements": {
+        "bijection": {
+          "drawable_particles": 382,
+          "towers_drawn": 118,
+          "tracks_drawn": 382
+        },
+        "conservation": {
+          "beams": 2,
+          "charge_sum": 2,
+          "final_state": 496,
+          "p4_residual_gev": {
+            "E": 3e-06,
+            "px": 6e-06,
+            "py": -2e-06,
+            "pz": 3e-06
+          },
+          "p4_tolerance_gev": 1.86
+        },
+        "containment": {
+          "calorimeter_eta_max": 1.6329,
+          "points_checked": 1138
+        },
+        "extension_bijection": null,
+        "merged": {
+          "exiting_muons": 0,
+          "extensions": 0,
+          "merged_shapes": 2,
+          "merged_tower_cells": 118
+        },
+        "scene_geometry": {
+          "scene_curvature_judged": 382,
+          "scene_curvature_unresolved": 31,
+          "scene_drawn_straight": 188,
+          "scene_points": 7732
+        },
+        "shader": {
+          "attribute_rows": 7732,
+          "extensions_with_shader": 0,
+          "shader_nodes": 1,
+          "tracks_with_shader": 382
+        },
+        "tracks": {
+          "declared": 194,
+          "hits": 136,
+          "straight_hits": 0,
+          "unresolved_hits": 0
+        },
+        "units": {
+          "mass_scale_judged": 253,
+          "radius_scale_judged": 194,
+          "scene_extent_ratio_log10": 0.0
+        }
+      }
+    },
+    "events-v2/pythia-zmumu.event.json": {
+      "inventory": {
+        "charged_tracks": 240,
+        "final_state": 542,
+        "hits": 1018,
+        "particles": 545,
+        "scene": {
+          "bytes": 2166898,
+          "components": [
+            "Shaders",
+            "Rendering",
+            "ParticleSystems",
+            "X_ITE"
+          ],
+          "profile": "Immersive",
+          "routes": 5,
+          "shapes": 8,
+          "tower_shapes": 124,
+          "track_shapes": 462,
+          "transforms": 1,
+          "unreadable_nodes": {},
+          "version": "4.0"
+        },
+        "towers": 124,
+        "tracks": 462
+      },
+      "measurements": {
+        "bijection": {
+          "drawable_particles": 462,
+          "towers_drawn": 124,
+          "tracks_drawn": 462
+        },
+        "conservation": {
+          "beams": 2,
+          "charge_sum": 2,
+          "final_state": 542,
+          "p4_residual_gev": {
+            "E": 1e-06,
+            "px": -1.2e-05,
+            "py": 1e-06,
+            "pz": 6e-06
+          },
+          "p4_tolerance_gev": 1.86
+        },
+        "containment": {
+          "calorimeter_eta_max": 1.6329,
+          "points_checked": 1480
+        },
+        "extension_bijection": {
+          "extensions": 2
+        },
+        "merged": {
+          "exiting_muons": 2,
+          "extensions": 2,
+          "merged_shapes": 3,
+          "merged_tower_cells": 124
+        },
+        "scene_geometry": {
+          "scene_curvature_judged": 462,
+          "scene_curvature_unresolved": 32,
+          "scene_drawn_straight": 222,
+          "scene_points": 9179
+        },
+        "shader": {
+          "attribute_rows": 9215,
+          "extensions_with_shader": 2,
+          "shader_nodes": 1,
+          "tracks_with_shader": 462
+        },
+        "tracks": {
+          "declared": 240,
+          "hits": 178,
+          "straight_hits": 0,
+          "unresolved_hits": 2
+        },
+        "units": {
+          "mass_scale_judged": 275,
+          "radius_scale_judged": 240,
+          "scene_extent_ratio_log10": 0.0
+        }
+      }
+    },
+    "events/exact-zmumu.event.json": {
+      "inventory": {
+        "charged_tracks": 2,
+        "final_state": 2,
+        "hits": 16,
+        "particles": 3,
+        "scene": {
+          "bytes": 105365,
+          "components": [
+            "Shaders"
+          ],
+          "profile": "Immersive",
+          "routes": 4,
+          "shapes": 13,
+          "tower_shapes": 2,
+          "track_shapes": 2,
+          "transforms": 6,
+          "unreadable_nodes": {},
+          "version": "4.0"
+        },
+        "towers": 2,
+        "tracks": 2
+      },
+      "measurements": {
+        "bijection": {
+          "drawable_particles": 2,
+          "towers_drawn": 2,
+          "tracks_drawn": 2
+        },
+        "conservation": {
+          "beams": 0,
+          "charge_sum": 0,
+          "final_state": 2,
+          "p4_residual_gev": {
+            "E": -0.0,
+            "px": 0.0,
+            "py": -0.0,
+            "pz": 0.0
+          },
+          "p4_tolerance_gev": 0.510221811337472
+        },
+        "containment": {
+          "calorimeter_eta_max": 1.6329,
+          "points_checked": 18
+        },
+        "extension_bijection": null,
+        "merged": null,
+        "scene_geometry": {
+          "scene_curvature_judged": 2,
+          "scene_curvature_unresolved": 0,
+          "scene_drawn_straight": 0,
+          "scene_points": 8
+        },
+        "shader": {
+          "attribute_rows": 8,
+          "extensions_with_shader": 0,
+          "shader_nodes": 1,
+          "tracks_with_shader": 2
+        },
+        "tracks": {
+          "declared": 2,
+          "hits": 2,
+          "straight_hits": 0,
+          "unresolved_hits": 0
+        },
+        "units": {
+          "mass_scale_judged": 2,
+          "radius_scale_judged": 2,
+          "scene_extent_ratio_log10": 0.0
+        }
+      }
+    },
+    "events/pythia-qcd-demo.event.json": {
+      "inventory": {
+        "charged_tracks": 235,
+        "final_state": 607,
+        "hits": 917,
+        "particles": 609,
+        "scene": {
+          "bytes": 684577,
+          "components": [
+            "Shaders"
+          ],
+          "profile": "Immersive",
+          "routes": 4,
+          "shapes": 644,
+          "tower_shapes": 132,
+          "track_shapes": 497,
+          "transforms": 12,
+          "unreadable_nodes": {},
+          "version": "4.0"
+        },
+        "towers": 132,
+        "tracks": 497
+      },
+      "measurements": {
+        "bijection": {
+          "drawable_particles": 497,
+          "towers_drawn": 132,
+          "tracks_drawn": 497
+        },
+        "conservation": {
+          "beams": 2,
+          "charge_sum": 2,
+          "final_state": 607,
+          "p4_residual_gev": {
+            "E": 3e-06,
+            "px": 1e-05,
+            "py": -1.6e-05,
+            "pz": -3e-06
+          },
+          "p4_tolerance_gev": 1.86
+        },
+        "containment": {
+          "calorimeter_eta_max": 1.6329,
+          "points_checked": 1414
+        },
+        "extension_bijection": null,
+        "merged": null,
+        "scene_geometry": {
+          "scene_curvature_judged": 497,
+          "scene_curvature_unresolved": 36,
+          "scene_drawn_straight": 262,
+          "scene_points": 5614
+        },
+        "shader": {
+          "attribute_rows": 5614,
+          "extensions_with_shader": 0,
+          "shader_nodes": 1,
+          "tracks_with_shader": 497
+        },
+        "tracks": {
+          "declared": 235,
+          "hits": 159,
+          "straight_hits": 0,
+          "unresolved_hits": 3
+        },
+        "units": {
+          "mass_scale_judged": 284,
+          "radius_scale_judged": 235,
+          "scene_extent_ratio_log10": 0.0
+        }
+      }
+    },
+    "events/pythia-qcd-inflight.event.json": {
+      "inventory": {
+        "charged_tracks": 194,
+        "final_state": 496,
+        "hits": 756,
+        "particles": 498,
+        "scene": {
+          "bytes": 589266,
+          "components": [
+            "Shaders"
+          ],
+          "profile": "Immersive",
+          "routes": 4,
+          "shapes": 515,
+          "tower_shapes": 118,
+          "track_shapes": 382,
+          "transforms": 12,
+          "unreadable_nodes": {},
+          "version": "4.0"
+        },
+        "towers": 118,
+        "tracks": 382
+      },
+      "measurements": {
+        "bijection": {
+          "drawable_particles": 382,
+          "towers_drawn": 118,
+          "tracks_drawn": 382
+        },
+        "conservation": {
+          "beams": 2,
+          "charge_sum": 2,
+          "final_state": 496,
+          "p4_residual_gev": {
+            "E": 3e-06,
+            "px": 6e-06,
+            "py": -2e-06,
+            "pz": 3e-06
+          },
+          "p4_tolerance_gev": 1.86
+        },
+        "containment": {
+          "calorimeter_eta_max": 1.6329,
+          "points_checked": 1138
+        },
+        "extension_bijection": null,
+        "merged": null,
+        "scene_geometry": {
+          "scene_curvature_judged": 382,
+          "scene_curvature_unresolved": 31,
+          "scene_drawn_straight": 188,
+          "scene_points": 4772
+        },
+        "shader": {
+          "attribute_rows": 4772,
+          "extensions_with_shader": 0,
+          "shader_nodes": 1,
+          "tracks_with_shader": 382
+        },
+        "tracks": {
+          "declared": 194,
+          "hits": 136,
+          "straight_hits": 0,
+          "unresolved_hits": 0
+        },
+        "units": {
+          "mass_scale_judged": 253,
+          "radius_scale_judged": 194,
+          "scene_extent_ratio_log10": 0.0
+        }
+      }
+    },
+    "events/pythia-zmumu.event.json": {
+      "inventory": {
+        "charged_tracks": 240,
+        "final_state": 542,
+        "hits": 1018,
+        "particles": 545,
+        "scene": {
+          "bytes": 668361,
+          "components": [
+            "Shaders"
+          ],
+          "profile": "Immersive",
+          "routes": 4,
+          "shapes": 601,
+          "tower_shapes": 124,
+          "track_shapes": 462,
+          "transforms": 12,
+          "unreadable_nodes": {},
+          "version": "4.0"
+        },
+        "towers": 124,
+        "tracks": 462
+      },
+      "measurements": {
+        "bijection": {
+          "drawable_particles": 462,
+          "towers_drawn": 124,
+          "tracks_drawn": 462
+        },
+        "conservation": {
+          "beams": 2,
+          "charge_sum": 2,
+          "final_state": 542,
+          "p4_residual_gev": {
+            "E": 1e-06,
+            "px": -1.2e-05,
+            "py": 1e-06,
+            "pz": 6e-06
+          },
+          "p4_tolerance_gev": 1.86
+        },
+        "containment": {
+          "calorimeter_eta_max": 1.6329,
+          "points_checked": 1480
+        },
+        "extension_bijection": null,
+        "merged": null,
+        "scene_geometry": {
+          "scene_curvature_judged": 462,
+          "scene_curvature_unresolved": 32,
+          "scene_drawn_straight": 222,
+          "scene_points": 5659
+        },
+        "shader": {
+          "attribute_rows": 5659,
+          "extensions_with_shader": 0,
+          "shader_nodes": 1,
+          "tracks_with_shader": 462
+        },
+        "tracks": {
+          "declared": 240,
+          "hits": 178,
+          "straight_hits": 0,
+          "unresolved_hits": 2
+        },
+        "units": {
+          "mass_scale_judged": 275,
+          "radius_scale_judged": 240,
+          "scene_extent_ratio_log10": 0.0
+        }
+      }
+    }
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "fd8301241b5ca8870b391426d1d9ce56cc13e4e20eb510956a182d036d228101",
+  "witness": "hep-event"
+}

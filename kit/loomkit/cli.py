@@ -6,6 +6,8 @@
   python -m loomkit grammar   ROOT --evidence DIR --files GLOB [--fork PATH]
   python -m loomkit foldback  ROOT --evidence DIR --patch FILE
   python -m loomkit sci       ROOT --evidence DIR --profile kit/profiles/x3d-stem-science.json
+  python -m loomkit play      ROOT --evidence DIR --tapes GLOB --levels GLOB --runner FILE [--repeats 2]
+  python -m loomkit hepevent  ROOT --evidence DIR --events GLOB --spec FILE
   python -m loomkit command   ROOT --evidence DIR --name NAME -- CMD ...
   python -m loomkit record    ROOT --evidence DIR --name NAME --status not_run --reason TEXT
   python -m loomkit accept    ROOT --evidence DIR --profile FILE
@@ -24,7 +26,7 @@ import sys
 from pathlib import Path
 
 from . import accept as acc
-from . import foldback, grammar, pagetraps, picture, receipt, sci, sweep, traps
+from . import foldback, grammar, hepevent, metalsite, pagetraps, picture, play, receipt, sci, sweep, traps
 from .core import GateError, InstrumentError, candidate, need, portable, sha256_file, write_witness
 
 
@@ -41,9 +43,11 @@ def _files(root: Path, pattern: str) -> list[Path]:
 def cmd_traps(a) -> dict:
     root = Path(a.root)
     subject = candidate(root)["sha256"]
-    rows, errors, warnings = {}, 0, 0
+    rows, errors, warnings, seen = {}, 0, 0, {"scenes": 0, "bytes": 0}
     for f in _files(root, a.files):
-        hits = traps.check(f.read_bytes(), {"host": a.host})
+        data = f.read_bytes()
+        seen["scenes"] += 1; seen["bytes"] += len(data)
+        hits = traps.check(data, {"host": a.host})
         rows[f.relative_to(root).as_posix()] = [h.__dict__ for h in hits]
         errors += sum(h.severity == "error" for h in hits)
         warnings += sum(h.severity == "warning" for h in hits)
@@ -51,7 +55,7 @@ def cmd_traps(a) -> dict:
     return write_witness(a.evidence, root, subject, "traps", status, "C",
                          {"tool": "loomkit.traps", "rules": sorted(traps.RULES),
                           "rules_sha256": sha256_file(Path(traps.__file__))},
-                         measurements={"files": len(rows), "errors": errors, "warnings": warnings, "hits": rows},
+                         measurements={"files": len(rows), "errors": errors, "warnings": warnings, "seen": seen, "hits": rows},
                          coverage={"rules": len(traps.RULES)},
                          limitations=["Portable subset of x3d.onto loom_gate.py rules; the family gate itself is not on this machine.",
                                       "Runtime-labelled rules describe the runtime they were observed on."])
@@ -136,6 +140,81 @@ def cmd_sci(a) -> dict:
                          reason=reason)
 
 
+def cmd_metalsite(a) -> dict:
+    """Metal-site witness over PDB-format structures or trajectories; writes the 'metal-site' witness."""
+    root = Path(a.root)
+    subject = candidate(root)["sha256"]
+    need(Path(a.spec).resolve().is_relative_to(root.resolve()), "SITE_SPEC",
+         "the spec must be a file inside the candidate, so the candidate hash covers its thresholds")
+    spec = json.loads(Path(a.spec).read_text())
+    files = _files(root, a.files)
+    try:
+        res = metalsite.check_files(files, spec)
+        res = {portable(Path(k).relative_to(root)): v for k, v in res.items()}
+        status, reason = "pass", ""
+    except GateError as e:
+        res, status, reason = {"rejected": e.code, "detail": e.detail}, "fail", f"{e.code}: {e.detail}"
+    except Exception as e:  # an instrument crash is an error record, never a pass and never a missing record (law 19)
+        res, status, reason = {"error": type(e).__name__, "detail": str(e)[:600]}, "error", f"{type(e).__name__}: {e}"
+    sites = sum(v["inventory"]["metals_checked"] for v in res.values() if isinstance(v, dict) and "inventory" in v)
+    declared = [s for s in spec.get("sites", []) if isinstance(s, dict)] if isinstance(spec, dict) else []
+    coverage = {"files": len(files), "sites": sites,
+                "class_declared": sum(bool(s.get("class")) for s in declared),
+                "tau4_floor_declared": sum(s.get("tau4_min") is not None for s in declared),
+                "min_intact_fraction": spec.get("min_intact_fraction", 1.0) if isinstance(spec, dict) else None}
+    return write_witness(a.evidence, root, subject, a.name, status, "C",
+                         {"tool": "loomkit.metalsite", "rules_sha256": sha256_file(Path(metalsite.__file__)),
+                          "spec_sha256": sha256_file(Path(a.spec))},
+                         measurements=res, coverage=coverage,
+                         limitations=["PDB format only; distance windows are typical values (L), declared in the spec."],
+                         reason=reason)
+
+
+def cmd_hepevent(a) -> dict:
+    """Hep-event plausibility witness (a demo witness) over event JSON files and the X3D scenes they name; writes 'hep-event'."""
+    root = Path(a.root)
+    subject = candidate(root)["sha256"]
+    spec = json.loads(Path(a.spec).read_text())
+    files = _files(root, a.events)
+    try:
+        res = hepevent.check_files(files, spec)
+        res = {portable(Path(k).relative_to(root)): v for k, v in res.items()}
+        status, reason = "pass", ""
+    except GateError as e:
+        res, status, reason = {"rejected": e.code, "detail": e.detail}, "fail", f"{e.code}: {e.detail}"
+    inv = [v["inventory"] for v in res.values() if isinstance(v, dict) and "inventory" in v]
+    return write_witness(a.evidence, root, subject, "hep-event", status, "C",
+                         {"tool": "loomkit.hepevent", "rules_sha256": sha256_file(Path(hepevent.__file__)),
+                          "spec_sha256": sha256_file(Path(a.spec))},
+                         measurements=res,
+                         coverage={"events": len(files), "scenes": sum(1 for i in inv if i["scene"]),
+                                   "tracks": sum(i["tracks"] for i in inv), "towers": sum(i["towers"] for i in inv)},
+                         limitations=["Demo plausibility only: loose physics tolerances, declared in the spec; no mass shell, resonance or calorimeter sum rule.",
+                                      "Nothing is rendered and no GLSL is compiled here: the shader check proves the binding (shader, attributes, clock route), not the look."],
+                         reason=reason)
+
+
+def cmd_play(a) -> dict:
+    """Play witness: every listed level has a tape that replays, deterministically, to its recorded finish."""
+    root = Path(a.root)
+    subject = candidate(root)["sha256"]
+    tapes, levels, runner = _files(root, a.tapes), _files(root, a.levels), root / a.runner
+    need(runner.is_file(), "PLAY_RUNNER_MISSING", a.runner)
+    try:
+        res = play.check(tapes, levels, runner, a.node, a.repeats)
+        status, reason = "pass", ""
+    except GateError as e:
+        res, status, reason = {"rejected": e.code, "detail": e.detail}, "fail", f"{e.code}: {e.detail}"
+    node_v = subprocess.run([a.node, "--version"], capture_output=True, text=True).stdout.strip()
+    return write_witness(a.evidence, root, subject, "play", status, "C",
+                         {"tool": "loomkit.play", "rules_sha256": sha256_file(Path(play.__file__)), "runner": a.runner,
+                          "runner_sha256": sha256_file(runner), "node": node_v},
+                         measurements=res, coverage={"tapes": len(tapes), "levels": len(levels)},
+                         limitations=["Determinism is shown on the runner's JavaScript engine only; other engines need their own replay (the browser witness).",
+                                      "A tape proves one way through a level, not that the level is fair, fun or free of shortcuts."],
+                         reason=reason)
+
+
 def cmd_command(a) -> dict:
     """Adapter for a project's own gate: exit 0 pass, 1 fail, anything else error."""
     root = Path(a.root)
@@ -213,6 +292,11 @@ def main(argv: list[str] | None = None) -> int:
     p = common("grammar"); p.add_argument("--files", required=True); p.add_argument("--fork", default=str(grammar.DEFAULT_FORK))
     p = common("foldback"); p.add_argument("--patch", required=True)
     p = common("sci"); p.add_argument("--profile", required=True)
+    p = common("metalsite"); p.add_argument("--files", required=True); p.add_argument("--spec", required=True)
+    p.add_argument("--name", default="metal-site")
+    p = common("hepevent"); p.add_argument("--events", required=True); p.add_argument("--spec", required=True)
+    p = common("play"); p.add_argument("--tapes", required=True); p.add_argument("--levels", required=True)
+    p.add_argument("--runner", required=True); p.add_argument("--node", default="node"); p.add_argument("--repeats", type=int, default=2)
     p = common("command"); p.add_argument("--name", required=True)
     p = common("record"); p.add_argument("--name", required=True); p.add_argument("--status", required=True)
     p.add_argument("--grade", default="L"); p.add_argument("--reason", required=True); p.add_argument("--by", default="operator")
@@ -244,13 +328,16 @@ def main(argv: list[str] | None = None) -> int:
         elif a.cmd_name == "picture":
             out = picture.validate(json.loads(Path(a.review).read_text()), a.subject, json.loads(Path(a.frames).read_text()))
         else:
-            out = {"sci": cmd_sci, "pagetraps": cmd_pagetraps, "traps": cmd_traps, "grammar": cmd_grammar, "foldback": cmd_foldback, "command": cmd_command,
+            out = {"sci": cmd_sci, "metalsite": cmd_metalsite, "hepevent": cmd_hepevent, "play": cmd_play, "pagetraps": cmd_pagetraps, "traps": cmd_traps, "grammar": cmd_grammar, "foldback": cmd_foldback, "command": cmd_command,
                    "record": cmd_record, "accept": cmd_accept, "receipt": cmd_receipt}[a.cmd_name](a)
     except GateError as e:
         print(json.dumps({"rejected": e.code, "detail": e.detail}))
         return 1
     except (InstrumentError, OSError, ValueError, KeyError, subprocess.SubprocessError) as e:
         print(json.dumps({"error": type(e).__name__, "detail": str(e)[:600]}))
+        return 2
+    except Exception as e:  # a bug in a witness is an instrument error (exit 2), never a violation (exit 1, law 19)
+        print(json.dumps({"error": "INSTRUMENT_CRASH", "detail": f"{type(e).__name__}: {e}"[:600]}))
         return 2
     def brief(o):  # a witness record prints as its name and status; anything else prints whole
         return {"witness": o["witness"], "status": o["status"], "reason": o["reason"]} if "schema" in o and "witness" in o else o

@@ -51,6 +51,12 @@ RULES = {
     "js-syntax": Rule("js-syntax", "error", "Node.js syntax check (node --check)",
         "A hardening script left '}););' in the vortex page; the script never ran, yet every pattern rule passed it (5 Nov, failure mode 92). "
         "A page that does not parse trivially avoids every other trap, so syntax is checked first."),
+    "sim-nonportable-math": Rule("sim-nonportable-math", "error", "ECMAScript (any engine); files marked // loom:sim",
+        "A game whose proof of play is a replayed tape needs the same state hash in every JavaScript engine. ECMAScript leaves "
+        "Math.sin, cos, exp, pow, atan2 and the ** operator implementation-approximated, so two engines may differ in the last bit "
+        "and a tape recorded in one diverges in another; Math.random and clocks differ on every run. x3d.platformer's sim "
+        "replaced them with a portable polynomial (engine/physics.js dsin, 6 Nov). Spec fact; a cross-engine divergence was not "
+        "reproduced here (grade L). Only code that declares itself sim is held to it: render and audio code may use Math.sin."),
     "loadurl-unbudgeted": Rule("loadurl-unbudgeted", "warning", "X_ITE 16.6.1 (source reading)",
         "replaceWorld can leave its promise pending when an internal wait rejects (X_ITE teardown F01, L2; not reproduced here, failure mode 89). "
         "Give the world load a time budget (Promise.race with a timeout)."),
@@ -184,6 +190,25 @@ def patterns(src: str, path: str = "<page>", globals_shared: bool = True) -> lis
     return hits
 
 
+SIM_MARKER = re.compile(r"^\s*//\s*loom:sim\b")
+_SIM_FORBIDDEN = re.compile(
+    r"\bMath\.(sin|cos|tan|asin|acos|atan|atan2|sinh|cosh|tanh|asinh|acosh|atanh|exp|expm1|log|log1p|log2|log10|pow|cbrt|hypot|random)\b"
+    r"|\bDate\.now\b|\bnew\s+Date\b|\bperformance\.now\b|\bgetRandomValues\b|(?<![*/])\*\*(?![*/=])")
+
+
+def is_sim(src: str) -> bool:
+    """Code declares itself part of a deterministic simulation with a `// loom:sim` line among its first five lines."""
+    lines = [l for l in src.splitlines() if l.strip()][:5]
+    return any(SIM_MARKER.match(l) for l in lines)
+
+
+def sim_math(code: str, path: str = "<page>") -> list[Hit]:
+    """On comment-stripped sim code: every call whose result is not exactly specified, or not repeatable."""
+    return [Hit("sim-nonportable-math", "error", f"{path}:{_line(code, m.start())}",
+                f"{m.group(0).strip()} in sim code: use a portable polynomial (dsin/dcos) or the tick counter")
+            for m in _SIM_FORBIDDEN.finditer(code)]
+
+
 def inventory(src: str) -> dict:
     """What the witness saw: a pass over code with no field callbacks and no world loads measured nothing about them."""
     src = strip_comments(src)
@@ -193,7 +218,8 @@ def inventory(src: str) -> dict:
 
 def check(src: str, path: str = "<page>") -> list[Hit]:
     code = strip_comments(src)
-    return syntax(src, path) + patterns(code, path, globals_shared=not is_module(code))
+    return (syntax(src, path) + patterns(code, path, globals_shared=not is_module(code))
+            + (sim_math(code, path) if is_sim(src) else []))
 
 
 _JS_TYPES = {"", "module", "text/javascript", "application/javascript"}
@@ -232,4 +258,8 @@ def check_html(html: str, path: str = "<page>") -> list[Hit]:
         hits += syntax(pad + html[a:b], path, module=module)
     hits += patterns(strip_comments(scripts_view(html)), path, globals_shared=False)
     shared = [h for h in patterns(strip_comments(scripts_view(html, "classic")), path) if h.rule == "window-global-shadow"]
+    for a, b, _ in inline_scripts(html):                     # an inline script may declare itself sim
+        if is_sim(html[a:b]):
+            only = "".join(c if a <= i < b or c == "\n" else " " for i, c in enumerate(html))
+            shared += sim_math(strip_comments(only), path)
     return hits + shared

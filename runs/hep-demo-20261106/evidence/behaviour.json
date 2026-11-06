@@ -1,0 +1,22 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T14:42:06+00:00",
+  "grade": "L",
+  "instrument": {
+    "by": "operator",
+    "tool": "declared"
+  },
+  "limitations": [],
+  "measurements": {},
+  "reason": "No browser ran: the GLSL has not been compiled and the scene has not been loaded in X_ITE. Another worker is measuring X_ITE rendering separately.",
+  "schema": "loom.witness/1",
+  "status": "not_run",
+  "subject_sha256": "fd8301241b5ca8870b391426d1d9ce56cc13e4e20eb510956a182d036d228101",
+  "witness": "behaviour"
+}

@@ -1,0 +1,18 @@
+{
+  "min_intact_fraction": 0.99,
+  "note": "1M9O: TTP-family (Nup475) first finger, no RNA (NMR, 23 models). Ligand classes from the family's literature (L); tau4, windows and radius as declared for the synthetic rehearsal.",
+  "schema": "loom.metal-site-spec/1",
+  "search_radius": 3.0,
+  "sites": [
+    {
+      "class": "CCCH",
+      "coordination": 4,
+      "metal": {
+        "chain": "A",
+        "resname": "ZN",
+        "resseq": 78
+      },
+      "tau4_min": 0.7
+    }
+  ]
+}

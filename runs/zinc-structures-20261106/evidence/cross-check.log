@@ -1,0 +1,17 @@
+1aay: fail reproduced=True: ZN A201 frame 0 HIS129.NE2 witness 1.940 A, reader 1.9401
+1m9o: pass, agrees (1 sites, 23 models)
+1n0z: fail reproduced=True: ZN A46 frame 14 CYS33.SG witness 2.193 A, reader 2.1935
+1rgo: pass, agrees (2 sites, 20 models)
+1ubd: pass, agrees (4 sites, 1 models)
+1zaa: fail reproduced=True: ZN C201 frame 0 HIS29.NE2 witness 1.876 A, reader 1.876
+2jvx: fail reproduced=True: ZN A29 frame 2 donors witness 5, reader 5 ['CYS26.SG', 'CYS6.SG', 'CYS9.SG', 'GLU28.O', 'HIS22.NE2']
+2k1p: pass, agrees (1 sites, 20 models)
+3g9y: pass, agrees (1 sites, 1 models)
+4av1: fail reproduced=True: ZN A1600 frame 0 CYS56.SG witness 2.142 A, reader 2.1422
+6dnh: fail reproduced=True: ZN C301 frame 0 HIS59.NE2 witness 2.209 A, reader 2.2088
+6fuw: fail reproduced=True: ZN C201 frame 0 CYS41.SG witness 2.461 A, reader 2.4611
+6nzl: fail reproduced=True: ZN A201 frame 0 CYS119.SG witness 1.986 A, reader 1.9864
+6uro: fail reproduced=True: ZN C301 frame 0 donors witness 3, reader 3 ['CYS41.SG', 'CYS55.SG', 'HIS59.NE2']
+compared 63 values across 177 site-frames in 32 sites of 14 structures
+
+--- stderr ---

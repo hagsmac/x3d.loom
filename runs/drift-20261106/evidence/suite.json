@@ -1,0 +1,33 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [
+    {
+      "path": "suite.log",
+      "sha256": "e74e7614488168994a9ee241c43cd99d71d4147c5dc4c305c124167d5b0469a4"
+    }
+  ],
+  "finished_at": "2026-11-06T20:26:16+00:00",
+  "grade": "C",
+  "instrument": {
+    "command": [
+      "node",
+      "tests/run_all.mjs"
+    ],
+    "tool": "project gate (adapter)"
+  },
+  "limitations": [],
+  "measurements": {
+    "exit_code": 0,
+    "stdout_tail": "  goal tick 5341\nPASS tape tests/fixtures/tapes/oval-rush.tape.json  5445d80abfac5cc6  score 25264 (platinum)  goal tick 10876\nPASS tape tests/fixtures/tapes/skidpad-attack.tape.json  885c0014f42b9d68  lap 14.473 s (gold)  goal tick 2175\nPASS tape tests/fixtures/tapes/skidpad-rush.tape.json  a4fc45dbea1e3fd4  score 178862 (platinum)  goal tick 10877\nPASS tape tests/fixtures/tapes/twisty-attack.tape.json  77aa92654fe222ab  lap 56.3609 s (gold)  goal tick 7344\nPASS tape tests/fixtures/tapes/twisty-rush.tape.json  32c01af4a74bad2f  score 10543 (gold)  goal tick 10880\n{\"run_all\":\"pass\",\"tapes\":18}"
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "c5821a908021b14e001ad92197530ff64aa815eba819ad49d838f3f284605565",
+  "witness": "suite"
+}

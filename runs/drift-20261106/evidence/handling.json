@@ -1,0 +1,33 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [
+    {
+      "path": "handling.log",
+      "sha256": "e46828c5bf6205af70fccc0660f817b5bd5b4b4d9d57c72c5c6b85576de2e915"
+    }
+  ],
+  "finished_at": "2026-11-06T20:25:22+00:00",
+  "grade": "C",
+  "instrument": {
+    "command": [
+      "node",
+      "tests/handling.test.mjs"
+    ],
+    "tool": "project gate (adapter)"
+  },
+  "limitations": [],
+  "measurements": {
+    "exit_code": 0,
+    "stdout_tail": ": skidpad 0.00%, flick yaw 0.00%, slip 0.00%\nok   banshee held drift 25-50 deg for 36.0 s (mean 36 deg, 0 wall hits)\nok   banshee on oval: wheel loads sum to m g cos(theta) + downforce (worst 2.6e-16), lightest wheel 6.1%\nok   koi on twisty: wheel loads sum to m g cos(theta) + downforce (worst 3.6e-16), lightest wheel 8.8%\nok   tempest on oval: wheel loads sum to m g cos(theta) + downforce (worst 2.5e-16), lightest wheel 7.5%\nok   acceleration order KOI < RONIN < BANSHEE < TEMPEST\nok   TEMPEST has the most grip\nok   top speed order KOI < RONIN < TEMPEST < BANSHEE\n{\"handling\":\"pass\",\"failed\":0}"
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "c5821a908021b14e001ad92197530ff64aa815eba819ad49d838f3f284605565",
+  "witness": "handling"
+}

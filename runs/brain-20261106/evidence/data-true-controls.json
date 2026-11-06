@@ -1,0 +1,35 @@
+{
+  "coverage": {},
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [
+    {
+      "path": "data-true-controls.log",
+      "sha256": "8d7da9489b8611fc3976684b6fe029efd404bc2ab7ab2a43ab99a24beae138b5"
+    }
+  ],
+  "finished_at": "2026-11-06T17:51:31+00:00",
+  "grade": "C",
+  "instrument": {
+    "command": [
+      "python3",
+      "-I",
+      "-B",
+      "tests/test_brain_truth.py"
+    ],
+    "tool": "project gate (adapter)"
+  },
+  "limitations": [],
+  "measurements": {
+    "exit_code": 0,
+    "stdout_tail": "ched off by the page JavaScript\",\n    \"result\": \"pass\"\n   },\n   {\n    \"case\": \"twin: profile Full without the Shaders component\",\n    \"result\": \"pass\"\n   },\n   {\n    \"case\": \"twin: clamped transfer-function texture\",\n    \"result\": \"pass\"\n   },\n   {\n    \"case\": \"twin: identity Transform above the deep structures\",\n    \"result\": \"pass\"\n   }\n  ],\n  \"python\": \"3.13.18\",\n  \"syntax\": [\n   {\n    \"asserts\": 0,\n    \"case\": \"no assert statement in brain_scene_truth.py\"\n   },\n   {\n    \"asserts\": 0,\n    \"case\": \"no assert statement in test_brain_truth.py\"\n   }\n  ]\n },\n \"schema\": \"brain.truth-controls/1\"\n}"
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "d59bb5b7b778c1f533b00e0af5b2e09da9c09750a130b65a432f275f9f7d5f03",
+  "witness": "data-true-controls"
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "loom.profile/1",
+  "name": "zinc-structures/v0",
+  "purpose": "P1 reference set: the deposited zinc finger structures whose every declared zinc site passes the metal-site witness as deposited, in every model, plus an independent reader that reproduces all 14 records (passes and failures). The set was chosen after the P1 measurement by that rule; the nine structures that fail stay visible in the receipt with their reasons. Accepting under it means these five can start a simulation without repairing the zinc site; it says nothing about the other nine beyond their recorded reds.",
+  "required": [
+    {
+      "witness": "metal-site-1ubd",
+      "coverage": {
+        "files": 1,
+        "sites": 4
+      }
+    },
+    {
+      "witness": "metal-site-1rgo",
+      "coverage": {
+        "files": 1,
+        "sites": 2
+      }
+    },
+    {
+      "witness": "metal-site-1m9o",
+      "coverage": {
+        "files": 1,
+        "sites": 1
+      }
+    },
+    {
+      "witness": "metal-site-2k1p",
+      "coverage": {
+        "files": 1,
+        "sites": 1
+      }
+    },
+    {
+      "witness": "metal-site-3g9y",
+      "coverage": {
+        "files": 1,
+        "sites": 1
+      }
+    },
+    {
+      "witness": "cross-check"
+    }
+  ],
+  "visible_not_run": [
+    "metal-site-1aay",
+    "metal-site-1zaa",
+    "metal-site-6nzl",
+    "metal-site-1n0z",
+    "metal-site-2jvx",
+    "metal-site-4av1",
+    "metal-site-6fuw",
+    "metal-site-6dnh",
+    "metal-site-6uro",
+    "simulation",
+    "grammar",
+    "meaning",
+    "traps",
+    "page-traps",
+    "behaviour",
+    "eyes"
+  ],
+  "limitations": [
+    "Deposited structures only: geometry as deposited, with each method's own limits (NMR calculation restraints, crystallographic and cryo-EM coordinate error). Nothing here was simulated.",
+    "The distance windows are the typical values declared before P1 (grade L) and were not changed after seeing these files; small misses (0.007 A in one model of 1N0Z, 0.010 A at one 1AAY site) are reported as reds, not hidden.",
+    "The cross-check shares the donor-atom table, search radius and metal identity with the witness; it is independent in parsing, selection and arithmetic.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ]
+}

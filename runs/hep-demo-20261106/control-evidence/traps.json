@@ -1,0 +1,54 @@
+{
+  "coverage": {
+    "rules": 11
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T14:42:08+00:00",
+  "grade": "C",
+  "instrument": {
+    "rules": [
+      "color-emissive-white",
+      "color-range",
+      "glsl-reserved-active",
+      "metadata-containerfield",
+      "movie-not-still",
+      "no-script-under-host",
+      "route-before-def",
+      "route-undefined",
+      "shader-raw-source",
+      "splat-bbox",
+      "version-fits-nodes"
+    ],
+    "rules_sha256": "7079495c69d211928167639261199a015de127d66901404b5758b673c546d492",
+    "tool": "loomkit.traps"
+  },
+  "limitations": [
+    "Portable subset of x3d.onto loom_gate.py rules; the family gate itself is not on this machine.",
+    "Runtime-labelled rules describe the runtime they were observed on."
+  ],
+  "measurements": {
+    "errors": 0,
+    "files": 4,
+    "hits": {
+      "events/exact-zmumu.x3d": [],
+      "events/pythia-qcd-demo.x3d": [],
+      "events/pythia-qcd-inflight.x3d": [],
+      "events/pythia-zmumu.x3d": []
+    },
+    "seen": {
+      "bytes": 2046949,
+      "scenes": 4
+    },
+    "warnings": 0
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "e712767acaa3cb94a240f589e4a6185a84d63aa45ba9abe16d94b00fe2717dde",
+  "witness": "traps"
+}

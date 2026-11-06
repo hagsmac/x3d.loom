@@ -1,0 +1,10 @@
+{
+ "tool": "looks_from_board.py",
+ "version": 1,
+ "seed": 7,
+ "k": 6,
+ "analysis_width": 256,
+ "looks": 12,
+ "looks_sha256": "d0bee6b7385691161033ae9047a793bfdafa028931bd25688075f783e4f160fb",
+ "notice": "Palette-only data measured from a private set of style-reference images (not shipped; no image pixels in this file). Colours are hex or sRGB floats; `push` entries are [DEF, field, value] operations for the hero scene. Illustrative styling, not measurements of any anatomy."
+}

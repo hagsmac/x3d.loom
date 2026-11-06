@@ -1,0 +1,98 @@
+{
+  "budget": {
+    "cloud_resources": 0,
+    "paid_calls": 0
+  },
+  "candidate_files": 57,
+  "candidate_sha256": "979dec13377e906f95a4736ee6c5fabd00a49c4c48f40bc23c0bacac3d6fc7b0",
+  "grade": "C",
+  "inputs": {
+    "candidate_sha256": "979dec13377e906f95a4736ee6c5fabd00a49c4c48f40bc23c0bacac3d6fc7b0"
+  },
+  "kind": "artifact",
+  "limitations": [
+    "Model 1 of each deposited file only; the per-model spread is in the P1 census, not in the scenes.",
+    "The data-true reader shares the donor table, the side-chain atom lists, the 2.5 angstrom glow line and the spline sampling with the builder; it is independent in parsing (MDAnalysis), selection and arithmetic.",
+    "The glow line is a display rule, not the metal-site window: a bond can glow and still fail the witness (for example a Zn-S of 2.461 A).",
+    "The scenes have no ROUTEs or scripts, so there is no behaviour to judge; the camera is the only thing that moves.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ],
+  "model_calls": [],
+  "not_run": [
+    {
+      "reason": "Read 32 frames, one per scene Viewpoint (X_ITE 16.7.0; headless Chromium 153 on SwiftShader; 960x720; Viewpoints bound through SAI set_bind; eyes-render-log.json). Every frame draws its zinc, donors, bonds and labels; none is blank (lowest lit share 0.113, 6DNH C302); 0 console messages. Short bonds glow gold (S) and blue (N); the long cryo-EM bonds draw dark and thin as the rule says (6DNH C301 2.80, C303 2.75; 6FUW C201 2.66 and 2.78; 6URO C302 2.99, C303 2.52) and 6DNH C302 shows two donors. Left as found: neighbouring sites crowd the background of 1ZAA C201 and 6DNH C301, and a side chain crosses a few labels. The frames were read on the previous build (same atoms, bonds and Viewpoints); this build's frames differ from them in at most 0.0002 of their pixels. X_ITE 16.6.0 under the same rig gave 32 of 32 byte-identical frames. A model reading of pictures: graded S.",
+      "status": "pass",
+      "witness": "eyes"
+    },
+    {
+      "reason": "Static scenes: no ROUTEs, scripts or host page, and nothing was simulated.",
+      "status": "not_run",
+      "witness": "behaviour"
+    },
+    {
+      "reason": "Static scenes: no ROUTEs, scripts or host page, and nothing was simulated.",
+      "status": "not_run",
+      "witness": "page-traps"
+    },
+    {
+      "reason": "Static scenes: no ROUTEs, scripts or host page, and nothing was simulated.",
+      "status": "not_run",
+      "witness": "simulation"
+    }
+  ],
+  "outputs": {
+    "eyes-render-log.json": {
+      "bytes": 13899,
+      "sha256": "56f8fe2641b476645e1f4e35ae801a10efdc03460068755cf2c79fa0243c96c5"
+    }
+  },
+  "prev": null,
+  "profile": "zinc-scenes/v0",
+  "schema": "loom.receipt/1",
+  "sha256": "fc37e514b2a7c3ad4026152e7404d83f4e199aac5be92d87f1cec0d66650990d",
+  "signed": false,
+  "subject": "Zinc finger Site scenes, model 1 of 14 deposited structures (wwPDB snapshot 2026-01-01)",
+  "tools": {
+    "data-true": {
+      "tool": "project gate (adapter)"
+    },
+    "grammar": {
+      "commit": "327c5c4ee21268fcb5c4526da7c2f39932019e72",
+      "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+    },
+    "meaning": {
+      "commit": "327c5c4ee21268fcb5c4526da7c2f39932019e72",
+      "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+    },
+    "traps": {
+      "tool": "loomkit.traps"
+    }
+  },
+  "witnesses": [
+    {
+      "grade": "C",
+      "record_sha256": "cf9411b03d2c234902769b5cfcbd8e3d03e16d73de6d3432ad32ed4a24baefdc",
+      "status": "pass",
+      "witness": "grammar"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "7f291df9e3cec1a94962dc4417091631bc85d454cf3709f0e26de51b24ca01a5",
+      "status": "pass",
+      "witness": "meaning"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "3eaedd20d0173b9fd84c402c320411273bc1aa109692c166da91c9c020979d4c",
+      "status": "pass",
+      "witness": "traps"
+    },
+    {
+      "grade": "C",
+      "record_sha256": "98c3822950b36ceb0b68eb3ecf2c4a323823b462021f8f49abb6b4aa22db9868",
+      "status": "pass",
+      "witness": "data-true"
+    }
+  ],
+  "written_at": "2026-11-06T06:57:50+00:00"
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "loom.profile/1",
+  "name": "zinc-site/v0",
+  "purpose": "First acceptance profile for a molecular study with a zinc site (x3d.STEM 'Proteins in Motion', zinc fingers). Accepting under it means: every declared zinc site in every listed structure or trajectory frame has its declared coordination number, ligand class (for example CCCH or CCHH), histidine donor atoms, metal-ligand distances inside declared windows and a tetrahedral tau4 above the declared floor, in at least the declared fraction of frames, and the coordinates passed a gross angstrom-versus-nanometre check. It says nothing about the force field, sampling, energetics, RNA or DNA binding, or how the scene renders.",
+  "required": [
+    {"witness": "metal-site", "coverage": {"files": 2, "sites": 2}}
+  ],
+  "visible_not_run": ["real-structure", "simulation", "grammar", "meaning", "traps", "page-traps", "behaviour", "eyes"],
+  "gate_map": {
+    "ZN-COORDINATION": "metalsite: SITE_COORDINATION (donor count within the search radius)",
+    "ZN-LIGAND-CLASS": "metalsite: SITE_CLASS (protein donors in sequence order)",
+    "ZN-HIS-DONOR": "metalsite: SITE_DONOR (ND1 or NE2, the tautomer the parameters assume)",
+    "ZN-DISTANCE": "metalsite: SITE_DISTANCE (declared windows per donor element)",
+    "ZN-GEOMETRY": "metalsite: SITE_GEOMETRY (tau4 floor)",
+    "ZN-INTACT": "metalsite: SITE_INTACT_FRACTION (fraction of frames with the site intact)",
+    "ZN-UNITS": "metalsite: SITE_UNITS (median nearest-neighbour distance)",
+    "ZN-FAIL-CLOSED": "every predicate raises; tested under python -O (kit/tests/test_metalsite.py)"
+  },
+  "limitations": [
+    "Version 0: written before any real structure was available to the instrument; the first real run may move the windows, which are typical values (grade L) declared per study.",
+    "The metal-site witness reads PDB format only; trajectories must be written as MODEL records first.",
+    "Geometry is not energy: a site that passes can still come from a force field that is wrong for zinc.",
+    "Unsigned receipt: it shows drift; it does not authenticate authorship."
+  ]
+}

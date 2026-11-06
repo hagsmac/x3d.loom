@@ -1,0 +1,41 @@
+{
+  "coverage": {
+    "files": 2
+  },
+  "development": false,
+  "environment": {
+    "optimized": false,
+    "python": "3.13.18"
+  },
+  "evidence": [],
+  "finished_at": "2026-11-06T17:51:35+00:00",
+  "grade": "C",
+  "instrument": {
+    "branch": "HEAD",
+    "commit": "13121b68e6d9c8ffe12cb8bc9996c1bf01a90d67",
+    "dirty": false,
+    "path": "~/Projects/x3d/x3d_mcp",
+    "python": "~/Projects/x3d/x3d_mcp/.venv/bin/python",
+    "tool": "x3d_mcp fork (validate_xml + semantic_diagnostics)"
+  },
+  "limitations": [
+    "Fork commit 13121b6 on branch HEAD; not the family pin unless they match."
+  ],
+  "measurements": {
+    "scenes/brain_hero_lite.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    },
+    "scenes/torso_ct_lite.x3d": {
+      "semantic_errors": 0,
+      "semantic_instrument_error": null,
+      "semantic_warnings": 0
+    }
+  },
+  "reason": "",
+  "schema": "loom.witness/1",
+  "status": "pass",
+  "subject_sha256": "4812fbee4e02496e7366f1cb2eee6b3129ee1cf28ea8ce941b2185f31d116285",
+  "witness": "meaning"
+}
