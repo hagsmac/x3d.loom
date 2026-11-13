@@ -1,0 +1,79 @@
+{
+ "node": "PointLight",
+ "mode": "scene",
+ "note": "three spheres lit by one local light",
+ "steps": [
+  {
+   "settle": 2
+  },
+  {
+   "only": "ours",
+   "js": [
+    "__body.scene.lights.filter(l=>l.getClassName()==='PointLight').length",
+    1
+   ]
+  },
+  {
+   "only": "ours",
+   "js": [
+    "(()=>{const l=__body.scene.lights.find(l=>l.getClassName()==='PointLight');return [l.getAbsolutePosition().x,l.getAbsolutePosition().y,l.getAbsolutePosition().z].map(v=>Math.round(v*100)/100)})()",
+    [
+     -3,
+     2,
+     4
+    ]
+   ]
+  },
+  {
+   "set": [
+    "MOVE",
+    "translation",
+    [
+     2,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "settle": 0.5
+  },
+  {
+   "only": "ours",
+   "js": [
+    "(()=>{const l=__body.scene.lights.find(l=>l.getClassName()==='PointLight');return Math.round(l.getAbsolutePosition().x*100)/100})()",
+    -1
+   ]
+  },
+  {
+   "set": [
+    "MOVE",
+    "translation",
+    [
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "shot": "main"
+  }
+ ],
+ "gaps": [
+  "attenuation is a Babylon range cut at 1/32 of the polynomial (a0 1 0 0 means no fall-off), not X_ITE's per pixel polynomial",
+  "global=FALSE scope uses includedOnlyMeshes of the parent group; compared in our body only",
+  "ambientIntensity is not used"
+ ],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "iou": 0.85,
+   "mad": 12,
+   "fg": 40
+  }
+ }
+}

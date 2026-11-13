@@ -12,7 +12,8 @@ BR.node('ComposedTexture3D', {
     texture: ['MFNode', IO, []],
     textureProperties: ['SFNode', INIT, null],
   },
-  /* The slices are the 2D textures of `texture`, in depth order. A Shape has 2D texture coordinates only, so the volume is sampled at r = 0 and the first slice is what is drawn (gap, as for
-     PixelTexture3D). */
+  /* The slices are the 2D textures of `texture` (ImageTexture or PixelTexture), in depth order, stacked into one Babylon RawTexture3D (BR.vol, body-br.js; slices of another size are resampled to the
+     first slice's). Sampled by the (s, t, r) of the 3D / 4D texture coordinates, or at r = 0 by 2D coordinates (the first slice, as X_ITE 16.6.0 does). Nearest filtering by default. */
   build() { return null; },
+  changed(body, n, field) { if (field === 'texture' || field === 'repeatS' || field === 'repeatT' || field === 'repeatR') BR.vol.reload(body, n); },
 });

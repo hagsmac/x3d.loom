@@ -1,0 +1,50 @@
+{
+ "node": "SurfaceEmitter",
+ "mode": "scene",
+ "tone": "none",
+ "note": "emission from a sphere surface",
+ "steps": [
+  {
+   "expect": [
+    "E",
+    "speed",
+    0.5
+   ]
+  },
+  {
+   "expect": [
+    "E",
+    "surface",
+    "[node SRF]"
+   ]
+  },
+  {
+   "settle": 3.0
+  },
+  {
+   "only": "ours",
+   "js": [
+    "(()=>{const p=__body.scene.particleSystems[0].particles;return p.every(q=>Math.hypot(q.position.x,q.position.y,q.position.z)>0.9)})()",
+    true
+   ]
+  },
+  {
+   "shot": "shell"
+  }
+ ],
+ "compare": {
+  "shell": {
+   "iou": 0.0,
+   "bbox": 60,
+   "count": [
+    0.5,
+    2.0
+   ]
+  }
+ },
+ "gaps": [
+  "particle age at the shot differs between the engines on this CPU raster (ours runs on elapsed time at about 3 frames per second under SwiftShader), so the extent is compared with a wide bound",
+  "X_ITE 16.6.0 draws the particles white on this raster, ours uses the Material emissive colour (colour is not compared)",
+  "the emission point is a random point of the surface triangles, area weighted, along the face normal (a Sphere is cut into 16 x 12 facets for this)"
+ ]
+}

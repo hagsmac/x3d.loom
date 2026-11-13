@@ -102,10 +102,31 @@
      1
     ]
    ]
+  },
+  {
+   "mouse": [
+    "move",
+    3,
+    3
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "shot": "main"
   }
  ],
  "gaps": [
-  "X_ITE is compared on loading and drawing the shapes; the generated texture coordinates are not observable there, so they are checked against the formula in our body only",
-  "the camera is taken as the identity: SPHERE and the CAMERASPACE modes use the object-space normal or position; NOISE and reflection modes are not made"
- ]
+  "the six modes of the fixture are compared in the picture (silhouette overlap 0.98) and against the formula in our body; the CAMERASPACENORMAL and CAMERASPACEREFLECTIONVECTOR spheres differ visibly from X_ITE 16.6.0 (mean RGB difference 11 of 255 over the picture): X_ITE's own scaling of the camera-space range is not reproduced",
+  "camera-space modes are recomputed on the CPU whenever the model-view matrix changes, not in a shader; NOISE and NOISE-EYE are not made"
+ ],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "iou": 0.85,
+   "mad": 14,
+   "fg": 25
+  }
+ }
 }

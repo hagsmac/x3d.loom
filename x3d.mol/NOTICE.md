@@ -9,6 +9,11 @@
 - Jumper J et al. Highly accurate protein structure prediction with AlphaFold. *Nature* 596, 583–589 (2021). doi:10.1038/s41586-021-03819-2
 - Varadi M et al. AlphaFold Protein Structure Database in 2024: providing structure coverage for over 214 million protein sequences. *Nucleic Acids Research* 52, D368–D375 (2024). doi:10.1093/nar/gkad1011
 
+The diffusion illustration (`src/anim.py`) follows the noise schedule published for AlphaFold 3; no AlphaFold 3 code or weights are used:
+
+- Abramson J et al. Accurate structure prediction of biomolecular interactions with AlphaFold 3. *Nature* 630, 493–500 (2024). doi:10.1038/s41586-024-07487-w
+- Karras T et al. Elucidating the design space of diffusion-based generative models. NeurIPS 2022 (the EDM schedule form).
+
 The X3D scenes, stills and Blender meshes made from these models are adaptations: coordinates are unchanged, while geometry, colours and layout are added here.
 
 ## The zinc finger research this follows

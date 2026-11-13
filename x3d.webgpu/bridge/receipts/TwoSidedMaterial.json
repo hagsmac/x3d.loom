@@ -3,28 +3,74 @@
  "pass": true,
  "xsd": {
   "ok": true,
-  "msg": "/tmp/claude-0/wt-bridge/x3d.webgpu/bridge/fixtures/TwoSidedMaterial.x3d validates",
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/TwoSidedMaterial.x3d validates",
   "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
  },
  "test": {
   "ok": true,
-  "ours": "pass 9/9",
-  "xite": "pass 7/7",
+  "ours": "pass 13/13",
+  "xite": "pass 10/10",
   "map": {},
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 0.98,
+    "coverOurs": 1,
+    "coverXite": 0.98,
+    "bboxOurs": [
+     59,
+     10,
+     260,
+     223
+    ],
+    "bboxXite": [
+     58,
+     10,
+     261,
+     224
+    ],
+    "nOurs": 17354,
+    "nXite": 17681,
+    "fgFracOurs": 0.23,
+    "fgFracXite": 0.23,
+    "mad": 1.66,
+    "psnr": 32.13,
+    "fgMeanOurs": [
+     59,
+     121,
+     87
+    ],
+    "fgMeanXite": [
+     58,
+     118,
+     85
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
   "msg": "",
   "gaps": [
-   "X_ITE is compared on loading and picking the shapes; which side shows which colour is checked in our body only (two passes, culled front and back)",
-   "specular, shininess and ambient are read and not shown"
+   "which side shows which colour is compared in the picture (the lower row is turned round, so it shows the back colours; a solid=TRUE pair in the middle is culled in both engines), and in our body by pass: two meshes for solid=FALSE, one for solid=TRUE",
+   "ambient and ambientIntensity are read and not shown (no ambient term in the headlight model); the specular highlight of the sphere follows Phong shininess*128 and is compared in the picture"
   ]
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha d4e15ecfee7a",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha a1adb764a1bc",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "9df2df5"
+ "driver_commit": "15277a6"
 }

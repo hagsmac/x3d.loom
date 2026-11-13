@@ -5,5 +5,7 @@
     <NavigationInfo type='"EXAMINE" "ANY"' transitionType='"TELEPORT"' headlight="false"/>
     <Viewpoint position="0 0 10"/>
     <Shape><Appearance><ComposedTexture3D DEF="N"><ImageTexture url='"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFklEQVR4nGNkYPj//z8Dw38GBob/DAAl9gT9bzchygAAAABJRU5ErkJggg=="'/><PixelTexture image="2 2 3 65535 16711935 16776960 0"/></ComposedTexture3D></Appearance><Box size="4 4 4"/></Shape>
+    <Transform translation="-3.7 0 0"><Shape><Appearance><ComposedTexture3D DEF="V4"><PixelTexture image="2 2 3 0xff0000 0xffff00 0xff8000 0xff0080"/><PixelTexture image="2 2 3 0x00ff00 0x00ffff 0x80ff00 0x00ff80"/><PixelTexture image="2 2 3 0x0000ff 0xff00ff 0x8000ff 0x0080ff"/><PixelTexture image="2 2 3 0xffffff 0x808080 0x404040 0xc0c0c0"/></ComposedTexture3D></Appearance><IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="-1.5 -1.1 0, 1.5 -1.1 0, 1.5 1.1 0, -1.5 1.1 0"/><TextureCoordinate3D point="0 0 0.15, 1 0 0.15, 1 1 0.15, 0 1 0.15"/></IndexedFaceSet></Shape></Transform>
+    <Transform translation="3.7 0 0"><Shape><Appearance><ComposedTexture3D USE="V4"/></Appearance><IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="-1.5 -1.1 0, 1.5 -1.1 0, 1.5 1.1 0, -1.5 1.1 0"/><TextureCoordinate3D point="0 0 0.05, 1 0 0.95, 1 1 0.95, 0 1 0.05"/></IndexedFaceSet></Shape></Transform>
   </Scene>
 </X3D>

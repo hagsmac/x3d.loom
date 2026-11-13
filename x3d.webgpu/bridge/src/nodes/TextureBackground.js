@@ -32,8 +32,14 @@ BR.bg = {
   },
   receive(n, field, v) { if (field !== 'set_bind') return false; BR.bg.bind(n, !!v); return true; },
 };
-BR.node('Background', { component: 'EnvironmentalEffects', level: 1, extend: { Background: { isBound: ['SFBool', OUT, false], bindTime: ['SFTime', OUT, 0] } },
-  init: BR.bg.init, receive: BR.bg.receive });
+/* Background: the stock body took only the horizon colour as the clear colour, so a sky gradient, a ground and the six face pictures (backUrl ... topUrl) were never drawn. The sky sphere and the face
+   squares of TextureBackground (BR.bg.make below) now draw the plain Background too: the same arithmetic, the faces from the url fields. The clear colour stays as the stock body set it
+   (it only shows where the sphere is transparent). */
+BR.node('Background', { component: 'EnvironmentalEffects', level: 1,
+  extend: { Background: { isBound: ['SFBool', OUT, false], bindTime: ['SFTime', OUT, 0], backUrl: ['MFString', IO, []], bottomUrl: ['MFString', IO, []], frontUrl: ['MFString', IO, []], leftUrl: ['MFString', IO, []], rightUrl: ['MFString', IO, []], topUrl: ['MFString', IO, []] } },
+  init: BR.bg.init, receive: BR.bg.receive,
+  build(body, n) { BR.bg.make(body, n); return null; },
+  changed(body, n, field) { if (field === 'isBound') BR.bg.show(n); else if (field !== 'set_bind' && field !== 'bindTime' && field !== 'metadata') BR.bg.make(body, n); } });
 
 /* Fog (the world's own fog, EnvironmentalEffects level 2; kept here because it shares the bind code above): like Background, one stack per world, the first Fog is bound at load, set_bind moves one to the top. The stock body never drew it; the bridge
    treats it as the fog of every mesh that no LocalFog covers (a LocalFog above a mesh wins, as in X3D). isBound and bindTime are added on the stock node. */
@@ -121,7 +127,8 @@ BR.node('TextureBackground', {
     mat.disableLighting = true; mat.emissiveColor.set(1, 1, 1); mat.diffuseColor.set(0, 0, 0); mat.specularColor.set(0, 0, 0); mat.backFaceCulling = false; mat.fogEnabled = false;
     mesh.material = mat; mesh.useVertexColors = true; mesh.hasVertexAlpha = false; out.push(mesh);
     for (const [fld, c] of Object.entries(FACES)) {
-      const t = f[fld] && body.tex(f[fld]); if (!t) continue;
+      const urls = f[fld.replace('Texture', 'Url')], tn = f[fld] || (urls && urls.length ? { id: n.id + ':' + fld + ':' + urls.join(','), type: 'ImageTexture', f: { url: urls, repeatS: false, repeatT: false } } : null);   // Background has url lists, TextureBackground texture nodes
+      const t = tn && body.tex(tn); if (!t) continue;
       const m = new BABYLON.Mesh((n.def || 'TextureBackground') + '-' + fld, sc), v = new BABYLON.VertexData();
       v.positions = c.flatMap((p) => [p[0] * BOX_R, p[1] * BOX_R, p[2] * BOX_R]); v.uvs = UV; v.indices = [0, 1, 2, 0, 2, 3]; v.applyToMesh(m, false);
       BABYLON.ShaderStore.ShadersStoreWGSL['unlitVertexShader'] = VERT_UNLIT; BABYLON.ShaderStore.ShadersStoreWGSL['unlitFragmentShader'] = FRAG_UNLIT;   // the body's own unlit textured shader

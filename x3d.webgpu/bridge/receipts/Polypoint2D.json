@@ -3,27 +3,76 @@
  "pass": true,
  "xsd": {
   "ok": true,
-  "msg": "/tmp/claude-0/wt-bridge/x3d.webgpu/bridge/fixtures/Polypoint2D.x3d validates",
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/Polypoint2D.x3d validates",
   "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
  },
  "test": {
   "ok": true,
-  "ours": "pass 2/2",
-  "xite": "pass 2/2",
+  "ours": "pass 5/5",
+  "xite": "pass 5/5",
   "map": {},
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 1,
+    "coverOurs": 1,
+    "coverXite": 1,
+    "bboxOurs": [
+     72,
+     90,
+     247,
+     149
+    ],
+    "bboxXite": [
+     72,
+     90,
+     247,
+     149
+    ],
+    "nOurs": 20,
+    "nXite": 20,
+    "fgFracOurs": 0,
+    "fgFracXite": 0,
+    "mad": 1.69,
+    "psnr": 40.03,
+    "fgMeanOurs": [
+     202,
+     162,
+     41
+    ],
+    "fgMeanXite": [
+     64,
+     51,
+     13
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
   "msg": "",
   "gaps": [
-   "points cannot be picked: the point count is compared between the engines; WebGPU draws each point one pixel, X_ITE draws them with its point size; colour is not compared"
+   "WebGPU has no point size: each point is a small camera-facing square drawn by a shader; X_ITE 16.6.0 draws its points much dimmer on this CPU raster (seen in the picture), colour and size are not compared; PointProperties sizing is not applied"
+  ],
+  "scope": [
+   "points cannot be picked: the point count is compared between the engines (ours: 4 corners of a camera-facing quad per point = 20 vertices for 5 points; X_ITE: 5 vertices) and the drawn points are compared in the picture"
   ]
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 3b32691c2a96",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 7c9e99d98ec7",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "2b54cb9"
+ "driver_commit": "ea465bf"
 }

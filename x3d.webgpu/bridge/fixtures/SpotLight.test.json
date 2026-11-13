@@ -1,0 +1,35 @@
+{
+ "node": "SpotLight",
+ "mode": "scene",
+ "note": "a spot lights a disc on a wall",
+ "steps": [
+  {
+   "settle": 2
+  },
+  {
+   "only": "ours",
+   "js": [
+    "__body.scene.lights.filter(l=>l.getClassName()==='SpotLight').length",
+    1
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "shot": "main"
+  }
+ ],
+ "gaps": [
+  "beamWidth to cutOffAngle fall-off follows Babylon's innerAngle and exponent, X_ITE's is a smoothstep: the disc edge differs",
+  "attenuation as on PointLight"
+ ],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "iou": 0.8,
+   "mad": 16,
+   "fg": 40
+  }
+ }
+}

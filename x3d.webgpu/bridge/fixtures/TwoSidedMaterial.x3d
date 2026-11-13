@@ -4,9 +4,15 @@
   <Scene>
     <Viewpoint position="0 0 10"/>
     <Group>
-      <Transform translation="-2.5 0 0"><Shape DEF="S1"><Appearance><TwoSidedMaterial DEF="T1" separateBackColor="true" diffuseColor="1 0 0" backDiffuseColor="0 0 1"/></Appearance><IndexedTriangleSet DEF="G1" index="0 1 2 0 2 3"><Coordinate point="-1 -1 0, 1 -1 0, 1 1 0, -1 1 0"/></IndexedTriangleSet></Shape></Transform>
-      <Transform translation="2.5 0 0"><Shape DEF="S2"><Appearance><TwoSidedMaterial DEF="T2" diffuseColor="0 1 0" backDiffuseColor="1 1 0"/></Appearance><IndexedTriangleSet DEF="G2" index="0 1 2 0 2 3"><Coordinate point="-1 -1 0, 1 -1 0, 1 1 0, -1 1 0"/></IndexedTriangleSet></Shape></Transform>
+      <Transform translation="-2.5 0 0"><Shape DEF="S1"><Appearance><TwoSidedMaterial DEF="T1" separateBackColor="true" diffuseColor="1 0 0" backDiffuseColor="0 0 1"/></Appearance><IndexedTriangleSet DEF="G1" solid="false" index="0 1 2 0 2 3"><Coordinate point="-1 -1 0, 1 -1 0, 1 1 0, -1 1 0"/></IndexedTriangleSet></Shape></Transform>
+      <Transform translation="2.5 0 0"><Shape DEF="S2"><Appearance><TwoSidedMaterial DEF="T2" diffuseColor="0 1 0" backDiffuseColor="1 1 0"/></Appearance><IndexedTriangleSet DEF="G2" solid="false" index="0 1 2 0 2 3"><Coordinate point="-1 -1 0, 1 -1 0, 1 1 0, -1 1 0"/></IndexedTriangleSet></Shape></Transform>
       <TouchSensor DEF="TS"/>
+    </Group>
+    <Group>
+      <Transform translation="0 2.5 0"><Shape DEF="SP"><Appearance><TwoSidedMaterial diffuseColor="0.2 0.5 0.9" specularColor="1 1 1" shininess="0.6"/></Appearance><Sphere radius="1.2"/></Shape></Transform>
+      <Transform translation="-2.5 -2.6 0" rotation="0 1 0 3.14159265"><Shape><Appearance><TwoSidedMaterial separateBackColor="true" diffuseColor="1 0 0" backDiffuseColor="0 0 1"/></Appearance><IndexedTriangleSet solid="false" index="0 1 2 0 2 3"><Coordinate point="-1 -1 0, 1 -1 0, 1 1 0, -1 1 0"/></IndexedTriangleSet></Shape></Transform>
+      <Transform translation="2.5 -2.6 0" rotation="0 1 0 3.14159265"><Shape><Appearance><TwoSidedMaterial diffuseColor="0 1 0" backDiffuseColor="1 1 0"/></Appearance><IndexedTriangleSet solid="false" index="0 1 2 0 2 3"><Coordinate point="-1 -1 0, 1 -1 0, 1 1 0, -1 1 0"/></IndexedTriangleSet></Shape></Transform>
+      <Transform translation="0 -2.6 0" rotation="0 1 0 3.14159265"><Shape DEF="CUL"><Appearance><TwoSidedMaterial separateBackColor="true" diffuseColor="1 0 1" backDiffuseColor="0 1 1"/></Appearance><IndexedTriangleSet index="0 1 2 0 2 3"><Coordinate point="-0.6 -0.6 0, 0.6 -0.6 0, 0.6 0.6 0, -0.6 0.6 0"/></IndexedTriangleSet></Shape></Transform>
     </Group>
   </Scene>
 </X3D>

@@ -82,6 +82,6 @@ Terms as Loom v1 uses them. Source IDs are in [SOURCES.md](SOURCES.md).
 | **Discrete solution** | What the integrator's own scheme gives (for semi-implicit Euler, y0 − g h² n(n+1)/2). A stepped engine is judged against it; the continuum answer differs by a known 1/2 g h t | PXB; failure mode 124 |
 | **Takeover** | Page code replaces a runtime's own implementation (the bridge stops X_ITE's Bullet and steps PhysX instead). The record shows the old engine off on every host that has it | PXB; law 41 |
 | **Leak (takeover)** | A step or event the replaced engine produced before the switch took hold, listed with whether it is handled (`loadURL()` runs one Bullet step; `createX3DFromURL`, disable, `replaceWorld` leaks none) | PXB; law 41 |
-| **Waiver (accepted failure)** | A measure beyond its tolerance, recorded with owner, date, reason and its own numbers, within a profile's cap. It is a pass with the waiver on the receipt, never a clean pass | PXB; law 43 |
+| **Waiver (accepted failure)** | A measure beyond its tolerance, recorded with owner, date, reason and its own numbers, within a profile's cap. It is a pass with the waiver on the receipt, never a clean pass. Physics profiles only, for now | PXB; law 43 |
 | **Loss report** | The list of authored fields an engine cannot honour, shown to the person instead of dropped (11 ODE-only fields for PhysX) | PXB; law 40, failure mode 132 |
 | **Build check** | A cross-check of an engine against itself (native MuJoCo against its own WASM). It tests the build, not the model | MJB; failure mode 142 |

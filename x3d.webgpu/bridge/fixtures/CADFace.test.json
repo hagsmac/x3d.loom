@@ -1,0 +1,30 @@
+{
+ "node": "CADFace",
+ "mode": "scene",
+ "tone": "none",
+ "note": "CAD product structure: CADFace > CADLayer > CADPart > CADFace > Shape. P1 is moved by translation, rotation and scale, the layer L2 starts hidden",
+ "steps": [
+  {"settle": 2},
+  {"expect": ["A", "name", "engine"]},
+  {"expect": ["P1", "translation", [-3, 0.5, 0]]},
+  {"expect": ["F2", "name", "sphere"]},
+  {"shot": "hidden"},
+  {"set": ["L2", "visible", true]},
+  {"settle": 0.6},
+  {"expect": ["L2", "visible", true]},
+  {"shot": "shown"},
+  {"set": ["P2", "translation", [3, 2, 0], "SFVec3f"]},
+  {"settle": 0.6},
+  {"shot": "moved"},
+  {"set": ["A2", "visible", false]},
+  {"settle": 0.6},
+  {"shot": "subhidden"}
+ ],
+ "compare": {
+  "hidden": {"iou": 0.9, "mad": 8, "fg": 12},
+  "shown": {"iou": 0.9, "mad": 8, "fg": 12},
+  "moved": {"iou": 0.9, "mad": 8, "fg": 12},
+  "subhidden": {"iou": 0.9, "mad": 8, "fg": 12}
+ },
+ "gaps": []
+}

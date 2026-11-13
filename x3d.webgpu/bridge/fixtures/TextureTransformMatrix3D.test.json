@@ -1,0 +1,53 @@
+{
+ "node": "TextureTransformMatrix3D",
+ "mode": "scene",
+ "tone": "none",
+ "steps": [
+  {
+   "only": "ours",
+   "expect": [
+    "TM",
+    "matrix",
+    [
+     0.877583,
+     0.479426,
+     0.0,
+     0.0,
+     -0.479426,
+     0.877583,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     1.0,
+     0.0,
+     0.300921,
+     -0.178504,
+     0.4,
+     1.0
+    ]
+   ]
+  },
+  {
+   "only": "xite",
+   "js": [
+    "String(X3D.getBrowser('#c').currentScene.getNamedNode('TM').matrix).trim().split(/\\s+/).map(v=>Math.round(Number(v)*1e5)/1e5).join(',')",
+    "0.87758,0.47943,0,0,-0.47943,0.87758,0,0,0,0,1,0,0.30092,-0.1785,0.4,1"
+   ]
+  },
+  {
+   "settle": 3
+  },
+  {
+   "shot": "main"
+  }
+ ],
+ "compare": {
+  "main": {
+   "iou": 0.9,
+   "mad": 8,
+   "fg": 14
+  }
+ },
+ "gaps": []
+}

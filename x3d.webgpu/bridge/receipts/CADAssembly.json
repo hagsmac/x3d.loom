@@ -1,0 +1,201 @@
+{
+ "node": "CADAssembly",
+ "pass": true,
+ "xsd": {
+  "ok": true,
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/CADAssembly.x3d validates",
+  "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
+ },
+ "test": {
+  "ok": true,
+  "ours": "pass 15/15",
+  "xite": "pass 15/15",
+  "map": {},
+  "oursOk": true,
+  "mapX": {},
+  "xiteOk": true,
+  "visual": {
+   "hidden": {
+    "iou": 0.98,
+    "coverOurs": 1,
+    "coverXite": 0.99,
+    "bboxOurs": [
+     54,
+     79,
+     259,
+     146
+    ],
+    "bboxXite": [
+     53,
+     78,
+     260,
+     146
+    ],
+    "nOurs": 4157,
+    "nXite": 4197,
+    "fgFracOurs": 0.05,
+    "fgFracXite": 0.05,
+    "mad": 1.68,
+    "psnr": 38.03,
+    "fgMeanOurs": [
+     125,
+     88,
+     111
+    ],
+    "fgMeanXite": [
+     123,
+     86,
+     109
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   },
+   "shown": {
+    "iou": 0.98,
+    "coverOurs": 1,
+    "coverXite": 0.99,
+    "bboxOurs": [
+     54,
+     79,
+     259,
+     203
+    ],
+    "bboxXite": [
+     53,
+     78,
+     260,
+     204
+    ],
+    "nOurs": 5341,
+    "nXite": 5389,
+    "fgFracOurs": 0.07,
+    "fgFracXite": 0.07,
+    "mad": 1.68,
+    "psnr": 37.83,
+    "fgMeanOurs": [
+     109,
+     100,
+     98
+    ],
+    "fgMeanXite": [
+     107,
+     99,
+     96
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   },
+   "moved": {
+    "iou": 0.98,
+    "coverOurs": 1,
+    "coverXite": 0.99,
+    "bboxOurs": [
+     54,
+     44,
+     259,
+     203
+    ],
+    "bboxXite": [
+     53,
+     44,
+     260,
+     204
+    ],
+    "nOurs": 5356,
+    "nXite": 5399,
+    "fgFracOurs": 0.07,
+    "fgFracXite": 0.07,
+    "mad": 1.68,
+    "psnr": 37.83,
+    "fgMeanOurs": [
+     108,
+     100,
+     98
+    ],
+    "fgMeanXite": [
+     107,
+     99,
+     96
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   },
+   "subhidden": {
+    "iou": 0.98,
+    "coverOurs": 1,
+    "coverXite": 0.98,
+    "bboxOurs": [
+     54,
+     79,
+     183,
+     203
+    ],
+    "bboxXite": [
+     53,
+     78,
+     183,
+     204
+    ],
+    "nOurs": 3089,
+    "nXite": 3145,
+    "fgFracOurs": 0.04,
+    "fgFracXite": 0.04,
+    "mad": 1.7,
+    "psnr": 37.98,
+    "fgMeanOurs": [
+     161,
+     95,
+     51
+    ],
+    "fgMeanXite": [
+     158,
+     93,
+     50
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
+  "msg": ""
+ },
+ "env": {
+  "chromium": "153.0.8010.12",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha f499223bf445",
+  "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
+  "babylon": "9.32.0"
+ },
+ "driver_commit": "8170b11"
+}

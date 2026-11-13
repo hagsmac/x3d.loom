@@ -28,7 +28,7 @@
     $("#list").innerHTML = groups.map(([k, label]) => `<div data-kind="${k}"><h3>${label}</h3>` + state.catalog.scenes.filter((s) => s.kind === k).map((s) =>
       `<button class="item" data-id="${esc(s.id)}"><b>${esc(s.id.replace(/-F1$/, "").toUpperCase())}</b><span>${esc(s.title.replace(/^[^:]+:\s*/, "").replace(/ \[chains.*$/, ""))}</span>` +
       `<i>${s.residues} aa${s.sites.length ? " · " + s.sites.length + " Zn" : ""}${s.mean_plddt ? " · pLDDT " + s.mean_plddt : ""}</i></button>`).join("") + "</div>").join("");
-    buildCinema();
+    buildCinema(); buildDiffusionList();
     for (const t of document.querySelectorAll("#tabs button")) t.onclick = () => showTab(t.dataset.k);
     showTab("pdb");
     for (const b of document.querySelectorAll(".item")) b.onclick = () => load(b.dataset.id);
@@ -71,6 +71,82 @@
     get.href = (base || "cinema/") + s.x3d.gz.file;
     if (base) { get.removeAttribute("download"); get.target = "_blank"; get.rel = "noopener"; get.textContent = "Get the X3D (gzip) from GitHub"; }
     $("#cineBox").hidden = false;
+  }
+
+  /* ---------- AlphaFold 3 diffusion illustration (src/anim.py writes the X3D; viewer/diffuse.js plays it) ---------- */
+  function buildDiffusionList() {
+    const a = state.animIndex; if (!a || !a.scenes || !a.scenes.length) return;
+    $("#diffN").textContent = a.scenes.length; $('#tabs [data-k="diff"]').hidden = false;
+    const div = document.createElement("div"); div.dataset.kind = "diff";
+    div.innerHTML = `<h3>AlphaFold 3, diffusion · illustration</h3><p class="note">AlphaFold 3 places atoms by diffusion: it starts from atoms scattered as noise and removes the noise step by step, on a fixed schedule, until a structure is left. Here that schedule is run backwards onto known coordinates. <b>Nothing is predicted in your browser.</b></p>` +
+      a.scenes.map((s) => `<button class="item" data-anim="${esc(s.id)}"><b>${esc(s.id.replace(/-F1$/, "").toUpperCase())}</b><span>${esc(s.title.replace(/^[^:]+:\s*/, "").replace(/, diffusion illustration$/, ""))}</span>` +
+        `<i>${s.atoms.toLocaleString("en")} atoms${s.zinc ? " · " + s.zinc + " Zn" : ""} · ${s.keys} keys · ${s.kind === "afdb" ? "pLDDT and PAE" : "crystal, no scores"}</i></button>`).join("");
+    const film = state.film && state.film.scenes ? Object.entries(state.film.scenes).filter(([, f]) => f.mp4) : [];
+    if (film.length) div.insertAdjacentHTML("beforeend", `<h3>Rendered in Blender · Cycles</h3>` + film.map(([id, f]) =>
+      `<figure class="film"><video src="cinema/${esc(f.mp4.file)}" poster="cinema/${esc(f.poster.file)}" controls loop muted playsinline preload="none" aria-label="${esc(id)} diffusion illustration, rendered in Blender"></video>` +
+      `<figcaption>${esc(id.replace(/-F1$/, "").toUpperCase())} · the same X3D keyframes, ${f.frames} frames in Cycles · last frame ${f.check ? f.check.last_frame_rms_from_rest_A : "?"} Å from the file's atoms · illustration, not a live run</figcaption></figure>`).join(""));
+    $("#list").appendChild(div);
+    for (const b of div.querySelectorAll("[data-anim]")) b.onclick = () => openAnim(b.dataset.anim);
+  }
+  function stopAnim() {
+    const p = state.player; if (!p) return;
+    p.dispose(); state.player = null; document.body.classList.remove("anim"); $("#diff").hidden = true;
+    for (const m of state.body.meshes) { m.visibility = 1; m.isPickable = true; }
+    state.body.setLayer("sites", $("#l_sites").checked);
+    if (state.paeDraw) { state.paeDraw.restore(); state.paeDraw = null; }
+    for (const b of document.querySelectorAll("[data-anim]")) b.classList.remove("on");
+  }
+  async function openAnim(id) {
+    stopAnim();
+    const ae = state.animIndex.scenes.find((s) => s.id === id) || state.animIndex.scenes[0];
+    await load(ae.id, true);
+    $("#busy").hidden = false; $("#busy").textContent = "Reading the diffusion keyframes…";
+    const text = await fetchScene(ae);
+    const shaOk = (await sha256(text)) === ae.sha256;
+    const anim = XMolDiffuse.parse(text);
+    const low = matchMedia("(max-width:700px)").matches;
+    const p = XMolDiffuse.create(state.body, anim, { low });
+    state.player = p; state.animEntry = ae; state.animShaOk = shaOk; state.follow = true;
+    for (const b of document.querySelectorAll(".item")) b.classList.toggle("on", b.dataset.anim === ae.id);
+    showTab("diff");
+    document.body.classList.add("anim"); $("#diff").hidden = false;
+    $("#dNote").textContent = anim.disclaimer;
+    const sw = (c, t) => `<span><u style="background:${c}"></u>${t}</span>`;
+    $("#dLegend").innerHTML = sw("#b8d6ff", "not yet placed") + (ae.kind === "afdb"
+      ? BAND.map((b, i) => sw(b[2], b[1])).join("")
+      : sw("#8c9ead", "C") + sw("#4073ff", "N") + sw("#ff4740", "O") + sw("#ffd940", "S") + sw("#ff8c1a", "P") + sw("#b3cceb", "Zn"));
+    const ext = p.extent(), B = BABYLON, near = Math.max(36, state.body.radius * 2.15), far = Math.max(near, ext.radius * 2.3);
+    const ctr = new B.Vector3(...ext.center);
+    state.body.tween({ target: ctr, radius: far, alpha: -1.0, beta: 1.15 }, 0);
+    const pae = state.model.meta.pae_half_angstrom;
+    state.paeDraw = pae && state.pae ? XMolDiffuse.paeReveal($("#paeCanvas"), pae, state.pae.N, state.pae.M) : null;
+    const scrub = $("#dScrub");
+    p.onFrame = (info) => {
+      if (!state.scrubbing) scrub.value = String(Math.round(info.fraction * 1000));
+      const vis = info.hold;
+      for (const m of state.body.meshes) { m.visibility = vis; m.isPickable = vis > 0.9; }
+      state.body.sitesNode.setEnabled($("#l_sites").checked && vis > 0.6);
+      if (state.follow) { const cam = state.body.camera, want = near + (far - near) * Math.pow(Math.min(1, info.shown / info.cap), 0.7); cam.radius += (want - cam.radius) * (p.playing ? 0.3 : 1); cam.setTarget(B.Vector3.Lerp(cam.target, ctr, p.playing ? 0.3 : 1)); }
+      if (state.paeDraw) state.paeDraw(Math.min(1, info.fraction / anim.meta.denoise_fraction[0]));
+      if ((state.tickA = (state.tickA || 0) + 1) % 4 === 0 || !p.playing) {
+        $("#dRead").innerHTML = info.sigma > 0
+          ? `step <b>${info.step}</b> of ${info.steps} · noise σ <b>${info.sigma >= 100 ? Math.round(info.sigma) : info.sigma.toFixed(1)} Å</b>${info.sigma - info.shown > 0.05 ? ` (drawn at ${info.shown.toFixed(1)} Å)` : ""} · <b>${Math.round(info.settled * 100)}%</b> of atoms within 1 Å of their place`
+          : `step <b>${info.steps}</b> of ${info.steps} · noise 0 · every atom on the ${ae.kind === "afdb" ? "AlphaFold DB model" : "deposited crystal"} coordinates`;
+      }
+    };
+    $("#dPlay").textContent = "Pause";
+    renderAnimReceipt();
+    $("#busy").hidden = true;
+    if (!window.__xmolNoHash) history.replaceState(null, "", "#anim=" + ae.id);
+    window.__xmolAnimReady = { id: ae.id, atoms: anim.n, keys: anim.key.length, shaOk };
+  }
+  function renderAnimReceipt() {
+    const ae = state.animEntry, r = state.receipt && state.receipt.anim, sc = r && r.scenes && r.scenes[ae.id];
+    const dl = document.createElement("dl"); dl.className = "animrc";
+    dl.innerHTML = `<dt>diffusion</dt><dd>${esc(ae.file.split("/").pop())} · ${(ae.bytes / 1024).toFixed(0)} KB · ${ae.atoms} atoms × ${ae.keys} keys</dd>
+      <dt>sha256</dt><dd class="mono">${esc(ae.sha256.slice(0, 16))}… ${state.animShaOk ? '<b class="ok">matches the file served</b>' : '<b class="bad">DIFFERS</b>'}</dd>
+      <dt>checked</dt><dd>${sc ? `${sc.xsd_valid ? "XSD valid" : "<b class='bad'>XSD invalid</b>"}, ${sc.semantic_errors} semantic errors · witness ${sc.witness === "pass" ? '<b class="ok">pass</b>' : '<b class="bad">' + esc(sc.witness) + "</b>"} (last key equals the source atoms; noise follows the stated schedule) · ${r.controls.negative} refusal controls` : "receipt not loaded"}</dd>`;
+    $("#receipt dl").after(dl);
   }
 
   function showTab(k) {
@@ -188,7 +264,7 @@
     state.labelEls = model.labels.map((l) => { const d = document.createElement("div"); d.className = "lbl"; d.textContent = l.text; host.appendChild(d); return { el: d, pos: l.pos }; });
   }
   function placeLabels() {
-    const on = state.body.layers.sites !== false;
+    const on = state.body.layers.sites !== false && !(state.player && state.player.info && state.player.info.hold < 0.6);
     for (const l of state.labelEls || []) {
       const p = state.body.project(l.pos);
       const dist = state.body.camera.position.subtract(new BABYLON.Vector3(...l.pos)).length();
@@ -199,7 +275,8 @@
   }
 
   /* ---------- loading ---------- */
-  async function load(id) {
+  async function load(id, forAnim) {
+    if (!forAnim) stopAnim();
     const entry = state.catalog.scenes.find((s) => s.id === id) || state.catalog.scenes[0];
     $("#busy").hidden = false; $("#busy").textContent = "Reading " + entry.id + "…";
     for (const b of document.querySelectorAll(".item")) b.classList.toggle("on", b.dataset.id === entry.id);
@@ -216,15 +293,15 @@
     renderInfo(model, entry); renderReceipt(entry, shaOk); buildPAE(model); buildLabels(model);
     $("#residue").hidden = true; paeClear && state.pae && paeClear();
     $("#busy").hidden = true;
-    if (!window.__xmolNoHash) history.replaceState(null, "", "#scene=" + entry.id + (state.scheme !== "file" ? "&scheme=" + state.scheme : ""));
+    if (!forAnim && !window.__xmolNoHash) history.replaceState(null, "", "#scene=" + entry.id + (state.scheme !== "file" ? "&scheme=" + state.scheme : ""));
     window.__xmolReady = { id: entry.id, meshes: state.body.meshes.length, backend: state.body.backend };
   }
 
   async function boot() {
     try {
-      const [cat, rec, cred, cine, gate] = await Promise.all([getJSON("scenes/catalog.json"), getJSON("scenes/receipt.json").catch(() => null), getJSON("scenes/credits.json").catch(() => null),
-        getJSON("cinema/receipt.json").catch(() => null), getJSON("cinema/gate.json").catch(() => null)]);
-      Object.assign(state, { catalog: cat, receipt: rec, credits: cred, cine, gate });
+      const [cat, rec, cred, cine, gate, anim, film] = await Promise.all([getJSON("scenes/catalog.json"), getJSON("scenes/receipt.json").catch(() => null), getJSON("scenes/credits.json").catch(() => null),
+        getJSON("cinema/receipt.json").catch(() => null), getJSON("cinema/gate.json").catch(() => null), getJSON("scenes/anim/anim.json").catch(() => null), getJSON("cinema/diffusion.json").catch(() => null)]);
+      Object.assign(state, { catalog: cat, receipt: rec, credits: cred, cine, gate, animIndex: anim, film });
       buildCatalogue();
       const q = hp.get("q") || (matchMedia("(max-width:700px)").matches ? "low" : "high");
       state.body = await XMolBody.create($("#stage"), { quality: q, webgpu: hp.get("gpu") !== "0" });
@@ -238,11 +315,18 @@
       $("#core").onclick = () => state.body.focusCore(70);
       $("#hide").onclick = () => document.body.classList.toggle("nui");
       $("#about").onclick = () => { $("#aboutBox").hidden = false; };
+      $("#dPlay").onclick = () => { const p = state.player; if (!p) return; p.play(!p.playing); $("#dPlay").textContent = p.playing ? "Pause" : "Play"; };
+      $("#dExit").onclick = () => { const id = state.animEntry && state.animEntry.id; stopAnim(); if (id) load(id); };
+      $("#dFollow").onclick = () => { state.follow = !state.follow; $("#dFollow").classList.toggle("on", state.follow); };
+      const scrub = $("#dScrub");
+      scrub.addEventListener("pointerdown", () => { state.scrubbing = true; });
+      scrub.addEventListener("input", () => { const p = state.player; if (!p) return; if (p.playing) { p.play(false); $("#dPlay").textContent = "Play"; } p.seek(+scrub.value / 1000); });
+      scrub.addEventListener("change", () => { state.scrubbing = false; });
       $("#aboutClose").onclick = () => { $("#aboutBox").hidden = true; };
-      document.addEventListener("keydown", (e) => { if (e.target.tagName === "SELECT") return; if (e.key === "h") $("#hide").click(); if (e.key === "c") $("#cinema").click(); if (e.key === "Escape") { $("#cineBox").hidden = true; state.pinned = null; paeClear && state.pae && (state.paeLocked = false, paeClear()); setHover(-1); } });
+      document.addEventListener("keydown", (e) => { if (e.target.tagName === "SELECT") return; if (e.key === "h") $("#hide").click(); if (e.key === "c") $("#cinema").click(); if (e.key === " " && state.player && e.target.tagName !== "BUTTON" && e.target.tagName !== "INPUT") { e.preventDefault(); $("#dPlay").click(); } if (e.key === "Escape") { $("#cineBox").hidden = true; state.pinned = null; paeClear && state.pae && (state.paeLocked = false, paeClear()); setHover(-1); } });
       const cv = $("#stage");
       let down = null;
-      cv.addEventListener("pointerdown", (e) => { down = [e.clientX, e.clientY]; });
+      cv.addEventListener("pointerdown", (e) => { down = [e.clientX, e.clientY]; if (state.player && state.follow) { state.follow = false; $("#dFollow").classList.remove("on"); } });
       cv.addEventListener("pointerup", (e) => {
         if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 4) return; down = null;
         const r = cv.getBoundingClientRect(), p = state.body.pick(e.clientX - r.left, e.clientY - r.top);
@@ -257,7 +341,8 @@
       });
       state.body.scene.onAfterRenderObservable.add(() => { placeLabels(); const f = $("#fps"); if (f && (state.tick = (state.tick || 0) + 1) % 30 === 0) f.textContent = state.body.engine.getFps().toFixed(0) + " fps (this machine, this frame size; not a benchmark)"; });
       renderAbout(); window.__xmolState = state;
-      await load(hp.get("scene") || "1aay");
+      if (hp.get("anim") && state.animIndex) await openAnim(hp.get("anim"));
+      else await load(hp.get("scene") || "1aay");
       if (hp.get("cinema") === "1") $("#cinema").click();
       if (hp.get("ui") === "0") document.body.classList.add("nui");
     } catch (e) {

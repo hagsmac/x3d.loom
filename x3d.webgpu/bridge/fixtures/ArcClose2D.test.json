@@ -101,9 +101,31 @@
     "X3D.getBrowser('#c').currentScene.getNamedNode('G2').getValue().getVertices().length/12",
     28
    ]
+  },
+  {
+   "mouse": [
+    "move",
+    3,
+    3
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "shot": "main"
   }
  ],
- "gaps": [
-  "compared by pointer-over probes in both engines and the triangle count; texture mapping and lighting are not compared"
+ "gaps": [],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "iou": 0.9,
+   "mad": 8,
+   "fg": 15
+  }
+ },
+ "scope": [
+  "compared by pointer-over probes, the triangle count and the picture; texture mapping and lighting of ArcClose2D are not compared with X_ITE"
  ]
 }

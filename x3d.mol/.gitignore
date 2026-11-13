@@ -1,8 +1,10 @@
 # rebuilt deterministically by tools/run_all.py; the page carries them gzip'd in docs/scenes, and scenes/receipt.json names each sha256
 scenes/*.x3d
+scenes/anim/*.x3d
 # the Blender stage keeps its PNGs and plain X3D locally; the repository carries the JPEG stills and the .mn.x3d.gz (receipt names the plain sha256)
 cinema/*.png
 cinema/*.mn.x3d
 runs/
 __pycache__/
 tests/last-run.json
+tests/last-anim-run.json

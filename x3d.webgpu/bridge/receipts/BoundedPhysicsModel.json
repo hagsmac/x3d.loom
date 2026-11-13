@@ -1,0 +1,76 @@
+{
+ "node": "BoundedPhysicsModel",
+ "pass": true,
+ "xsd": {
+  "ok": true,
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/BoundedPhysicsModel.x3d validates",
+  "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp + XSD patched: ParticleSystem children as a choice, not a sequence"
+ },
+ "test": {
+  "ok": true,
+  "ours": "pass 5/5",
+  "xite": "pass 4/4",
+  "map": {},
+  "oursOk": true,
+  "mapX": {},
+  "xiteOk": true,
+  "visual": {
+   "boxed": {
+    "iou": 0.32,
+    "coverOurs": 0.5,
+    "coverXite": 0.46,
+    "bboxOurs": [
+     111,
+     86,
+     208,
+     153
+    ],
+    "bboxXite": [
+     113,
+     86,
+     207,
+     154
+    ],
+    "nOurs": 2833,
+    "nXite": 3043,
+    "fgFracOurs": 0.04,
+    "fgFracXite": 0.04,
+    "mad": 9.82,
+    "psnr": 16.14,
+    "fgMeanOurs": [
+     145,
+     145,
+     33
+    ],
+    "fgMeanXite": [
+     207,
+     207,
+     207
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
+  "msg": "",
+  "gaps": [
+   "X_ITE 16.6.0 draws the particles white on this raster, ours uses the Material emissive colour (colour is not compared)",
+   "the bounds are tested in ours from the particle list (a box of 3 x 2 x 2 holds every particle, which reflect at the faces); X_ITE's particle positions are not read, its picture is compared by extent"
+  ]
+ },
+ "env": {
+  "chromium": "153.0.8010.12",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha f499223bf445",
+  "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
+  "babylon": "9.32.0"
+ },
+ "driver_commit": "8170b11"
+}

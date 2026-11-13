@@ -59,7 +59,16 @@ select{background:rgba(5,10,20,.9);border:1px solid var(--line);border-radius:8p
 body.nui #side,body.nui #info,body.nui #controls,body.nui #legend,body.nui #residue,body.nui #receipt,body.nui #pae,body.nui #gpuhint,body.nui #menu{display:none}
 body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.cinema #legend,body.cinema #residue{opacity:0;pointer-events:none}
 #paeBtn{display:none}
+#diff{position:fixed;left:324px;bottom:12px;width:min(620px,calc(100vw - 324px - 364px));padding:8px 12px;z-index:4}
+#diff .drow{display:flex;gap:8px;align-items:center}#diff input[type=range]{flex:1;min-width:60px;accent-color:var(--accent)}#diff p{margin:6px 0 0;font-size:12px}#diff #dRead{color:var(--mut);min-height:1.45em}#diff #dRead b{color:var(--text)}
+#dLegend{display:flex;gap:4px 12px;flex-wrap:wrap}#dLegend u{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.badge{font:600 10px/1.2 ui-monospace,Menlo,monospace;letter-spacing:.04em;text-transform:uppercase;color:#ffd9a0;border:1px solid rgba(255,180,84,.5);border-radius:6px;padding:4px 6px;white-space:nowrap}
+.film{margin:4px 6px 10px}.film video{width:100%;aspect-ratio:16/9;border-radius:6px;background:#02040a;display:block;border:1px solid var(--line)}.film figcaption{color:var(--mut);font-size:11px;margin-top:4px}
+#dFollow.on{background:rgba(124,196,255,.28);border-color:rgba(124,196,255,.6)}.note{margin:4px 6px 8px;color:var(--mut);font-size:12px}
+body.anim #legend,body.anim #residue{display:none}
+body.nui #diff{display:none}
 @media (max-width:1180px){
+ #diff{width:auto;right:12px}#diff .fine{display:none}body.anim #controls{bottom:126px}body.anim #pae{bottom:222px}body.anim #paeCanvas{width:min(100%,max(100px,calc(100vh - 500px)))}
  #info{max-width:calc(100vw - 336px)}#controls{top:auto;bottom:58px;right:12px;width:min(444px,calc(100vw - 336px))}
  #receipt{display:none;bottom:12px}body.show-receipt #receipt{display:block;z-index:8}
  #pae{bottom:160px;width:240px}#paeCanvas{width:min(100%,max(120px,calc(100vh - 419px)))}#legend{max-width:calc(100vw - 336px)}
@@ -71,7 +80,8 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
  #legend{left:50%;transform:translateX(-50%);bottom:66px;max-width:calc(100vw - 24px);flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;border-radius:99px;white-space:nowrap}
  #residue{left:auto;right:12px;transform:none;bottom:108px;max-width:calc(100vw - 24px)}body.show-pae #residue{max-width:calc(100vw - 196px)}
  #receipt{left:12px;right:12px;width:auto;bottom:auto;top:12px;max-height:40vh}
- #pae{display:none;left:12px;right:auto;bottom:108px;width:160px;padding:8px}#paeCanvas{width:100%}body.show-pae #pae{display:block}#paeRead{font-size:11px}
+ #pae{display:none;left:12px;right:auto;bottom:108px;width:160px;padding:8px}
+ #diff{left:12px;right:12px;bottom:12px;width:auto}body.anim #controls{bottom:168px}body.anim #pae{bottom:226px}#diff .badge{font-size:9px;padding:3px 4px;white-space:normal;max-width:84px}#paeCanvas{width:100%}body.show-pae #pae{display:block}#paeRead{font-size:11px}
 }
 </style>
 </head>
@@ -82,7 +92,7 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
 <aside id="side">
   <header><h1>x3d<span>.mol</span></h1><p class="sub">Proteins as validated X3D, drawn on <b id="backend">…</b></p></header>
   <div class="row"><button class="btn" id="about">About and credit</button><button class="btn" id="hide" title="Hide the panels (H)">Hide UI</button><button class="btn" onclick="document.body.classList.toggle('show-receipt')">Receipt</button></div>
-  <div class="tabs" id="tabs"><button data-k="pdb" class="on">Zinc fingers · 14</button><button data-k="afdb">AlphaFold · 5</button><button data-k="cine" hidden>Blender · <span id="cineN">0</span></button></div>
+  <div class="tabs" id="tabs"><button data-k="pdb" class="on">Zinc fingers · 14</button><button data-k="afdb">AlphaFold · 5</button><button data-k="diff" hidden>AF3 · <span id="diffN">0</span></button><button data-k="cine" hidden>Blender · <span id="cineN">0</span></button></div>
   <div id="list"></div>
   <div id="gpuhint" hidden>Running on WebGL2 because WebGPU was not available. On Windows Chrome, <span class="mono">chrome://flags/#enable-unsafe-webgpu</span> may turn it on.</div>
 </aside>
@@ -97,12 +107,16 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
 <div id="legend"></div>
 <div id="residue" hidden></div>
 <section id="pae" class="panel" hidden><h4>AlphaFold predicted aligned error</h4><canvas id="paeCanvas"></canvas><p id="paeRead">Hover the map: each cell is the model's own error estimate for one pair of residues.</p></section>
+<section id="diff" class="panel" hidden aria-label="Diffusion player">
+  <div class="drow"><span class="badge" title="The AlphaFold 3 noise schedule run backwards onto known coordinates">Illustration · not a live run</span><button id="dPlay" class="btn">Pause</button><input id="dScrub" type="range" min="0" max="1000" value="0" aria-label="Diffusion time, from noise to structure"><button id="dFollow" class="btn on" title="The camera follows the noise as it shrinks; dragging the view turns this off">Follow</button><button id="dExit" class="btn">Exit</button></div>
+  <p id="dRead">…</p><p id="dLegend"></p><p class="fine" id="dNote"></p>
+</section>
 <aside id="receipt" class="panel"></aside>
 <div id="busy">Loading…</div>
 <div id="cineBox" hidden><div class="card"><div id="cineBody"></div><p class="cinebtns"><button class="btn" id="cineOpen">Open this structure in the live viewer</button><a class="btn" id="cineGet" download>Download the X3D (gzip)</a><button class="btn" id="cineClose">Close</button></p></div></div>
 <div id="aboutBox" hidden><div class="card"><div id="aboutBody"></div><p><button class="btn" id="aboutClose">Close</button></p></div></div>
 <script src="https://cdn.jsdelivr.net/npm/babylonjs@9.32.0/babylon.js" integrity="sha384-1XDybi1454WehNQaPHwhcTlpJ6oDdq/L4KKyDu7JiWPOBUzoBC0yEcuKDzHpdXyo" crossorigin="anonymous"></script>
-<script>window.__xmolBuild="fa5261ef5c59";</script>
+<script>window.__xmolBuild="6cb114a92e7d";</script>
 <script>
 /* One WebGPU adapter request that does not give up early. Babylon asks navigator.gpu.requestAdapter() with its own options (the high-performance
    hint); on some machines only the plain call, the low-power hint or the software adapter answers (x3d.loom PR 14, playbook 4.1). This wraps the
@@ -541,6 +555,134 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
   root.XMolBody = { create, residueColors, PL, CHAIN };
 })(typeof window !== "undefined" ? window : globalThis);
 
+/* x3d.mol diffusion player: plays a scenes/anim/*.anim.x3d file (src/anim.py) over the live scene.
+   The file is X3D: a TimeSensor routed to a CoordinateInterpolator routed to a PointSet's Coordinate. This player follows those
+   ROUTEs as an X3D browser would (it refuses a file whose routes do not connect), interpolates the keys linearly, as
+   CoordinateInterpolator is defined to, and draws each point as a small sphere. Look, not data: sphere sizes, the grey of
+   unsettled atoms, the fade-in of colours and of the cartoon, and the order in which PAE cells appear. */
+(function (root) {
+  "use strict";
+  const B = root.BABYLON;
+  const f32 = (s) => Float32Array.from((s || "").trim().split(/\s+/).filter(Boolean), Number);
+  const lin = (c) => Math.pow(Math.max(0, Math.min(1, c)), 2.2);
+  const NOISE = [0.72, 0.84, 1.0];    // unsettled atoms: a cool grey-blue (look)
+  const RADIUS = [0.55, 0.65, 0.6, 1.25]; // backbone, side chain, nucleic, zinc (angstrom, look)
+
+  function parse(text) {
+    const doc = new DOMParser().parseFromString(text, "application/xml");
+    if (doc.querySelector("parsererror")) throw new Error("diffusion file is not well-formed XML");
+    const meta = {};
+    for (const m of doc.querySelectorAll("WorldInfo > MetadataSet > *")) {
+      const v = m.getAttribute("value") || "";
+      meta[m.getAttribute("name")] = m.tagName === "MetadataString" ? root.XMolReader.mfstring(v) : f32(v);
+    }
+    const byDef = {}; for (const e of doc.querySelectorAll("[DEF]")) byDef[e.getAttribute("DEF")] = e;
+    const routes = [...doc.querySelectorAll("ROUTE")].map((r) => [r.getAttribute("fromNode"), r.getAttribute("fromField"), r.getAttribute("toNode"), r.getAttribute("toField")]);
+    const r1 = routes.find((r) => byDef[r[0]] && byDef[r[0]].tagName === "TimeSensor" && r[1] === "fraction_changed" && r[3] === "set_fraction");
+    const interp = r1 && byDef[r1[2]];
+    const r2 = interp && routes.find((r) => r[0] === r1[2] && r[1] === "value_changed" && r[3] === "set_point");
+    const coord = r2 && byDef[r2[2]];
+    if (!interp || interp.tagName !== "CoordinateInterpolator" || !coord || coord.tagName !== "Coordinate") throw new Error("the file's ROUTEs do not connect clock, interpolator and coordinates");
+    const clock = byDef[r1[0]];
+    const key = f32(interp.getAttribute("key")), kv = f32(interp.getAttribute("keyValue")), rest = f32(coord.getAttribute("point"));
+    const n = rest.length / 3;
+    if (kv.length !== key.length * n * 3) throw new Error("keyValue length does not match keys x points");
+    const color = f32(coord.parentElement.querySelector("Color").getAttribute("color"));
+    return { meta, key, kv, rest, n, color, cycle: +clock.getAttribute("cycleInterval"), loop: clock.getAttribute("loop") === "true",
+      title: doc.querySelector("WorldInfo").getAttribute("title"), disclaimer: (meta.disclaimer || [""])[0] };
+  }
+
+  /* fraction -> (segment, local t), as CoordinateInterpolator does */
+  function seg(key, f) {
+    if (f <= key[0]) return [0, 0];
+    if (f >= key[key.length - 1]) return [key.length - 2, 1];
+    let i = 1; while (key[i] < f) i++;
+    return [i - 1, (f - key[i - 1]) / (key[i] - key[i - 1])];
+  }
+
+  function create(body, anim, opts) {
+    opts = opts || {};
+    const scene = body.scene, n = anim.n, cls = anim.meta.atom_class, cap = anim.meta.cap[0];
+    const sph = B.MeshBuilder.CreateIcoSphere("diffAtoms", { radius: 1, subdivisions: opts.low ? 1 : n < 2000 ? 3 : 2 }, scene);
+    const m = new B.PBRMaterial("diffMat", scene);
+    m.albedoColor = new B.Color3(1, 1, 1); m.metallic = 0; m.roughness = 0.32; m.emissiveColor = new B.Color3(0.03, 0.04, 0.07); m.environmentIntensity = 1;
+    sph.material = m; sph.isPickable = false; sph.parent = body.root; sph.alwaysSelectAsActiveMesh = true;
+    const mats = new Float32Array(n * 16), cols = new Float32Array(n * 4), pos = new Float32Array(n * 3);
+    for (let i = 0; i < n; i++) { cols[i * 4 + 3] = 1; mats[i * 16 + 15] = 1; }
+    sph.thinInstanceSetBuffer("matrix", mats, 16, false);
+    sph.thinInstanceSetBuffer("color", cols, 4, false);
+    const fin = anim.color, fl = new Float32Array(n * 3);
+    for (let i = 0; i < n * 3; i++) fl[i] = lin(fin[i]);
+    const nz = NOISE.map(lin);
+    const last = anim.key.length - 1, base = last * n * 3;
+    const p = { pos, mesh: sph, fraction: 0, playing: true, t0: performance.now(), anim, scale: 1, onFrame: null, settled: 0 };
+
+    p.apply = function (f) {
+      p.fraction = f;
+      const [k, u] = seg(anim.key, f), a = k * n * 3, b = (k + 1) * n * 3, kv = anim.kv;
+      const hold = anim.meta.denoise_fraction[0], h = f <= hold ? 0 : Math.min(1, (f - hold) / ((1 - hold) * 0.5));
+      const shrink = 1 - 0.45 * h; let settled = 0;
+      for (let i = 0; i < n; i++) {
+        const o = i * 3;
+        const x = kv[a + o] + (kv[b + o] - kv[a + o]) * u, y = kv[a + o + 1] + (kv[b + o + 1] - kv[a + o + 1]) * u, z = kv[a + o + 2] + (kv[b + o + 2] - kv[a + o + 2]) * u;
+        pos[o] = x; pos[o + 1] = y; pos[o + 2] = z;
+        const d = Math.hypot(x - kv[base + o], y - kv[base + o + 1], z - kv[base + o + 2]);
+        const s = Math.max(0, Math.min(1, 1 - d / 3.5)), e = s * s * (3 - 2 * s);   // within 3.5 A of its place the atom takes its colour
+        if (d < 1) settled++;
+        const r = RADIUS[cls[i]] * (cls[i] === 3 ? 1 : shrink) * (1.6 - 0.6 * e), q = i * 16;   // unsettled atoms drawn larger so the cloud reads
+        mats[q] = r; mats[q + 5] = r; mats[q + 10] = r; mats[q + 12] = x; mats[q + 13] = y; mats[q + 14] = z;
+        const c = i * 4;
+        cols[c] = nz[0] + (fl[o] - nz[0]) * e; cols[c + 1] = nz[1] + (fl[o + 1] - nz[1]) * e; cols[c + 2] = nz[2] + (fl[o + 2] - nz[2]) * e;
+      }
+      sph.thinInstanceBufferUpdated("matrix"); sph.thinInstanceBufferUpdated("color");
+      sph.thinInstanceRefreshBoundingInfo(false);
+      p.settled = settled / n;
+      const step = anim.meta.step, sig = anim.meta.sigma, shown = anim.meta.sigma_shown;
+      const kk = Math.min(k + (u > 0.5 ? 1 : 0), step.length - 1);
+      p.info = { fraction: f, key: kk, step: f >= hold ? step[step.length - 1] : step[kk], steps: anim.meta.steps[0], sigma: f >= hold ? 0 : sig[kk], shown: f >= hold ? 0 : shown[kk], cap, settled: p.settled, hold: h };
+      if (p.onFrame) p.onFrame(p.info);
+    };
+    p.play = function (on) { p.playing = on; if (on) p.t0 = performance.now() - p.fraction * anim.cycle * 1000; };
+    p.seek = function (f) { p.fraction = Math.max(0, Math.min(1, f)); p.t0 = performance.now() - p.fraction * anim.cycle * 1000; p.apply(p.fraction); };
+    const obs = scene.onBeforeRenderObservable.add(() => {
+      if (!p.playing) return;
+      let f = ((performance.now() - p.t0) / 1000) / anim.cycle;
+      f = anim.loop ? f - Math.floor(f) : Math.min(1, f);
+      p.apply(f);
+    });
+    p.dispose = function () { scene.onBeforeRenderObservable.remove(obs); sph.dispose(); m.dispose(); };
+    p.extent = function () {   // centre and radius of the noisiest frame, so the camera can hold the whole cloud
+      let c = [0, 0, 0]; for (let i = 0; i < n; i++) for (let k = 0; k < 3; k++) c[k] += anim.rest[i * 3 + k] / n;
+      const d = new Float32Array(n); for (let i = 0; i < n; i++) d[i] = Math.hypot(anim.kv[i * 3] - c[0], anim.kv[i * 3 + 1] - c[1], anim.kv[i * 3 + 2] - c[2]);
+      d.sort(); return { center: c, radius: d[Math.floor(n * 0.85)] };   // 85th percentile: a few far atoms should not shrink the view
+    };
+    p.apply(0);
+    return p;
+  }
+
+  /* PAE reveal: cells with lower error appear first, with a fixed per-cell jitter (look, not data: AlphaFold 3 computes PAE in its
+     confidence head, not during diffusion). pae is the half-angstrom array the scene stores. Returns a function of progress 0..1. */
+  function paeReveal(canvas, pae, N, M) {
+    const g = canvas.getContext("2d"), W = canvas.width, img = g.getImageData(0, 0, W, W), src = img.data.slice(), rank = new Float32Array(N * N);
+    let s = 12345; const rnd = () => ((s = (s * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+    for (let k = 0; k < N * N; k++) rank[k] = 0.8 * Math.min(1, pae[k] * 0.5 / 31) + 0.2 * rnd();
+    let lastR = -1;
+    const draw = function (r) {
+      if (Math.abs(r - lastR) < 0.01 && r !== 1 && r !== 0) return; lastR = r;
+      const d = img.data;
+      for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+        const o = ((i + M) * W + (j + M)) * 4, on = rank[i * N + j] <= r * 1.02;
+        d[o] = on ? src[o] : 14; d[o + 1] = on ? src[o + 1] : 18; d[o + 2] = on ? src[o + 2] : 26;
+      }
+      g.putImageData(img, 0, 0);
+    };
+    draw.restore = function () { img.data.set(src); g.putImageData(img, 0, 0); lastR = -1; };
+    return draw;
+  }
+
+  root.XMolDiffuse = { parse, create, paeReveal, seg };
+})(typeof window !== "undefined" ? window : globalThis);
+
 /* x3d.mol page: catalogue, colour schemes, residue picking, zinc sites, the AlphaFold PAE map and the receipt card. */
 (function () {
   "use strict";
@@ -571,7 +713,7 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
     $("#list").innerHTML = groups.map(([k, label]) => `<div data-kind="${k}"><h3>${label}</h3>` + state.catalog.scenes.filter((s) => s.kind === k).map((s) =>
       `<button class="item" data-id="${esc(s.id)}"><b>${esc(s.id.replace(/-F1$/, "").toUpperCase())}</b><span>${esc(s.title.replace(/^[^:]+:\s*/, "").replace(/ \[chains.*$/, ""))}</span>` +
       `<i>${s.residues} aa${s.sites.length ? " · " + s.sites.length + " Zn" : ""}${s.mean_plddt ? " · pLDDT " + s.mean_plddt : ""}</i></button>`).join("") + "</div>").join("");
-    buildCinema();
+    buildCinema(); buildDiffusionList();
     for (const t of document.querySelectorAll("#tabs button")) t.onclick = () => showTab(t.dataset.k);
     showTab("pdb");
     for (const b of document.querySelectorAll(".item")) b.onclick = () => load(b.dataset.id);
@@ -614,6 +756,82 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
     get.href = (base || "cinema/") + s.x3d.gz.file;
     if (base) { get.removeAttribute("download"); get.target = "_blank"; get.rel = "noopener"; get.textContent = "Get the X3D (gzip) from GitHub"; }
     $("#cineBox").hidden = false;
+  }
+
+  /* ---------- AlphaFold 3 diffusion illustration (src/anim.py writes the X3D; viewer/diffuse.js plays it) ---------- */
+  function buildDiffusionList() {
+    const a = state.animIndex; if (!a || !a.scenes || !a.scenes.length) return;
+    $("#diffN").textContent = a.scenes.length; $('#tabs [data-k="diff"]').hidden = false;
+    const div = document.createElement("div"); div.dataset.kind = "diff";
+    div.innerHTML = `<h3>AlphaFold 3, diffusion · illustration</h3><p class="note">AlphaFold 3 places atoms by diffusion: it starts from atoms scattered as noise and removes the noise step by step, on a fixed schedule, until a structure is left. Here that schedule is run backwards onto known coordinates. <b>Nothing is predicted in your browser.</b></p>` +
+      a.scenes.map((s) => `<button class="item" data-anim="${esc(s.id)}"><b>${esc(s.id.replace(/-F1$/, "").toUpperCase())}</b><span>${esc(s.title.replace(/^[^:]+:\s*/, "").replace(/, diffusion illustration$/, ""))}</span>` +
+        `<i>${s.atoms.toLocaleString("en")} atoms${s.zinc ? " · " + s.zinc + " Zn" : ""} · ${s.keys} keys · ${s.kind === "afdb" ? "pLDDT and PAE" : "crystal, no scores"}</i></button>`).join("");
+    const film = state.film && state.film.scenes ? Object.entries(state.film.scenes).filter(([, f]) => f.mp4) : [];
+    if (film.length) div.insertAdjacentHTML("beforeend", `<h3>Rendered in Blender · Cycles</h3>` + film.map(([id, f]) =>
+      `<figure class="film"><video src="cinema/${esc(f.mp4.file)}" poster="cinema/${esc(f.poster.file)}" controls loop muted playsinline preload="none" aria-label="${esc(id)} diffusion illustration, rendered in Blender"></video>` +
+      `<figcaption>${esc(id.replace(/-F1$/, "").toUpperCase())} · the same X3D keyframes, ${f.frames} frames in Cycles · last frame ${f.check ? f.check.last_frame_rms_from_rest_A : "?"} Å from the file's atoms · illustration, not a live run</figcaption></figure>`).join(""));
+    $("#list").appendChild(div);
+    for (const b of div.querySelectorAll("[data-anim]")) b.onclick = () => openAnim(b.dataset.anim);
+  }
+  function stopAnim() {
+    const p = state.player; if (!p) return;
+    p.dispose(); state.player = null; document.body.classList.remove("anim"); $("#diff").hidden = true;
+    for (const m of state.body.meshes) { m.visibility = 1; m.isPickable = true; }
+    state.body.setLayer("sites", $("#l_sites").checked);
+    if (state.paeDraw) { state.paeDraw.restore(); state.paeDraw = null; }
+    for (const b of document.querySelectorAll("[data-anim]")) b.classList.remove("on");
+  }
+  async function openAnim(id) {
+    stopAnim();
+    const ae = state.animIndex.scenes.find((s) => s.id === id) || state.animIndex.scenes[0];
+    await load(ae.id, true);
+    $("#busy").hidden = false; $("#busy").textContent = "Reading the diffusion keyframes…";
+    const text = await fetchScene(ae);
+    const shaOk = (await sha256(text)) === ae.sha256;
+    const anim = XMolDiffuse.parse(text);
+    const low = matchMedia("(max-width:700px)").matches;
+    const p = XMolDiffuse.create(state.body, anim, { low });
+    state.player = p; state.animEntry = ae; state.animShaOk = shaOk; state.follow = true;
+    for (const b of document.querySelectorAll(".item")) b.classList.toggle("on", b.dataset.anim === ae.id);
+    showTab("diff");
+    document.body.classList.add("anim"); $("#diff").hidden = false;
+    $("#dNote").textContent = anim.disclaimer;
+    const sw = (c, t) => `<span><u style="background:${c}"></u>${t}</span>`;
+    $("#dLegend").innerHTML = sw("#b8d6ff", "not yet placed") + (ae.kind === "afdb"
+      ? BAND.map((b, i) => sw(b[2], b[1])).join("")
+      : sw("#8c9ead", "C") + sw("#4073ff", "N") + sw("#ff4740", "O") + sw("#ffd940", "S") + sw("#ff8c1a", "P") + sw("#b3cceb", "Zn"));
+    const ext = p.extent(), B = BABYLON, near = Math.max(36, state.body.radius * 2.15), far = Math.max(near, ext.radius * 2.3);
+    const ctr = new B.Vector3(...ext.center);
+    state.body.tween({ target: ctr, radius: far, alpha: -1.0, beta: 1.15 }, 0);
+    const pae = state.model.meta.pae_half_angstrom;
+    state.paeDraw = pae && state.pae ? XMolDiffuse.paeReveal($("#paeCanvas"), pae, state.pae.N, state.pae.M) : null;
+    const scrub = $("#dScrub");
+    p.onFrame = (info) => {
+      if (!state.scrubbing) scrub.value = String(Math.round(info.fraction * 1000));
+      const vis = info.hold;
+      for (const m of state.body.meshes) { m.visibility = vis; m.isPickable = vis > 0.9; }
+      state.body.sitesNode.setEnabled($("#l_sites").checked && vis > 0.6);
+      if (state.follow) { const cam = state.body.camera, want = near + (far - near) * Math.pow(Math.min(1, info.shown / info.cap), 0.7); cam.radius += (want - cam.radius) * (p.playing ? 0.3 : 1); cam.setTarget(B.Vector3.Lerp(cam.target, ctr, p.playing ? 0.3 : 1)); }
+      if (state.paeDraw) state.paeDraw(Math.min(1, info.fraction / anim.meta.denoise_fraction[0]));
+      if ((state.tickA = (state.tickA || 0) + 1) % 4 === 0 || !p.playing) {
+        $("#dRead").innerHTML = info.sigma > 0
+          ? `step <b>${info.step}</b> of ${info.steps} · noise σ <b>${info.sigma >= 100 ? Math.round(info.sigma) : info.sigma.toFixed(1)} Å</b>${info.sigma - info.shown > 0.05 ? ` (drawn at ${info.shown.toFixed(1)} Å)` : ""} · <b>${Math.round(info.settled * 100)}%</b> of atoms within 1 Å of their place`
+          : `step <b>${info.steps}</b> of ${info.steps} · noise 0 · every atom on the ${ae.kind === "afdb" ? "AlphaFold DB model" : "deposited crystal"} coordinates`;
+      }
+    };
+    $("#dPlay").textContent = "Pause";
+    renderAnimReceipt();
+    $("#busy").hidden = true;
+    if (!window.__xmolNoHash) history.replaceState(null, "", "#anim=" + ae.id);
+    window.__xmolAnimReady = { id: ae.id, atoms: anim.n, keys: anim.key.length, shaOk };
+  }
+  function renderAnimReceipt() {
+    const ae = state.animEntry, r = state.receipt && state.receipt.anim, sc = r && r.scenes && r.scenes[ae.id];
+    const dl = document.createElement("dl"); dl.className = "animrc";
+    dl.innerHTML = `<dt>diffusion</dt><dd>${esc(ae.file.split("/").pop())} · ${(ae.bytes / 1024).toFixed(0)} KB · ${ae.atoms} atoms × ${ae.keys} keys</dd>
+      <dt>sha256</dt><dd class="mono">${esc(ae.sha256.slice(0, 16))}… ${state.animShaOk ? '<b class="ok">matches the file served</b>' : '<b class="bad">DIFFERS</b>'}</dd>
+      <dt>checked</dt><dd>${sc ? `${sc.xsd_valid ? "XSD valid" : "<b class='bad'>XSD invalid</b>"}, ${sc.semantic_errors} semantic errors · witness ${sc.witness === "pass" ? '<b class="ok">pass</b>' : '<b class="bad">' + esc(sc.witness) + "</b>"} (last key equals the source atoms; noise follows the stated schedule) · ${r.controls.negative} refusal controls` : "receipt not loaded"}</dd>`;
+    $("#receipt dl").after(dl);
   }
 
   function showTab(k) {
@@ -731,7 +949,7 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
     state.labelEls = model.labels.map((l) => { const d = document.createElement("div"); d.className = "lbl"; d.textContent = l.text; host.appendChild(d); return { el: d, pos: l.pos }; });
   }
   function placeLabels() {
-    const on = state.body.layers.sites !== false;
+    const on = state.body.layers.sites !== false && !(state.player && state.player.info && state.player.info.hold < 0.6);
     for (const l of state.labelEls || []) {
       const p = state.body.project(l.pos);
       const dist = state.body.camera.position.subtract(new BABYLON.Vector3(...l.pos)).length();
@@ -742,7 +960,8 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
   }
 
   /* ---------- loading ---------- */
-  async function load(id) {
+  async function load(id, forAnim) {
+    if (!forAnim) stopAnim();
     const entry = state.catalog.scenes.find((s) => s.id === id) || state.catalog.scenes[0];
     $("#busy").hidden = false; $("#busy").textContent = "Reading " + entry.id + "…";
     for (const b of document.querySelectorAll(".item")) b.classList.toggle("on", b.dataset.id === entry.id);
@@ -759,15 +978,15 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
     renderInfo(model, entry); renderReceipt(entry, shaOk); buildPAE(model); buildLabels(model);
     $("#residue").hidden = true; paeClear && state.pae && paeClear();
     $("#busy").hidden = true;
-    if (!window.__xmolNoHash) history.replaceState(null, "", "#scene=" + entry.id + (state.scheme !== "file" ? "&scheme=" + state.scheme : ""));
+    if (!forAnim && !window.__xmolNoHash) history.replaceState(null, "", "#scene=" + entry.id + (state.scheme !== "file" ? "&scheme=" + state.scheme : ""));
     window.__xmolReady = { id: entry.id, meshes: state.body.meshes.length, backend: state.body.backend };
   }
 
   async function boot() {
     try {
-      const [cat, rec, cred, cine, gate] = await Promise.all([getJSON("scenes/catalog.json"), getJSON("scenes/receipt.json").catch(() => null), getJSON("scenes/credits.json").catch(() => null),
-        getJSON("cinema/receipt.json").catch(() => null), getJSON("cinema/gate.json").catch(() => null)]);
-      Object.assign(state, { catalog: cat, receipt: rec, credits: cred, cine, gate });
+      const [cat, rec, cred, cine, gate, anim, film] = await Promise.all([getJSON("scenes/catalog.json"), getJSON("scenes/receipt.json").catch(() => null), getJSON("scenes/credits.json").catch(() => null),
+        getJSON("cinema/receipt.json").catch(() => null), getJSON("cinema/gate.json").catch(() => null), getJSON("scenes/anim/anim.json").catch(() => null), getJSON("cinema/diffusion.json").catch(() => null)]);
+      Object.assign(state, { catalog: cat, receipt: rec, credits: cred, cine, gate, animIndex: anim, film });
       buildCatalogue();
       const q = hp.get("q") || (matchMedia("(max-width:700px)").matches ? "low" : "high");
       state.body = await XMolBody.create($("#stage"), { quality: q, webgpu: hp.get("gpu") !== "0" });
@@ -781,11 +1000,18 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
       $("#core").onclick = () => state.body.focusCore(70);
       $("#hide").onclick = () => document.body.classList.toggle("nui");
       $("#about").onclick = () => { $("#aboutBox").hidden = false; };
+      $("#dPlay").onclick = () => { const p = state.player; if (!p) return; p.play(!p.playing); $("#dPlay").textContent = p.playing ? "Pause" : "Play"; };
+      $("#dExit").onclick = () => { const id = state.animEntry && state.animEntry.id; stopAnim(); if (id) load(id); };
+      $("#dFollow").onclick = () => { state.follow = !state.follow; $("#dFollow").classList.toggle("on", state.follow); };
+      const scrub = $("#dScrub");
+      scrub.addEventListener("pointerdown", () => { state.scrubbing = true; });
+      scrub.addEventListener("input", () => { const p = state.player; if (!p) return; if (p.playing) { p.play(false); $("#dPlay").textContent = "Play"; } p.seek(+scrub.value / 1000); });
+      scrub.addEventListener("change", () => { state.scrubbing = false; });
       $("#aboutClose").onclick = () => { $("#aboutBox").hidden = true; };
-      document.addEventListener("keydown", (e) => { if (e.target.tagName === "SELECT") return; if (e.key === "h") $("#hide").click(); if (e.key === "c") $("#cinema").click(); if (e.key === "Escape") { $("#cineBox").hidden = true; state.pinned = null; paeClear && state.pae && (state.paeLocked = false, paeClear()); setHover(-1); } });
+      document.addEventListener("keydown", (e) => { if (e.target.tagName === "SELECT") return; if (e.key === "h") $("#hide").click(); if (e.key === "c") $("#cinema").click(); if (e.key === " " && state.player && e.target.tagName !== "BUTTON" && e.target.tagName !== "INPUT") { e.preventDefault(); $("#dPlay").click(); } if (e.key === "Escape") { $("#cineBox").hidden = true; state.pinned = null; paeClear && state.pae && (state.paeLocked = false, paeClear()); setHover(-1); } });
       const cv = $("#stage");
       let down = null;
-      cv.addEventListener("pointerdown", (e) => { down = [e.clientX, e.clientY]; });
+      cv.addEventListener("pointerdown", (e) => { down = [e.clientX, e.clientY]; if (state.player && state.follow) { state.follow = false; $("#dFollow").classList.remove("on"); } });
       cv.addEventListener("pointerup", (e) => {
         if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 4) return; down = null;
         const r = cv.getBoundingClientRect(), p = state.body.pick(e.clientX - r.left, e.clientY - r.top);
@@ -800,7 +1026,8 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
       });
       state.body.scene.onAfterRenderObservable.add(() => { placeLabels(); const f = $("#fps"); if (f && (state.tick = (state.tick || 0) + 1) % 30 === 0) f.textContent = state.body.engine.getFps().toFixed(0) + " fps (this machine, this frame size; not a benchmark)"; });
       renderAbout(); window.__xmolState = state;
-      await load(hp.get("scene") || "1aay");
+      if (hp.get("anim") && state.animIndex) await openAnim(hp.get("anim"));
+      else await load(hp.get("scene") || "1aay");
       if (hp.get("cinema") === "1") $("#cinema").click();
       if (hp.get("ui") === "0") document.body.classList.add("nui");
     } catch (e) {

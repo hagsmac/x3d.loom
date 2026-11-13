@@ -47,9 +47,30 @@
     "X3D.getBrowser('#c').currentScene.getNamedNode('G3').getValue().getVertices().length/8",
     40
    ]
+  },
+  {
+   "mouse": [
+    "move",
+    3,
+    3
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "shot": "main"
   }
  ],
- "gaps": [
-  "lines are not pickable, so there is no hit probe: the segment count is compared between the engines (X_ITE vertex pairs via its internal getVertices, which is a private API), and our body is checked to have built one line mesh; colour and line width are not compared"
+ "gaps": [],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "dilate": 2,
+   "cover": 0.9
+  }
+ },
+ "scope": [
+  "lines are not pickable, so the check is the picture (silhouette overlap and the mean colour of the drawn pixels, SwiftShader CPU raster) plus the segment count between the engines (X_ITE vertex pairs through its internal getVertices, a private API) and one line mesh in our body; line width is one pixel in both, ours is an anti-aliased ribbon"
  ]
 }

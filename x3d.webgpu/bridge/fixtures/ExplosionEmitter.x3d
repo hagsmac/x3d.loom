@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile="Immersive" version="4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
+  <head><component name="ParticleSystems" level="2"/><meta name="title" content="ExplosionEmitter.x3d"/><meta name="description" content="Bridge fixture for ExplosionEmitter: 300 particles leave one point at once in every direction; the picture after 2 s is a ball of dots"/></head>
+  <Scene>
+    <Viewpoint position="0 0 10"/>
+    <Shape><Appearance><Material emissiveColor="0.2 0.2 0.2"/></Appearance><Sphere radius="0.05"/></Shape>
+    <ParticleSystem DEF="PS" maxParticles="300" particleLifetime="6" lifetimeVariation="0.0" geometryType="QUAD" particleSize="0.16 0.16">
+      <Appearance><Material emissiveColor="1 0.6 0.1"/></Appearance>
+      <ExplosionEmitter DEF="E" speed="1.0" variation="0.0" position="0 0 0"/>
+    </ParticleSystem>
+  </Scene>
+</X3D>

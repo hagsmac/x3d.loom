@@ -59,7 +59,16 @@ select{background:rgba(5,10,20,.9);border:1px solid var(--line);border-radius:8p
 body.nui #side,body.nui #info,body.nui #controls,body.nui #legend,body.nui #residue,body.nui #receipt,body.nui #pae,body.nui #gpuhint,body.nui #menu{display:none}
 body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.cinema #legend,body.cinema #residue{opacity:0;pointer-events:none}
 #paeBtn{display:none}
+#diff{position:fixed;left:324px;bottom:12px;width:min(620px,calc(100vw - 324px - 364px));padding:8px 12px;z-index:4}
+#diff .drow{display:flex;gap:8px;align-items:center}#diff input[type=range]{flex:1;min-width:60px;accent-color:var(--accent)}#diff p{margin:6px 0 0;font-size:12px}#diff #dRead{color:var(--mut);min-height:1.45em}#diff #dRead b{color:var(--text)}
+#dLegend{display:flex;gap:4px 12px;flex-wrap:wrap}#dLegend u{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.badge{font:600 10px/1.2 ui-monospace,Menlo,monospace;letter-spacing:.04em;text-transform:uppercase;color:#ffd9a0;border:1px solid rgba(255,180,84,.5);border-radius:6px;padding:4px 6px;white-space:nowrap}
+.film{margin:4px 6px 10px}.film video{width:100%;aspect-ratio:16/9;border-radius:6px;background:#02040a;display:block;border:1px solid var(--line)}.film figcaption{color:var(--mut);font-size:11px;margin-top:4px}
+#dFollow.on{background:rgba(124,196,255,.28);border-color:rgba(124,196,255,.6)}.note{margin:4px 6px 8px;color:var(--mut);font-size:12px}
+body.anim #legend,body.anim #residue{display:none}
+body.nui #diff{display:none}
 @media (max-width:1180px){
+ #diff{width:auto;right:12px}#diff .fine{display:none}body.anim #controls{bottom:126px}body.anim #pae{bottom:222px}body.anim #paeCanvas{width:min(100%,max(100px,calc(100vh - 500px)))}
  #info{max-width:calc(100vw - 336px)}#controls{top:auto;bottom:58px;right:12px;width:min(444px,calc(100vw - 336px))}
  #receipt{display:none;bottom:12px}body.show-receipt #receipt{display:block;z-index:8}
  #pae{bottom:160px;width:240px}#paeCanvas{width:min(100%,max(120px,calc(100vh - 419px)))}#legend{max-width:calc(100vw - 336px)}
@@ -71,7 +80,8 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
  #legend{left:50%;transform:translateX(-50%);bottom:66px;max-width:calc(100vw - 24px);flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;border-radius:99px;white-space:nowrap}
  #residue{left:auto;right:12px;transform:none;bottom:108px;max-width:calc(100vw - 24px)}body.show-pae #residue{max-width:calc(100vw - 196px)}
  #receipt{left:12px;right:12px;width:auto;bottom:auto;top:12px;max-height:40vh}
- #pae{display:none;left:12px;right:auto;bottom:108px;width:160px;padding:8px}#paeCanvas{width:100%}body.show-pae #pae{display:block}#paeRead{font-size:11px}
+ #pae{display:none;left:12px;right:auto;bottom:108px;width:160px;padding:8px}
+ #diff{left:12px;right:12px;bottom:12px;width:auto}body.anim #controls{bottom:168px}body.anim #pae{bottom:226px}#diff .badge{font-size:9px;padding:3px 4px;white-space:normal;max-width:84px}#paeCanvas{width:100%}body.show-pae #pae{display:block}#paeRead{font-size:11px}
 }
 </style>
 </head>
@@ -82,7 +92,7 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
 <aside id="side">
   <header><h1>x3d<span>.mol</span></h1><p class="sub">Proteins as validated X3D, drawn on <b id="backend">…</b></p></header>
   <div class="row"><button class="btn" id="about">About and credit</button><button class="btn" id="hide" title="Hide the panels (H)">Hide UI</button><button class="btn" onclick="document.body.classList.toggle('show-receipt')">Receipt</button></div>
-  <div class="tabs" id="tabs"><button data-k="pdb" class="on">Zinc fingers · 14</button><button data-k="afdb">AlphaFold · 5</button><button data-k="cine" hidden>Blender · <span id="cineN">0</span></button></div>
+  <div class="tabs" id="tabs"><button data-k="pdb" class="on">Zinc fingers · 14</button><button data-k="afdb">AlphaFold · 5</button><button data-k="diff" hidden>AF3 · <span id="diffN">0</span></button><button data-k="cine" hidden>Blender · <span id="cineN">0</span></button></div>
   <div id="list"></div>
   <div id="gpuhint" hidden>Running on WebGL2 because WebGPU was not available. On Windows Chrome, <span class="mono">chrome://flags/#enable-unsafe-webgpu</span> may turn it on.</div>
 </aside>
@@ -97,6 +107,10 @@ body.cinema #info,body.cinema #receipt,body.cinema #pae,body.cinema #side,body.c
 <div id="legend"></div>
 <div id="residue" hidden></div>
 <section id="pae" class="panel" hidden><h4>AlphaFold predicted aligned error</h4><canvas id="paeCanvas"></canvas><p id="paeRead">Hover the map: each cell is the model's own error estimate for one pair of residues.</p></section>
+<section id="diff" class="panel" hidden aria-label="Diffusion player">
+  <div class="drow"><span class="badge" title="The AlphaFold 3 noise schedule run backwards onto known coordinates">Illustration · not a live run</span><button id="dPlay" class="btn">Pause</button><input id="dScrub" type="range" min="0" max="1000" value="0" aria-label="Diffusion time, from noise to structure"><button id="dFollow" class="btn on" title="The camera follows the noise as it shrinks; dragging the view turns this off">Follow</button><button id="dExit" class="btn">Exit</button></div>
+  <p id="dRead">…</p><p id="dLegend"></p><p class="fine" id="dNote"></p>
+</section>
 <aside id="receipt" class="panel"></aside>
 <div id="busy">Loading…</div>
 <div id="cineBox" hidden><div class="card"><div id="cineBody"></div><p class="cinebtns"><button class="btn" id="cineOpen">Open this structure in the live viewer</button><a class="btn" id="cineGet" download>Download the X3D (gzip)</a><button class="btn" id="cineClose">Close</button></p></div></div>

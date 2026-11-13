@@ -1,0 +1,19 @@
+{
+ "_note": "Declared before the batch 6 witness run and committed first; tmp6.py refuses to run if this file differs from its last commit, and records that commit in every run record. Development runs (sims only, no scenes) informed the scale of several limits: the symplectic Euler harmonic order at T = 2 pi came out as 2, not 1, so the prediction is stated for both T = 1 and T = 2 pi.",
+ "order_tol": 0.15,
+ "orders_T1": {"euler": 1, "symplectic": 1, "midpoint": 2, "verlet": 2, "rk4": 4},
+ "orders_T2pi": {"euler": 1, "symplectic": 2, "midpoint": 2, "verlet": 2, "rk4": 4},
+ "kepler_steps_per_orbit": 200,
+ "kepler_orbits": 50,
+ "verlet_energy_max_rel": 0.02,
+ "verlet_energy_growth_ratio_max": 1.5,
+ "rk4_pos_err_5_orbits_max": 0.01,
+ "verlet_over_rk4_pos_err_5_orbits_min": 100,
+ "sap_pairs_missed": 0,
+ "sap_pairs_false": 0,
+ "sap_axis_ratio_min": 2.0,
+ "sap_tests_over_brute_max": 0.10,
+ "morton_mismatches": 0,
+ "bvh_queries_wrong": 0,
+ "bvh_tests_over_brute_max": 0.05
+}

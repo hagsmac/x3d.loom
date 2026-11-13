@@ -1,0 +1,52 @@
+{
+ "node": "ImageTexture3D",
+ "mode": "scene",
+ "tone": "none",
+ "steps": [
+  {
+   "expect": [
+    "NR",
+    "repeatS",
+    false
+   ]
+  },
+  {
+   "expect": [
+    "NR",
+    "load",
+    true
+   ]
+  },
+  {
+   "expect": [
+    "NR",
+    "description",
+    ""
+   ]
+  },
+  {
+   "settle": 3
+  },
+  {
+   "shot": "main"
+  }
+ ],
+ "compare": {
+  "main": {
+   "iou": 0.9,
+   "mad": 8,
+   "fg": 14,
+   "region": [
+    0,
+    58,
+    160,
+    182
+   ]
+  }
+ },
+ "gaps": [
+  "the DDS volume (right) is drawn by ours and shown white by X_ITE 16.6.0 on this raster (Suspected: its DDS 3D reader does not take this uncompressed RGBA header); the picture comparison covers the NRRD volume (left)",
+  "ImageTexture3D reads uncompressed DDS volumes and uchar NRRD (raw, gzip, ascii); DICOM and compressed DDS are not read"
+ ],
+ "note": "The same 8 x 8 x 8 gradient as an NRRD file (left) and a DDS file (right), data: URLs, read at r = 0.3."
+}

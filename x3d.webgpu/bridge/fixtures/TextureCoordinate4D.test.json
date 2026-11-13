@@ -1,0 +1,21 @@
+{
+ "node": "TextureCoordinate4D",
+ "mode": "scene",
+ "tone": "none",
+ "steps": [
+  {
+   "settle": 3
+  },
+  {
+   "shot": "main"
+  }
+ ],
+ "compare": {
+  "main": {
+   "iou": 0.9,
+   "mad": 8,
+   "fg": 14
+  }
+ },
+ "gaps": []
+}

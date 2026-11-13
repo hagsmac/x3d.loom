@@ -9,5 +9,16 @@
       </Shape>
       <TouchSensor DEF="TS"/>
     </Group>
+    <Group>
+      <Transform translation="-3 2.6 0"><Shape><Appearance><Material/></Appearance>
+        <TriangleFanSet fanCount="5"><Coordinate point="0 0 0, -1 -1 0, 1 -1 0, 1 1 0, -1 1 0"/><Color color="1 0 0, 0 1 0, 0 0 1, 1 1 0, 1 0 1"/></TriangleFanSet></Shape></Transform>
+      <Transform translation="3 2.6 0" rotation="0 1 0 0.9"><Shape><Appearance><Material diffuseColor="0.9 0.5 0.1"/></Appearance>
+        <TriangleFanSet fanCount="4"><Coordinate point="0 0 0, -1 -1 0, 1 -1 0, 1 1 0"/><Normal vector="0 0 1, 0 0.6 0.8, 0.6 0 0.8, 0 0 1"/></TriangleFanSet></Shape></Transform>
+      <Transform translation="0 -2.6 0"><Shape><Appearance><Material diffuseColor="0.5 0.5 1"/><PixelTexture image="2 2 3 0xff0000 0x00ff00 0x0000ff 0xffff00" repeatS="false" repeatT="false"/></Appearance>
+        <TriangleFanSet fanCount="5"><Coordinate point="0 0 0, -1.5 -1 0, 1.5 -1 0, 1.5 1 0, -1.5 1 0"/><TextureCoordinate point="0.5 0.5, 0 0, 1 0, 1 1, 0 1"/></TriangleFanSet></Shape></Transform>
+      <Transform translation="3.9 -2.4 -0.5"><Shape DEF="BAR"><Appearance><Material diffuseColor="1 1 1"/></Appearance><IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="-1.4 -0.3 0, 1.4 -0.3 0, 1.4 0.3 0, -1.4 0.3 0"/></IndexedFaceSet></Shape></Transform>
+      <Transform translation="3.9 -2.4 0"><Shape DEF="ALPHA"><Appearance><Material diffuseColor="1 1 1"/></Appearance>
+        <TriangleFanSet fanCount="4"><Coordinate point="-1 -0.6 0, 1 -0.6 0, 1 0.6 0, -1 0.6 0"/><ColorRGBA color="1 0 0 0.5, 0 0 1 0.5, 0 0 1 0.5, 1 0 0 0.5"/></TriangleFanSet></Shape></Transform>
+    </Group>
   </Scene>
 </X3D>

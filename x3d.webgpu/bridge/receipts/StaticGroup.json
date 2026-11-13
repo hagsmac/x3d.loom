@@ -3,27 +3,116 @@
  "pass": true,
  "xsd": {
   "ok": true,
-  "msg": "/tmp/claude-0/wt-bridge/x3d.webgpu/bridge/fixtures/StaticGroup.x3d validates",
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/StaticGroup.x3d validates",
   "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
  },
  "test": {
   "ok": true,
-  "ours": "pass 11/11",
-  "xite": "pass 10/10",
+  "ours": "pass 18/18",
+  "xite": "pass 17/17",
   "map": {},
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "visual": {
+   "before": {
+    "iou": 0.98,
+    "coverOurs": 1,
+    "coverXite": 0.98,
+    "bboxOurs": [
+     63,
+     88,
+     247,
+     151
+    ],
+    "bboxXite": [
+     63,
+     87,
+     247,
+     152
+    ],
+    "nOurs": 6838,
+    "nXite": 6959,
+    "fgFracOurs": 0.09,
+    "fgFracXite": 0.09,
+    "mad": 1.71,
+    "psnr": 36.58,
+    "fgMeanOurs": [
+     45,
+     158,
+     204
+    ],
+    "fgMeanXite": [
+     44,
+     154,
+     199
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   },
+   "after": {
+    "iou": 0.98,
+    "coverOurs": 1,
+    "coverXite": 0.98,
+    "bboxOurs": [
+     63,
+     21,
+     247,
+     222
+    ],
+    "bboxXite": [
+     63,
+     21,
+     247,
+     223
+    ],
+    "nOurs": 10164,
+    "nXite": 10298,
+    "fgFracOurs": 0.13,
+    "fgFracXite": 0.13,
+    "mad": 1.72,
+    "psnr": 36.03,
+    "fgMeanOurs": [
+     77,
+     130,
+     157
+    ],
+    "fgMeanXite": [
+     75,
+     128,
+     154
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
   "msg": "",
-  "gaps": [
-   "compared by pointer-over probes on the box and sphere inside it (the sensor sits outside, as the node forbids sensors inside); X_ITE's merging of static children is not observable"
+  "scope": [
+   "the static children are drawn as a Group and are not merged into one mesh as X_ITE does at load; the merge is an optimisation, it changes no field and no picture (compared below)"
   ]
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 3b32691c2a96",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha fbf130ec58bf",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "2b54cb9"
+ "driver_commit": "e6c3f9a"
 }

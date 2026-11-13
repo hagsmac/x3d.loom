@@ -3,27 +3,73 @@
  "pass": true,
  "xsd": {
   "ok": true,
-  "msg": "/tmp/claude-0/wt-bridge/x3d.webgpu/bridge/fixtures/ArcClose2D.x3d validates",
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/ArcClose2D.x3d validates",
   "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
  },
  "test": {
   "ok": true,
-  "ours": "pass 15/15",
-  "xite": "pass 15/15",
+  "ours": "pass 18/18",
+  "xite": "pass 18/18",
   "map": {},
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 0.98,
+    "coverOurs": 1,
+    "coverXite": 0.98,
+    "bboxOurs": [
+     36,
+     77,
+     284,
+     162
+    ],
+    "bboxXite": [
+     35,
+     76,
+     284,
+     163
+    ],
+    "nOurs": 9803,
+    "nXite": 9994,
+    "fgFracOurs": 0.13,
+    "fgFracXite": 0.13,
+    "mad": 1.69,
+    "psnr": 35.1,
+    "fgMeanOurs": [
+     51,
+     178,
+     230
+    ],
+    "fgMeanXite": [
+     50,
+     175,
+     226
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
   "msg": "",
-  "gaps": [
-   "compared by pointer-over probes in both engines and the triangle count; texture mapping and lighting are not compared"
+  "scope": [
+   "compared by pointer-over probes, the triangle count and the picture; texture mapping and lighting of ArcClose2D are not compared with X_ITE"
   ]
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 3b32691c2a96",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 4ba756222b5d",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "2b54cb9"
+ "driver_commit": "d7d1c8f"
 }

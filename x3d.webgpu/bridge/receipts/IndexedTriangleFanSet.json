@@ -3,27 +3,73 @@
  "pass": true,
  "xsd": {
   "ok": true,
-  "msg": "/tmp/claude-0/wt-bridge/x3d.webgpu/bridge/fixtures/IndexedTriangleFanSet.x3d validates",
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/IndexedTriangleFanSet.x3d validates",
   "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
  },
  "test": {
   "ok": true,
-  "ours": "pass 21/21",
-  "xite": "pass 19/19",
+  "ours": "pass 24/24",
+  "xite": "pass 22/22",
   "map": {},
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 0.97,
+    "coverOurs": 1,
+    "coverXite": 0.97,
+    "bboxOurs": [
+     44,
+     16,
+     305,
+     223
+    ],
+    "bboxXite": [
+     44,
+     15,
+     306,
+     224
+    ],
+    "nOurs": 14144,
+    "nXite": 14592,
+    "fgFracOurs": 0.18,
+    "fgFracXite": 0.19,
+    "mad": 1.8,
+    "psnr": 32.71,
+    "fgMeanOurs": [
+     93,
+     117,
+     131
+    ],
+    "fgMeanXite": [
+     90,
+     113,
+     127
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
   "msg": "",
-  "gaps": [
-   "compared by where the pointer is over the shape (a TouchSensor) in both engines, plus triangle count and normals in our body only; colour, texture and lighting are not compared with X_ITE"
+  "scope": [
+   "attrib is read and kept; only a shader program would consume it, and no shader language runs in the bridge (see ShaderProgram, ProgramShader)"
   ]
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 3b32691c2a96",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 022e741d6028",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "2b54cb9"
+ "driver_commit": "c782ea1"
 }

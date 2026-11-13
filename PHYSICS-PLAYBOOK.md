@@ -64,6 +64,24 @@ The restitution test found a limit cycle (failure mode 125): below minBounceSpee
 
 **10. A threat model with measured gaps.** MuJoCo's Gate 0 ran 84 tests and 19 threat checks: 16 defences hold, 3 gaps were *measured* and listed (one, XML entity resolution in the validator server, is a follow-up). A gate that reports its gaps is worth more than one that reports none.
 
+**11. Every check ships its wrong twin (law 44).** Before a reference goes into a record, run it against an implementation you know is wrong. The kinetic-energy check on a billiards port read 1.33e-15 with the buggy rule, 2.0e-15 with the fixed one and 0 with no collisions: it could not fail, so it said nothing (failure mode 148). The exchange test did fail on the bug (head-on elastic: velocities swap; oblique: tangential part kept, outgoing velocities perpendicular, dot -2e-16). Add the oblique case, because a head-on axis-aligned test makes every dot product exact (failure mode 151).
+
+**12. Read each quantity where nothing has just enforced it.** A constraint residual after its own projection is zero by construction (a bead's "< 2e-16" was 2.4e-2 before the projection at 1 substep, 2.9e-6 at 100); an engine's derived energy may be one stage stale (MuJoCo under RK4: 3.4e-6 as read, 8.86e-9 after `mj_forward`); a scan that stops at a threshold reports the value at the stop. Say when the number was read (failure modes 149, 152).
+
+**13. Commit the limits first, and let the runner check.** In the Ten Minute Physics batch 6 the limits are a JSON file committed and pushed before the first run; `tmp6.py` refuses to start if the file differs from its last commit and writes the commit and the file's sha256 into each record (`limits` block, outside the schema the kit checks today). That is provable from history, which `limit` and `declared_limit` written by one run are not (failure mode 156). A development run still informs the scale of some limits; the notes say which. Open: have `loom physics` read and verify a `limits.commit`.
+
+**14. A second reader breaks the numbers before they are Confirmed.** Four reviewers recomputed v1 to v4 of the ports and a skeptical agent tried to knock down each negative finding: 125 claims checked, 25 negative findings survived, 0 false alarms. They were mostly checks that could not fail and explanations nobody had tested, less often wrong arithmetic (Likely; a count of the 25 by kind was not made). The corrections live in `x3d.demo` v5 `ERRATA-v1-v4.md`; earlier folders are not edited.
+
+**15. An explanation is a claim with its own test.** "The wave outruns a cell per step" was refuted by its own number (c dt/dx = 0.83); the cause was the checkerboard mode, stable only below 0.7082 on the 28 x 28 grid (1/sqrt 2 in the infinite grid, 1/sqrt d in d dimensions). "The late error is chaos" holds only with a horizon: ln(tolerance / initial difference) / lambda, about 8.9 s for a 1e-9 difference at lambda = 2 per second (failure modes 153, 154).
+
+**16. Orders are slopes read at an end time; energy is not position.** Symplectic Euler measures order 2.0 at T = 2 pi and 1.0 at T = 1 (the leading error cancels over a period). On a Kepler orbit (e = 0.6, 200 steps per orbit, 50 orbits) velocity Verlet keeps energy within 0.74% with no growth yet sits 0.61 from the true position after 5 orbits, against 0.0022 for RK4 (283 times), whose energy error drifted from 6.9e-5 to 3.3e-4. The crossover where a symplectic method wins on energy was not measured (Suspected). Counts and numbers: x3d.demo v6 (failure mode 159).
+
+**17. A spatial structure is checked by set equality, and cost is counted.** Sweep and prune over 200 boxes: 0 pairs missed or false against brute force in 180 frames; 1002 tests per frame along the long axis, 4133 along the short, 19,900 brute; cost grows as n^1.50 at fixed density, not n. Morton codes: 0 mismatches against the bit loop over 100,008 inputs. A BVH from one sort: 78.6 tests per query of 4096, 0 wrong of 1000 queries. The wrong-structure controls (sort by centre: 905 pairs missed; node boxes shrunk by 0.02: 2466 hits lost) are what make the equality meaningful (failure mode 160).
+
+**18. Count caught controls, and make each one change something.** In batch 6 the first run of the 11 mutations caught 9: two scaled a reference whose limit was 0 and changed nothing. After choosing a reference with a nonzero limit, 11 of 11 (failure mode 157).
+
+**19. Keep falsified predictions in the notes and out of the witness.** Two written rules about cloth tunnelling failed (failure mode 158). They stay readable in NOTES.md and are not references, because a reference that fails would turn the record red for a reason that is not a defect of the code.
+
 ## 4. The run record: `loom.physics-run/1`
 
 One JSON file per run. `kit/loom physics ROOT --evidence DIR --runs 'runs/*.physics.json' [--hosts a,b,c] [--max-waivers N] [--require-takeover]`. Exit 0 pass, 1 a contract violation with its code, 2 an unreadable record. Standard library only; every gate raises, none asserts, so it holds under `python -O` (law 18).
@@ -114,6 +132,8 @@ A pass says: these hashes replayed unchanged in these hosts on this machine; thi
 | Waivers (6) | `evidence/p5-smoke.json`, `p5-smoke-log.txt`; `x3d.physics/runs/*.physics.json` |
 | Derived-score tests (8) | `physx-bridge/tests/crashtest.test.ts` (HIC of a square pulse within 5 % of the textbook value); `evidence/crashtest-*.json` |
 | Gate 0 (10) | `mujoco-bridge/GATE-0.md`, `THREAT-MODEL.md` |
+| Checks that can fail, limits by commit, second-reader review (11 to 14, 18) | `x3d.physics/ten-minute-physics/` (README, `ERRATA-v1-v4.md`, `witness-scripts/`); the scenes and records are in `hagopjay/x3d.demo` `docs/demos/ten-minute-physics/v1` to `v6` |
+| Integrators, broad phase, BVH (16, 17) | `witness-scripts/tmp6.py`, `limits6.json`; x3d.demo v6 |
 | The records and controls | `x3d.physics/runs/`, `x3d.physics/tools/`, `runs/physics-20261113/` |
 
 ## 8. Content boundaries that were set along the way
@@ -127,3 +147,4 @@ The ragdoll is a crash-test dummy and a cartoon person; effects are cartoon (sta
 - **MuJoCo has no run record.** Its phase 1 plans checkpoint replay with `mj_getState`. Until then, only the Gate 0 pattern and the failure modes carry over.
 - **Waiver ownership of the three smoke failures** is reconstructed from the thread's note ("user accepted"); the owner should confirm (LOOM-v1 §10, question 16).
 - **Real-GPU, listening and a paired visual review** stay `visible_not_run`.
+- **`loom physics` does not yet check a `limits.commit`.** The Ten Minute Physics batch 6 records carry one (`limits.path`, `limits.commit`, `limits.sha256`) and the generator verifies it; the kit ignores the block (pattern 13). A check that the file at that commit has the sha256 the record names is small.

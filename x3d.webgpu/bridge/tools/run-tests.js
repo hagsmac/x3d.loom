@@ -8,10 +8,39 @@ const fs = require('fs'), path = require('path'), http = require('http');
 const BR = path.resolve(__dirname, '..'), SRC = path.resolve(BR, '..', 'demo', 'src');
 const args = process.argv.slice(2); const noXite = args.includes('--no-xite');
 const bi = args.indexOf('--babylon'); const babylon = bi >= 0 ? args.splice(bi, 2)[1] : (process.env.BABYLON_JS || '/tmp/bb/t/package/babylon.js');
+const si = args.indexOf('--shots'); const shotsDir = si >= 0 ? args.splice(si, 2)[1] : process.env.BRIDGE_SHOTS || null;
 const names = args.filter((a) => !a.startsWith('--'));
 const XITE_DIR = process.env.XITE_DIR || '/tmp/bb/xite/package/dist';
 
 const bundle = require('./bundle.js');
+
+// --shots DIR (or BRIDGE_SHOTS) keeps every named shot of a scene test as NODE.name.ours.png / .xite.png and a side by side NODE.name.png (ours | X_ITE).
+// A spec's "compare": {name: {iou, mad, fg}} turns the two pictures of a named shot into numbers and fails the node when they miss the bounds:
+//   fg    mask of pixels that differ from the picture's own corner pixel by more than 24 in some channel (silhouette of what is drawn), iou = |A and B| / |A or B| of the two masks
+//   mad   mean absolute difference of R, G, B over the whole picture (0..255);  fgMean  mean colour of the pixels in both masks, per engine
+//   dilate d widens both masks by d pixels before iou (thin lines differ by a pixel or two between engines); cover = share of each engine's drawn pixels within d px of the other's; bbox = bounding box of the mask, bounds in px
+//   count [lo, hi]: ours / X_ITE drawn-pixel ratio must lie in the range (random scenes: particles)
+//   region [x, y, w, h] restricts every number to a box
+//   tone (spec key, not in compare): the body's tone map for the run, 'none' to compare lighting without the neutral tone curve (default 'neutral'; X_ITE 16.6.0 draws with none)
+const METRICS = async ([a, b, opt]) => {
+  const dec = async (u) => { const im = new Image(); im.src = u; await im.decode(); const c = document.createElement('canvas'); c.width = im.width; c.height = im.height; const g = c.getContext('2d'); g.drawImage(im, 0, 0); return g.getImageData(0, 0, im.width, im.height); };
+  const A = await dec(a), B = await dec(b); if (A.width !== B.width || A.height !== B.height) return { error: 'size ' + A.width + 'x' + A.height + ' vs ' + B.width + 'x' + B.height };
+  const W = A.width, H = A.height, rg = (opt && opt.region) || [0, 0, W, H], thr = (opt && opt.thr) || 24;
+  const bgOf = (I) => { const p = (opt && opt.bg) || [0, 0]; const k = (p[1] * W + p[0]) * 4; return [I.data[k], I.data[k + 1], I.data[k + 2]]; };
+  const bA = bgOf(A), bB = bgOf(B), dil = (opt && opt.dilate) || 0, mkA = new Uint8Array(W * H), mkB = new Uint8Array(W * H); let sad = 0, sse = 0, n = 0, na = 0, nb = 0; const mA = [0, 0, 0], mB = [0, 0, 0];
+  const box = (m) => { const o = new Uint8Array(W * H); for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (m[y * W + x]) for (let dy = -dil; dy <= dil; dy++) for (let dx = -dil; dx <= dil; dx++) { const yy = y + dy, xx = x + dx; if (yy >= 0 && yy < H && xx >= 0 && xx < W) o[yy * W + xx] = 1; } return o; };
+  const bb = (m) => { let x0 = W, y0 = H, x1 = -1, y1 = -1; for (let y = rg[1]; y < rg[1] + rg[3]; y++) for (let x = rg[0]; x < rg[0] + rg[2]; x++) if (m[y * W + x]) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; } return x1 < 0 ? null : [x0, y0, x1, y1]; };
+  for (let y = rg[1]; y < rg[1] + rg[3]; y++) for (let x = rg[0]; x < rg[0] + rg[2]; x++) {
+    const k = (y * W + x) * 4; let fa = false, fb = false;
+    for (let c = 0; c < 3; c++) { const d = A.data[k + c] - B.data[k + c]; sad += Math.abs(d); sse += d * d; if (Math.abs(A.data[k + c] - bA[c]) > thr) fa = true; if (Math.abs(B.data[k + c] - bB[c]) > thr) fb = true; }
+    n++; if (fa) { na++; mkA[y * W + x] = 1; for (let c = 0; c < 3; c++) mA[c] += A.data[k + c]; } if (fb) { nb++; mkB[y * W + x] = 1; for (let c = 0; c < 3; c++) mB[c] += B.data[k + c]; }
+  }
+  const dA = dil ? box(mkA) : mkA, dB = dil ? box(mkB) : mkB; let inter = 0, uni = 0, hitA = 0, hitB = 0;      // iou on the (dilated) masks; cover = share of each engine's drawn pixels that lie within dilate px of the other's
+  for (let i = 0; i < W * H; i++) { if (dA[i] && dB[i]) inter++; if (dA[i] || dB[i]) uni++; if (mkA[i] && dB[i]) hitA++; if (mkB[i] && dA[i]) hitB++; }
+  const r1 = (v) => Math.round(v * 100) / 100, mse = sse / (3 * n);
+  return { iou: uni ? r1(inter / uni) : 1, coverOurs: na ? r1(hitA / na) : 1, coverXite: nb ? r1(hitB / nb) : 1, bboxOurs: bb(mkA), bboxXite: bb(mkB), nOurs: na, nXite: nb, fgFracOurs: r1(na / n), fgFracXite: r1(nb / n), mad: r1(sad / (3 * n)), psnr: mse ? r1(10 * Math.log10(255 * 255 / mse)) : 99, fgMeanOurs: mA.map((v) => Math.round(na ? v / na : 0)), fgMeanXite: mB.map((v) => Math.round(nb ? v / nb : 0)), bgOurs: bA, bgXite: bB };
+};
+const SIDE = async ([a, b]) => { const dec = async (u) => { const im = new Image(); im.src = u; await im.decode(); return im; }; const A = await dec(a), B = await dec(b); const c = document.createElement('canvas'); c.width = A.width + B.width + 4; c.height = Math.max(A.height, B.height); const g = c.getContext('2d'); g.fillStyle = '#f0f'; g.fillRect(0, 0, c.width, c.height); g.drawImage(A, 0, 0); g.drawImage(B, A.width + 4, 0); return c.toDataURL('image/png'); };
 
 // A local-only run is useful, but a missing reference engine must never look like a comparison pass.
 // xiteDisagrees documents an assertion disagreement; it cannot excuse an engine that threw or did not run.
@@ -52,7 +81,7 @@ const close = (a, b) => {
 const show = (v) => JSON.stringify(v);
 async function runSpec(eng, spec, xml) {
   if (!Array.isArray(spec.steps) || !spec.steps.length) throw new Error('test spec requires at least one step');
-  const out = { ok: true, steps: 0, fails: [], recorded: [], map: {} }; const X = window.X3D;
+  const out = { ok: true, steps: 0, fails: [], recorded: [], map: {}, shots: {} }; const X = window.X3D;
   const scene = await eng.open(xml); const nodes = {}; const events = {};
   const node = (d) => (nodes[d] ||= scene.getNamedNode(d));
   const conv = (t, v) => {
@@ -83,7 +112,7 @@ async function runSpec(eng, spec, xml) {
       else if (s.nearv) { const [d, f, v, tol] = s.nearv; const fl = (x) => (Array.isArray(x) ? x.flatMap(fl) : [x]); const a = fl(plain(node(d)[f])), vv = fl(v); if (!(a.length === vv.length && vv.every((x, i) => Math.abs(a[i] - x) <= tol))) fail(d + '.' + f + ' is ' + show(a) + ', expected ' + show(v) + ' within ' + tol); }
       else if (s.js) { const [code, v] = s.js; const got = await new Function('return (' + code + ')')(); if (v === '$any') out.recorded.push(got); if (!close(got, v)) fail('js ' + show(got) + ', expected ' + show(v)); }
       else if (s.px) { const [x, y, v, tol] = s.px; const im = new Image(); im.src = eng.name === 'ours' ? await window.__bodyShot() : 'data:image/png;base64,' + await window.__pxraw(x, y); await im.decode(); const c = document.createElement('canvas'); c.width = im.width; c.height = im.height; const g = c.getContext('2d'); g.drawImage(im, 0, 0); const a = Array.from(g.getImageData(eng.name === 'ours' ? x : 0, eng.name === 'ours' ? y : 0, 1, 1).data).slice(0, 3); if (v === '$any') out.recorded.push(a); else if (!(a.every((q, i) => Math.abs(q - v[i]) <= (tol ?? 24)))) fail('px ' + x + ',' + y + ' is ' + show(a) + ', expected ' + show(v) + ' within ' + (tol ?? 24)); }
-      else if (s.shot) out.recorded.push(eng.name === 'ours' ? await window.__bodyShot() : 'data:image/png;base64,' + await window.__shotraw());   // a whole 320 x 240 picture, for demo pages
+      else if (s.shot) { const pic = eng.name === 'ours' ? await window.__bodyShot() : 'data:image/png;base64,' + await window.__shotraw(); if (typeof s.shot === 'string') out.shots[s.shot] = pic; else out.recorded.push(pic); }   // a whole 320 x 240 picture; a named shot is kept for --shots and the "compare" metrics, a numbered one goes to recorded (demo pages)
       else if (s.setnode) { const [d, f, d2] = s.setnode; await eng.apply(() => { node(d)[f] = node(d2); }); }
       else if (s.wait) await new Promise((r) => setTimeout(r, s.wait * 1000));
       else if (s.key) { await window.__key(...s.key); await eng.settle(0.1); }
@@ -134,7 +163,7 @@ window.__bodyShot = async () => {
   } finally { sc.clearColor.copyFrom(keep); sc.activeCameras = keepA; }
   return cv.toDataURL('image/png');
 };
-window.runScene = async (spec, xml) => { await window.sceneReady; if (window.__R) __R.bridge.allowScripts = spec.scripts !== false; return runSpec({ name: 'ours',
+window.runScene = async (spec, xml) => { await window.sceneReady; if (window.__R) __R.bridge.allowScripts = spec.scripts !== false; window.__body.setTone(spec.tone || 'neutral'); return runSpec({ name: 'ours',
   open: async (x) => { const sc = await X3DSAI.B.createX3DFromString(x); await X3DSAI.B.replaceWorld(sc); await X3DSAI.B.nextFrame(); await X3DSAI.B.nextFrame(); return sc; },
   apply: async (fn) => { fn(); await X3DSAI.B.nextFrame(); await X3DSAI.B.nextFrame(); },
   settle: async (dt) => { await sleep((dt || 0.05) * 1000); await X3DSAI.B.nextFrame(); },
@@ -187,7 +216,7 @@ async function main() {
   if (!noXite && fs.existsSync(path.join(XITE_DIR, 'x_ite.min.js'))) { px = await b.newPage(); px.on('pageerror', (e) => errs.push('xite: ' + e.message.slice(0, 160))); await px.goto(base + '/xite.html'); await px.waitForFunction(() => window.X3D && X3D.getBrowser('#c'), null, { timeout: 60000 }).catch(() => {}); env.xite = 'X_ITE ' + (await px.evaluate(() => window.xiteInfo && window.xiteInfo().version).catch(() => '?')) + ' (WebGL2, SwiftShader)'; }
   else env.xite = noXite ? 'skipped (--no-xite)' : 'not found at ' + XITE_DIR;
   const startupErrors = errs.slice();
-  let pos = null, pxs = null;
+  let pos = null, pxs = null, mp = null;
   const mouseFor = async (pg) => { await pg.exposeFunction('__mouse', async (k, x, y) => { if (k === 'move') await pg.mouse.move(x, y, { steps: 6 }); else if (k === 'down') { await pg.mouse.move(x, y); await pg.mouse.down(); } else if (k === 'up') { await pg.mouse.move(x, y, { steps: 6 }); await pg.mouse.up(); } }); };
   // px: the composited colour of one canvas pixel, from a 1 x 1 page screenshot decoded in the page; the same route for both engines
   const pxFor = async (pg) => { await pg.exposeFunction('__shotraw', async () => (await pg.screenshot({ clip: { x: 0, y: 0, width: 320, height: 240 }, type: 'png' })).toString('base64')); return pxFor0(pg); };
@@ -211,14 +240,27 @@ async function main() {
     if (scene) await scenePages(!noXite && spec.xite !== false);
     const P = scene ? pos : po, PX = noXite || spec.xite === false ? null : scene ? pxs : px, fnO = scene ? 'runScene' : 'runOurs', fnX = scene ? 'runScene' : 'runXite';
     const r = { ok: false, ours: '?', xite: PX ? '?' : spec.xite === false ? 'not applicable (fixture)' : noXite ? 'skipped (--no-xite)' : 'unavailable' };
-    try { const o = await P.evaluate(([f, s, x]) => window[f](s, x), [fnO, spec, xml]); r.map = o.map; r.ours = o.ok ? `pass ${o.steps}/${o.steps}` : 'FAIL ' + o.fails.join(' | '); r.oursOk = o.ok; if (o.recorded.length) r.recordedOurs = o.recorded; } catch (e) { r.ours = 'ERROR ' + String(e).slice(0, 200); r.oursOk = false; }
-    if (PX && spec.xite !== false) { try { const o = await PX.evaluate(([f, s, x]) => window[f](s, x), [fnX, spec, xml]); r.mapX = o.map; r.xite = o.ok ? `pass ${o.steps}/${o.steps}` : 'FAIL ' + o.fails.join(' | '); r.xiteOk = o.ok; if (o.recorded.length) r.recordedXite = o.recorded; } catch (e) { r.xite = 'ERROR ' + String(e).slice(0, 200); r.xiteOk = false; r.xiteError = true; } }
+    try { const o = await P.evaluate(([f, s, x]) => window[f](s, x), [fnO, spec, xml]); r.map = o.map; r.shotsOurs = o.shots; r.ours = o.ok ? `pass ${o.steps}/${o.steps}` : 'FAIL ' + o.fails.join(' | '); r.oursOk = o.ok; if (o.recorded.length) r.recordedOurs = o.recorded; } catch (e) { r.ours = 'ERROR ' + String(e).slice(0, 200); r.oursOk = false; }
+    if (PX && spec.xite !== false) { try { const o = await PX.evaluate(([f, s, x]) => window[f](s, x), [fnX, spec, xml]); r.mapX = o.map; r.shotsXite = o.shots; r.xite = o.ok ? `pass ${o.steps}/${o.steps}` : 'FAIL ' + o.fails.join(' | '); r.xiteOk = o.ok; if (o.recorded.length) r.recordedXite = o.recorded; } catch (e) { r.xite = 'ERROR ' + String(e).slice(0, 200); r.xiteOk = false; r.xiteError = true; } }
+    if (o_shots(r)) { const sh = o_shots(r); r.visual = {};
+      for (const name of Object.keys(sh.ours)) {
+        if (shotsDir) { fs.mkdirSync(shotsDir, { recursive: true }); const wr = (suffix, u) => fs.writeFileSync(path.join(shotsDir, `${n}.${name}${suffix}.png`), Buffer.from(u.split(',')[1], 'base64')); wr('.ours', sh.ours[name]); if (sh.xite[name]) { wr('.xite', sh.xite[name]); wr('', await (mp ||= await b.newPage()).evaluate(SIDE, [sh.ours[name], sh.xite[name]])); } else wr('', sh.ours[name]); }
+        const want = spec.compare && spec.compare[name];
+        if (sh.xite[name] && (want || shotsDir)) {
+          const m = await (mp ||= await b.newPage()).evaluate(METRICS, [sh.ours[name], sh.xite[name], want]); r.visual[name] = m;
+          if (want && m.error) { r.oursOk = false; r.ours += ` | compare ${name}: ${m.error}`; }
+          else if (want) { const bad = judgeVisual(m, want); if (bad.length) { r.oursOk = false; r.ours += ` | compare ${name}: ${bad.join('; ')}`; } }
+        }
+      }
+      if (!Object.keys(r.visual).length) delete r.visual; }
+    delete r.shotsOurs; delete r.shotsXite;
     if (r.map && r.mapX) for (const [name, tol] of spec.agree || []) {   // recorded values must agree between the engines, relative tol
       const fl = (x) => (Array.isArray(x) ? x.flatMap(fl) : [x]), a = fl(r.map[name]), c = fl(r.mapX[name]), sc = Math.max(1, ...c.map(Math.abs));
       if (!(a.length === c.length && a.every((v, i) => Math.abs(v - c[i]) <= tol * sc))) { r.oursOk = false; r.ours += ` | ${name}: ours ${JSON.stringify(r.map[name])} vs X_ITE ${JSON.stringify(r.mapX[name])} (tol ${tol})`; }
     }
     verdict(r, spec, noXite, startupErrors.concat(errs.slice(errorStart)));
     if (spec.gaps && spec.gaps.length) r.gaps = spec.gaps;
+    if (spec.scope && spec.scope.length) r.scope = spec.scope;
     results[n] = r;
   }
   if (errs.length) env.pageErrors = errs.slice(0, 5);
@@ -231,5 +273,21 @@ async function main() {
   }
 }
 
-module.exports = { verdict, RUNNER };
+const o_shots = (r) => (r.shotsOurs && Object.keys(r.shotsOurs).length ? { ours: r.shotsOurs, xite: r.shotsXite || {} } : null);
+
+// the bounds of a spec's "compare" entry against the metrics of one named shot -> list of what is out of bounds (empty = within). A picture in which neither engine drew anything never passes unless it says "empty": true.
+function judgeVisual(m, want) {
+  const bad = [];
+  if (!m.nOurs && !m.nXite && !want.empty) bad.push('nothing drawn by either engine (set "empty": true when that is the point)');
+  if (want.empty && (m.nOurs || m.nXite)) bad.push(`expected an empty picture, drew ${m.nOurs} / ${m.nXite} px`);
+  if (want.iou !== undefined && m.iou < want.iou) bad.push(`iou ${m.iou} < ${want.iou}`);
+  if (want.cover !== undefined && Math.min(m.coverOurs, m.coverXite) < want.cover) bad.push(`cover ${m.coverOurs}/${m.coverXite} < ${want.cover}`);
+  if (want.mad !== undefined && m.mad > want.mad) bad.push(`mad ${m.mad} > ${want.mad}`);
+  if (want.fg !== undefined) m.fgMeanOurs.forEach((v, i) => { if (Math.abs(v - m.fgMeanXite[i]) > want.fg) bad.push(`fg mean ch${i} ${v} vs ${m.fgMeanXite[i]} (tol ${want.fg})`); });
+  if (want.count !== undefined && m.nXite && (m.nOurs / m.nXite < want.count[0] || m.nOurs / m.nXite > want.count[1])) bad.push(`drawn pixels ${m.nOurs} vs ${m.nXite} outside ${want.count[0]}..${want.count[1]} x`);
+  if (want.bbox !== undefined && m.bboxOurs && m.bboxXite && m.bboxOurs.some((v, i) => Math.abs(v - m.bboxXite[i]) > want.bbox)) bad.push(`bbox ${m.bboxOurs} vs ${m.bboxXite} (tol ${want.bbox})`);
+  if (want.bbox !== undefined && !!m.bboxOurs !== !!m.bboxXite) bad.push('one engine drew nothing');
+  return bad;
+}
+module.exports = { verdict, RUNNER, judgeVisual };
 if (require.main === module) main().catch((e) => { console.error(e); console.log(JSON.stringify({ ok: false, error: String(e) })); process.exitCode = 1; });

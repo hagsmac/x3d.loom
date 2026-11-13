@@ -26,6 +26,7 @@ for (const t of ['SFVec2d', 'SFVec3d', 'SFVec4d', 'SFMatrix3f', 'SFMatrix3d', 'S
 if (!PARSE.MFVec2d) PARSE.MFVec2d = (s) => chunk(_nums(s), 2);
 if (!PARSE.MFVec3d) PARSE.MFVec3d = (s) => chunk(_nums(s), 3);
 if (!PARSE.MFVec4d) PARSE.MFVec4d = (s) => chunk(_nums(s), 4);
+if (!PARSE.MFVec4f) PARSE.MFVec4f = (s) => chunk(_nums(s), 4);
 if (!PARSE.MFDouble) PARSE.MFDouble = _nums;
 if (!PARSE.MFBool) PARSE.MFBool = (s) => String(s).replace(/,/g, ' ').trim().split(/\s+/).filter(Boolean).map((t) => /^true$/i.test(t));
 if (!PARSE.MFMatrix3f) PARSE.MFMatrix3f = (s) => chunk(_nums(s), 9);
@@ -390,16 +391,17 @@ BR.resolveUrl = (u) => { const b = R.bridge.body; try { return b && b.resolve ? 
    The node gives its triangles as source vertex numbers (3 per triangle) and the face each triangle belongs to (a fan, a strip, a quad); compose() turns that into the vertex data
    the body draws: one corner per triangle vertex, so per-face colours and normals work. Winding follows ccw. A missing normal is made here: smooth over the shared source vertex when
    normalPerVertex, else flat per face. Colours drop alpha (the body draws RGB). */
+BR.tcWidth = (t) => (!t ? 2 : t.type === 'TextureCoordinate4D' ? 4 : t.type === 'TextureCoordinate3D' ? 3 : 2);      // numbers per texture coordinate: 3D and 4D coordinates feed volume textures
 BR.compose = (g, tri, faceOf) => {
   const f = g.f, P = (f.coord && f.coord.f.point) || [], nc = tri.length, flip = f.ccw === false;
   const pos = new Float32Array(nc * 3), idx = new Uint32Array(nc), nrm = new Float32Array(nc * 3), perV = f.normalPerVertex !== false, cperV = f.colorPerVertex !== false;
-  const C = f.color && f.color.f.color, cw = f.color && f.color.type === 'ColorRGBA' ? 4 : 3, N = f.normal && f.normal.f.vector, T = f.texCoord && f.texCoord.f.point;
-  const col = C ? new Float32Array(nc * 3) : null, uv = T ? new Float32Array(nc * 2) : null;
+  const C = f.color && f.color.f.color, cw = f.color && f.color.type === 'ColorRGBA' ? 4 : 3, N = f.normal && f.normal.f.vector, T = f.texCoord && f.texCoord.f.point, tcw = BR.tcWidth(f.texCoord);
+  const col = C ? new Float32Array(nc * 3) : null, uv = T ? new Float32Array(nc * 2) : null, uvw = T && tcw > 2 ? new Float32Array(nc * 4) : null, alpha = C && cw === 4 ? new Float32Array(nc).fill(1) : null;
   for (let c = 0; c < nc; c++) {
     const v = tri[c], face = faceOf[(c / 3) | 0];
     pos[c * 3] = P[v * 3]; pos[c * 3 + 1] = P[v * 3 + 1]; pos[c * 3 + 2] = P[v * 3 + 2];
-    if (uv) { uv[c * 2] = T[v * 2]; uv[c * 2 + 1] = T[v * 2 + 1]; }
-    if (col) { const k = (cperV ? v : face) * cw; col[c * 3] = C[k]; col[c * 3 + 1] = C[k + 1]; col[c * 3 + 2] = C[k + 2]; }
+    if (uv) { uv[c * 2] = T[v * tcw]; uv[c * 2 + 1] = T[v * tcw + 1]; if (uvw) { uvw[c * 4] = T[v * tcw]; uvw[c * 4 + 1] = T[v * tcw + 1]; uvw[c * 4 + 2] = T[v * tcw + 2]; uvw[c * 4 + 3] = tcw > 3 ? T[v * tcw + 3] : 1; } }
+    if (col) { const k = (cperV ? v : face) * cw; col[c * 3] = C[k]; col[c * 3 + 1] = C[k + 1]; col[c * 3 + 2] = C[k + 2]; if (alpha) alpha[c] = C[k + 3]; }
   }
   for (let t = 0; t < nc; t += 3) { if (flip) { idx[t] = t; idx[t + 1] = t + 2; idx[t + 2] = t + 1; } else { idx[t] = t; idx[t + 1] = t + 1; idx[t + 2] = t + 2; } }
   const fn = new Float32Array(nc);                    // face normal of each triangle, from the emitted order, unnormalised
@@ -419,7 +421,7 @@ BR.compose = (g, tri, faceOf) => {
   } else {
     for (let c = 0; c < nc; c++) { const n = nl(tn[(c / 3) | 0]); nrm[c * 3] = n[0]; nrm[c * 3 + 1] = n[1]; nrm[c * 3 + 2] = n[2]; }
   }
-  return { pos, nrm, col, uv, idx };
+  return { pos, nrm, col, uv, uvw, idx, alpha };      // alpha: per corner, only with a ColorRGBA (the body draws it as vertex alpha)
 };
 // index lists with -1 separators -> list of runs
 BR.runs = (index) => { const out = []; let cur = []; for (const i of index || []) { if (i < 0) { if (cur.length) out.push(cur); cur = []; } else cur.push(i); } if (cur.length) out.push(cur); return out; };

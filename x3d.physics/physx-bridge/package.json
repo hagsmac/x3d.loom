@@ -2,6 +2,7 @@
   "name": "x3d-physx-bridge",
   "private": true,
   "version": "0.0.1",
+  "license": "Apache-2.0",
   "type": "module",
   "description": "Standard X3D 4.0 RigidBodyPhysics scenes on NVIDIA PhysX 5 (WASM) in the browser; the Marble Machine demo.",
   "scripts": {

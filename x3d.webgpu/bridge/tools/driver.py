@@ -7,6 +7,7 @@
   driver.py scaffold NODE...                module (field table generated from the UOM) + fixture + test skeleton, never overwrites
   driver.py check NODE... [--no-xite]       fixture vs x3d-4.0.xsd, then the test spec in our reader and in X_ITE; writes receipts/NODE.json
   driver.py batch [-n 5] [--close]          check enough new nodes for a batch of n, run the regression gate, mark passers `bridged`; with --close number the batch of n and write BATCH-NN.md
+  driver.py reopen NODE...                  put bridged / gap / todo / base nodes back to wip so the next batch re-checks them (the earlier batch and note are kept)
   driver.py report N                        rewrite BATCH-NN.md from NODES.json and the receipts
 
 Status values: todo | wip (module exists, not yet checked) | base (reader already knew it before this work) | bridged (new here, fixture + test pass)
@@ -249,7 +250,8 @@ def xsd_check(name, xsd):
 
 def run_tests(names, xite=True, babylon=None):
     cmd = ['node', os.path.join(HERE, 'run-tests.js')] + (['--no-xite'] if not xite else []) + (['--babylon', babylon] if babylon else []) + names
-    p = subprocess.run(cmd, capture_output=True, text=True, cwd=BR)
+    env = dict(os.environ); env.setdefault('BRIDGE_SHOTS', os.path.join(BR, 'receipts', 'shots'))      # named shots of scene tests: NODE.name.png (ours | X_ITE) next to the receipt
+    p = subprocess.run(cmd, capture_output=True, text=True, cwd=BR, env=env)
     sys.stderr.write(p.stderr[-2000:])
     try: return json.loads(p.stdout.strip().splitlines()[-1])
     except Exception: return {'error': 'test runner gave no JSON', 'stdout': p.stdout[-800:]}
@@ -298,12 +300,30 @@ def write_report(d, nb, nodes, gate=None):
     for k in nodes:
         r = recs[k]; t = r['test']
         L.append(f"| {k} | {d['nodes'][k]['component']} | {'ok' if r['xsd']['ok'] else 'FAIL'} | {t.get('ours', '')} | {t.get('xite', '')} | {'PASS' if r['pass'] else 'FAIL'} | {d['nodes'][k]['note'] or ''} |")
+    vis = [(k, nm, m) for k in nodes for nm, m in (recs[k]['test'].get('visual') or {}).items()]
+    if vis:
+        L += ['', 'Visual comparison (320 x 240 picture of each engine, same scene and camera; ours = Babylon render target, X_ITE = page screenshot; CPU only, SwiftShader / llvmpipe, no real GPU). iou = overlap of the drawn silhouettes, mad = mean absolute RGB difference over the picture (0 to 255), fg = mean colour of the drawn pixels:', '',
+              '| node | shot | iou | mad | psnr dB | fg ours | fg X_ITE | picture (ours left, X_ITE right) |', '|---|---|---|---|---|---|---|---|']
+        for k, nm, m in vis: L.append(f"| {k} | {nm} | {m.get('iou')} | {m.get('mad')} | {m.get('psnr')} | {m.get('fgMeanOurs')} | {m.get('fgMeanXite')} | receipts/shots/{k}.{nm}.png |")
     open(os.path.join(BR, f'BATCH-{nb:02d}.md'), 'w').write('\n'.join(L) + '\n'); return '\n'.join(L)
 
 
 def cmd_report(a):
     d = load(); nodes = [k for k, v in sorted(d['nodes'].items(), key=lambda kv: kv[1]['rank']) if v['batch'] == a.batch]
     print(write_report(d, a.batch, nodes))
+
+
+def cmd_reopen(a):
+    """Put bridged / gap / todo nodes back to `wip` so the next `batch` re-checks them (a gap that was worked on, a todo that got its module). The earlier batch and note are kept as prev_batch / prev_note."""
+    d = load()
+    for k in a.nodes:
+        v = d['nodes'].get(k)
+        if not v: raise SystemExit(f'{k}: not in NODES.json')
+        if v['status'] in ('claimed', 'blocked'): raise SystemExit(f"{k}: status {v['status']} belongs to another thread or is deferred")
+        if v['status'] in ('bridged', 'gap'): v['prev_batch'] = v.get('batch'); v['prev_note'] = v.get('note', '')
+        if not os.path.exists(os.path.join(BR, 'src', 'nodes', k + '.js')): raise SystemExit(f'{k}: no module yet (scaffold it first)')
+        v['status'] = 'wip'; v['batch'] = None
+    save(d); print('reopened:', ', '.join(a.nodes))
 
 
 def cmd_batch(a):
@@ -320,8 +340,9 @@ def cmd_batch(a):
     d = load()
     for k in checked:
         if res[k]['pass'] and gate['ok']:
-            gaps = res[k]['test'].get('gaps'); d['nodes'][k]['status'] = 'gap' if gaps else 'bridged'
-            if gaps: d['nodes'][k]['note'] = '; '.join(gaps)
+            gaps = res[k]['test'].get('gaps'); scope = res[k]['test'].get('scope'); d['nodes'][k]['status'] = 'gap' if gaps else 'bridged'
+            # gaps keep the node at `gap`; `scope` lines (what the node does not do because another node owns it) travel with a bridged node so a reader still sees them
+            d['nodes'][k]['note'] = '; '.join(gaps) if gaps else '; '.join(scope or [])
         else: d['nodes'][k]['status'] = 'wip'
     save(d)
     for k in checked: print(f"  {k}: {d['nodes'][k]['status']}")
@@ -340,15 +361,15 @@ def cmd_batch(a):
 
 def main():
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest='cmd', required=True)
-    for name in ('init', 'status', 'next', 'scaffold', 'check', 'batch', 'report'):
+    for name in ('init', 'status', 'next', 'scaffold', 'check', 'batch', 'report', 'reopen'):
         p = sp.add_parser(name); p.add_argument('--uom', default=UOM_DEFAULT); p.add_argument('--xsd', default=XSD_DEFAULT)
         p.add_argument('--no-xite', action='store_true'); p.add_argument('--babylon', default=None)
         if name == 'next': p.add_argument('-n', type=int, default=5)
         if name == 'batch': p.add_argument('-n', type=int, default=5); p.add_argument('--close', action='store_true')
         if name == 'report': p.add_argument('batch', type=int)
-        if name in ('scaffold', 'check'): p.add_argument('nodes', nargs='+')
+        if name in ('scaffold', 'check', 'reopen'): p.add_argument('nodes', nargs='+')
     a = ap.parse_args()
-    result = {'init': cmd_init, 'status': cmd_status, 'next': cmd_next, 'scaffold': cmd_scaffold, 'check': cmd_check, 'batch': cmd_batch, 'report': cmd_report}[a.cmd](a)
+    result = {'init': cmd_init, 'status': cmd_status, 'next': cmd_next, 'scaffold': cmd_scaffold, 'check': cmd_check, 'batch': cmd_batch, 'report': cmd_report, 'reopen': cmd_reopen}[a.cmd](a)
     if result is False or (a.cmd == 'check' and not all(r['pass'] for r in result.values())): return 1
     return 0
 

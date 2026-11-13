@@ -1,10 +1,10 @@
 {
  "node": "ComposedTexture3D",
  "mode": "scene",
- "note": "A box with a ComposedTexture3D of an ImageTexture and a PixelTexture (2 by 2 pictures), the first slice red green on the bottom row, blue white above. Cut at r = 0 in both engines, the first slice shows.",
+ "note": "A box with a ComposedTexture3D of an ImageTexture and a PixelTexture (2 by 2 pictures), the first slice red green on the bottom row, blue white above. Cut at r = 0 in both engines, the first slice shows. The comparison box leaves out the top strip: X_ITE shows its own 'Loading done' badge there while an ImageTexture is loading.",
  "gaps": [
-  "the volume is not sampled in 3D, only the first slice is drawn (see PixelTexture3D)",
-  "XSD finding: x3d-4.0.xsd writes the texture field of a ComposedTexture3D as an xs:sequence of ImageTexture, PixelTexture, MovieTexture, ProtoInstance repeated, not an xs:choice, so the slices must come in fours in that order and two ImageTextures do not validate; the fixture is checked against the XSD with that sequence made a choice (the receipt says so); the image field of a PixelTexture3D takes decimal numbers only in the XSD (no 0x hex)"
+  "XSD finding: x3d-4.0.xsd writes the texture field of a ComposedTexture3D as an xs:sequence of ImageTexture, PixelTexture, MovieTexture, ProtoInstance repeated, not an xs:choice, so the slices must come in fours in that order and two ImageTextures do not validate; the fixture is checked against the XSD with that sequence made a choice (the receipt says so); the image field of a PixelTexture3D takes decimal numbers only in the XSD (no 0x hex)",
+  "Babylon side: a WGSL ShaderMaterial over a RawTexture3D, shaded by the headlight only (N dot view axis, two sided); other lights, TextureProperties anisotropy and mipmaps are not applied to volumes"
  ],
  "xsdChoice": [
   "ComposedTexture3D"
@@ -88,6 +88,33 @@
     ],
     45
    ]
+  },
+  {
+   "mouse": [
+    "move",
+    3,
+    3
+   ]
+  },
+  {
+   "settle": 0.5
+  },
+  {
+   "shot": "main"
   }
- ]
+ ],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "iou": 0.9,
+   "mad": 8,
+   "fg": 14,
+   "region": [
+    0,
+    58,
+    320,
+    182
+   ]
+  }
+ }
 }

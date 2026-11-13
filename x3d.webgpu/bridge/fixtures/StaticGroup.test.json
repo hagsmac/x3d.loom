@@ -63,9 +63,56 @@
     "__body.rec.get(__body.world.nodes.find(n=>n.def==='SG').id).kids.length",
     2
    ]
+  },
+  {
+   "mouse": [
+    "move",
+    3,
+    3
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "shot": "before"
+  },
+  {
+   "set": [
+    "SG2",
+    "visible",
+    true
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "expect": [
+    "SG2",
+    "visible",
+    true
+   ]
+  },
+  {
+   "shot": "after"
   }
  ],
- "gaps": [
-  "compared by pointer-over probes on the box and sphere inside it (the sensor sits outside, as the node forbids sensors inside); X_ITE's merging of static children is not observable"
+ "gaps": [],
+ "tone": "none",
+ "compare": {
+  "before": {
+   "iou": 0.9,
+   "mad": 6,
+   "fg": 10
+  },
+  "after": {
+   "iou": 0.9,
+   "mad": 6,
+   "fg": 10
+  }
+ },
+ "scope": [
+  "the static children are drawn as a Group and are not merged into one mesh as X_ITE does at load; the merge is an optimisation, it changes no field and no picture (compared below)"
  ]
 }

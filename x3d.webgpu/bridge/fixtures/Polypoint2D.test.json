@@ -10,7 +10,7 @@
    "only": "ours",
    "js": [
     "(()=>{const sh=__body.world.nodes.find(n=>n.def==='S1');return __body.rec.get(sh.id).meshes[0].getTotalVertices()})()",
-    5
+    20
    ]
   },
   {
@@ -19,9 +19,32 @@
     "X3D.getBrowser('#c').currentScene.getNamedNode('G1').getValue().getVertices().length/4",
     5
    ]
+  },
+  {
+   "mouse": [
+    "move",
+    3,
+    3
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "shot": "main"
   }
  ],
  "gaps": [
-  "points cannot be picked: the point count is compared between the engines; WebGPU draws each point one pixel, X_ITE draws them with its point size; colour is not compared"
+  "WebGPU has no point size: each point is a small camera-facing square drawn by a shader; X_ITE 16.6.0 draws its points much dimmer on this CPU raster (seen in the picture), colour and size are not compared; PointProperties sizing is not applied"
+ ],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "dilate": 2,
+   "cover": 0.9
+  }
+ },
+ "scope": [
+  "points cannot be picked: the point count is compared between the engines (ours: 4 corners of a camera-facing quad per point = 20 vertices for 5 points; X_ITE: 5 vertices) and the drawn points are compared in the picture"
  ]
 }

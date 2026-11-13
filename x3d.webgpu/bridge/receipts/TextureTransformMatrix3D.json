@@ -1,0 +1,72 @@
+{
+ "node": "TextureTransformMatrix3D",
+ "pass": true,
+ "xsd": {
+  "ok": true,
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/TextureTransformMatrix3D.x3d validates",
+  "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
+ },
+ "test": {
+  "ok": true,
+  "ours": "pass 3/3",
+  "xite": "pass 3/3",
+  "map": {},
+  "oursOk": true,
+  "mapX": {},
+  "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 0.99,
+    "coverOurs": 1,
+    "coverXite": 0.99,
+    "bboxOurs": [
+     56,
+     88,
+     263,
+     151
+    ],
+    "bboxXite": [
+     55,
+     88,
+     264,
+     151
+    ],
+    "nOurs": 11136,
+    "nXite": 11264,
+    "fgFracOurs": 0.14,
+    "fgFracXite": 0.15,
+    "mad": 1.66,
+    "psnr": 35.3,
+    "fgMeanOurs": [
+     127,
+     128,
+     128
+    ],
+    "fgMeanXite": [
+     125,
+     125,
+     125
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
+  "msg": ""
+ },
+ "env": {
+  "chromium": "153.0.8010.12",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha fbf130ec58bf",
+  "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
+  "babylon": "9.32.0"
+ },
+ "driver_commit": "e6c3f9a"
+}

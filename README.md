@@ -4,7 +4,7 @@ The X3D Loom, consolidated: one definition, its sources, what the other model's 
 
 | File | What it is |
 |---|---|
-| [LOOM-v1.md](LOOM-v1.md) | **The definition.** Purpose, roles, 43 laws, the ten-step loop, artefacts, gates and thresholds, measurements with grades, 147 failure modes, roadmap, open questions, decisions |
+| [LOOM-v1.md](LOOM-v1.md) | **The definition.** Purpose, roles, 44 laws, the ten-step loop, artefacts, gates and thresholds, measurements with grades, 160 failure modes, roadmap, open questions, decisions |
 | [LESSONS-v1.0.md](LESSONS-v1.0.md) | **The v1.0 sweep.** The lessons in plain language: witnesses, limits and causes, science, the browser and X_ITE, process; what v1.0 contains and what is open before it is frozen |
 | [SCIENCE-PLAYBOOK.md](SCIENCE-PLAYBOOK.md) | **For science- and maths-intensive studies.** The order of work, nine witness patterns (exact references and exact discrete identities, convergence, invariants vs events, measured claims, controls that must fail, the display chain, cross-implementation, reproducibility, units), a numerics cheat-sheet, the builder and page skeleton, and the study card (`kit/templates/SCIENCE-STUDY-CARD.md`) |
 | [SOURCES.md](SOURCES.md) | Every input, what it gave, how it was read, and the 14 places sources disagree, each with its resolution |

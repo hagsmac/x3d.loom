@@ -3,28 +3,77 @@
  "pass": true,
  "xsd": {
   "ok": true,
-  "msg": "/tmp/claude-0/wt-bridge/x3d.webgpu/bridge/fixtures/LineSet.x3d validates",
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/LineSet.x3d validates",
   "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
  },
  "test": {
   "ok": true,
-  "ours": "pass 3/3",
-  "xite": "pass 2/2",
+  "ours": "pass 6/6",
+  "xite": "pass 5/5",
   "map": {},
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 0.81,
+    "coverOurs": 1,
+    "coverXite": 1,
+    "bboxOurs": [
+     73,
+     91,
+     246,
+     178
+    ],
+    "bboxXite": [
+     73,
+     90,
+     246,
+     178
+    ],
+    "nOurs": 574,
+    "nXite": 695,
+    "fgFracOurs": 0.01,
+    "fgFracXite": 0.01,
+    "mad": 2.33,
+    "psnr": 29.27,
+    "fgMeanOurs": [
+     60,
+     120,
+     61
+    ],
+    "fgMeanXite": [
+     48,
+     99,
+     51
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
   "msg": "",
   "gaps": [
-   "lines are not pickable, so there is no hit probe: the segment count is compared between the engines (X_ITE vertex pairs via its internal getVertices, which is a private API), and our body is checked to have built one line mesh; colour and line width are not compared",
-   "normal, fogCoord and attrib are read and ignored"
+   "normal, fogCoord and attrib are read and ignored",
+   "line colour: the drawn pixels are about 20 percent brighter than X_ITE's one pixel lines in the picture (mean colour 60,120,61 against 48,99,51), the anti-aliased ribbon covers more pixels than a raw GL line"
+  ],
+  "scope": [
+   "lines are not pickable, so the check is the picture (silhouette overlap and the mean colour of the drawn pixels, SwiftShader CPU raster) plus the segment count between the engines (X_ITE vertex pairs through its internal getVertices, a private API) and one line mesh in our body; line width is one pixel in both, ours is an anti-aliased ribbon"
   ]
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 3b32691c2a96",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 4ba756222b5d",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "2b54cb9"
+ "driver_commit": "d7d1c8f"
 }

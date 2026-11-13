@@ -3,27 +3,73 @@
  "pass": true,
  "xsd": {
   "ok": true,
-  "msg": "/tmp/claude-0/wt-bridge/x3d.webgpu/bridge/fixtures/Polyline2D.x3d validates",
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/Polyline2D.x3d validates",
   "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
  },
  "test": {
   "ok": true,
-  "ours": "pass 2/2",
-  "xite": "pass 2/2",
+  "ours": "pass 5/5",
+  "xite": "pass 5/5",
   "map": {},
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 0.83,
+    "coverOurs": 1,
+    "coverXite": 1,
+    "bboxOurs": [
+     73,
+     91,
+     246,
+     149
+    ],
+    "bboxXite": [
+     72,
+     90,
+     247,
+     149
+    ],
+    "nOurs": 405,
+    "nXite": 521,
+    "fgFracOurs": 0.01,
+    "fgFracXite": 0.01,
+    "mad": 2.29,
+    "psnr": 28.35,
+    "fgMeanOurs": [
+     157,
+     125,
+     32
+    ],
+    "fgMeanXite": [
+     135,
+     108,
+     27
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
   "msg": "",
-  "gaps": [
-   "lines are not pickable: the segment count is compared between the engines (X_ITE vertex pairs via its private getVertices); colour and width are not compared"
+  "scope": [
+   "lines are not pickable, so the check is the picture (silhouette overlap and the mean colour of the drawn pixels, SwiftShader CPU raster) plus the segment count between the engines (X_ITE vertex pairs through its internal getVertices, a private API) and one line mesh in our body; line width is one pixel in both, ours is an anti-aliased ribbon"
   ]
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 3b32691c2a96",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 7c9e99d98ec7",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "2b54cb9"
+ "driver_commit": "ea465bf"
 }

@@ -3,17 +3,63 @@
  "pass": true,
  "xsd": {
   "ok": true,
-  "msg": "/tmp/claude-0/wt-bridge/x3d.webgpu/bridge/fixtures/FillProperties.x3d validates",
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/FillProperties.x3d validates",
   "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
  },
  "test": {
   "ok": true,
-  "ours": "pass 12/12",
-  "xite": "pass 10/10",
+  "ours": "pass 15/15",
+  "xite": "pass 13/13",
   "map": {},
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 0.96,
+    "coverOurs": 1,
+    "coverXite": 0.96,
+    "bboxOurs": [
+     128,
+     88,
+     288,
+     151
+    ],
+    "bboxXite": [
+     127,
+     87,
+     288,
+     152
+    ],
+    "nOurs": 8256,
+    "nXite": 8642,
+    "fgFracOurs": 0.11,
+    "fgFracXite": 0.11,
+    "mad": 6.07,
+    "psnr": 19.87,
+    "fgMeanOurs": [
+     69,
+     179,
+     199
+    ],
+    "fgMeanXite": [
+     92,
+     188,
+     173
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
   "msg": "",
   "gaps": [
    "a shape with filled=false and hatched=false is not drawn but still answers the pointer, as in X_ITE 16.6.0 (the 4.0 text does not say)",
@@ -24,9 +70,9 @@
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha d4e15ecfee7a",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha a1adb764a1bc",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "9df2df5"
+ "driver_commit": "15277a6"
 }

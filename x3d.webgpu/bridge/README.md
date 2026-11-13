@@ -44,6 +44,16 @@ Goal (owner's ask, 8 Nov 2026): walk every X3D 4.0 node type, in value order, an
 ## The loop
 `driver.py next` -> `driver.py scaffold NODE...` -> write behaviour, fixture and test spec -> `driver.py batch -n 5 --close`. The batch checks the next five nodes that have a module, runs the regression gate (a ROUTE chain through every bridged event node, in both engines and inside the Babylon body), marks the passing ones `bridged` and writes `BATCH-NN.md`. A node fails the batch if its fixture does not validate (`xmllint` against `x3d-4.0.xsd` from x3d_mcp), if our reader disagrees with the spec, or if the gate fails. X_ITE is the oracle: a spec that X_ITE fails is re-read against the standard before it is trusted; a documented disagreement goes in `xiteDisagrees`.
 
+## Visual tests (sub-lane A)
+A scene-mode test (`"mode": "scene"`) can take named shots (`{"shot": "name"}`; `run-tests.js --shots DIR` keeps the PNGs of both engines and the diff) and states in the test file what the two pictures must share:
+`"compare": {"name": {"iou": 0.9, "mad": 6, "fg": 10, "cover": .., "bbox": .., "count": .., "dilate": .., "region": [x,y,w,h], "empty": false}}`. The numbers are read off the CPU raster (SwiftShader, headless
+Chromium) and are bounds, not a pixel match: iou is the overlap of the drawn pixels, mad the mean absolute channel difference inside the union, fg the mean colour distance of the shared foreground. A shot where
+neither engine drew anything fails unless `empty` is true. `"tone": "none"` turns off the body's neutral tone curve (X_ITE 16.6.0 draws without one); `"scope"` lines travel with a bridged node like `gaps` but do not hold it at `gap`.
+`driver.py reopen NODE...` puts a worked-on gap or todo node back to `wip` so the next `batch` checks it again (the earlier batch number and note are kept as `prev_batch` / `prev_note`).
+Fidelity rules found by these comparisons (X3D 4.0 and X_ITE 16.6.0): a NavigationInfo headlight (default TRUE) lights every Material shape; a texture is multiplied by diffuseColor; a Color node replaces diffuseColor;
+the first Viewpoint is bound at load; X_ITE culls the clockwise TriangleSet2D triangle even with solid=false (the bridge draws both, a logged difference). x3d-4.0.xsd writes ComposedTexture3D and ParticleSystem
+physics as xs:sequence, and does not allow LayoutGroup in the child models; the fixtures use the key xsdChoice and xsdAllow (see `tools/driver.py`) to say so, and the validator reports them as schema defects, not fixture errors.
+
 ## Putting the kit in a page
 Concatenate after the reader and its extensions and before the body: `kit.js`, then `src/nodes/*.js` (or just the ones the page needs), then (after `body-cam.js`) `body-br.js`. Nothing in the older reader files changes; a type the kit does not own takes the stock path. The page builders (`demo/src/build-*.py`) do not include the kit yet; a port adds those parts to its `PARTS` when it wants the nodes.
 

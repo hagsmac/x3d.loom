@@ -1,0 +1,76 @@
+{
+ "node": "ImageTexture3D",
+ "pass": true,
+ "xsd": {
+  "ok": true,
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/ImageTexture3D.x3d validates",
+  "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
+ },
+ "test": {
+  "ok": true,
+  "ours": "pass 5/5",
+  "xite": "pass 5/5",
+  "map": {},
+  "oursOk": true,
+  "mapX": {},
+  "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 0.99,
+    "coverOurs": 1,
+    "coverXite": 0.99,
+    "bboxOurs": [
+     56,
+     88,
+     142,
+     151
+    ],
+    "bboxXite": [
+     55,
+     88,
+     142,
+     151
+    ],
+    "nOurs": 5568,
+    "nXite": 5608,
+    "fgFracOurs": 0.19,
+    "fgFracXite": 0.19,
+    "mad": 1.66,
+    "psnr": 33.85,
+    "fgMeanOurs": [
+     129,
+     128,
+     73
+    ],
+    "fgMeanXite": [
+     126,
+     125,
+     72
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
+  "msg": "",
+  "gaps": [
+   "the DDS volume (right) is drawn by ours and shown white by X_ITE 16.6.0 on this raster (Suspected: its DDS 3D reader does not take this uncompressed RGBA header); the picture comparison covers the NRRD volume (left)",
+   "ImageTexture3D reads uncompressed DDS volumes and uchar NRRD (raw, gzip, ascii); DICOM and compressed DDS are not read"
+  ]
+ },
+ "env": {
+  "chromium": "153.0.8010.12",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha fbf130ec58bf",
+  "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
+  "babylon": "9.32.0"
+ },
+ "driver_commit": "e6c3f9a"
+}

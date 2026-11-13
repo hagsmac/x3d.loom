@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile="Immersive" version="4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
+  <head><component name="Lighting" level="2"/><meta name="title" content="PointLight.x3d"/><meta name="description" content="Bridge fixture for PointLight: three spheres on a wall, one local light at the left, a Transform above it moves the light"/></head>
+  <Scene>
+    <NavigationInfo headlight="false"/>
+    <Viewpoint position="0 0 10"/>
+    <Transform DEF="MOVE" translation="0 0 0"><PointLight DEF="L" location="-3 2 4" color="1 0.9 0.6" radius="30"/></Transform>
+    <Transform translation="0 0 -1"><Shape><Appearance><Material diffuseColor="0.9 0.9 0.9"/></Appearance><Box size="12 7 0.2"/></Shape></Transform>
+    <Transform translation="-3 0 0"><Shape><Appearance><Material diffuseColor="0.2 0.5 0.9"/></Appearance><Sphere radius="1"/></Shape></Transform>
+    <Transform translation="0 0 0"><Shape><Appearance><Material diffuseColor="0.9 0.3 0.2" specularColor="0.8 0.8 0.8" shininess="0.4"/></Appearance><Sphere radius="1"/></Shape></Transform>
+    <Transform translation="3 0 0"><Shape><Appearance><Material diffuseColor="0.3 0.8 0.3"/></Appearance><Sphere radius="1"/></Shape></Transform>
+  </Scene>
+</X3D>

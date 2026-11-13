@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile="Immersive" version="4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
+  <head><component name="ParticleSystems" level="2"/><meta name="title" content="BoundedPhysicsModel.x3d"/><meta name="description" content="Bridge fixture for BoundedPhysicsModel: fast particles from a point stay inside the box of the bounded geometry"/></head>
+  <Scene>
+    <Viewpoint position="0 0 10"/>
+    <ParticleSystem DEF="PS" maxParticles="300" particleLifetime="5" lifetimeVariation="0.0" geometryType="QUAD" particleSize="0.14 0.14">
+      <Appearance><Material emissiveColor="0.9 0.9 0.2"/></Appearance>
+      <PointEmitter DEF="E" speed="1.5" variation="0.3" direction="0 0 0"/>
+      <BoundedPhysicsModel DEF="B"><Box DEF="BX" size="3 2 2"/></BoundedPhysicsModel>
+    </ParticleSystem>
+  </Scene>
+</X3D>

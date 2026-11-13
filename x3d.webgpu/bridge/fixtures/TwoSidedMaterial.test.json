@@ -59,10 +59,40 @@
      "back:010"
     ]
    ]
+  },
+  {
+   "only": "ours",
+   "js": [
+    "(()=>{const sh=__body.world.nodes.find(n=>n.def==='CUL');return __body.rec.get(sh.id).meshes.map(m=>m.material._two)})()",
+    [
+     "front"
+    ]
+   ]
+  },
+  {
+   "mouse": [
+    "move",
+    3,
+    3
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "shot": "main"
   }
  ],
  "gaps": [
-  "X_ITE is compared on loading and picking the shapes; which side shows which colour is checked in our body only (two passes, culled front and back)",
-  "specular, shininess and ambient are read and not shown"
- ]
+  "which side shows which colour is compared in the picture (the lower row is turned round, so it shows the back colours; a solid=TRUE pair in the middle is culled in both engines), and in our body by pass: two meshes for solid=FALSE, one for solid=TRUE",
+  "ambient and ambientIntensity are read and not shown (no ambient term in the headlight model); the specular highlight of the sphere follows Phong shininess*128 and is compared in the picture"
+ ],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "iou": 0.9,
+   "mad": 8,
+   "fg": 14
+  }
+ }
 }

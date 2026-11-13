@@ -6,6 +6,7 @@ Two physics bridges built under the Loom, collected so that what they learned st
 |---|---|---|
 | [physx-bridge/](physx-bridge/) | **X3D with PhysX 5.** Standard X3D 4.0 RigidBodyPhysics scenes run on PhysX 5.12 (WASM, in a Web Worker) under X_ITE 16.7.0, with X_ITE's own Bullet engine switched off. Seven demos and a side-by-side page: the marble machine, music box, draw-a-domino run, trebuchet vs castle, Galton board, the stairs of doom (an H-Anim ragdoll: a crash-test dummy and a cartoon person, with cannon, wrecking ball, heat map and head score) and the dummy barrage. SPEC.md (draft 1.0), SPEC-RAGDOLL.md, evidence for five phases | `9a694e9` of `x3d-physx-bridge` (local git, no remote) |
 | [mujoco-bridge/](mujoco-bridge/) | **X3D with MuJoCo.** MuJoCo 3.17 (WASM) behind X3D scenes, Apache-2.0, release 0.2.0; Gate 0 (84 tests and 19 threat checks), a threat model, a licence review, an agent slice, a guided tour | `069ddd3` of `x3d-mujoco-bridge/bridge` (local git, no remote) |
+| [ten-minute-physics/](ten-minute-physics/) | **Ten Minute Physics ports, six batches (own code, credit to Matthias Müller).** Errata of the independent review, two field guides, the generator scripts and committed limits. Scenes and records live in `hagopjay/x3d.demo` | |
 | [notes/](notes/) | The two sibling threads' own hand-over notes | |
 | [runs/](runs/) | **The two PhysX run records** (`loom.physics-run/1`), built from the bridge's evidence | |
 | [tools/](tools/) | `physx_run_record.py` (evidence to records) and `physx_controls.py` (14 negative controls on the real records) | |
@@ -69,7 +70,7 @@ Law 16: this folder went through `kit/loom sweep` (rules kept private) before it
 
 - PhysX 5 is BSD-3-Clause (`physx-bridge/licenses/NVIDIA-PhysX-BSD-3-Clause.md`, verbatim); `physx-js-webidl` is MIT, X_ITE is MIT, ammo.js is zlib.
 - `mujoco-bridge/` is Apache-2.0 (`LICENSE`, `NOTICE`; `LICENSE-REVIEW.md` records that the owner confirmed they hold the rights to the two archives and the generated code and chose Apache-2.0).
-- **`physx-bridge/` states no licence of its own** (its `package.json` has no `license` field and the folder has no LICENSE file). The owner decides before this is merged; see the PR's risk list.
+- `physx-bridge/` is Apache-2.0 too (`LICENSE`, and `"license"` in its `package.json`), added at the owner's word when it was collected here; the third-party texts above stay verbatim. No copyright line was added (the MuJoCo bridge's `NOTICE` names the owner; add the same to `physx-bridge/` if wanted).
 
 ## Decisions carried over from the threads
 

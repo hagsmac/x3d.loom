@@ -1,0 +1,60 @@
+{
+ "node": "ExplosionEmitter",
+ "mode": "scene",
+ "tone": "none",
+ "note": "one burst from a point, all directions: after the burst every particle sits on a sphere of radius speed * age (checked in ours from the particle list); the picture compares the extent and the count, the age at the shot differs between the engines (CPU frame rate)",
+ "steps": [
+  {
+   "expect": [
+    "E",
+    "speed",
+    1.0
+   ]
+  },
+  {
+   "expect": [
+    "E",
+    "position",
+    [
+     0,
+     0,
+     0
+    ]
+   ]
+  },
+  {
+   "expect": [
+    "PS",
+    "maxParticles",
+    300
+   ]
+  },
+  {
+   "only": "ours",
+   "js": [
+    "(()=>{const p=__body.scene.particleSystems[0].particles;const e=p.filter(q=>Math.abs(Math.hypot(q.position.x,q.position.y,q.position.z)/q.age-1)<0.02).length;return e/p.length})()",
+    1
+   ]
+  },
+  {
+   "settle": 2.2
+  },
+  {
+   "shot": "burst"
+  }
+ ],
+ "compare": {
+  "burst": {
+   "iou": 0.0,
+   "bbox": 60,
+   "count": [
+    0.5,
+    2.0
+   ]
+  }
+ },
+ "gaps": [
+  "particle age at the shot differs between the engines on this CPU raster (ours runs on elapsed time at about 3 frames per second under SwiftShader), so the extent is compared with a wide bound and the speed is checked from the particle list in our body",
+  "X_ITE 16.6.0 draws the particles white on this raster, ours uses the Material emissive colour (colour is not compared); the X_ITE picture also shows a swirl pattern that ours does not reproduce"
+ ]
+}

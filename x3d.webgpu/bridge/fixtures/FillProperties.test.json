@@ -76,6 +76,19 @@
      0
     ]
    ]
+  },
+  {
+   "mouse": [
+    "move",
+    3,
+    3
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "shot": "main"
   }
  ],
  "gaps": [
@@ -83,5 +96,13 @@
   "compared by pointer-over probes (hidden fill is not hit, hatched and plain fills are) and, in our body only, the hatch overlay mesh; line pattern, thickness and screen-space scaling are not compared with X_ITE",
   "hatchStyle 7 to 19 are drawn as style 6",
   "the pattern follows the geometry's texture coordinates, a geometry without them shows no hatch"
- ]
+ ],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "iou": 0.6,
+   "mad": 14,
+   "fg": 40
+  }
+ }
 }

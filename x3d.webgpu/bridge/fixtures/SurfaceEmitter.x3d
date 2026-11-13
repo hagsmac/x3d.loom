@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<X3D profile="Immersive" version="4.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd">
+  <head><component name="ParticleSystems" level="2"/><meta name="title" content="SurfaceEmitter.x3d"/><meta name="description" content="Bridge fixture for SurfaceEmitter: particles leave the surface of a sphere along the normal"/></head>
+  <Scene>
+    <Viewpoint position="0 0 10"/>
+    <ParticleSystem DEF="PS" maxParticles="400" particleLifetime="6" lifetimeVariation="0.0" geometryType="QUAD" particleSize="0.14 0.14">
+      <Appearance><Material emissiveColor="0.2 0.9 0.9"/></Appearance>
+      <SurfaceEmitter DEF="E" speed="0.5" variation="0.0"><Sphere DEF="SRF" containerField="surface" radius="1"/></SurfaceEmitter>
+    </ParticleSystem>
+  </Scene>
+</X3D>

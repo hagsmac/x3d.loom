@@ -3,27 +3,73 @@
  "pass": true,
  "xsd": {
   "ok": true,
-  "msg": "/tmp/claude-0/wt-bridge/x3d.webgpu/bridge/fixtures/Arc2D.x3d validates",
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/Arc2D.x3d validates",
   "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
  },
  "test": {
   "ok": true,
-  "ours": "pass 4/4",
-  "xite": "pass 4/4",
+  "ours": "pass 7/7",
+  "xite": "pass 7/7",
   "map": {},
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 0.84,
+    "coverOurs": 1,
+    "coverXite": 1,
+    "bboxOurs": [
+     24,
+     84,
+     296,
+     154
+    ],
+    "bboxXite": [
+     23,
+     84,
+     296,
+     155
+    ],
+    "nOurs": 579,
+    "nXite": 644,
+    "fgFracOurs": 0.01,
+    "fgFracXite": 0.01,
+    "mad": 2.53,
+    "psnr": 27.16,
+    "fgMeanOurs": [
+     151,
+     121,
+     31
+    ],
+    "fgMeanXite": [
+     150,
+     120,
+     30
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
   "msg": "",
-  "gaps": [
-   "lines are not pickable, so there is no hit probe: the segment count is compared between the engines (X_ITE vertex pairs via its internal getVertices, which is a private API), and our body is checked to have built one line mesh; colour and line width are not compared"
+  "scope": [
+   "lines are not pickable, so the check is the picture (silhouette overlap and the mean colour of the drawn pixels, SwiftShader CPU raster) plus the segment count between the engines (X_ITE vertex pairs through its internal getVertices, a private API) and one line mesh in our body; line width is one pixel in both, ours is an anti-aliased ribbon"
   ]
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 3b32691c2a96",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 4ba756222b5d",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "2b54cb9"
+ "driver_commit": "d7d1c8f"
 }

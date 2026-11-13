@@ -14,6 +14,7 @@
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "comparison": "passed",
   "msg": "",
   "gaps": [
    "the points are kept as 32-bit floats (the geometry code reads Float32Array); doubles finer than about 7 digits or larger than 3e38 are not kept",
@@ -22,9 +23,9 @@
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha ece5768b88af",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 7c9e99d98ec7",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "744b32a"
+ "driver_commit": "ea465bf"
 }

@@ -1,10 +1,9 @@
 {
  "node": "PixelTexture3D",
  "mode": "scene",
- "note": "A box with a PixelTexture3D (no Material, so the texture colour is the colour). The box has its normal 2D texture coordinates, so the volume is cut at r = 0 in both engines: the first slice, with the first row of the image at the bottom. The probes sit in the middle of the four quarters of the front face (red, green, blue, white), then the image is replaced by a grey one slice deep.",
+ "note": "A box with a PixelTexture3D (no Material, so the texture colour is the colour). The box has its normal 2D texture coordinates, so the volume is cut at r = 0 in both engines: the first slice, with the first row of the image at the bottom. The probes sit in the middle of the four quarters of the front face (red, green, blue, white), then the image is replaced by a grey one slice deep; the strips beside it are sampled in 3D by TextureCoordinate3D.",
  "gaps": [
-  "the volume is not sampled in 3D: the Texturing3D coordinate nodes (TextureCoordinate3D, TextureCoordinate4D, TextureTransform3D, TextureTransformMatrix3D) come in later batches and only the first slice is drawn",
-  "repeatR, repeatS and repeatT are read for S and T only"
+  "Babylon side: a WGSL ShaderMaterial over a RawTexture3D, shaded by the headlight only (N dot view axis, two sided); other lights, TextureProperties anisotropy and mipmaps are not applied to volumes"
  ],
  "steps": [
   {
@@ -173,6 +172,27 @@
     ],
     45
    ]
+  },
+  {
+   "mouse": [
+    "move",
+    3,
+    3
+   ]
+  },
+  {
+   "settle": 0.5
+  },
+  {
+   "shot": "main"
   }
- ]
+ ],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "iou": 0.9,
+   "mad": 8,
+   "fg": 14
+  }
+ }
 }

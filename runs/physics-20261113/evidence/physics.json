@@ -10,7 +10,7 @@
     "python": "3.13.2"
   },
   "evidence": [],
-  "finished_at": "2026-11-13T14:15:56+00:00",
+  "finished_at": "2026-11-13T14:20:22+00:00",
   "grade": "C",
   "instrument": {
     "hosts": [
@@ -203,6 +203,6 @@
   "reason": "",
   "schema": "loom.witness/1",
   "status": "pass",
-  "subject_sha256": "eff63d9e7202f79b8dc4e99c152710a5fc04f813e5c714382261f8fc050bb039",
+  "subject_sha256": "ba4d4daa52c9517cc1b8b25f76538bf56525eb12e46b413b936c46f6194f71af",
   "witness": "physics"
 }

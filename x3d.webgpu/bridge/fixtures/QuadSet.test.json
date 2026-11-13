@@ -120,9 +120,31 @@
      1
     ]
    ]
+  },
+  {
+   "mouse": [
+    "move",
+    5,
+    5
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "shot": "main"
   }
  ],
- "gaps": [
-  "compared by where the pointer is over the shape (a TouchSensor) in both engines, plus triangle count and normals in our body only; colour, texture and lighting are not compared with X_ITE"
+ "gaps": [],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "iou": 0.9,
+   "mad": 6,
+   "fg": 10
+  }
+ },
+ "scope": [
+  "attrib is read and kept; only a shader program would consume it, and no shader language runs in the bridge (see ShaderProgram, ProgramShader)"
  ]
 }

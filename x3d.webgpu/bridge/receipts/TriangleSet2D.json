@@ -3,27 +3,73 @@
  "pass": true,
  "xsd": {
   "ok": true,
-  "msg": "/tmp/claude-0/wt-bridge/x3d.webgpu/bridge/fixtures/TriangleSet2D.x3d validates",
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/TriangleSet2D.x3d validates",
   "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
  },
  "test": {
   "ok": true,
-  "ours": "pass 18/18",
-  "xite": "pass 17/17",
+  "ours": "pass 22/22",
+  "xite": "pass 20/20",
   "map": {},
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 0.97,
+    "coverOurs": 1,
+    "coverXite": 0.97,
+    "bboxOurs": [
+     73,
+     92,
+     130,
+     148
+    ],
+    "bboxXite": [
+     73,
+     91,
+     130,
+     148
+    ],
+    "nOurs": 1682,
+    "nXite": 1740,
+    "fgFracOurs": 0.04,
+    "fgFracXite": 0.05,
+    "mad": 1.76,
+    "psnr": 35.86,
+    "fgMeanOurs": [
+     51,
+     178,
+     230
+    ],
+    "fgMeanXite": [
+     49,
+     172,
+     222
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
   "msg": "",
-  "gaps": [
-   "compared by pointer-over probes in both engines and the triangle count; the clockwise second triangle is turned to face +z in ours, X_ITE draws it two-sided"
+  "scope": [
+   "compared by pointer-over probes, the triangle count and the picture; X_ITE 16.6.0 culls the clockwise second triangle although solid is false, ours draws it facing +z (the 4.0 text: a 2D geometry has no back side), a deliberate difference"
   ]
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 3b32691c2a96",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha 4ba756222b5d",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "2b54cb9"
+ "driver_commit": "d7d1c8f"
 }

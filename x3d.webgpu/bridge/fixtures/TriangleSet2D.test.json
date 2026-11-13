@@ -111,9 +111,50 @@
     "(()=>{const g=__body.world.nodes.find(n=>n.def==='G1');return __body.geometryData(g).nrm.every((v,i)=>i%3!==2||v>0.99)})()",
     true
    ]
+  },
+  {
+   "mouse": [
+    "move",
+    3,
+    3
+   ]
+  },
+  {
+   "settle": 0.6
+  },
+  {
+   "shot": "main"
+  },
+  {
+   "only": "ours",
+   "px": [
+    218,
+    130,
+    [
+     51,
+     178,
+     230
+    ],
+    30
+   ]
   }
  ],
- "gaps": [
-  "compared by pointer-over probes in both engines and the triangle count; the clockwise second triangle is turned to face +z in ours, X_ITE draws it two-sided"
+ "gaps": [],
+ "tone": "none",
+ "compare": {
+  "main": {
+   "iou": 0.9,
+   "mad": 8,
+   "fg": 15,
+   "region": [
+    0,
+    0,
+    160,
+    240
+   ]
+  }
+ },
+ "scope": [
+  "compared by pointer-over probes, the triangle count and the picture; X_ITE 16.6.0 culls the clockwise second triangle although solid is false, ours draws it facing +z (the 4.0 text: a 2D geometry has no back side), a deliberate difference"
  ]
 }

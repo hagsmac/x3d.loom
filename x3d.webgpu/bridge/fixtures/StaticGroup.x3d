@@ -10,5 +10,9 @@
       </StaticGroup>
       <TouchSensor DEF="TS"/>
     </Group>
+    <StaticGroup DEF="SG2" visible="false">
+      <Transform translation="0 -2.5 0"><Shape><Appearance><Material diffuseColor="0.9 0.6 0.1"/></Appearance><Cone bottomRadius="0.9" height="1.5"/></Shape></Transform>
+      <Transform translation="0 2.6 0" rotation="1 0 0 0.6"><Shape><Appearance><Material diffuseColor="0.8 0.3 0.6"/></Appearance><Cylinder radius="0.7" height="1.2"/></Shape></Transform>
+    </StaticGroup>
   </Scene>
 </X3D>

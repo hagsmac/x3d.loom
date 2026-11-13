@@ -3,28 +3,73 @@
  "pass": true,
  "xsd": {
   "ok": true,
-  "msg": "/tmp/claude-0/wt-bridge/x3d.webgpu/bridge/fixtures/PixelTexture3D.x3d validates",
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/PixelTexture3D.x3d validates",
   "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
  },
  "test": {
   "ok": true,
-  "ours": "pass 16/16",
-  "xite": "pass 16/16",
+  "ours": "pass 19/19",
+  "xite": "pass 19/19",
   "map": {},
   "oursOk": true,
   "mapX": {},
   "xiteOk": true,
+  "visual": {
+   "main": {
+    "iou": 0.99,
+    "coverOurs": 1,
+    "coverXite": 0.99,
+    "bboxOurs": [
+     9,
+     48,
+     310,
+     191
+    ],
+    "bboxXite": [
+     9,
+     47,
+     310,
+     192
+    ],
+    "nOurs": 25640,
+    "nXite": 25986,
+    "fgFracOurs": 0.33,
+    "fgFracXite": 0.34,
+    "mad": 1.64,
+    "psnr": 30.21,
+    "fgMeanOurs": [
+     153,
+     153,
+     145
+    ],
+    "fgMeanXite": [
+     152,
+     152,
+     144
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
   "msg": "",
   "gaps": [
-   "the volume is not sampled in 3D: the Texturing3D coordinate nodes (TextureCoordinate3D, TextureCoordinate4D, TextureTransform3D, TextureTransformMatrix3D) come in later batches and only the first slice is drawn",
-   "repeatR, repeatS and repeatT are read for S and T only"
+   "Babylon side: a WGSL ShaderMaterial over a RawTexture3D, shaded by the headlight only (N dot view axis, two sided); other lights, TextureProperties anisotropy and mipmaps are not applied to volumes"
   ]
  },
  "env": {
   "chromium": "153.0.8010.12",
-  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha d4e15ecfee7a",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha a1adb764a1bc",
   "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
   "babylon": "9.32.0"
  },
- "driver_commit": "9df2df5"
+ "driver_commit": "15277a6"
 }

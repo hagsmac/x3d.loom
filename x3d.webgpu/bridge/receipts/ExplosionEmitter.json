@@ -1,0 +1,76 @@
+{
+ "node": "ExplosionEmitter",
+ "pass": true,
+ "xsd": {
+  "ok": true,
+  "msg": "/home/user/x3d.loom/x3d.webgpu/bridge/fixtures/ExplosionEmitter.x3d validates",
+  "validator": "xmllint (libxml2) vs x3d-4.0.xsd from x3d_mcp"
+ },
+ "test": {
+  "ok": true,
+  "ours": "pass 6/6",
+  "xite": "pass 5/5",
+  "map": {},
+  "oursOk": true,
+  "mapX": {},
+  "xiteOk": true,
+  "visual": {
+   "burst": {
+    "iou": 0.05,
+    "coverOurs": 0.1,
+    "coverXite": 0.1,
+    "bboxOurs": [
+     54,
+     14,
+     264,
+     224
+    ],
+    "bboxXite": [
+     88,
+     51,
+     229,
+     192
+    ],
+    "nOurs": 6425,
+    "nXite": 6630,
+    "fgFracOurs": 0.08,
+    "fgFracXite": 0.09,
+    "mad": 23.87,
+    "psnr": 11.73,
+    "fgMeanOurs": [
+     121,
+     73,
+     14
+    ],
+    "fgMeanXite": [
+     215,
+     215,
+     194
+    ],
+    "bgOurs": [
+     1,
+     1,
+     3
+    ],
+    "bgXite": [
+     0,
+     0,
+     0
+    ]
+   }
+  },
+  "comparison": "passed",
+  "msg": "",
+  "gaps": [
+   "particle age at the shot differs between the engines on this CPU raster (ours runs on elapsed time at about 3 frames per second under SwiftShader), so the extent is compared with a wide bound and the speed is checked from the particle list in our body",
+   "X_ITE 16.6.0 draws the particles white on this raster, ours uses the Material emissive colour (colour is not compared); the X_ITE picture also shows a swirl pattern that ours does not reproduce"
+  ]
+ },
+ "env": {
+  "chromium": "153.0.8010.12",
+  "ours": "x3d.webgpu reader + SAI shim, headless, bundle sha f499223bf445",
+  "xite": "X_ITE 16.6.0 (WebGL2, SwiftShader)",
+  "babylon": "9.32.0"
+ },
+ "driver_commit": "8170b11"
+}

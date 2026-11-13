@@ -12,10 +12,10 @@ BR.node('PixelTexture3D', {
     repeatT: ['SFBool', INIT, false],
     textureProperties: ['SFNode', INIT, null],
   },
-  /* A Shape has the 2D texture coordinates of its geometry, so a 3D texture is sampled at r = 0: the first slice. That slice is drawn as a picture (BR.tex3; the 3D coordinates of
-     TextureCoordinate3D and the volume itself come with the Texturing3D coordinate nodes: gap). The same code draws the 2D PixelTexture, which the stock body did not draw. */
+  /* The volume is a Babylon RawTexture3D (BR.vol, body-br.js): sampled by the (s, t, r) of the geometry's 3D or 4D texture coordinates, or r = 0 for the 2D coordinates of a Box and the like (the first
+     slice, as X_ITE 16.6.0 does). Nearest filtering unless a TextureProperties asks for more (19775-1 18.4 default FASTEST). A change of `image` uploads the volume again. */
   build() { return null; },
-  changed(body, n, field) { if (field === 'image' || field === 'repeatS' || field === 'repeatT') BR.tex3.refresh(body, n); },
+  changed(body, n, field) { if (field === 'image' || field === 'repeatS' || field === 'repeatT' || field === 'repeatR') BR.vol.reload(body, n); },
 });
 /* pixel arrays -> a Babylon texture: components 1 grey, 2 grey+alpha, 3 RGB, 4 RGBA; one integer per pixel, the first byte is the first component; the first row is the bottom row */
 BR.tex3 = {

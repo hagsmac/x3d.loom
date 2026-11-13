@@ -55,3 +55,7 @@ node tools/replay-node.ts run.json             # replay a run saved from a page 
 
 The domino chart shows measurements of real dominoes from Larham, "DEMONic Dominoes" (arXiv:1302.3311), read from the paper, not
 measured here.
+
+## Licence
+
+Apache License 2.0 (`LICENSE`), added on 13 Nov 2026 when the bridge was collected into x3d.physics. Third-party components keep their own licences: PhysX 5 (BSD-3-Clause), physx-js-webidl (MIT), X_ITE (MIT), ammo.js (zlib); see `THIRD_PARTY_NOTICES.md` and `licenses/`.
